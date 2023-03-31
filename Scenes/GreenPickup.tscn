@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce0p7urptc6bg"]
+
+[ext_resource type="Script" path="res://Scripts/Car.gd" id="1_mtrop"]
+[ext_resource type="Texture2D" uid="uid://cpr4e1cp4qmrx" path="res://Sprites/PickupTruck_b.png" id="2_nhxvt"]
+[ext_resource type="PackedScene" uid="uid://bknynayus3la5" path="res://Scenes/tire.tscn" id="3_1ro6d"]
+[ext_resource type="Script" path="res://Scripts/Tires.gd" id="3_fk08e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4lb0"]
+radius = 9.0
+
+[node name="Character" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(6.062, 6.062)
+script = ExtResource("1_mtrop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_e4lb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(8, 0)
+rotation = -1.5708
+texture = ExtResource("2_nhxvt")
+
+[node name="Tires" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("3_fk08e")
+
+[node name="Left" parent="Tires" instance=ExtResource("3_1ro6d")]
+
+[node name="Right" parent="Tires" instance=ExtResource("3_1ro6d")]
+position = Vector2(16, 8.5)

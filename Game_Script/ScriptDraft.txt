@@ -1,0 +1,293 @@
+Main character has a little brother. His dad when castigating PLAYER_NAME about missing class refers to the little brother.
+He sees what youre doing and hes influenced by it. Not only that he gets made fun of at school for being weird, and he's not even weird! 'And we are?'
+
+neighbor moves in next door and is a bit of a free spirit too. They had to move in from the last town because the new kid was exiled.
+Their first meeting is at the site of the carjacking. The car that got jacked is the player's little brother.
+
+
+
+What's your favorite type of food?
+What's your favorite color?
+What's your special skill?
+What's your favorite social media? Every answer except "I don't like social media" will result in an immediate Game Over.
+
+
+--- Open Act I ---
+/*
+    Player lies asleep in a field. Pan to Player's house. (Door sound and fade into the inside of the house.) 
+    Player's dad is on the phone.
+*/
+
+Dad: Yes I know I know, I'm very sorry.
+Telephone: Unfortunately Mr. Wheelson, you're apologies won't help your son to pass his Hive History class.
+Dad: What CAN I do to help him?
+Telephone: You can ensure that he actually ATTEND class! *CLICK*
+
+/*
+    Player's father, exasperated slowly rolls to the door. (Door sound and fade to a wide shot of your house.)
+*/
+
+Dad: PLAYER_NAME! Come on in! PLAYER_NAME!!!
+
+/*
+    Camera pans over to the field where the player is lying asleep. He wakes up slowly.
+*/
+
+PLAYER_NAME: ... I'm coming, Dad!
+
+/*
+    Player gets control of the car for the first time. Here in an empty field so that they can experiment with the controls.
+    There should be plenty of fuel and boost restoring items scattered around so the player feels free to drive around here as much as they want.
+    Eventually they do need to go home to see their dad.
+*/
+
+Dad: PLAYER_NAME, I just got off of the phone with Ms. Gearwright. She said you missed class again today.
+PLAYER_NAME: I know, I'm sorry dad. I was just out on a run and I lost track of time. (Maybe he was investigating a potential crime. he does this often and it's always dead ends)
+Dad: I know son, I know. I've known from the moment you were dropped on my doorstep that you would march to the beat of your own drum (Make this a car pun).
+    I want you to follow your dreams. But I also want you to have a future. And if you don't do this  you wont graduate and you won't be able to get a job.
+    And they'll send you off to the glue factory.
+PLAYER_NAME: Thanks dad. But I really am sorry. I know you want the best for me. You're the only one who wants the best for me. The least I can do is try 
+    my hardest.
+
+/*
+    Time passes. PLAYER_NAME is graduating. On the way to their graduation, Player witnesses two cars chasing another car. 
+*/
+    Victim1: HELLLLLPPP!!! He's trying to killlll meeeee!!!
+    Percy: (Brooklyn accent) Get back ova heeya if ya know what's good foya!
+    Victim1: NOoOOOooO!!!!
+    // Victim1 is captured and taken behind a broken wall. Percy rolls back out. And looks at PLAYER_NAME
+    Percy: And you'll keep ya trap shut if you know what's good for YOU!
+/*
+    Percy exits. 
+
+    PLAYER_NAME looks left, looks right, looks back, and then to the hole in the wall. He takes one more look at the road that leads to graduation (down). He then thinks of his dad.
+    Maybe his dad fades in on a cloud and says something cheesy to him.
+
+    PLAYER_NAME slowly backs away from the road to graduation. Then quickly speeds forwards into a turn away from graduation and towards the hole in the wall.
+
+
+    Player regains control. there is a fork in the road. One side has rubble that you  can interact with.
+*/
+
+(Before reaching the dead end)
+Rubble-interact: This rubble looks like it could be cleared away but I can't do anything about it now. If the other path in the fork doesn't lead anywhere, I'll see about having it cleared.
+
+(After reaching the dead end)
+Rubble-interact: This rubble looks like it could be cleared away. I should talk to the city about getting it cleared so I can continue my investigation.
+
+/*
+    PLAYER_NAME continues down the remaining paths at the fork in the road. The end of each fork will have some sort of task that will help the player make use of all of the different abilities.
+    the final cutscene is triggered when the player enters the 'lobby' of the forks after having completed the final task.
+
+    PLAYER_NAME exits from the hole in the wall to the scene in which he made his decision to be late to his graduation.
+*/
+
+PLAYER_NAME: Wait... is it dark out already? What time is it? Oh no! XX:XX! That is so late! I only have XX:XX to get there before my name is called.
+
+/*
+    Timer starts and PLAYER_NAME has to use his newly acquired skills to try and get to his graduation on time. The streets are empty because everyone is at the graduation. Just try beat the 
+    clock and not get totalled.
+
+    3-4 tiers to the timer. In each bracket, PLAYER_NAME is rewarded something different depending on how late they were to their own graduation. Each tier will trigger a slightly different
+    cutscene, but ultimately they will all result in your dad being disappointed in you for being late to the graduation.
+
+--------(LONGEST TIME)
+    // Arrives at stadium
+    PLAYER_NAME: Oh no... everyone's gone.
+    // Player needs to pilot him back home. Runs lower on gas.
+
+    /*
+        Dad is sitting on the porch alone.
+    */
+
+    PLAYER_NAME: Dad?
+    Dad: ...
+    PLAYER_NAME: Dad.. I'm sorry.
+    Dad: ...
+    Dad: You're sorry.
+    Dad: That's okay. 
+    Dad: I understand it's hard for you. 
+    Dad: But please understand that it's hard for me too.
+    Dad: I was the only father in that audience who didn't have a son on that stage.
+    Dad: ...
+    PLAYER_NAME: ...
+    // Dad walks inside.
+
+--------(SHORTEST TIME)
+    // Arrives at stadium just in time to have his name called. He was out of breath.
+    SPEAKER_DUDE: PLAYER_NAME! 
+    //PLAYER_NAME rushes on stage at the last second
+    PLAYER_NAME: (panting) thank you so much. *pant* *cough* *wheeze*
+    //PLAYER_NAME takes diploma and rolls off screen.
+    //Empty stadium PLAYER_NAME goes up to his dad in audience.
+    Dad: You made it! I was worried there for a moment.
+    PLAYER_NAME: Oh.. uh yeah! I was here! Just took a bit longer to get my grills done than I thought.
+    Dad: I'm the happiest Father in the world for you to have been there. I don't care if you barely made it!
+    // the two walk home together. in mid conversation.
+    PLAYER_NAME: Yeah and that's about all I did today. at least before the accident...
+    Dad: Oh you didn't tell me you saw an accident. What happened?
+    PLAYER_NAME: Yeah, I saw someone carnap another car..
+    Dad: No you did not.. Carnapping only happens in movies. No Car is able to kill another car.
+    PLAYER_NAME: I promise I did! I even saw where they went! But one of the paths was blocked off so I couldn't check everywhere!
+    Dad: You couldn't check everywhere?
+    Dad: Is this why you were almost late to your graduation?
+    // Dad walks inside.
+
+
+/*
+    Player is allowed to explore the city at night. Quite a lot is closed because it's night but the player can still ride around and test out their car which has been upgraded due to the graduation?
+    When the Player is ready, they just need to go to sleep in their bed in order to trigger the next cutscene.
+
+    PLAYER_NAME wakes up. Leaves house, play can notice that his dad is missing this early in the morning and it's a little strange.
+*/
+
+PLAYER_NAME: Ok, so all I need to do is go to the city building to talk to someone about getting that road cleared!
+
+// Player regains control to go to the city building. Side quests are available along the way.
+// Player enters City building. Goes up to the reception desk.
+
+Receptionist: Can I help you?
+PLAYER_NAME: Yes thank you, I'm looking to report debris blocking off the road.
+Receptionist: How many?
+PLAYER_NAME: How many?
+Receptionist: How many roads is the debris blocking off, Honey?
+PLAYER_NAME: How many roads?... well, just one road.
+Receptionist: Just one road?? Oh Honey, I'm sorry but you'll have to file a request and we're totally backlog with reports like this recently. We are barely keeping afloat here. The queen works 
+    in mysterious ways!!
+PLAYER_NAME: Please! Is there any way you to get priority?
+Receptionist: I'm sorry, the only people who have the authority to sign a report as a priority is the governor of the city.
+PLAYER_NAME: So we need a signature from the governor...
+// PLAYER_NAME walks away.
+Receptionist: That's not what I meant!!
+
+// Player takes control and finds the governor's house.
+// PLAYER_NAME knocks on the door.
+// No one answers the door.
+
+Sounds from house: Hiya! Hiya! Hey!
+PLAYER_NAME: He might need help! We should check to see if a back door is unlocked so we can help him!
+
+// Player regains control. There's a key hidden under a rock that the player uses to open the back door.
+
+Sounds from house: HIIIRraaaYaaaAA revvv yraa yraaaa vroooom!
+
+// Player follows noises up the stairs.
+// Walks into the governor and another car in a bed together.
+Governor Gearson: WHAT ARE YOU TWO BOYS DOING IN HERE!
+PLAYER_NAME: Oh.. we were checking to see if you needed any help!
+Governor Gearson: We don't! So get out!
+PLAYER_NAME: Well, we were also wondering if you could hear a proposal.
+Governor Gearson: WHAT?!?!
+PLAYER_NAME: Well, there's this road down the street that --
+Governor Gearson: NO! Get out!
+// PLAYER_NAME starts to drive away.
+Governor Gearson: WAIT!
+Governor Gearson: Are your dashcams recording?..
+Governor Gearson: Give me the recordings.
+PLAYER_NAME: Hear our proposal and we will.
+Governor Gearson: I don't negotiate with terrorists!
+
+**** First boss battle ensues ****
+
+// Governor Gearson is defeated.
+Gov. Gearson: I have to admit. You two are quite impressive fighters. You style almost reminds me of.. no nonsense. Anyway, I'll hear your proposal. But you'll have to promise me that you won't show those 
+    videos to ANYONE. Trust (Rust?) goes both ways.
+PLAYER_NAME: You've got yourself a deal!
+Gov. Gearson: So what is it that you boys want?
+PLAYER_NAME: Well there's an old blocked road that we really want to investigate but it will take months in the regular cue and we need to investigate it NOW!
+Gov. Gearson: Which road are we talking about here boys?
+PLAYER_NAME: right at the entrance to Train Drive.
+Gov. Gearson: The entrance to Train Drive?...
+// Gov. Gearson flabbergasted.
+Gov. Gearson: Why would you two want to remove that rubble?..
+PLAYER_NAME: Well...
+Gov. Gearson: You don't know!
+PLAYER_NAME: Know what?
+Gov. Gearson: That's it! Have I got something to show you boys! Race ya to the rubble. Keep up if ya can!
+//Race Gov. Gearson to the rubble. Don't run into anyone!
+Gov. Gearson: Here we are now. Watch and learn...
+// Gov. Gearson backs up slowly away from the wall.
+Gov. Gearson: ReVvvvvVVVvvv REREVvV vvVvvv.
+// Gov. Gearson speeds off directly into the rubble.
+PLAYER_NAME: NOOOOO!!! Governor Gearson!!
+// Gov. Gearson drives through the rubble without interacting with it at all.
+PLAYER_NAME: What happened? Where is he? I thought for sure we were about to watch an auto-murder...
+// Gov. Gearson exits slowly from the rubble.
+Gov. Gearson: HAHAHAH! You should have seen the looks on your grills!
+PLAYER_NAME: WHAT!!!?
+Gov. Gearson: It's an illusion. You can drive right through it! Come on! Follow me!
+// PLAYER_NAME carefully drives closer to the rubble and slowly through it.
+// Player regains control and drives through the rubble.
+Gov. Gearson: Welcome to Underton!
+
+/*
+    The trio find themselves in the middle of a city square. The camera pans out until it fades to black. 
+*/
+
+--- Close Act I ---
+
+
+--- Open Act II ---
+
+/*
+    We pick up from where we left off. The trio is in the middle of Underton Square.
+*/
+Shop Keeper 1: Oi Gearson!
+Shop Keeper 2: Gearson! Why I oughtta. Lot a nerve showin' your face around here.
+PLAYER_NAME: Wow! You do seem to be a regular around here Governor.
+Gov. Gearson: Why uh yes!.. This is like a second home to me! I suppose I should get back to work in Overton...
+PLAYER_NAME: Wait! Governor, can we ask for another favor?
+Gov. Gearson: Go for your life, kid!
+PLAYER_NAME: Well we witnessed a car-napping the other day and we were looking for the perpetrator.
+Gov. Gearson: Okayyy. What did this perpetrator look like?
+PLAYER_NAME: (Describes Percy)
+Gov. Gearson: Your sticking your grill where it don't belong, kid.
+PLAYER_NAME: You know him? You have to tell us!
+Gov. Gearson: And risk my gears? Forget about it!
+PLAYER_NAME: But we need to save my brother!
+Gov. Gearson: It's your brother... ughh sorry, I can't help you.
+// Gov. Gearson turns away. PLAYER_NAME turns away
+Gov. Gearson: His name is Percy.
+// PLAYER_NAME turns back
+PLAYER_NAME: Percy who? Where can I find him?
+Gov. Gearson: Ask around at {insert first place}.
+// At this point if you lost the race to the rubble against Gov. Gearson, he will return back to Overton.
+// If you won the race:
+Gov. Gearson: Hey kid, you really shouldn't be goin down this path alone.
+PLAYER_NAME: Well we have to do it somehow!
+Gov. Gearson: I know. That's why I'm going with you.
+
+// Gov. Gearson joins the party.
+// Player regains control and goes to {insert first place}
+
+
+
+Maybe this is where the big investigation starts.
+You finally open up to Gov. Gearson about what's going on and who you're looking for. you describe Percy.
+
+/*
+
+Strange
+
+
+
+Beginning of Act II, if you won the race, the Governor will offer to join your party.
+
+
+Two story houses have ramps circling th perimeter of house instead of stairs.
+This should all get changed into PLAYER_NAME and his best friend doing all of this together so that the best friend can talk instead of PLAYER_NAME
+
+
+when player is faced with a fork in the road while in pursuit of Percy. One option is blocked off by rubble. the other side of the rubber is a new open area. This is where PLAYER_NAME thinks
+Percy has gone. Maybe in this more open area there are cars there that aren't like the cars from his town. They are more loose, and open. More like PLAYER_NAME. PLAYER_NAME immediately bonds with them.
+He wants to spend all his time there. He eventually has a falling out with his dad and goes to the open part forever. The first he's out with his friends after having moved there, one of his friends 
+get reaaaaalll drunk. And he's driving and someone orders him a Tow-ber but this drunk guy just starts driving real fast and hits a wall and a human comes crashing out of the windshield and smashes into
+another wall and goes SPLATTTTT. The other humans get out of their cars and run up to his remains. They turn to PLAYER_NAME and ask why they're still in their car. Someone has died. PLAYER_NAME is in shock.
+
+
+
+
+The car is 
+    captured and taken away. The captor looks at the player and tells him to keep quiet and no one will get hurt etc etc.
+
+Player decides to investigate a bit and it leads to a dead end, but he's late to school as a result and his Dad has to talk to him again.

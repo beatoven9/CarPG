@@ -1,0 +1,29 @@
+*Fuel is necessary to get anywhere. If you run out of fuel, you are towed to a gas station of your choosing for a price. The price is determined by distance. Can't travel to a gas station you haven't been to yet.
+*Overworld enemies drive around and you encounter them by running into them. If you run into the enemy with the front of your car
+the enemy will start the battle having taken damage. You will also have taken some damage. Battering rams are available for purchase.
+Better battering rams offer less damage to user and more damage to enemy. Speed at time of impact also affects damage taken/dealt. When 
+you hit another car you can choose whether to fight and the winner pays for ALL damages, or you just pay for damages based roughly on 
+who was at fault but your insurance premium will go up.
+*Encounters are turn based. Magic power is based on your boost power. Magic gauge is based on your boost capacity/duration.
+attack stat raises with each level and also with what kind of battering ram you put on.
+*End of day, you get a bill for existing. Insurance, registration, etc. You can drive without a registration but police will chase you
+and you need to pay an obscene fine or fight them. They will be super powerful and just impossible to beat in the early game.
+
+CONTROL ABILITIES AND BATTLE ABILITIES ARE SHARED:
+    OVERWORLD EFFECT    BATTLE
+------------------------------------------------------------------------------------
+    max speed           next turn comes faster
+    boost power         magic power
+    boost duration      magic gauge
+    handling            accuracy
+    acceleration        lower chance of being parried
+    
+
+FOR PURCHASE:
+UPGRADE             OVERWORLD EFFECT                        BATTLE EFFECT
+------------------------------------------------------------------------------------
+battering ram       hit overworld encounters                attack stat
+new paint           protection from overworld damage        defense
+new headlights      better vision in dark                   temporarily blind enemy?
+fuel efficiency     world doesnt become polluted            (not sure)            
+                    (affects how people like you)           

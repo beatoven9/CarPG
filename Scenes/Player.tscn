@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0tujsi0yq4e0"]
+
+[ext_resource type="PackedScene" uid="uid://b3qom5ha8346k" path="res://Scenes/BaseCar.tscn" id="1_l6jvm"]
+[ext_resource type="Script" path="res://Scripts/PlayerCar.gd" id="2_5yjm1"]
+[ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Sedan_a.png" id="2_rpetk"]
+
+[node name="Player" instance=ExtResource("1_l6jvm")]
+script = ExtResource("2_5yjm1")
+
+[node name="CarSprite" parent="." index="1"]
+texture = ExtResource("2_rpetk")
+
+[node name="Left" parent="Tires" index="0"]
+position = Vector2(16, -7.5)
+
+[node name="Right" parent="Tires" index="1"]
+position = Vector2(16, 7.5)
