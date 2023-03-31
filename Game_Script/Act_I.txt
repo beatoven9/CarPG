@@ -5,9 +5,31 @@ What's your favorite social media? Every answer except "I don't like social medi
 
 
 --- Open Act I ---
---- Scene 1 ---
+--- Prologue ---
 /*
-    Player lies asleep in a field. Pan to Player's house. (Door sound and fade into the inside of the house.) 
+    emotional music (The Heroes Return part 1 from Earthbound)
+    Black screen.
+*/
+
+VOICE: PLAYER_NAME, wake up!
+VOICE: ...
+VOICE: Wake Up!!!
+
+/*
+    Player fades into view in the black screen.
+*/
+
+VOICE: You are a very special car.
+VOICE: You're very own story is about to unfold. And it will change everything.
+
+--- Close Prologue ---
+
+--- Scene 1 ---
+// Player wakes up in a field under the shade of a tree.
+Inner monologue: Wow that was a nice nap. And a weird dream.
+
+/*
+    Pan to Player's house. (Door sound and fade into the inside of the house.) 
     Player's dad is on the phone.
 */
 
