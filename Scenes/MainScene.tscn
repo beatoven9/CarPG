@@ -56,7 +56,6 @@ layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(6.062, 6.062)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
@@ -155,7 +154,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_ieqmb")
 scrollable = false
-tick_count = 8
 script = ExtResource("2_h7yqo")
 
 [node name="PlayerHealth" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer"]
