@@ -1,0 +1,41 @@
+--- Open Act II ---
+
+/*
+    We pick up from where we left off. The trio is in the middle of Underton Square.
+*/
+Shop Keeper 1: Oi Gearson! You son of a bike!
+Shop Keeper 2: Gearson! Why I oughtta. Lot a nerve showin' your face around here.
+FRIEND: Wow! You do seem to be a regular around here, Governor.
+Gov. Gearson: Why uh yes!.. This is like a second home to me! I suppose I should get back to work in Overton...
+FRIEND: Wait! Governor, can we ask for another favor?
+Gov. Gearson: Go for your life, kid!
+FRIEND: Well we witnessed a car-napping the other day and we were looking for the perpetrator.
+Gov. Gearson: Okayyy. What did this perpetrator look like?
+FRIEND: (Describes Percy)
+Gov. Gearson: Your sticking your grill where it don't belong, kid.
+FRIEND: You know him? You have to tell us!
+Gov. Gearson: And risk my gears? Forget about it!
+FRIEND: But we need to save my brother!
+Gov. Gearson: It's your brother... ughh sorry, I can't help you.
+// Gov. Gearson turns away. PLAYER_NAME turns away
+Gov. Gearson: His name is Percy.
+// FRIEND and PLAYER_NAME turns back
+FRIEND: Percy who? Where can I find him?
+Gov. Gearson: Ask around at {insert first place}.
+// At this point if you lost the Race to the Rubble against Gov. Gearson, he will return back to Overton through the rubble portal.
+// If you won the race:
+Gov. Gearson: Hey kid, you really shouldn't be goin down this path alone.
+FRIEND: Well we have to do it somehow!
+Gov. Gearson: I know. That's why I'm going with you.
+
+// Gov. Gearson joins the party.
+// Player regains control and goes to {insert first place}
+
+
+*The big reveal that there are actually humans in the cars in Underton.*
+One of the mainline quests will result in FRIEND and PLAYER_NAME getting drunk with a group of Underton citizens. One of the citizens is so drunk that he can't drive. His friends call him a Tow-ber for a tow.
+The friend insists on proving that he's not drunk by driving around really fast. He hits a tree stump and the human inside of the car comes flying out of the car and SPLATs on a wall. The other humans get out
+of their cars to run up to the deceased's remains. They turn to PLAYER_NAME and FRIEND and ask what they're still doing in their car. Someone has died! FRIEND turns to PLAYER_NAME. "What are those things? 
+And how did they just get out of those cars? Oh my god, I think the cars they were in are dead. Hello? Hellllooo?! We need to get out of here, PLAYER_NAME!!" This will be a turning point in the story. From this
+point on, all of the cars in Underton will be hostile. Maybe the shops are still functional though? They still like money? lol
+
