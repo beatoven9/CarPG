@@ -20,7 +20,7 @@ func _input(event):
 	elif event.is_action_pressed("right"):
 		pass
 	elif event.is_action_pressed("up"):
-		pass
+		movement_direction = 1
 	elif event.is_action_pressed("down"):
 		movement_direction = -1
 
@@ -32,7 +32,7 @@ func _input(event):
 	elif event.is_action_released("up"):
 		pass
 	elif event.is_action_released("down"):
-		movement_direction = 1
+		pass
 
 func _on_shifter_ready(shifter_value):
 	speed = (shifter_value/100) * stats.max_speed
