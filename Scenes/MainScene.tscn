@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b66wv2nsy7xu1"]
+[gd_scene load_steps=20 format=3 uid="uid://b66wv2nsy7xu1"]
 
 [ext_resource type="Script" path="res://Scripts/StickShift.gd" id="2_h7yqo"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="2_su8da"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bsj3upwllbcxl" path="res://Sprites/SpeedGauge.png" id="8_y1wu1"]
 [ext_resource type="Script" path="res://Scripts/SpeedGauge.gd" id="9_cbq4y"]
 [ext_resource type="Texture2D" uid="uid://bcxjbyh4dbycw" path="res://Sprites/Gauge_Needle_2.png" id="9_t55cm"]
-[ext_resource type="Texture2D" uid="uid://dowyu0rup3tw5" path="res://Sprites/RoadPiece_h.png" id="10_0nbl2"]
 [ext_resource type="PackedScene" uid="uid://d0tujsi0yq4e0" path="res://Scenes/Player.tscn" id="10_sgbf5"]
 [ext_resource type="Texture2D" uid="uid://mmthnmxmekn" path="res://Sprites/ProgressBarFrame.png" id="12_joidk"]
+[ext_resource type="Script" path="res://Scripts/UI_Spacer_1.gd" id="12_kp4v0"]
 [ext_resource type="Texture2D" uid="uid://dvholimj2xge8" path="res://Sprites/HealthBarFill.png" id="13_b8130"]
 [ext_resource type="Texture2D" uid="uid://bbjfwwa8ftgqx" path="res://Sprites/BoostBarFill.png" id="14_poix7"]
 
@@ -28,12 +28,21 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_af6fc")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjiir"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
 [sub_resource type="Theme" id="Theme_ieqmb"]
 VSlider/constants/grabber_offset = 0
 VSlider/icons/grabber = ExtResource("3_o8cqi")
 VSlider/icons/grabber_disabled = ExtResource("3_o8cqi")
 VSlider/icons/grabber_highlight = ExtResource("3_o8cqi")
-VSlider/icons/tick = ExtResource("10_0nbl2")
+VSlider/styles/slider = SubResource("StyleBoxFlat_pjiir")
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 3
@@ -48,7 +57,6 @@ layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(6.062, 6.062)
-zoom = Vector2(6, 6)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
@@ -79,64 +87,81 @@ layout_mode = 2
 
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
 
 [node name="Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
-custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
+script = ExtResource("12_kp4v0")
 
-[node name="FuelGauge" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/Control"]
+[node name="SpeedGauge" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
 texture_filter = 3
-scale = Vector2(3, 3)
-texture = ExtResource("5_rchl4")
-offset = Vector2(32, 32)
-script = ExtResource("6_8u58h")
-
-[node name="Needle" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/Control/FuelGauge"]
-texture_filter = 3
-position = Vector2(32, 32)
-rotation = 3.9968
-texture = ExtResource("6_u02t4")
-offset = Vector2(0, -12)
-
-[node name="Control2" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
-custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
-
-[node name="SpeedGauge" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/Control2"]
-texture_filter = 3
-scale = Vector2(4, 4)
+size_flags_horizontal = 8
+size_flags_vertical = 8
 texture = ExtResource("8_y1wu1")
-offset = Vector2(32, 32)
+stretch_mode = 5
 script = ExtResource("9_cbq4y")
 
-[node name="Needle" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/Control2/SpeedGauge"]
+[node name="Needle" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/SpeedGauge"]
 texture_filter = 3
-position = Vector2(32, 32)
-rotation = -2.28639
-texture = ExtResource("9_t55cm")
-offset = Vector2(0, -12)
-
-[node name="Control3" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
-custom_minimum_size = Vector2(32, 0)
-layout_mode = 2
-
-[node name="Shifter" type="VSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/Control3"]
-texture_filter = 3
-layout_mode = 2
-offset_right = 64.0
-offset_bottom = 256.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -30.0
+offset_right = 5.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 2
+pivot_offset = Vector2(5, 30)
+texture = ExtResource("9_t55cm")
+
+[node name="FuelGauge" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
+texture_filter = 3
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("5_rchl4")
+stretch_mode = 5
+script = ExtResource("6_8u58h")
+
+[node name="Needle" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox/FuelGauge"]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -30.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(5, 30)
+texture = ExtResource("6_u02t4")
+stretch_mode = 4
+
+[node name="Shifter" type="VSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
+texture_filter = 3
+layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_ieqmb")
+scrollable = false
+tick_count = 8
 script = ExtResource("2_h7yqo")
 
 [node name="PlayerHealth" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 texture_filter = 3
-custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+size_flags_horizontal = 8
 value = 100.0
 stretch_margin_left = 2
 stretch_margin_top = 4
@@ -149,6 +174,7 @@ texture_progress_offset = Vector2(1, 1)
 [node name="PlayerBoost" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 texture_filter = 3
 layout_mode = 2
+size_flags_horizontal = 8
 value = 100.0
 texture_over = ExtResource("12_joidk")
 texture_progress = ExtResource("14_poix7")
@@ -156,4 +182,4 @@ texture_progress_offset = Vector2(1, 1)
 
 [node name="Player" parent="." instance=ExtResource("10_sgbf5")]
 
-[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/HBox/Control3/Shifter" to="Player" method="_on_shifter_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/HBox/Shifter" to="Player" method="_on_shifter_value_changed"]

@@ -1,4 +1,4 @@
-extends Sprite2D
+extends TextureRect
 
 var max_angle_radians = 8.5
 var min_angle_radians = 4
@@ -18,6 +18,7 @@ func calculate_angle_radians(current_fuel):
 	
 
 func _ready():
+	print("Needle is: ", needle)
 	pass
 
 

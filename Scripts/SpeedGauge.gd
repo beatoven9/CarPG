@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureRect
 
 var max_angle_radians = 8.5
 var min_angle_radians = 4
