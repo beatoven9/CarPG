@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b66wv2nsy7xu1"]
+[gd_scene load_steps=22 format=3 uid="uid://b66wv2nsy7xu1"]
 
 [ext_resource type="Script" path="res://Scripts/StickShift.gd" id="2_h7yqo"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="2_su8da"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://d0tujsi0yq4e0" path="res://Scenes/Player.tscn" id="10_sgbf5"]
 [ext_resource type="Texture2D" uid="uid://mmthnmxmekn" path="res://Sprites/ProgressBarFrame.png" id="12_joidk"]
 [ext_resource type="Texture2D" uid="uid://dvholimj2xge8" path="res://Sprites/HealthBarFill.png" id="13_b8130"]
+[ext_resource type="Texture2D" uid="uid://cwscf8apojupm" path="res://Sprites/Bar_Underfill.png" id="13_j22li"]
+[ext_resource type="Script" path="res://Scripts/PlayerBoostGauge.gd" id="14_0e2nt"]
 [ext_resource type="Texture2D" uid="uid://bbjfwwa8ftgqx" path="res://Sprites/BoostBarFill.png" id="14_poix7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_af6fc"]
@@ -27,20 +29,24 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_af6fc")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lv7do"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjiir"]
+bg_color = Color(0.435294, 0.552941, 0.72549, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
-expand_margin_left = 8.0
-expand_margin_right = 8.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
 
 [sub_resource type="Theme" id="Theme_ieqmb"]
 VSlider/constants/grabber_offset = 0
 VSlider/icons/grabber = ExtResource("3_o8cqi")
 VSlider/icons/grabber_disabled = ExtResource("3_o8cqi")
 VSlider/icons/grabber_highlight = ExtResource("3_o8cqi")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_lv7do")
 VSlider/styles/slider = SubResource("StyleBoxFlat_pjiir")
 
 [node name="Node2D" type="Node2D"]
@@ -168,10 +174,13 @@ texture_progress_offset = Vector2(1, 1)
 texture_filter = 3
 layout_mode = 2
 size_flags_horizontal = 8
-value = 100.0
+value = 50.0
+texture_under = ExtResource("13_j22li")
 texture_over = ExtResource("12_joidk")
 texture_progress = ExtResource("14_poix7")
 texture_progress_offset = Vector2(1, 1)
+tint_under = Color(0.278431, 0.415686, 0, 1)
+script = ExtResource("14_0e2nt")
 
 [node name="Player" parent="." instance=ExtResource("10_sgbf5")]
 

@@ -1,14 +1,24 @@
 extends CharacterBody2D
 
+var is_boosting = false
 var fuel_usage_multiplier = .0001
 var wheel_rotation = 0
 var speed = 0
+var extra_thrust = 1
 var movement_rotation = 0
 var movement_direction = 1
 var rotation_direction = 0
 @onready var tires = get_node("Tires")
 @onready var stats = get_node("Stats")
 
+
+# returns boost_power if there is boost left.
+func use_boost(boost_used, boost_is_true, delta):
+	if (stats.current_boost > 0) && (boost_is_true == true):
+		stats.current_boost -= boost_used * delta
+		return stats.current_boost_power
+	else:
+		return 1
 
 func get_input():
 	var accelerator = 0
@@ -62,7 +72,7 @@ func move(delta, accelerator):
 		)
 	else:
 		velocity = lerp(
-			transform.x * accelerator * speed,
+			transform.x * accelerator * speed * extra_thrust,
 			velocity,
 			pow(2, -10 * delta)
 		)

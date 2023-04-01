@@ -4,7 +4,7 @@ extends Node
 var max_health = 100
 var max_speed = 400
 var max_fuel = 1000
-var max_boost = 100
+var max_boost = 60
 var max_fuel_efficiency = .5
 var max_acceleration = 1
 var max_rotation = 1
@@ -15,7 +15,9 @@ var max_rotation_speed = .1
 var current_fuel
 var current_max_speed
 var current_health
-var current_boost
+var current_boost = 60
+var current_boost_power = 2
+var current_boost_efficiency = 1
 var current_fuel_efficiency
 var current_acceleration
 var current_rotation_speed
