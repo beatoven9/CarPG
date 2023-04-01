@@ -10,12 +10,8 @@ func get_input():
 		"wheel_rotation_delta": wheel_rotation_delta
 	}
 
-func _ready():
-	print("READY")
-
 func _physics_process(delta):
 	super._physics_process(delta)
-	print(stats.current_boost)
 	if is_boosting:
 		_on_boost_used.emit(stats.current_boost)
 	extra_thrust = use_boost(
@@ -37,6 +33,11 @@ func _input(event):
 	if event.is_action_pressed("boost"):
 		is_boosting = true
 
+	if event.is_action_pressed("drift"):
+		turn_tightness = .1
+
+	if event.is_action_released("drift"):
+		turn_tightness = .15
 
 	if event.is_action_released("left"):
 		pass
