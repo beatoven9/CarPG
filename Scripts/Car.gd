@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var is_boosting = false
+var is_drifting = false
 var fuel_usage_multiplier = .0001
 var wheel_rotation = 0
 var speed = 0
@@ -8,6 +9,7 @@ var extra_thrust = 1
 var movement_rotation = 0
 var movement_direction = 1
 var rotation_direction = 0
+var turn_tightness = .1
 @onready var tires = get_node("Tires")
 @onready var stats = get_node("Stats")
 
@@ -56,7 +58,7 @@ func calculate_fuel_usage(vel):
 
 func move(delta, accelerator):
 	if velocity != Vector2.ZERO and stats.current_fuel > 0:
-		rotation += movement_rotation * .1 * movement_direction
+		rotation += movement_rotation * movement_direction * turn_tightness
 		calculate_fuel_usage(velocity)
 		
 	if accelerator == 0 or stats.current_fuel <= 0:
