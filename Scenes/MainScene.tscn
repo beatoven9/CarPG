@@ -29,9 +29,9 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_af6fc")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lv7do"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g27dm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjiir"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt2yo"]
 bg_color = Color(0.435294, 0.552941, 0.72549, 1)
 border_width_left = 2
 border_width_top = 2
@@ -46,8 +46,8 @@ VSlider/constants/grabber_offset = 0
 VSlider/icons/grabber = ExtResource("3_o8cqi")
 VSlider/icons/grabber_disabled = ExtResource("3_o8cqi")
 VSlider/icons/grabber_highlight = ExtResource("3_o8cqi")
-VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_lv7do")
-VSlider/styles/slider = SubResource("StyleBoxFlat_pjiir")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_g27dm")
+VSlider/styles/slider = SubResource("StyleBoxFlat_lt2yo")
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 3
