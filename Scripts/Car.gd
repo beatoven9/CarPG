@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var is_boosting = false
-var is_drifting = false
 var fuel_usage_multiplier = .0001
 var wheel_rotation = 0
 var speed = 0
@@ -9,9 +8,13 @@ var extra_thrust = 1
 var movement_rotation = 0
 var movement_direction = 1
 var rotation_direction = 0
-var turn_tightness = .1
+var turn_tightness
 @onready var tires = get_node("Tires")
 @onready var stats = get_node("Stats")
+
+
+func _ready():
+	turn_tightness = stats.base_turn_tightness
 
 
 # returns boost_power if there is boost left.
@@ -21,6 +24,7 @@ func use_boost(boost_used, boost_is_true, delta):
 		return stats.current_boost_power
 	else:
 		return 1
+
 
 func get_input():
 	var accelerator = 0
@@ -39,6 +43,7 @@ func get_axel_width_pixels():
 	var car_width = car_position.x - car_end.x
 	return car_width
 	
+
 func manage_wheel_rotation(delta, wheel_rotation_delta):
 	wheel_rotation += wheel_rotation_delta
 	wheel_rotation = clamp(wheel_rotation, -stats.max_rotation, stats.max_rotation)
@@ -56,9 +61,11 @@ func calculate_fuel_usage(vel):
 	var fuel_usage = vel.length() * fuel_usage_multiplier * (1/stats.current_fuel_efficiency)
 	stats.current_fuel -= fuel_usage
 
+
 func move(delta, accelerator):
 	if velocity != Vector2.ZERO and stats.current_fuel > 0:
-		rotation += movement_rotation * movement_direction * turn_tightness
+		rotation += movement_rotation * movement_direction * turn_tightness * (sqrt(velocity.length()) * .1)
+
 		calculate_fuel_usage(velocity)
 		
 	if accelerator == 0 or stats.current_fuel <= 0:
@@ -67,11 +74,6 @@ func move(delta, accelerator):
 			velocity,
 			pow(2, -10 * delta)
 		)
-		movement_rotation = lerpf(
-			0,
-			movement_rotation,
-			pow(2, -5 * delta)
-		)
 	else:
 		velocity = lerp(
 			transform.x * accelerator * speed * extra_thrust,
@@ -79,9 +81,8 @@ func move(delta, accelerator):
 			pow(2, -10 * delta)
 		)
 		movement_rotation = wheel_rotation
-
-	if velocity.length() < 10:
+	
+	if velocity.length() < 1:
 		movement_rotation = 0
-		velocity = Vector2.ZERO
 
 	move_and_slide()
