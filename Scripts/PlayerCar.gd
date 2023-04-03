@@ -33,11 +33,11 @@ func _input(event):
 	if event.is_action_pressed("boost"):
 		is_boosting = true
 
-	if event.is_action_pressed("drift"):
-		turn_tightness = .1
+	if event.is_action_pressed("tight_turn"):
+		turn_tightness = stats.tight_turn_tightness
 
-	if event.is_action_released("drift"):
-		turn_tightness = .15
+	if event.is_action_released("tight_turn"):
+		turn_tightness = stats.base_turn_tightness
 
 	if event.is_action_released("left"):
 		pass
