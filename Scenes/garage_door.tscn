@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvce0selet74m"]
+
+[ext_resource type="Texture2D" uid="uid://bis38rj4bnocl" path="res://Sprites/GarageDoor.png" id="1_te1pu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7knw7"]
+size = Vector2(46, 21)
+
+[node name="GarageDoor" type="Area2D"]
+z_index = 7
+z_as_relative = false
+position = Vector2(110, -43)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_te1pu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_7knw7")

@@ -6,17 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://bknynayus3la5" path="res://Scenes/tire.tscn" id="4_wlbsi"]
 [ext_resource type="PackedScene" uid="uid://c61xpsn7ruwae" path="res://Scenes/stats.tscn" id="5_y6cb3"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4lb0"]
-radius = 7.75322
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2buy"]
+size = Vector2(18, 31)
 
 [node name="BaseCar" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_ej6ue")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(7.50004, -2.68004e-05)
 rotation = -1.5708
-shape = SubResource("CapsuleShape2D_e4lb0")
+shape = SubResource("RectangleShape2D_c2buy")
 
 [node name="CarSprite" type="Sprite2D" parent="."]
 texture_filter = 1
