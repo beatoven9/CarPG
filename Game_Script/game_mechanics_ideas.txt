@@ -27,3 +27,23 @@ new paint           protection from overworld damage        defense
 new headlights      better vision in dark                   temporarily blind enemy?
 fuel efficiency     world doesnt become polluted            (not sure)            
                     (affects how people like you)           
+
+
+
+
+
+shifter. Actually shifts you through gears.
+You start out with two gears. Slow and medium. At the end of some early quest (maybe tutorial), you're 
+gifted with a 3rd gear. 
+Gears will work like this.
+    You can click up sequentially by holding shift and then clicking with the mouse.
+    When you let off of the accelerator, the gear goes down one. When you press the back arrow,
+        you're taken out of gear completely.
+        (All of this backwards for in reverse)
+
+Or
+
+Right click up shift, left click down shift, boost is the shift key and can only be accessed once in top gear. However,
+when not in the top gear, the left shift key will also upshift you.
+Maybe there will be a slight cool-down for shifts. As you progress in the game and are awarded shifts, you're also awarded
+decreases in cool-down time for shift changes.
