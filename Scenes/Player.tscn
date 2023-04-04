@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0tujsi0yq4e0"]
+[gd_scene load_steps=5 format=3 uid="uid://d0tujsi0yq4e0"]
 
 [ext_resource type="PackedScene" uid="uid://b3qom5ha8346k" path="res://Scenes/BaseCar.tscn" id="1_l6jvm"]
 [ext_resource type="Script" path="res://Scripts/PlayerCar.gd" id="2_5yjm1"]
 [ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Sedan_a.png" id="2_rpetk"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bdt"]
+resource_local_to_scene = true
+size = Vector2(14, 28)
+
 [node name="Player" instance=ExtResource("1_l6jvm")]
 script = ExtResource("2_5yjm1")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_d2bdt")
 
 [node name="CarSprite" parent="." index="1"]
 texture = ExtResource("2_rpetk")
