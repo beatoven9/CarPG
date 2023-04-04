@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://3e3achillvns"]
+
+[ext_resource type="PackedScene" uid="uid://b3qom5ha8346k" path="res://Scenes/BaseCar.tscn" id="1_p3u6q"]
+[ext_resource type="Texture2D" uid="uid://cehacbj87fak7" path="res://Sprites/FriendCar.png" id="2_1jcoi"]
+
+[node name="FriendCar" instance=ExtResource("1_p3u6q")]
+z_index = 0
+
+[node name="CarSprite" parent="." index="1"]
+texture = ExtResource("2_1jcoi")
+
+[node name="Tires" parent="." index="2"]
+position = Vector2(6.5, 0)
+
+[node name="Left" parent="Tires" index="0"]
+position = Vector2(0, -7.588)
+
+[node name="Right" parent="Tires" index="1"]
+position = Vector2(0, 7.588)

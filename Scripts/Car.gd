@@ -11,10 +11,14 @@ var rotation_direction = 0
 var turn_tightness
 @onready var tires = get_node("Tires")
 @onready var stats = get_node("Stats")
+@onready var collision_box = get_node("CollisionShape2D")
+@onready var car_sprite = get_node("CarSprite")
 
 
 func _ready():
 	turn_tightness = stats.base_turn_tightness
+	tires.fix_axle_width()
+	fix_collision_box_width()
 
 
 # returns boost_power if there is boost left.
@@ -35,13 +39,18 @@ func get_input():
 	}
 
 
-func get_axel_width_pixels():
-	var car_sprite = get_node("CarSprite")
+func get_axle_width_pixels():
 	var car_rect = car_sprite.get_rect()
 	var car_position = car_rect.position
 	var car_end = car_rect.end
 	var car_width = car_position.x - car_end.x
 	return car_width
+
+
+func fix_collision_box_width():
+	var car_rect = car_sprite.get_rect()
+	var collision_shape = collision_box.shape
+	collision_shape.size = car_rect.size
 	
 
 func manage_wheel_rotation(delta, wheel_rotation_delta):

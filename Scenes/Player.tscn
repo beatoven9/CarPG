@@ -7,18 +7,5 @@
 [node name="Player" instance=ExtResource("1_l6jvm")]
 script = ExtResource("2_5yjm1")
 
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(7.50004, -1.54972e-06)
-
 [node name="CarSprite" parent="." index="1"]
-z_index = 2
 texture = ExtResource("2_rpetk")
-
-[node name="Tires" parent="." index="2"]
-z_index = 1
-
-[node name="Left" parent="Tires" index="0"]
-position = Vector2(16, -7.5)
-
-[node name="Right" parent="Tires" index="1"]
-position = Vector2(16, 7.5)

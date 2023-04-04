@@ -2,6 +2,9 @@ extends "res://Scripts/Car.gd"
 
 signal _on_boost_used
 
+func _ready():
+	super()
+
 func get_input():
 	var accelerator = Input.get_axis("down", "up")
 	var wheel_rotation_delta = Input.get_axis("left", "right") * stats.current_rotation_speed

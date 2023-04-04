@@ -7,31 +7,37 @@
 [ext_resource type="PackedScene" uid="uid://c61xpsn7ruwae" path="res://Scenes/stats.tscn" id="5_y6cb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2buy"]
-size = Vector2(18, 31)
+resource_local_to_scene = true
+size = Vector2(14, 28)
 
 [node name="BaseCar" type="CharacterBody2D"]
+z_index = 1
 texture_filter = 1
 script = ExtResource("1_ej6ue")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.50004, -2.68004e-05)
+z_index = 3
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_c2buy")
 
 [node name="CarSprite" type="Sprite2D" parent="."]
+z_index = 2
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(8, 0)
 rotation = -1.5708
 texture = ExtResource("2_72qjo")
 
 [node name="Tires" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(8, 0)
 script = ExtResource("3_vvcyt")
 
 [node name="Left" parent="Tires" instance=ExtResource("4_wlbsi")]
-position = Vector2(15.8364, -7.58825)
+z_index = 0
+position = Vector2(0, -8.5)
 
 [node name="Right" parent="Tires" instance=ExtResource("4_wlbsi")]
-position = Vector2(16.0013, 7.58825)
+z_index = 0
+position = Vector2(0, 8.5)
 
 [node name="Stats" parent="." instance=ExtResource("5_y6cb3")]

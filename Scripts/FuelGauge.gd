@@ -18,7 +18,6 @@ func calculate_angle_radians(current_fuel):
 	
 
 func _ready():
-	print("Needle is: ", needle)
 	pass
 
 
