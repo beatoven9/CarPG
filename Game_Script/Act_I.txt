@@ -98,16 +98,24 @@ Inner monologue: I guess it's time to head over to the stadium for graduation!
 
 FRIEND: Hey there PLAYER_NAME! Fancy meeting you out here, you here on your way to graduation too?
 
-// Just then, a sudden commotion
+// Just then, a sudden commotion.
+// Enter BROTHER being pursued by Percy, a fancy car man and Tony, a tow-truck (For the carjacking)
 
-Player's brother: HELLLLLPPP!!! He's trying to killlll meeeee!!!
+BROTHER: HELLLLLPPP!!! He's trying to killlll meeeee!!!
 FRIEND: PLAYER_NAME, is that your little brother?
-Percy: (Brooklyn accent) Get back ovah here if ya know what's good foh ya!
+Percy: Get back here this instant, you little scoundrel!
+Tony: Yeah! Get back here! // Tony is a bad driver.
 FRIEND: Hey! Get away from him!
-Player's brother: NOoOOOooO!!!!
-// Player's brother is captured and taken behind a broken wall. Percy rolls back out. And looks at PLAYER_NAME
-Percy: And you'll keep ya trap shut if you know what's good for YOU!
-// Percy exits
+BROTHER: NOoOOOooO!!!!
+// BROTHER is captured and taken behind a broken wall. Percy rolls back out. And looks at PLAYER_NAME
+Percy: As for you two... You'll be keeping this to yourselves or I'll hear about it.
+Tony: Yeah! We'll killll ya!!
+Percy: ... Tony.
+Tony: Yeah Boss?
+Percy: Shut up.
+Tony: oh....
+
+// Percy and Tony exit
 
 FRIEND: We're gonna go after him, right?
 
@@ -133,10 +141,7 @@ FRIEND: WOOT!
 */
 
 (Before reaching the dead end)
-Rubble-interact: This rubble looks like it could be cleared away but I can't do anything about it now. If the other path in the fork doesn't lead anywhere, I'll see about having it cleared.
-
-(After reaching the dead end)
-Rubble-interact: This rubble looks like it could be cleared away. I should talk to the city about getting it cleared so I can continue my investigation.
+FRIEND: That rubble looks like it could be cleared away but we can't do anything about it now. If the other paths in the fork don't lead anywhere, we'll see about having it cleared.
 
 /*
     PLAYER_NAME continues down the remaining paths at the fork in the road. The end of each fork will have some sort of task that will help the player make use of all of the different abilities.
@@ -145,7 +150,9 @@ Rubble-interact: This rubble looks like it could be cleared away. I should talk 
     PLAYER_NAME exits from the hole in the wall to the scene in which he made his decision to be late to his graduation.
 */
 
-FRIEND: Wait... is it dark out already? What time is it? Oh no! XX:XX! That is so late! We only have XX:XX to get there before your name is called.
+FRIEND: Looks like the only path we haven't been able to search down is the one blocked by rubble. So we'll go to the city building first thing in the
+    morning. For now, let's go back to... Oh no, GRADUATION! What time is it? XX:XX! That is so late! We only have XX:XX to get there before your 
+    name is called.
 
 /*
     Timer starts and PLAYER_NAME has to use his newly acquired skills to try and get to his graduation on time. The streets are empty because everyone is at the graduation. Just try beat the 
