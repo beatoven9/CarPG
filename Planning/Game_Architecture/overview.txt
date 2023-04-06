@@ -1,26 +1,187 @@
+The FighterClass script will have methods for sending a dataclass with all information about the moves available. When the Fighter class is sent a request for this information from the ATB machine, it in turn requests it from 
+the FighterClass and when it receives it, the Fighter class passes it along to the ATB machine which uses it to populate the dialogue box.
+
+the Fighter class will also have a move queue. This is for multistage moves.
 
 ------------------------------------------------------------
 BATTLE ENGINE
 ------------------------------------------------------------
 
-Battles can be constructed as some data container with all of the information for the fight. (which slots are filled and with whom? what are the stats/moves of the cars in each slot.) An instance of the fighter class
-is created for each slot. Player fighters are all added to the Party variable (list or hash table). The ATB machine (script) gets the list of party members and the list of enemies and uses their data to determine 
-how quickly their atb gauge fills up and who goes first, etc. This will have to be listening for stat changes. Depending on the length of some of these attack animations, it may be good to have it also listen
-for the end of animations. This way the atb clock can stop during attach animations and resume when they complete. 
-This ATB machine honestly should be handling all of the attack and stat data anyway. The only thing it should really listen for is the ends of animations which it triggers in the bodies on the screen.
-
-We will have a move queue. LIFO
-Each enemy ai class has a move-generator method which uses information about the current state of the battle to determine the move to use. This is put into the move queue.
-Each player party member also has a move-generator (like) method that takes input from the player. The UI box for the player to select a move is created when the atb meter is full. But these dialogue boxes need queues as well.
-The ATB machine should handle this. When a player character atb meter is full, a hash table or dataclass is passed to the player_move_queue (LIFO). this data is sent to the gather_player_input Node which controls all of the
-player ui interactions to selct a move. It will take this move (instantiate data class/struct)
-
-We'll have timer nodes for the individual players for that are set by the ATB machine before at the end of each player's individual turns. It will also listen to timer and at that point put the move in the move lifo queue.
-They should not really ever have more than 2-3 moves in it. More than likely will mostly be empty.
-The move executor function will be called when a timer node completes. This will get passed to parameters: a class representing the move and a class representing the player. The move class might need to have certain methods on it
-such as to create animations. However the player class shouldn't at all. All of the calculations about stats/damage dealt/received should be handled by the ATB machine.
+-------------------
+---Loading--Data---
+-------------------
 
 
+At the start of the battle, a list of player fighter dataclasses and a list of enemy fighter dataclasses is sent to the ATB machine scene. The ATB machine scene then populates each slot with an instance of a fighter node. 
+The fighter nodes have either the PartyMemberFighter or EnemyFighter script on them. These scripts inherit from a parent Fighter class. The fighter nodes also have sprites and a FighterClass node as children.
+The FighterClass node will provide a method for returning the available moves. a method for method for performing its moves. a method for supplying weapon stats (Which will be called at battle onset and sent to ATB machine).
+
+Ordering is determined by order of list. Which in turn is determined by order in your overworld party. 
+
+Once all fighters are loaded in the scene, the battle begins.
+
+------------------
+---ATB--MACHINE---
+------------------
+
+The ATB machine starts a timer for each fighter and links it to that fighter's ATB meter. When a fighter's ATB meter is full, the ATB Machine will call a method on that fighter's Fighter class called request_move which will 
+return an instance of Move.
+
+A call to move_request on an enemy fighter will accept the battle state as an argument (contains info about fighter stats/health on the board). It will then query the FighterClass for available moves if the Fighter's move queue is empty.
+It will then calculate damage output of each move on each enemy and pick the best option (also consider healing/buffs). (Super basic ai that we will further develop later.)
+
+A call to move_request on a player fighter will cause the player's Fighter class to check its move queue to see if it has anything in the queue. if it does NOT, it will request available moves from the FighterClass and create a UI 
+move selection box with this information. To be clear, the Fighter class is the one creating the UI dialogue box so it has direct access to its results.
+
+Once selected, the move information will be sent to the ATB machine from the Fighter class.
+A returned move from an enemy and a returned move from the player will look identical to each other in the eyes of the ATB machine. The ATB machine will receive the move response from the fighter and make a call to add_to_queue(). 
+
+add_to_queue will place the move on the queue if there is a move in progress or if the queue has other moves on it. Otherwise, it will call apply_move(move: Move)
+When a move finishes, a signal is emitted that causes the ATB machine to make a call to pop_from_move_queue() which will pop an item from the queue if there is one.
+
+an instance of the Move class has three properties: fighter_move: FighterMove, user: Fighter, target: Fighter 
+the FighterMove property is another class which contains information about the move's base_power and methods handling the execution of the move.
+
+The execution of a move plays out as follows:
+    1. User calls perform_move().
+    2. attack_animation() is called.
+    3. a. attack power is calculated. attack is applied to target who has its get_hit(attack_power, attack_type) method called
+       b. if move is a multi-turn move, the next turn's move will be added the Fighter's move_queue) 
+    4. signal denoting end of attack is emitted (sent to ATB machine to check queue for next move)
+
+        ------------------
+        ---pseudo--code---
+        ------------------
+
+        class Fighter:
+        '''
+            Fighter class will be a class from which Player and enemy fighters inherit. It will handle actually performing a move against an enemy. It should be class agnostic. But a FighterClass node/script should exist on each fighter.
+        '''
+            @onready fighter_class: FighterClass = get_node("fighter_class")
+
+            func get_hit(attack_power: int, attack_type: str):
+                # attack_type and attack_power to calculate damage/healing recieved
+                pass
+                
+            func update_health(health_change):
+                self.health += health_change
+                play_change_health_animation.(health_change)
+
+        class Player(Fighter):
+            func get_move_selection():
+                var move_selection = self.fighter_class.get_move_selection()
+                return move_selection
+
+            func request_move():
+                move_selection = self.get_move_selection()
+                var move_choice, target = dialogue_box(move_selection)
+                move = Move(move=move_choice, user=self, target=target)
+
+                return move
+
+        class Enemy(Fighter):
+            func get_move_selection():
+                var move_selection = self.fighter_class.get_move_selection()
+                return move_selection
+
+            func request_move(battle_field_data):
+                move_selection = self.get_move_selection()
+                var move_choice, target = calculate_best_move(battle_field_data)
+                move = Move(move=move_choice, user=self, target=target)
+
+            func calculate_best_move(battle_field_data):
+                # This is the enemy ai logic
+                move = None
+                return move
+
+        Move = {
+            "move": FighterMove,
+            "user": Fighter,
+            "target": Fighter,
+        }
+
+        class Shoot(FighterMove):
+            var base_power: int = 100
+
+            func perform_move(user: Fighter, target: Fighter):
+                var attack_power = base_power + user.attack_stat
+                target.receive_attack(power=attack_power, attack_type="gun")
+
+                # This is a signal
+                attack_finished.emit()
+
+        class Steal(FighterMove):
+            var base_power = 0
+
+            func perform_move(user, target):
+                if (target.carries_item):
+                    # transfer item to user inventory here
+                    pass
+
+        class Heal(FighterMove):
+            var base_power = 100
+            var magic_usage = 40
+
+            func perform_move(user, target):
+                var health_addition = base_power + user.magic_stat
+                user.expend_magic(magic_usage)
+
+                target.receive_healing(health_addition=health_addition)
+
+        class SpeedUp(FighterMove):
+            var base_power = 100
+
+            func perform_move(user, target):
+                # For these types of moves, the Fighter class should retain information about base stats so that these stats can be reverted to their original state by certain moves.
+                var speed_up = user.magic_stat + base_power
+                target.receive_speed_up(speed_up)
+
+        class Jump_turn1(FighterMove):
+            func perform_move(user, target):
+                user.play_jump_animation()
+                user.untouchable = true
+                move2 = {
+                    "move": Jump_turn2,
+                    "user": user,
+                    "target": target
+                }
+                user.move_queue.append(move2)
+
+        class Jump_turn2(FighterMove):
+            base_power = 175
+
+            func perform_move(user, target):
+                var damage = user.attack_stat + base_power
+                target.receive_attack(power=attack_power, attack_type="jump")
+
+
+        class ATB_Machine:
+            #props
+            var atb_timer_list = [timer1, timer2, timer3]
+
+            func apply_move(move):
+                move_in_progress = True
+                for timer in atb_timer_list:
+                    timer.pause()
+                move["move"].move_finished.connect(move_is_finished)
+                move["move"].perform_move(move["user"], move["target"]) 
+
+            func move_is_finished():
+                for timer in atb_timer_list:
+                    timer.resume()
+                move_in_progress = False
+                self.execute_next_move()
+
+            func add_to_queue(move: Move):
+                self.queue.append(move)
+                self.execute_next_move()
+
+            func execute_next_move():
+                if self.queue.length > 0:
+                    move = self.queue.pop_at(0)
+                    self.apply_move(move)
+                else:
+                    pass
 
 
 ------------------------------------------------------------
@@ -34,7 +195,6 @@ At the end of a battle, the lose/win conditions determine what happens next.
     *win:   ATB machine packages up player data classes with updated health and sends it along with enemies_slain info. It then passes it on to the GainEXP class.
             The GainEXP class takes care of leveling up the players and awarding them with stat increases and abilities. This information is added onto the player data classes it received from the ATB machine and 
             then passes it on to the overworld stat handler.
-
 
 
 ------------------------------------------------------------
