@@ -1,49 +1,157 @@
-*Fuel is necessary to get anywhere. If you run out of fuel, you are towed to a gas station of your choosing for a price. The price is determined by distance. Can't travel to a gas station you haven't been to yet.
-*Overworld enemies drive around and you encounter them by running into them. If you run into the enemy with the front of your car
-the enemy will start the battle having taken damage. You will also have taken some damage. Battering rams are available for purchase.
-Better battering rams offer less damage to user and more damage to enemy. Speed at time of impact also affects damage taken/dealt. When 
-you hit another car you can choose whether to fight and the winner pays for ALL damages, or you just pay for damages based roughly on 
-who was at fault but your insurance premium will go up.
-*Encounters are turn based. Magic power is based on your boost power. Magic gauge is based on your boost capacity/duration.
-attack stat raises with each level and also with what kind of battering ram you put on.
-*End of day, you get a bill for existing. Insurance, registration, etc. You can drive without a registration but police will chase you
-and you need to pay an obscene fine or fight them. They will be super powerful and just impossible to beat in the early game.
 
-CONTROL ABILITIES AND BATTLE ABILITIES ARE SHARED:
-    OVERWORLD EFFECT    BATTLE
 ------------------------------------------------------------------------------------
-    max speed           next turn comes faster
-    boost power         magic power
-    boost duration      magic gauge
-    handling            accuracy
-    acceleration        lower chance of being parried
-    
-
-FOR PURCHASE:
-UPGRADE             OVERWORLD EFFECT                        BATTLE EFFECT
 ------------------------------------------------------------------------------------
-battering ram       hit overworld encounters                attack stat
-new paint           protection from overworld damage        defense
-new headlights      better vision in dark                   temporarily blind enemy?
-fuel efficiency     world doesnt become polluted            (not sure)            
-                    (affects how people like you)           
+GAME MECHANICS
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------
+GENERAL MECHANICS
+------------------------------------------------------------------------------------
+
+    *Fuel is necessary to get anywhere. If you run out of fuel, you are towed to a gas station of your choosing for a price. 
+     The price is determined by distance. Can't travel to a gas station you haven't been to yet.
+    *Overworld enemies drive around and you encounter them by running into them. If you run into the enemy with the front of your car
+    the enemy will start the battle having taken damage. You will also have taken some damage. Battering rams are available for purchase.
+    Better battering rams offer less damage to user and more damage to enemy. Speed at time of impact also affects damage taken/dealt. When 
+    you hit another car you can choose whether to fight and the winner pays for ALL damages, or you just pay for damages based roughly on 
+    who was at fault but your insurance premium will go up.
+    *Encounters are turn based. Magic power is based on your boost power. Magic gauge is based on your boost capacity/duration.
+    attack stat raises with each level and also with what kind of battering ram you put on.
+    *End of day, you get a bill for existing. Insurance, registration, etc. You can drive without a registration but police will chase you
+    and you need to pay an obscene fine or fight them. They will be super powerful and just impossible to beat in the early game.
+
+    CONTROL ABILITIES AND BATTLE ABILITIES ARE SHARED:
+        OVERWORLD EFFECT    BATTLE
+    ------------------------------------------------------------------------------------
+        max speed           next turn comes faster
+        boost power         magic power
+        boost duration      magic gauge
+        handling            accuracy
+        acceleration        lower chance of being parried
+        
+
+    FOR PURCHASE:
+    UPGRADE             OVERWORLD EFFECT                        BATTLE EFFECT
+    ------------------------------------------------------------------------------------
+    battering ram       hit overworld encounters                attack stat
+    new paint           protection from overworld damage        defense
+    new headlights      better vision in dark                   temporarily blind enemy?
+    fuel efficiency     world doesnt become polluted            (not sure)            
+                        (affects how people like you)           
 
 
 
 
 
-shifter. Actually shifts you through gears.
-You start out with two gears. Slow and medium. At the end of some early quest (maybe tutorial), you're 
-gifted with a 3rd gear. 
-Gears will work like this.
-    You can click up sequentially by holding shift and then clicking with the mouse.
-    When you let off of the accelerator, the gear goes down one. When you press the back arrow,
-        you're taken out of gear completely.
-        (All of this backwards for in reverse)
+------------------------------------------------------------------------------------
+MOVEMENT MECHANICS
+------------------------------------------------------------------------------------
+    shifter. Actually shifts you through gears.
+    You start out with two gears. Slow and medium. At the end of some early quest (maybe tutorial), you're 
+    gifted with a 3rd gear. 
+    Gears will work like this.
+        You can click up sequentially by holding shift and then clicking with the mouse.
+        When you let off of the accelerator, the gear goes down one. When you press the back arrow,
+            you're taken out of gear completely.
+            (All of this backwards for in reverse)
 
-Or
+    Or
 
-Right click up shift, left click down shift, boost is the shift key and can only be accessed once in top gear. However,
-when not in the top gear, the left shift key will also upshift you.
-Maybe there will be a slight cool-down for shifts. As you progress in the game and are awarded shifts, you're also awarded
-decreases in cool-down time for shift changes.
+    Right click up shift, left click down shift, boost is the shift key and can only be accessed once in top gear. However,
+    when not in the top gear, the left shift key will also upshift you.
+    Maybe there will be a slight cool-down for shifts. As you progress in the game and are awarded shifts, you're also awarded
+    decreases in cool-down time for shift changes.
+
+    Shift indicator will be rectangles filled with color. If the shift is not activated, it is an empty rectangle. If a shift is activated, all the rectangles below that
+    shift will be filled with distinct colors.
+
+    We need numbers below the speed gauge and below the fuel gauge. It might be fun to make the numbers for the fuel those vertically sliding numbers behind glass.
+
+
+------------------------------------------------------------------------------------
+EQUIPMENT/CLASS SYSTEM
+------------------------------------------------------------------------------------
+
+    There is one of each item and you find them as you progress through the story.
+    you can find upgrade modules through quests, and in the overworld. These upgrade modules are added to the character class weapons. Maybe some can be added to any of them.
+    A module increasing damage output or perhaps the armor stat would be an example of this. other modules would be straight up abilities like elemental attacks, haste/slow, mug, etc.
+    when leveling up your character, their stats go up but they don't themselves learn any new abilities.
+    It would be cool if weapons also had levels from gaining experience and certain modules could only be added after attaining a specific level. for example, only 2 max attack boosts on level 1 weapons.
+    Perhaps they each have one or two stats that get increased linearly as time goes on.
+
+    maybe you do have per car module slots for things like "scan" which are user installable/uninstallable upgrades
+
+    class:
+        
+        white mage
+        black mage
+        blue mage
+        combat specialist
+        dragoon
+        monk
+        theif
+
+    equippable item:
+        
+        white mage - 
+        black mage - 
+        blue mage -
+        combat specialist - sword (maybe chain gun)
+        dragoon - shocks/reinforced under-carriage
+        theif - keyring
+
+    signature attacks:
+
+        white mage - mostly healing/battle enhancements
+        black mage - attack magic
+        blue mage - learned attack magic
+        combat specialist - swing sword (maybe shoot chain gun)
+        dragoon - jump
+        monk - ram
+        theif - steal and "key car"
+
+
+------------------------------------------------------------------------------------
+BATTLE MECHANICS IDEAS / LEVELING MECHANICS
+------------------------------------------------------------------------------------
+
+    ATB system with a gauge filling up to determine the moment of a specific player's next turn.
+
+    # This isn't a great idea
+    We could use an ATB system where we don't allow any pausing of the game. So the player really needs to be ON. 
+    But I don't want any players to get grindy preemptively for fights that they are getting anxiety over. So perhaps
+    you can run from anything, even boss battles. And it's easy to do. That way we incentivize players to go in heads first. (Though it does incentivize leaving a battle early instead of trying again and again
+    I think that sensation of knowing that you beat the boss slightly underleveled is satisfying. And I don't want to deny the player of the sense of achievement or the reversal of a battle. If you are in a 
+    tough situation and you CANNOT run, you try your hardest and sometimes you can turn things around. Those victories are especially satisying.
+
+
+    # This is a cool idea but will likely be way too complicated
+    You don't gain experience points. You mix together different car parts at the mechanic's shop to give you certain builds to better handle certain enemies. It's all about finding the right match-up.
+    Frame material, body material, paint type, wax/no wax lol, style of tires for speed/stability (accuracy?), battering ram?, etc. Maybe finding the parts is a part of it. Mechanics say they heard a rumor
+    of such and such special part out in the wilderness growing on a tree?. Grab me two and I'll install yours for free. So you quest to find your upgrades. Maybe you can level up the upgrades by using them.
+    And using them while defeating certain types of enemies ( enemies whose strengths are complimentary of the type of upgrade) will result in them leveling up faster. This can be explicitly stated by an 
+    NPC. Probably best person to say it would be the first person who installs your part. The explanation can be really short, and just suggest using your scanner to check the stats of your opponent.
+    Maybe in your equipment menu, there's a slot for a modular attachment (multiple as you level up? This might kill a potential group of speed runners. Maybe you just find slots as well and get them installed).
+    However, the important thing is that these modular attachments can be moved around between party members without seeing a mechanic. And perhaps they don't level up, but rather grant power(s) to their bearers.
+
+
+    # This is a good idea
+    It may not be a great idea to use boost as an expendable resource.
+    Maybe the better way to do this is once your boost runs out completely in the overworld, it will slowly regenerate. And you have a full magic bar at the start to every fight. This way, players
+    can still be incentivized to spend on boost power/efficiency/etc for overworld fun without having to worry about wasting boost. Maybe magic even regenerates in fights. I always hated how magic
+    was something to be wasted and therefore something to be saved and barely ever used. 
+
+
+    # This is good too
+    Maybe we can use the character controller during battle animations. We can have the location of the fighter set as a boundary circle. the fighter must be within that. then when we have the player attack, it drives to it's enemy and
+    then path finds it's way back to being in the circle. (Or it's hard coded.)
+
+
+------------------------------------------------------------------------------------
+ECONOMY MECHANICS
+------------------------------------------------------------------------------------
+
+    This will likely be the most basic/shallow dimension. Basic gil earned, potions/upgrades for purchase. Maybe some side quests with auction houses or something. idk.

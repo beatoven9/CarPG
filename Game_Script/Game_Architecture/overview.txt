@@ -1,0 +1,58 @@
+
+------------------------------------------------------------
+BATTLE ENGINE
+------------------------------------------------------------
+
+Battles can be constructed as some data container with all of the information for the fight. (which slots are filled and with whom? what are the stats/moves of the cars in each slot.) An instance of the fighter class
+is created for each slot. Player fighters are all added to the Party variable (list or hash table). The ATB machine (script) gets the list of party members and the list of enemies and uses their data to determine 
+how quickly their atb gauge fills up and who goes first, etc. This will have to be listening for stat changes. Depending on the length of some of these attack animations, it may be good to have it also listen
+for the end of animations. This way the atb clock can stop during attach animations and resume when they complete. 
+This ATB machine honestly should be handling all of the attack and stat data anyway. The only thing it should really listen for is the ends of animations which it triggers in the bodies on the screen.
+
+We will have a move queue. LIFO
+Each enemy ai class has a move-generator method which uses information about the current state of the battle to determine the move to use. This is put into the move queue.
+Each player party member also has a move-generator (like) method that takes input from the player. The UI box for the player to select a move is created when the atb meter is full. But these dialogue boxes need queues as well.
+The ATB machine should handle this. When a player character atb meter is full, a hash table or dataclass is passed to the player_move_queue (LIFO). this data is sent to the gather_player_input Node which controls all of the
+player ui interactions to selct a move. It will take this move (instantiate data class/struct)
+
+We'll have timer nodes for the individual players for that are set by the ATB machine before at the end of each player's individual turns. It will also listen to timer and at that point put the move in the move lifo queue.
+They should not really ever have more than 2-3 moves in it. More than likely will mostly be empty.
+The move executor function will be called when a timer node completes. This will get passed to parameters: a class representing the move and a class representing the player. The move class might need to have certain methods on it
+such as to create animations. However the player class shouldn't at all. All of the calculations about stats/damage dealt/received should be handled by the ATB machine.
+
+
+
+
+------------------------------------------------------------
+END OF BATTLE
+------------------------------------------------------------
+
+At the end of a battle, the lose/win conditions determine what happens next.
+
+    *lose:  GameOver scene is player. Start from last save.
+
+    *win:   ATB machine packages up player data classes with updated health and sends it along with enemies_slain info. It then passes it on to the GainEXP class.
+            The GainEXP class takes care of leveling up the players and awarding them with stat increases and abilities. This information is added onto the player data classes it received from the ATB machine and 
+            then passes it on to the overworld stat handler.
+
+
+
+------------------------------------------------------------
+OVERWORLD STAT HANDLING
+------------------------------------------------------------
+
+There is a Party class that contains in it player dataclasses (distinct from the character controller.)
+These dataclasses will mostly be stored and kept for use in any upcoming battles. However, the Party class will send the stats of whichever party member you 
+    decide to use to navigate the overworld (We may only allow the use of the main character) to the character controller using a method on PlayerController called something like SetStats(stat_dictionary).
+Temporary stat enhancements that don't last into the next battle will be handled by the character controller.
+Permanent enhancements gained while in the overworld will be handled by the Party class's SetStats(stat_dictionary) method. This method will have to take into account temporary stat enhancements a player may have and 
+the state of their cool-down to ensure that their state can be resumed after the permanent enhancement is applied.
+
+
+
+
+------------------------------------------------------------
+Cut scenes and dialogue
+------------------------------------------------------------
+
+
