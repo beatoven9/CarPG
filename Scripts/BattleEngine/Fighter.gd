@@ -50,11 +50,7 @@ func start_battle_timer():
 
 func request_move(battle_state):
 	var enemy_fighters = battle_state["enemy_fighters"]
-	var move = {
-		"move_name": "punch_attack",
-		"base_power": 80,
-		}
-
+	var move = GUN_DOWN.new()
 	var move_info = {
 		"move" = move,
 		"user" = self,
@@ -73,3 +69,8 @@ func pause_timer():
 
 func resume_timer():
 	battle_timer.set_paused(false)
+
+func handle_move_receipt(move):
+	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
+		var damage_inflicted = (move.base_power / 10)
+		health_changed.emit(-damage_inflicted)	

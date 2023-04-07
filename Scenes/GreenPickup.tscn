@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://csf3v2e6hu67g"]
 
 [ext_resource type="Script" path="res://Scripts/Car.gd" id="1_mtrop"]
 [ext_resource type="Texture2D" uid="uid://cpr4e1cp4qmrx" path="res://Sprites/Car_Sprites/PickupTruck_b.png" id="2_nhxvt"]
-[ext_resource type="PackedScene" uid="uid://bknynayus3la5" path="res://Scenes/tire.tscn" id="3_1ro6d"]
+[ext_resource type="PackedScene" uid="uid://71qblmshtso3" path="res://Scenes/tire.tscn" id="3_1ro6d"]
 [ext_resource type="Script" path="res://Scripts/Tires.gd" id="3_fk08e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4lb0"]

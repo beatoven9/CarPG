@@ -9,7 +9,7 @@
 text = ""
 
 [node name="Gauge" parent="HBoxContainer" index="1"]
-texture_under = null
+texture_filter = 1
 texture_progress = ExtResource("2_pxxwc")
 
 [node name="GaugeValueLabel" parent="HBoxContainer" index="2"]

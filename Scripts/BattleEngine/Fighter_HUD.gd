@@ -15,7 +15,7 @@ func update_boost_bar(value):
 
 func update_health_bar(value):
 	# Maybe vitality can be how quickly the gauge falls (lerping)
-	health_bar.value = value
+	health_bar.value += value
 
 func set_fighter_name(this_fighter_name):
 	if this_fighter_name == null:

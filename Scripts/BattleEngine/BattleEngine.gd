@@ -119,7 +119,7 @@ func initiate_atb_meters(
 
 	for member in members_list:
 		member.ready_to_move.connect(request_move)
-		member.move_ready.connect(receive_move)
+		member.move_ready.connect(receive_move_info)
 		member.start_battle_timer()
 
 	return member_list
@@ -145,7 +145,7 @@ func resume_timers():
 	for fighter in global_fighters_list:
 		fighter.resume_timer()
 
-func receive_move(move_info):
+func receive_move_info(move_info):
 	move_queue.append(move_info)
 	execute_move()
 
@@ -165,7 +165,8 @@ func apply_move(move_info):
 	var target = move_info["target"]
 
 
-	print("APPLYING MOVE: ", move, " to ", target, " by ", user)
+	print("APPLYING MOVE: ", move.move_name, " to ", target, " by ", user)
+	target.handle_move_receipt(move)
 
 	resume_timers()
 	# user.play_attack_animation()

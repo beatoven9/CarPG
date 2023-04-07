@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/BattleEngine/BattleEngine.gd" id="2_n0sb6"]
 
 [node name="TestBattleScene" type="Node2D"]
+texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
