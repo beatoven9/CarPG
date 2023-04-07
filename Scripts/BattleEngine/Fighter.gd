@@ -28,16 +28,31 @@ func set_collision_box_size():
 	collision_shape2d.shape.size = car_rect.size
 
 func start_battle_timer():
-	var time = 5
+	var time = fighter_speed
 	battle_timer.start_timer(time)
 
-func request_move():
-	# print("Move requested. -from ", this_fighter_name)
-	var move = "Hello. this is a requested move from, " + this_fighter_name
-	move_ready.emit(move)
+func request_move(battle_state):
+	var enemy_fighters = battle_state["enemy_fighters"]
+	var move = {
+		"move_name": "punch_attack",
+		"base_power": 80,
+		}
+
+	var move_info = {
+		"move" = move,
+		"user" = self,
+		"target" = enemy_fighters[0]
+	}
+	move_ready.emit(move_info)
 
 func send_move():
 	pass
 
 func _timer_out(fighter):
 	ready_to_move.emit(fighter)
+
+func pause_timer():
+	battle_timer.set_paused(true)
+
+func resume_timer():
+	battle_timer.set_paused(false)

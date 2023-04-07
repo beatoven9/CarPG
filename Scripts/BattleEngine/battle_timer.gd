@@ -9,7 +9,6 @@ func _ready():
 	timeout.connect(_on_battle_timer_out)
 
 func _on_battle_timer_out():
-	print("TIMEOUT from timer")
 	battle_timer_out.emit(fighter)
 
 func start_timer(time: int):
