@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://odadsyq3gmdh"]
+
+[ext_resource type="Script" path="res://Scripts/BattleEngine/EnemyFighter.gd" id="1_545r0"]
+[ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Sedan_a.png" id="2_o6tar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlpd"]
+size = Vector2(20, 31)
+
+[node name="EnemyFighter" type="Area2D"]
+rotation = 1.5708
+script = ExtResource("1_545r0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_o6tar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qwlpd")

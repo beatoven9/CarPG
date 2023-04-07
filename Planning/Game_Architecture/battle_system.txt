@@ -1,0 +1,5 @@
+First step in developing this is to build an ATB machine that has very basic hardcoded fighter data. 
+(Texture, fighter_name)
+    -Create ATB meters that have real timers and will call a method called "request_move()" on the Fighter.
+        This method will merely print("Fighter {fighter_name} made their move")
+    -Add more hardcoded data that will populate each Fighter class (Add basic FighterClass class)

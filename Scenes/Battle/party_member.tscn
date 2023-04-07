@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpld604atv1nw"]
+
+[ext_resource type="Script" path="res://Scripts/BattleEngine/PartyMember.gd" id="1_nd4xd"]
+[ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Sedan_a.png" id="2_gosmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlpd"]
+size = Vector2(20, 31)
+
+[node name="PartyMember" type="Area2D"]
+rotation = -1.5708
+script = ExtResource("1_nd4xd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_gosmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qwlpd")

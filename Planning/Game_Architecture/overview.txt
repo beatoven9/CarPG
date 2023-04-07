@@ -45,7 +45,7 @@ the FighterMove property is another class which contains information about the m
 The execution of a move plays out as follows:
     1. User calls perform_move().
     2. attack_animation() is called.
-    3. a. attack power is calculated. attack is applied to target who has its get_hit(attack_power, attack_type) method called
+    3. a. attack power is calculated. attack is applied to target who has its get_hit(attack_power, attack_type) method called # This is a bit dumb. the ATB machine should really be the one calculating this
        b. if move is a multi-turn move, the next turn's move will be added the Fighter's move_queue) 
     4. signal denoting end of attack is emitted (sent to ATB machine to check queue for next move)
 
