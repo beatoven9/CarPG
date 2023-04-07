@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0b4h38qw6ot"
-path="res://.godot/imported/Sportscar_a.png-02e41dae54e030e0c9165845c6eb79bc.ctex"
+uid="uid://cpr4e1cp4qmrx"
+path="res://.godot/imported/PickupTruck_b.png-ecdd5eda69ad5b4c4eb0b589c58b25f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sportscar_a.png"
-dest_files=["res://.godot/imported/Sportscar_a.png-02e41dae54e030e0c9165845c6eb79bc.ctex"]
+source_file="res://Sprites/Car_Sprites/PickupTruck_b.png"
+dest_files=["res://.godot/imported/PickupTruck_b.png-ecdd5eda69ad5b4c4eb0b589c58b25f8.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

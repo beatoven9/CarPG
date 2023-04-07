@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbjfwwa8ftgqx"
-path="res://.godot/imported/BoostBarFill.png-a21ddb98738c1f6545e86fcdf91907d8.ctex"
+uid="uid://cwscf8apojupm"
+path="res://.godot/imported/Bar_Underfill.png-d82c325f61e12b8f954a7b65d29d7087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/BoostBarFill.png"
-dest_files=["res://.godot/imported/BoostBarFill.png-a21ddb98738c1f6545e86fcdf91907d8.ctex"]
+source_file="res://Sprites/UI_Sprites/Bar_Underfill.png"
+dest_files=["res://.godot/imported/Bar_Underfill.png-d82c325f61e12b8f954a7b65d29d7087.ctex"]
 
 [params]
 

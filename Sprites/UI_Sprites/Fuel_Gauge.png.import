@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpr4e1cp4qmrx"
-path="res://.godot/imported/PickupTruck_b.png-6a62c4efdefd57ba1685d2b4c0d3da6b.ctex"
+uid="uid://ulpiam1gwnb7"
+path="res://.godot/imported/Fuel_Gauge.png-a29c7a3851d8b19dfe0ed4988766c92b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PickupTruck_b.png"
-dest_files=["res://.godot/imported/PickupTruck_b.png-6a62c4efdefd57ba1685d2b4c0d3da6b.ctex"]
+source_file="res://Sprites/UI_Sprites/Fuel_Gauge.png"
+dest_files=["res://.godot/imported/Fuel_Gauge.png-a29c7a3851d8b19dfe0ed4988766c92b.ctex"]
 
 [params]
 

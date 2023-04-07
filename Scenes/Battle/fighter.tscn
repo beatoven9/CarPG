@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwxt1rwkyode6"]
+[gd_scene load_steps=5 format=3 uid="uid://cshenn15h40mg"]
 
-[ext_resource type="Script" path="res://Scripts/BattleEngine/PlayerFighter.gd" id="1_jvkma"]
-[ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Sedan_a.png" id="2_cuorp"]
+[ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="1_ljcyq"]
+[ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Car_Sprites/Sedan_a.png" id="2_a0v5c"]
 [ext_resource type="PackedScene" path="res://Scenes/Battle/battle_timer.tscn" id="3_d0vl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlpd"]
@@ -9,11 +9,11 @@ size = Vector2(20, 31)
 
 [node name="Fighter" type="Area2D"]
 rotation = -1.5708
-script = ExtResource("1_jvkma")
+script = ExtResource("1_ljcyq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-texture = ExtResource("2_cuorp")
+texture = ExtResource("2_a0v5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qwlpd")

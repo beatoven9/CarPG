@@ -1,25 +1,25 @@
-[gd_scene load_steps=26 format=3 uid="uid://b3n4qm431r60s"]
+[gd_scene load_steps=26 format=3 uid="uid://bkp8sl1au4gxu"]
 
 [ext_resource type="Texture2D" uid="uid://cvxejg21p413x" path="res://Sprites/HouseTilemap.png" id="1_0fwtm"]
-[ext_resource type="Texture2D" uid="uid://bsj3upwllbcxl" path="res://Sprites/SpeedGauge.png" id="2_blr6g"]
 [ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/TileMapTerrain.tscn" id="2_m4xkg"]
 [ext_resource type="Script" path="res://Scripts/SpeedGauge.gd" id="3_3mcku"]
-[ext_resource type="Texture2D" uid="uid://bcxjbyh4dbycw" path="res://Sprites/Gauge_Needle_2.png" id="4_km8pf"]
-[ext_resource type="Texture2D" uid="uid://ulpiam1gwnb7" path="res://Sprites/Fuel_Gauge.png" id="5_vaiwk"]
+[ext_resource type="Texture2D" uid="uid://bsj3upwllbcxl" path="res://Sprites/UI_Sprites/SpeedGauge.png" id="3_hqtur"]
+[ext_resource type="Texture2D" uid="uid://bcxjbyh4dbycw" path="res://Sprites/UI_Sprites/Gauge_Needle_2.png" id="5_lq2fd"]
 [ext_resource type="Script" path="res://Scripts/FuelGauge.gd" id="6_7ch42"]
-[ext_resource type="Texture2D" uid="uid://cn1f842wnjvxa" path="res://Sprites/Gauge_Needle.png" id="7_u1c3u"]
-[ext_resource type="Texture2D" uid="uid://bfl8qs0xn4vnu" path="res://Sprites/ShifterHandle.png" id="8_b7xye"]
+[ext_resource type="Texture2D" uid="uid://ulpiam1gwnb7" path="res://Sprites/UI_Sprites/Fuel_Gauge.png" id="6_7xleq"]
+[ext_resource type="Texture2D" uid="uid://cn1f842wnjvxa" path="res://Sprites/UI_Sprites/Gauge_Needle.png" id="8_jsg8m"]
 [ext_resource type="Script" path="res://Scripts/StickShift.gd" id="9_hdmaq"]
-[ext_resource type="Texture2D" uid="uid://mmthnmxmekn" path="res://Sprites/ProgressBarFrame.png" id="10_vf1gf"]
-[ext_resource type="Texture2D" uid="uid://dvholimj2xge8" path="res://Sprites/HealthBarFill.png" id="11_82cd0"]
-[ext_resource type="Texture2D" uid="uid://cwscf8apojupm" path="res://Sprites/Bar_Underfill.png" id="12_0ncwp"]
-[ext_resource type="Texture2D" uid="uid://bbjfwwa8ftgqx" path="res://Sprites/BoostBarFill.png" id="13_xgdum"]
+[ext_resource type="Texture2D" uid="uid://bfl8qs0xn4vnu" path="res://Sprites/UI_Sprites/ShifterHandle.png" id="9_lhwwb"]
+[ext_resource type="Texture2D" uid="uid://mmthnmxmekn" path="res://Sprites/UI_Sprites/ProgressBarFrame.png" id="11_m43tm"]
+[ext_resource type="Texture2D" uid="uid://dvholimj2xge8" path="res://Sprites/UI_Sprites/HealthBarFill.png" id="12_oa2yu"]
+[ext_resource type="Texture2D" uid="uid://cwscf8apojupm" path="res://Sprites/UI_Sprites/Bar_Underfill.png" id="13_7y5e3"]
+[ext_resource type="Texture2D" uid="uid://bbjfwwa8ftgqx" path="res://Sprites/UI_Sprites/BoostBarFill.png" id="14_f1csx"]
 [ext_resource type="Script" path="res://Scripts/PlayerBoostGauge.gd" id="14_l3a4n"]
-[ext_resource type="PackedScene" uid="uid://d0tujsi0yq4e0" path="res://Scenes/Player.tscn" id="15_wvxnx"]
+[ext_resource type="PackedScene" uid="uid://cxid7gxuk0pjp" path="res://Scenes/Player.tscn" id="15_wvxnx"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="16_h5ofl"]
 [ext_resource type="PackedScene" uid="uid://dvce0selet74m" path="res://Scenes/garage_door.tscn" id="18_2cpgn"]
-[ext_resource type="PackedScene" uid="uid://3e3achillvns" path="res://Scenes/FriendCar.tscn" id="19_b5erb"]
-[ext_resource type="PackedScene" uid="uid://b3qom5ha8346k" path="res://Scenes/BaseCar.tscn" id="20_bldsm"]
+[ext_resource type="PackedScene" uid="uid://c3w3p3a354cot" path="res://Scenes/FriendCar.tscn" id="19_b5erb"]
+[ext_resource type="PackedScene" uid="uid://phl52afcjq85" path="res://Scenes/BaseCar.tscn" id="20_bldsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5a7uw"]
 texture = ExtResource("1_0fwtm")
@@ -101,9 +101,9 @@ expand_margin_right = 4.0
 
 [sub_resource type="Theme" id="Theme_x0d5x"]
 VSlider/constants/grabber_offset = 0
-VSlider/icons/grabber = ExtResource("8_b7xye")
-VSlider/icons/grabber_disabled = ExtResource("8_b7xye")
-VSlider/icons/grabber_highlight = ExtResource("8_b7xye")
+VSlider/icons/grabber = ExtResource("9_lhwwb")
+VSlider/icons/grabber_disabled = ExtResource("9_lhwwb")
+VSlider/icons/grabber_highlight = ExtResource("9_lhwwb")
 VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_lv7do")
 VSlider/styles/slider = SubResource("StyleBoxFlat_pjiir")
 
@@ -148,7 +148,7 @@ texture_filter = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("2_blr6g")
+texture = ExtResource("3_hqtur")
 stretch_mode = 5
 script = ExtResource("3_3mcku")
 
@@ -167,14 +167,14 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(5, 30)
-texture = ExtResource("4_km8pf")
+texture = ExtResource("5_lq2fd")
 
 [node name="FuelGauge" type="TextureRect" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
 texture_filter = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("5_vaiwk")
+texture = ExtResource("6_7xleq")
 stretch_mode = 5
 script = ExtResource("6_7ch42")
 
@@ -193,7 +193,7 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(5, 30)
-texture = ExtResource("7_u1c3u")
+texture = ExtResource("8_jsg8m")
 stretch_mode = 4
 
 [node name="Shifter" type="VSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBox"]
@@ -215,8 +215,8 @@ stretch_margin_left = 2
 stretch_margin_top = 4
 stretch_margin_right = 2
 stretch_margin_bottom = 2
-texture_over = ExtResource("10_vf1gf")
-texture_progress = ExtResource("11_82cd0")
+texture_over = ExtResource("11_m43tm")
+texture_progress = ExtResource("12_oa2yu")
 texture_progress_offset = Vector2(1, 1)
 
 [node name="PlayerBoost" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer"]
@@ -224,9 +224,9 @@ texture_filter = 3
 layout_mode = 2
 size_flags_horizontal = 8
 value = 50.0
-texture_under = ExtResource("12_0ncwp")
-texture_over = ExtResource("10_vf1gf")
-texture_progress = ExtResource("13_xgdum")
+texture_under = ExtResource("13_7y5e3")
+texture_over = ExtResource("11_m43tm")
+texture_progress = ExtResource("14_f1csx")
 texture_progress_offset = Vector2(1, 1)
 tint_under = Color(0.278431, 0.415686, 0, 1)
 script = ExtResource("14_l3a4n")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mmthnmxmekn"
-path="res://.godot/imported/ProgressBarFrame.png-787f91161bea18eb19a168bcafd468e8.ctex"
+uid="uid://bdrm7y1pvq07k"
+path="res://.godot/imported/Sedan_a.png-e55cae8a54891c59428e161867187289.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ProgressBarFrame.png"
-dest_files=["res://.godot/imported/ProgressBarFrame.png-787f91161bea18eb19a168bcafd468e8.ctex"]
+source_file="res://Sprites/Car_Sprites/Sedan_a.png"
+dest_files=["res://.godot/imported/Sedan_a.png-e55cae8a54891c59428e161867187289.ctex"]
 
 [params]
 

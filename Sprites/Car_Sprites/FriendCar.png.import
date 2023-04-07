@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfl8qs0xn4vnu"
-path="res://.godot/imported/ShifterHandle.png-933982f9bc104cf7d7d4b65c62e6d360.ctex"
+uid="uid://cehacbj87fak7"
+path="res://.godot/imported/FriendCar.png-2c4d8921859d07f87474111d3f3d5679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ShifterHandle.png"
-dest_files=["res://.godot/imported/ShifterHandle.png-933982f9bc104cf7d7d4b65c62e6d360.ctex"]
+source_file="res://Sprites/Car_Sprites/FriendCar.png"
+dest_files=["res://.godot/imported/FriendCar.png-2c4d8921859d07f87474111d3f3d5679.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxamgehtoe7p"
-path="res://.godot/imported/Health_Boost_Bars.png-6d8a942fbac67d241c8df2fd5f321261.ctex"
+uid="uid://dpyrcu8hyeyka"
+path="res://.godot/imported/Arrow.png-659d92983b03ffab1b96a0b8102317c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Health_Boost_Bars.png"
-dest_files=["res://.godot/imported/Health_Boost_Bars.png-6d8a942fbac67d241c8df2fd5f321261.ctex"]
+source_file="res://Sprites/UI_Sprites/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-659d92983b03ffab1b96a0b8102317c6.ctex"]
 
 [params]
 

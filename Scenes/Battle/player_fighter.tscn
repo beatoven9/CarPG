@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmewk7iu4ex54"]
+[gd_scene load_steps=3 format=3 uid="uid://bmewk7iu4ex54"]
 
-[ext_resource type="PackedScene" uid="uid://bwxt1rwkyode6" path="res://Scenes/Battle/fighter.tscn" id="1_ouutd"]
+[ext_resource type="PackedScene" uid="uid://cshenn15h40mg" path="res://Scenes/Battle/fighter.tscn" id="1_ouutd"]
+[ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="2_sjs6d"]
 
 [node name="PlayerFighter" instance=ExtResource("1_ouutd")]
+script = ExtResource("2_sjs6d")

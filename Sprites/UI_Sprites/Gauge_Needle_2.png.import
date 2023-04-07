@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ulpiam1gwnb7"
-path="res://.godot/imported/Fuel_Gauge.png-f342a77b4307f93ae5a78307b3ebc8a1.ctex"
+uid="uid://bcxjbyh4dbycw"
+path="res://.godot/imported/Gauge_Needle_2.png-37db7d3a8472c2c777e37871ccab6a46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Fuel_Gauge.png"
-dest_files=["res://.godot/imported/Fuel_Gauge.png-f342a77b4307f93ae5a78307b3ebc8a1.ctex"]
+source_file="res://Sprites/UI_Sprites/Gauge_Needle_2.png"
+dest_files=["res://.godot/imported/Gauge_Needle_2.png-37db7d3a8472c2c777e37871ccab6a46.ctex"]
 
 [params]
 

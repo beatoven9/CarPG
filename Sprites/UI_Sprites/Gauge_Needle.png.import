@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcxjbyh4dbycw"
-path="res://.godot/imported/Gauge_Needle_2.png-a2ad3b1b2aa05ba24f4dca6dd7e89183.ctex"
+uid="uid://cn1f842wnjvxa"
+path="res://.godot/imported/Gauge_Needle.png-4c671c1f0f24e4fece95a67e3872c583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Gauge_Needle_2.png"
-dest_files=["res://.godot/imported/Gauge_Needle_2.png-a2ad3b1b2aa05ba24f4dca6dd7e89183.ctex"]
+source_file="res://Sprites/UI_Sprites/Gauge_Needle.png"
+dest_files=["res://.godot/imported/Gauge_Needle.png-4c671c1f0f24e4fece95a67e3872c583.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu2lgflbay7gt"
-path="res://.godot/imported/PickupTruck_a.png-6432904c0b3b709b766e28fc17d95f3b.ctex"
+uid="uid://mmthnmxmekn"
+path="res://.godot/imported/ProgressBarFrame.png-678dedea2361371ae714467f620d6b69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PickupTruck_a.png"
-dest_files=["res://.godot/imported/PickupTruck_a.png-6432904c0b3b709b766e28fc17d95f3b.ctex"]
+source_file="res://Sprites/UI_Sprites/ProgressBarFrame.png"
+dest_files=["res://.godot/imported/ProgressBarFrame.png-678dedea2361371ae714467f620d6b69.ctex"]
 
 [params]
 

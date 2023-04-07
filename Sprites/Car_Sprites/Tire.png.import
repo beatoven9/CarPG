@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn1f842wnjvxa"
-path="res://.godot/imported/Gauge_Needle.png-2f5042e8fe1ac3a6177a5cb6979ec968.ctex"
+uid="uid://ct7nm2ovsb014"
+path="res://.godot/imported/Tire.png-49655ff753909a60c65466816259c7e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Gauge_Needle.png"
-dest_files=["res://.godot/imported/Gauge_Needle.png-2f5042e8fe1ac3a6177a5cb6979ec968.ctex"]
+source_file="res://Sprites/Car_Sprites/Tire.png"
+dest_files=["res://.godot/imported/Tire.png-49655ff753909a60c65466816259c7e9.ctex"]
 
 [params]
 

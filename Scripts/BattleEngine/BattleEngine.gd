@@ -9,40 +9,42 @@ var global_player_fighters = []
 var global_enemy_fighters = []
 var move_queue = []
 
-# @onready var camera = get_tree().get_root().get_child(0).get_node("Camera2D")
-@onready var atb_meter = get_tree().get_root().get_child(0).get_node("CanvasLayer/ATB_Meter")
+# @onready var canvas = get_tree().get_root().get_child(0).get_node("CanvasLayer")
+@onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
+@onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
+
 
 func load_enemy_data():
-	var texture1 = load("res://Sprites/PickupTruck_b.png")
+	var texture1 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
 	var enemy_member1 = {
 		"name": "enemy_1",
 		"texture": texture1,
-		"speed": 1
+		"speed": 10
 	}
 
 	var enemy_members_data = [enemy_member1]
 	return enemy_members_data
 
 func load_player_data():
-	var texture1 = load("res://Sprites/Sedan_a.png")
+	var texture1 = load("res://Sprites/Car_Sprites/Sedan_a.png")
 	var player_fighter1 = {
 		"name": "player_1",
 		"texture": texture1,
-		"speed": 2
+		"speed": 20
 	}
 
-	var texture2 = load("res://Sprites/FriendCar.png")
+	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
 	var player_fighter2 = {
 		"name": "friend_car",
 		"texture": texture2,
-		"speed": 3
+		"speed": 12
 	}
 
-	var texture3 = load("res://Sprites/Sportscar_a.png")
+	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
 	var player_fighter3 = {
 		"name": "sportscar",
 		"texture": texture3,
-		"speed": 3 
+		"speed": 16
 	}
 
 	var player_fighters_data = [
@@ -75,6 +77,7 @@ func instantiate_player_fighters(player_fighters_data):
 		add_child(new_player_fighter)
 		player_fighters_list.append(new_player_fighter)
 	arrange_fighters_on_y_axis(player_fighters_list, 96, 0)
+	player_party_hud.create_party(player_fighters_list)
 
 	return player_fighters_list
 
@@ -90,6 +93,7 @@ func instantiate_enemy_members(enemy_members_data):
 		add_child(new_enemy_member)
 		enemy_members_list.append(new_enemy_member)
 	arrange_fighters_on_y_axis(enemy_members_list, 96, 0)
+	enemy_party_hud.create_party(enemy_members_list)
 
 	return enemy_members_list
 

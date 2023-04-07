@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsj3upwllbcxl"
-path="res://.godot/imported/SpeedGauge.png-1bdc8aba921239278ad897971d974d1f.ctex"
+uid="uid://dvholimj2xge8"
+path="res://.godot/imported/HealthBarFill.png-0d0bd16d2f0de9170ff7e4d5b65a72c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SpeedGauge.png"
-dest_files=["res://.godot/imported/SpeedGauge.png-1bdc8aba921239278ad897971d974d1f.ctex"]
+source_file="res://Sprites/UI_Sprites/HealthBarFill.png"
+dest_files=["res://.godot/imported/HealthBarFill.png-0d0bd16d2f0de9170ff7e4d5b65a72c3.ctex"]
 
 [params]
 

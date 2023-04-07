@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdrm7y1pvq07k"
-path="res://.godot/imported/Sedan_a.png-b790dc5c0795b1561f9102ab936c8746.ctex"
+uid="uid://2aqb8hdfkne1"
+path="res://.godot/imported/Battle_timer_fill.png-afde81ea728f3ba569472fa1564706cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sedan_a.png"
-dest_files=["res://.godot/imported/Sedan_a.png-b790dc5c0795b1561f9102ab936c8746.ctex"]
+source_file="res://Sprites/UI_Sprites/Battle_timer_fill.png"
+dest_files=["res://.godot/imported/Battle_timer_fill.png-afde81ea728f3ba569472fa1564706cc.ctex"]
 
 [params]
 

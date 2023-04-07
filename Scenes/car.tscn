@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://6x4ekjt5g7pg"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Car.gd" id="1_06mk2"]
-[ext_resource type="Texture2D" uid="uid://dx0b4h38qw6ot" path="res://Sprites/Sportscar_a.png" id="2_5upn6"]
+[ext_resource type="Texture2D" uid="uid://dx0b4h38qw6ot" path="res://Sprites/Car_Sprites/Sportscar_a.png" id="2_5upn6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4lb0"]
 radius = 9.0

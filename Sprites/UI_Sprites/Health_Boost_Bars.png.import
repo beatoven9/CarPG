@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cehacbj87fak7"
-path="res://.godot/imported/FriendCar.png-cff4e56e560143f568bc4a094e7d8ff2.ctex"
+uid="uid://djxamgehtoe7p"
+path="res://.godot/imported/Health_Boost_Bars.png-c977284f501a01e026483607890c8d51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/FriendCar.png"
-dest_files=["res://.godot/imported/FriendCar.png-cff4e56e560143f568bc4a094e7d8ff2.ctex"]
+source_file="res://Sprites/UI_Sprites/Health_Boost_Bars.png"
+dest_files=["res://.godot/imported/Health_Boost_Bars.png-c977284f501a01e026483607890c8d51.ctex"]
 
 [params]
 
