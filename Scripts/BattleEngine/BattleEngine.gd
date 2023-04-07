@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var party_member = preload("res://Scenes/Battle/party_member.tscn")
+@onready var player_fighter = preload("res://Scenes/Battle/player_fighter.tscn")
 @onready var enemy = preload("res://Scenes/Battle/enemy_fighter.tscn")
 @onready var battle_timer = preload("res://Scenes/Battle/battle_timer.tscn")
 
@@ -24,32 +24,32 @@ func load_enemy_data():
 
 func load_player_data():
 	var texture1 = load("res://Sprites/Sedan_a.png")
-	var party_member1 = {
+	var player_fighter1 = {
 		"name": "player_1",
 		"texture": texture1,
 		"speed": 20
 	}
 
 	var texture2 = load("res://Sprites/FriendCar.png")
-	var party_member2 = {
+	var player_fighter2 = {
 		"name": "friend_car",
 		"texture": texture2,
 		"speed": 50
 	}
 
 	var texture3 = load("res://Sprites/Sportscar_a.png")
-	var party_member3 = {
+	var player_fighter3 = {
 		"name": "sportscar",
 		"texture": texture3,
 		"speed": 120
 	}
 
-	var party_members_data = [
-		party_member1,
-		party_member2,
-		party_member3
+	var player_fighters_data = [
+		player_fighter1,
+		player_fighter2,
+		player_fighter3
 	]
-	return party_members_data
+	return player_fighters_data
 
 func arrange_fighters_on_y_axis(
 	fighter_list: Array,
@@ -62,20 +62,20 @@ func arrange_fighters_on_y_axis(
 		fighter.position.y = current_pos
 		current_pos += space_between
 
-func instantiate_party_members(party_members_data):
-	var party_members_list = []
-	for member_data in party_members_data:
-		var new_party_member = party_member.instantiate()
-		new_party_member.set_data(
+func instantiate_player_fighters(player_fighters_data):
+	var player_fighters_list = []
+	for member_data in player_fighters_data:
+		var new_player_fighter = player_fighter.instantiate()
+		new_player_fighter.set_data(
 			member_data["name"],
 			member_data["texture"],
 			member_data["speed"]
 		)
-		add_child(new_party_member)
-		party_members_list.append(new_party_member)
-	arrange_fighters_on_y_axis(party_members_list, 96, 0)
+		add_child(new_player_fighter)
+		player_fighters_list.append(new_player_fighter)
+	arrange_fighters_on_y_axis(player_fighters_list, 96, 0)
 
-	return party_members_list
+	return player_fighters_list
 
 func instantiate_enemy_members(enemy_members_data):
 	var enemy_members_list = []
@@ -92,20 +92,20 @@ func instantiate_enemy_members(enemy_members_data):
 
 	return enemy_members_list
 
-func arrange_fighters_on_x_axis(party_list, enemy_list, available_space):
+func arrange_fighters_on_x_axis(player_list, enemy_list, available_space):
 	var space_segment_size = available_space / 4
 
-	for party_list_member in party_list:
-		party_list_member.position.x = -space_segment_size
+	for player_list_member in player_list:
+		player_list_member.position.x = -space_segment_size
 
 	for enemy_member in enemy_list:
 		enemy_member.position.x = space_segment_size
 
-func start_play(party_members, enemy_members):
-	var party_timers = initiate_atb_meters(party_members)
+func start_play(player_fighters, enemy_members):
+	var player_timers = initiate_atb_meters(player_fighters)
 	var enemy_timers = initiate_atb_meters(enemy_members)
 
-	print(party_timers, enemy_timers)
+	print(player_timers, enemy_timers)
 
 func initiate_atb_meters(
 	members_list,
@@ -113,10 +113,9 @@ func initiate_atb_meters(
 	var timer_list = []
 
 	for member in members_list:
-		var timer = battle_timer.instantiate()
-		member.add_child(timer)
-		timer_list.append(timer)
-		timer.battle_timer_out.connect(request_move)
+		member.ready_to_move.connect(request_move)
+		member.move_ready.connect(receive_move)
+		member.start_battle_timer()
 
 	return timer_list
 
@@ -138,8 +137,9 @@ func resume_timers():
 		timer.set_paused(false)
 
 func receive_move(move_info):
-	move_queue.append(move_info)
-	execute_move()
+	print(move_info)
+	# move_queue.append(move_info)
+	# execute_move()
 
 	resume_timers()
 
@@ -165,18 +165,17 @@ func apply_move(move_info):
 
 func _ready():
 
-	var party_members_data = load_player_data()
-	var party_members_list = instantiate_party_members(party_members_data)
+	var player_fighters_data = load_player_data()
+	var player_fighters_list = instantiate_player_fighters(player_fighters_data)
 
 	var enemy_members_data = load_enemy_data()
 	var enemy_members_list = instantiate_enemy_members(
 		enemy_members_data
 	)
 
-	arrange_fighters_on_x_axis(party_members_list, enemy_members_list, 256)
+	arrange_fighters_on_x_axis(player_fighters_list, enemy_members_list, 256)
 
-	start_play(party_members_list, enemy_members_list)
+	start_play(player_fighters_list, enemy_members_list)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
