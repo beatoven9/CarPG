@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player_fighter = preload("res://Scenes/Battle/player_fighter.tscn")
 @onready var enemy = preload("res://Scenes/Battle/enemy_fighter.tscn")
-@onready var battle_timer = preload("res://Scenes/Battle/battle_timer.tscn")
+@onready var battle_timer = preload("res://Scenes/Battle/UI/battle_timer.tscn")
 
 var global_fighters_list = []
 var global_player_fighters = []
@@ -17,7 +17,7 @@ var move_queue = []
 func load_enemy_data():
 	var texture1 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
 	var enemy_member1 = {
-		"name": "enemy_1",
+		"name": "Big Bad Guy",
 		"texture": texture1,
 		"speed": 10
 	}
@@ -28,21 +28,21 @@ func load_enemy_data():
 func load_player_data():
 	var texture1 = load("res://Sprites/Car_Sprites/Sedan_a.png")
 	var player_fighter1 = {
-		"name": "player_1",
+		"name": "Rusty",
 		"texture": texture1,
 		"speed": 20
 	}
 
 	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
 	var player_fighter2 = {
-		"name": "friend_car",
+		"name": "Wheely",
 		"texture": texture2,
 		"speed": 12
 	}
 
 	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
 	var player_fighter3 = {
-		"name": "sportscar",
+		"name": "Gov. Gearwright",
 		"texture": texture3,
 		"speed": 16
 	}

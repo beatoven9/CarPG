@@ -34,10 +34,8 @@ func _ready():
 func update_timer_bar():
 	var time_left = battle_timer.time_left
 	var max_time = get_battle_timer_length()
-	var timer_bar_val = (time_left / max_time) * 100
-	print(time_left, " / ", max_time, " = ", timer_bar_val)
+	var timer_bar_val = 100 - ((time_left / max_time) * 100)
 	timer_changed.emit(timer_bar_val)
-	print(timer_bar_val)
 
 func _process(_delta):
 	update_timer_bar()

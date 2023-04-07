@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw8bjn8er1nyy"]
+
+[ext_resource type="Script" path="res://Scripts/BattleEngine/base_team_battle_hud.gd" id="1_4ftdu"]
+
+[node name="BaseTeamBattleHud" type="MarginContainer"]
+offset_right = 304.0
+offset_bottom = 277.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_4ftdu")
+
+[node name="FighterHUDContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 2
