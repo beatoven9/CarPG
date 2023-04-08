@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu5kib73hrkto"]
 
-[ext_resource type="PackedScene" uid="uid://cshenn15h40mg" path="res://Scenes/Battle/fighter.tscn" id="1_h7mf2"]
+[ext_resource type="PackedScene" uid="uid://etca8w110ckb" path="res://Scenes/Battle/fighter.tscn" id="1_h7mf2"]
 
 [node name="EnemyFighter" instance=ExtResource("1_h7mf2")]
 rotation = 1.5708

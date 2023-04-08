@@ -6,6 +6,8 @@ extends Area2D
 
 var fighter_name
 var fighter_speed
+var fighter_class
+var class_proficiency
 
 signal move_ready(move)
 signal ready_to_move
@@ -19,13 +21,13 @@ func get_battle_timer_length():
 	return timer_length
 
 func set_data(
-	new_fighter_name,
-	texture: Texture2D,
-	speed: int
+	data
 ):
-	fighter_name = new_fighter_name
-	get_node("Sprite2D").set_texture(texture)
-	fighter_speed = speed
+	fighter_name = data["name"]
+	get_node("Sprite2D").set_texture(data["texture"])
+	fighter_speed = data["speed"]
+	fighter_class = data["fighter_class"]
+	class_proficiency = data["class_proficiency"]
 
 func _ready():
 	battle_timer.battle_timer_out.connect(_timer_out)
@@ -48,7 +50,7 @@ func start_battle_timer():
 	var time = get_battle_timer_length()
 	battle_timer.start_timer(time)
 
-func request_move(battle_state):
+func request_move(battle_state, move_select_box):
 	var enemy_fighters = battle_state["enemy_fighters"]
 	var move = GUN_DOWN.new()
 	var move_info = {

@@ -12,6 +12,7 @@ var move_queue = []
 # @onready var canvas = get_tree().get_root().get_child(0).get_node("CanvasLayer")
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
+@onready var move_select_box = get_tree().get_root().get_child(0).get_node("CanvasLayer/MoveSelectionDialogue")
 
 
 func load_enemy_data():
@@ -19,7 +20,9 @@ func load_enemy_data():
 	var enemy_member1 = {
 		"name": "Big Bad Guy",
 		"texture": texture1,
-		"speed": 10
+		"speed": 10,
+		"fighter_class": GunnerClass,
+		"class_proficiency": 30
 	}
 
 	var enemy_members_data = [enemy_member1]
@@ -30,21 +33,27 @@ func load_player_data():
 	var player_fighter1 = {
 		"name": "Rusty",
 		"texture": texture1,
-		"speed": 20
+		"speed": 20,
+		"fighter_class": GunnerClass,
+		"class_proficiency": 30
 	}
 
 	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
 	var player_fighter2 = {
 		"name": "Wheely",
 		"texture": texture2,
-		"speed": 12
+		"speed": 12,
+		"fighter_class": GunnerClass,
+		"class_proficiency": 30,
 	}
 
 	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
 	var player_fighter3 = {
 		"name": "Gov. Gearwright",
 		"texture": texture3,
-		"speed": 16
+		"speed": 16,
+		"fighter_class": GunnerClass,
+		"class_proficiency": 30,
 	}
 
 	var player_fighters_data = [
@@ -69,11 +78,12 @@ func instantiate_player_fighters(player_fighters_data):
 	var player_fighters_list = []
 	for member_data in player_fighters_data:
 		var new_player_fighter = player_fighter.instantiate()
+		print("PLAYERFIGHTER: ", new_player_fighter)
+		print(new_player_fighter.position)
 		new_player_fighter.set_data(
-			member_data["name"],
-			member_data["texture"],
-			member_data["speed"]
+			member_data
 		)
+
 		add_child(new_player_fighter)
 		player_fighters_list.append(new_player_fighter)
 	arrange_fighters_on_y_axis(player_fighters_list, 96, 0)
@@ -85,10 +95,9 @@ func instantiate_enemy_members(enemy_members_data):
 	var enemy_members_list = []
 	for member_data in enemy_members_data:
 		var new_enemy_member = enemy.instantiate()
+		print(new_enemy_member)
 		new_enemy_member.set_data(
-			member_data["name"],
-			member_data["texture"],
-			member_data["speed"],
+			member_data
 		)
 		add_child(new_enemy_member)
 		enemy_members_list.append(new_enemy_member)
@@ -135,7 +144,7 @@ func get_battle_state():
 func request_move(fighter):
 	pause_timers()
 	var battle_state = get_battle_state()
-	fighter.request_move(battle_state)
+	fighter.request_move(battle_state, move_select_box)
 
 func pause_timers():
 	for fighter in global_fighters_list:
