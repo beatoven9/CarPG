@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqvdrrm4bmwgl"]
+
+[ext_resource type="FontVariation" uid="uid://bn104iyv12owi" path="res://Fonts/hud_bar_text.tres" id="1_d6a2l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyix8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grnsj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd68f"]
+bg_color = Color(1, 0.611765, 0.92549, 0.45098)
+
+[node name="Move_Selection_Root" type="ItemList"]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/guide_color = Color(0, 0, 0, 0)
+theme_override_constants/icon_margin = 16
+theme_override_fonts/font = ExtResource("1_d6a2l")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fyix8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_grnsj")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_kd68f")
+item_count = 3
+item_0/text = " Move 1"
+item_1/text = " Move 2"
+item_2/text = " Use Item"

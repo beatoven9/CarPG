@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://etca8w110ckb"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="1_ljcyq"]
 [ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Car_Sprites/Sedan_a.png" id="2_a0v5c"]
-[ext_resource type="PackedScene" path="res://Scenes/Battle/UI/battle_timer.tscn" id="3_d0vl4"]
+[ext_resource type="PackedScene" uid="uid://cp3nxeddaosie" path="res://Scenes/Battle/UI/battle_timer.tscn" id="3_d0vl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlpd"]
 size = Vector2(20, 31)
