@@ -4,3 +4,6 @@
 
 [node name="EnemyFighter" instance=ExtResource("1_h7mf2")]
 rotation = 1.5708
+
+[node name="SelectedSprite" parent="." index="3"]
+visible = false

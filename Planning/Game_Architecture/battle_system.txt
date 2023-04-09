@@ -3,3 +3,15 @@ First step in developing this is to build an ATB machine that has very basic har
     -Create ATB meters that have real timers and will call a method called "request_move()" on the Fighter.
         This method will merely print("Fighter {fighter_name} made their move")
     -Add more hardcoded data that will populate each Fighter class (Add basic FighterClass class)
+
+
+How do the fighters know when they should be highlighted?? (during dialogue box selection)
+	This is actually easy enough since we have references to each fighter in the battle state
+	connect a function that highlights the selected player to the signal for when the selection changes
+How should sub boxes be handled?
+
+Attack - just a normal melee attack
+Magic - fire, ice, thunder, etc (This will double for black, blue mage)
+Necromancy - This is available for necromancers that already have their beast raised. It is a move list of the raised.
+Abilites - repair, steal, jump
+Item - usable items in this list

@@ -5,3 +5,6 @@
 
 [node name="PlayerFighter" instance=ExtResource("1_ouutd")]
 script = ExtResource("2_5c7u5")
+
+[node name="SelectedSprite" parent="." index="3"]
+visible = false

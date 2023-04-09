@@ -18,14 +18,21 @@ var move_queue = []
 func load_enemy_data():
 	var texture1 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
 	var enemy_member1 = {
-		"name": "Big Bad Guy",
+		"name": "Big Bad Guy b",
+		"texture": texture1,
+		"speed": 10,
+		"fighter_class": GunnerClass,
+		"class_proficiency": 30
+	}
+	var enemy_member2 = {
+		"name": "Big Bad Guy a",
 		"texture": texture1,
 		"speed": 10,
 		"fighter_class": GunnerClass,
 		"class_proficiency": 30
 	}
 
-	var enemy_members_data = [enemy_member1]
+	var enemy_members_data = [enemy_member1, enemy_member2]
 	return enemy_members_data
 
 func load_player_data():
