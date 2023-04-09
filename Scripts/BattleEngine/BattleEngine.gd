@@ -3,16 +3,16 @@ extends Node2D
 @onready var player_fighter = preload("res://Scenes/Battle/player_fighter.tscn")
 @onready var enemy = preload("res://Scenes/Battle/enemy_fighter.tscn")
 @onready var battle_timer = preload("res://Scenes/Battle/UI/battle_timer.tscn")
+@onready var move_selection_box = preload("res://Scenes/Battle/UI/move_selection_dialogue.tscn")
+
 
 var global_fighters_list = []
 var global_player_fighters = []
 var global_enemy_fighters = []
 var move_queue = []
 
-# @onready var canvas = get_tree().get_root().get_child(0).get_node("CanvasLayer")
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
-@onready var move_select_box = get_tree().get_root().get_child(0).get_node("CanvasLayer/MoveSelectionDialogue")
 
 
 func load_enemy_data():
@@ -78,8 +78,6 @@ func instantiate_player_fighters(player_fighters_data):
 	var player_fighters_list = []
 	for member_data in player_fighters_data:
 		var new_player_fighter = player_fighter.instantiate()
-		print("PLAYERFIGHTER: ", new_player_fighter)
-		print(new_player_fighter.position)
 		new_player_fighter.set_data(
 			member_data
 		)
@@ -95,7 +93,6 @@ func instantiate_enemy_members(enemy_members_data):
 	var enemy_members_list = []
 	for member_data in enemy_members_data:
 		var new_enemy_member = enemy.instantiate()
-		print(new_enemy_member)
 		new_enemy_member.set_data(
 			member_data
 		)
@@ -124,14 +121,10 @@ func start_play(player_fighters, enemy_members):
 func initiate_atb_meters(
 	members_list,
 ):
-	var member_list = []
-
 	for member in members_list:
 		member.ready_to_move.connect(request_move)
 		member.move_ready.connect(receive_move_info)
 		member.start_battle_timer()
-
-	return member_list
 
 func get_battle_state():
 	var battle_state = {
@@ -144,7 +137,8 @@ func get_battle_state():
 func request_move(fighter):
 	pause_timers()
 	var battle_state = get_battle_state()
-	fighter.request_move(battle_state, move_select_box)
+	fighter.request_move(battle_state)
+
 
 func pause_timers():
 	for fighter in global_fighters_list:
@@ -174,7 +168,6 @@ func apply_move(move_info):
 	var target = move_info["target"]
 
 
-	print("APPLYING MOVE: ", move.move_name, " to ", target, " by ", user)
 	target.handle_move_receipt(move)
 
 	resume_timers()
@@ -182,7 +175,7 @@ func apply_move(move_info):
 	#
 	# THIS IS WHERE I LEFT OFF ^^^
 
-	
+		
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
 
 

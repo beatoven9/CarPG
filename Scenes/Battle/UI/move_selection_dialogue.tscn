@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cgsr4dyrmg78w" path="res://Scenes/Battle/UI/move_selection_target_select_box.tscn" id="3_hviwc"]
 
 [node name="MoveSelectionDialogue" type="MarginContainer"]
+visible = false
 texture_filter = 3
 anchors_preset = 2
 anchor_top = 1.0

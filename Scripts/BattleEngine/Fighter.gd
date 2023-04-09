@@ -9,7 +9,7 @@ var fighter_speed
 var fighter_class
 var class_proficiency
 
-signal move_ready(move)
+signal move_ready(move, user, target)
 signal ready_to_move
 
 signal health_changed(value)
@@ -50,7 +50,7 @@ func start_battle_timer():
 	var time = get_battle_timer_length()
 	battle_timer.start_timer(time)
 
-func request_move(battle_state, move_select_box):
+func request_move(battle_state):
 	var enemy_fighters = battle_state["enemy_fighters"]
 	var move = GUN_DOWN.new()
 	var move_info = {
@@ -76,3 +76,11 @@ func handle_move_receipt(move):
 	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
 		var damage_inflicted = (move.base_power / 10)
 		health_changed.emit(-damage_inflicted)	
+
+func _on_move_ready(move, target):
+	var move_info = {
+		"move": move,
+		"user": self,
+		"target": target
+	}
+	move_ready.emit(move_info)
