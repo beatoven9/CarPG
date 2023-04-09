@@ -93,19 +93,19 @@ Inner monologue: I guess it's time to head over to the stadium for graduation!
 */
 
 /*
-    Player bumps into another car named FRIEND.
+    Player bumps into another car named Wheely.
 */
 
-FRIEND: Hey there PLAYER_NAME! Fancy meeting you out here, you here on your way to graduation too?
+Wheely: Hey there PLAYER_NAME! Fancy meeting you out here, you here on your way to graduation too?
 
 // Just then, a sudden commotion.
 // Enter BROTHER being pursued by Percy, a fancy car man and Tony, a tow-truck (For the carjacking)
 
 BROTHER: HELLLLLPPP!!! He's trying to killlll meeeee!!!
-FRIEND: PLAYER_NAME, is that your little brother?
+Wheely: PLAYER_NAME, is that your little brother?
 Percy: Get back here this instant, you little scoundrel!
 Tony: Yeah! Get back here! // Tony is a bad driver.
-FRIEND: Hey! Get away from him!
+Wheely: Hey! Get away from him!
 BROTHER: NOoOOOooO!!!!
 // BROTHER is captured and taken behind a broken wall. Percy rolls back out. And looks at PLAYER_NAME
 Percy: As for you two... You'll be keeping this to yourselves or I'll hear about it.
@@ -117,7 +117,7 @@ Tony: oh....
 
 // Percy and Tony exit
 
-FRIEND: We're gonna go after him, right?
+Wheely: We're gonna go after him, right?
 
 /*
 
@@ -125,7 +125,7 @@ FRIEND: We're gonna go after him, right?
 
 */
  
-FRIEND: You're not seriously thinking of going to graduation after this. Right? Your brother has been car-jacked!
+Wheely: You're not seriously thinking of going to graduation after this. Right? Your brother has been car-jacked!
 
 /*
 
@@ -133,7 +133,7 @@ FRIEND: You're not seriously thinking of going to graduation after this. Right? 
 
 */
 
-FRIEND: WOOT!
+Wheely: WOOT!
 // He follows after PLAYER_NAME
 
 /*
@@ -141,7 +141,7 @@ FRIEND: WOOT!
 */
 
 (Before reaching the dead end)
-FRIEND: That rubble looks like it could be cleared away but we can't do anything about it now. If the other paths in the fork don't lead anywhere, we'll see about having it cleared.
+Wheely: That rubble looks like it could be cleared away but we can't do anything about it now. If the other paths in the fork don't lead anywhere, we'll see about having it cleared.
 
 /*
     PLAYER_NAME continues down the remaining paths at the fork in the road. The end of each fork will have some sort of task that will help the player make use of all of the different abilities.
@@ -150,7 +150,7 @@ FRIEND: That rubble looks like it could be cleared away but we can't do anything
     PLAYER_NAME exits from the hole in the wall to the scene in which he made his decision to be late to his graduation.
 */
 
-FRIEND: Looks like the only path we haven't been able to search down is the one blocked by rubble. So we'll go to the city building first thing in the
+Wheely: Looks like the only path we haven't been able to search down is the one blocked by rubble. So we'll go to the city building first thing in the
     morning. For now, let's go back to... Oh no, GRADUATION! What time is it? XX:XX! That is so late! We only have XX:XX to get there before your 
     name is called.
 
@@ -163,16 +163,16 @@ FRIEND: Looks like the only path we haven't been able to search down is the one 
 
 --------(LONGEST TIME)
     // Arrives at stadium
-    FRIEND: Oh no... everyone's gone.
+    Wheely: Oh no... everyone's gone.
     // Player needs to pilot PLAYER_NAME back home. Using gas on the trip is the penalty for the bad time on the quest.
 
     /*
         Dad is sitting on the porch alone.
     */
 
-    FRIEND: Mr. Wheelson?
+    Wheely: Mr. Wheelson?
     Dad: ...
-    FRIEND: Mr. Wheelson.. We're sorry.
+    Wheely: Mr. Wheelson.. We're sorry.
     Dad: ...
     Dad: You're sorry.
     Dad: That's okay. 
@@ -194,14 +194,14 @@ FRIEND: Looks like the only path we haven't been able to search down is the one 
     //PLAYER_NAME takes diploma and rolls off screen.
     //Empty stadium PLAYER_NAME goes up to his dad in audience.
     Dad: You made it! I was worried there for a moment.
-    FRIEND: Oh.. uh yeah! We were here! Just took a bit longer to get our grills done than we thought.
+    Wheely: Oh.. uh yeah! We were here! Just took a bit longer to get our grills done than we thought.
     Dad: I'm the happiest Father in the world for you to have been there. I don't care if you barely made it!
     // the three walk home together. in mid conversation.
-    FRIEND: Yeah and then bumped into each other right before the accident...
+    Wheely: Yeah and then bumped into each other right before the accident...
     Dad: Oh you didn't tell me you saw an accident. What happened?
-    FRIEND: Oh yeah, your youngest son was car-jacked.
+    Wheely: Oh yeah, your youngest son was car-jacked.
     Dad: No he did not.. He stayed home safe with the babysitter. And anyway, car-jacking only happens in movies. You know that. Cars aren't able to bring intentional harm to other cars. It's part of our hive DNA!
-    FRIEND: I promise that's what we saw! We even saw where they went! But one of the paths was blocked off so we couldn't check everywhere!
+    Wheely: I promise that's what we saw! We even saw where they went! But one of the paths was blocked off so we couldn't check everywhere!
     Dad: You couldn't check everywhere?
     Dad: Is this why you were almost late to your graduation??
     // Babysitter races out of house.
@@ -224,33 +224,33 @@ FRIEND: Looks like the only path we haven't been able to search down is the one 
 
 Dad: I have an appointment with the Queen this afternoon. I'm sure that BROTHER is just stuck in a well.
 // PLAYER_NAME leaves his house.
-// FRIEND rolls up
+// Wheely rolls up
 
-FRIEND: Ok, so all I need to do is go to the city building to talk to someone about getting that road cleared!
+Wheely: Ok, so all I need to do is go to the city building to talk to someone about getting that road cleared!
 
 // Player regains control to go to the city building. Side quests are available along the way.
 // Player enters City building. Goes up to the reception desk.
 
 Receptionist: Can I help you?
-FRIEND: Yes thank you, we're looking to report debris blocking off the road.
+Wheely: Yes thank you, we're looking to report debris blocking off the road.
 Receptionist: How many?
-FRIEND: How many?
+Wheely: How many?
 Receptionist: How many roads is the debris blocking off, Honey?
-FRIEND: How many roads?... well, just one road.
+Wheely: How many roads?... well, just one road.
 Receptionist: Just one road?? Oh Honey, I'm sorry but you'll have to file a request and we're totally backlog with reports like this recently. We are barely keeping afloat here. The queen works 
     in mysterious ways!!
-FRIEND: Please! Is there any way you to get priority?
+Wheely: Please! Is there any way you to get priority?
 Receptionist: I'm sorry, the only people who have the authority to sign a report as a priority is the governor of the city.
-FRIEND: So we need a signature from the governor...
-// PLAYER_NAME and FRIEND roll away.
+Wheely: So we need a signature from the governor...
+// PLAYER_NAME and Wheely roll away.
 Receptionist: That's not what I meant!!
 
 // Player takes control and finds the governor's house.
-// FRIEND beeps at the door.
+// Wheely beeps at the door.
 // No one answers the door.
 
 Sounds from house: REevvvvv! HONK! RubbleRubble!
-FRIEND: He sounds like he's in distress! He might need help! We should check to see if a back door is unlocked so we can help him!
+Wheely: He sounds like he's in distress! He might need help! We should check to see if a back door is unlocked so we can help him!
 
 // Player regains control. There's a key hidden under a rock that the player uses to open the back door.
 
@@ -259,17 +259,17 @@ Sounds from house: HIIIRraaaYaaaAA revvv yraa yraaaa vroooom!
 // Player follows noises up the stairs.
 // Walks into the governor and another car in a bed together.
 Governor Gearson: WHAT ARE YOU TWO BOYS DOING IN HERE!
-FRIEND: Oh.. we were checking to see if you needed any help!
+Wheely: Oh.. we were checking to see if you needed any help!
 Governor Gearson: We don't! So get out!
-FRIEND: Well, we were also wondering if you could hear a proposal.
+Wheely: Well, we were also wondering if you could hear a proposal.
 Governor Gearson: WHAT?!?!
-FRIEND: Well, there's this road down the street that --
+Wheely: Well, there's this road down the street that --
 Governor Gearson: NO! Get out!
 // PLAYER_NAME starts to drive away.
 Governor Gearson: WAIT!
 Governor Gearson: Are your dashcams recording?..
 Governor Gearson: Give me the recordings.
-FRIEND: Hear our proposal and we will.
+Wheely: Hear our proposal and we will.
 Governor Gearson: I don't negotiate with terrorists!
 
 **** First boss battle ensues ****
@@ -277,31 +277,31 @@ Governor Gearson: I don't negotiate with terrorists!
 // Governor Gearson is defeated.
 Gov. Gearson: I have to admit. You two are quite impressive fighters. Your style almost reminds me of... no that's nonsense. Anyway, I'll hear your proposal. But you'll have to promise me that you won't show those 
     videos to ANYONE. Trust runs both ways.
-FRIEND: You've got yourself a deal!
+Wheely: You've got yourself a deal!
 Gov. Gearson: So what is it that you boys want?
-FRIEND: Well there's an old blocked road that we really want to investigate but it will take months in the regular queue and we need to investigate it NOW!
+Wheely: Well there's an old blocked road that we really want to investigate but it will take months in the regular queue and we need to investigate it NOW!
 Gov. Gearson: Which road are we talking about here boys?
-FRIEND: right at the entrance to Train Drive.
+Wheely: right at the entrance to Train Drive.
 Gov. Gearson: The entrance to Train Drive?...
 // Gov. Gearson flabbergasted.
 Gov. Gearson: Why would you two want to remove that rubble?..
-FRIEND: Well...
+Wheely: Well...
 Gov. Gearson: You don't know!
-FRIEND: Know what?
+Wheely: Know what?
 Gov. Gearson: That's it! Have I got something to show you boys! Race ya to the rubble. Keep up if ya can!
 //Race Gov. Gearson to the rubble. Don't run into anyone!
 Gov. Gearson: Here we are now. Watch and learn...
 // Gov. Gearson backs up slowly away from the wall.
 Gov. Gearson: ReVvvvvVVVvvv REREVvV vvVvvv.
 // Gov. Gearson speeds off directly into the rubble.
-FRIEND: NOOOOO!!! Governor Gearson!!
+Wheely: NOOOOO!!! Governor Gearson!!
 // Gov. Gearson drives through the rubble without interacting with it at all.
-FRIEND: What happened? Where is he? I thought for sure we were about to watch an auto-murder...
+Wheely: What happened? Where is he? I thought for sure we were about to watch an auto-murder...
 // Gov. Gearson exits slowly from the rubble.
 Gov. Gearson: HAHAHAH! You should have seen the looks on your grills!
 PLAYER_NAME: WHAT!!!?
 Gov. Gearson: It's an illusion. You can drive right through it! Come on! Follow me!
-// FRIEND barrels through the fake rubble.
+// Wheely barrels through the fake rubble.
 // PLAYER_NAME carefully drives closer to the rubble and slowly through it.
 // Black screen
 Gov. Gearson: Welcome to Underton!

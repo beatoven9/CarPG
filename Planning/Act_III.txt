@@ -1,0 +1,198 @@
+---Act III---
+---scene i---
+
+// You enter the gates of the city.
+
+Gov Gearson: We're here! Ok, he lives on the far side of town in an inn called The Spare Tire. 
+
+// You explore the city and eventually make your way to The Spare Tire
+
+Gov Gearson: Hey Keepa! I'm an old friend of GEARSON_FRIEND. Can you remind me which room he's in?
+
+Barkeep: Course! He's on the second floor at the end of the hall! Just had a group of visitors this morning.
+	a couple blue cars. real sporty looking (describing big bad's lackeys.)
+
+// Music stops
+
+Gov Gearson: What?
+
+// Regain player control. You wheel to GEARSON_FRIEND's room and enter the room (All with no music)
+
+// The friend is nowhere to be seen and there's a small car crying that attacks. Maybe the music should be more sad or dramatic here. maybe mourning and anger.
+
+Tinaldo: GET OUT!!!!!!
+
+// Tinaldo raises two rust golems for you to fight
+// This should be pretty tough. Once you beat the rust golems Tinaldo breaks down crying.
+
+Tinaldo: Ahhh where did you take him??
+
+Gearson: We didn't take anyone anywhere, are you talking about those blue cars? We are not with them. I'm a friend of GEARSON_FRIEND.
+	We were coming to say hi. You must be... his son?
+
+Tinaldo: ...
+
+Wheely: You don't have to worry! Those blue cars are our enemies too! We're trying to put an end to all of this violence.
+
+BLUE_MAGE_CHARACTER: With violence!
+
+Tinaldo: I want to come with you!
+
+Wheely: No no no, you're wayyy too young!
+
+Tinaldo: AM NOT!!
+
+Wheely: YEAH HUH!
+
+Gearson: Wait wait wait wait!
+Gearson: Normally I would agree with you... But weren't you also just a little bit impressed by the strength of those 
+	rust golems he just raised?
+
+Wheely: I guess so...
+
+Gearson: I've seen the kinds of necromancy his father has done and he obviously has been teaching him. He could be a huge help
+	in saving your brother and his father.
+
+PLAYER_NAME: Ok! You're in!
+
+Wheely: But you have to do what we say!
+
+Tinaldo: No way!
+
+PLAYER_NAME: You don't have to do what he says... Just be helpful.
+
+Tinaldo: You don't have to worry about that! You won't know how you every survived without me!
+
+// Tinaldo joins your party as a necromancer.
+
+---close scene i---
+
+---scene ii---
+
+PLAYER_NAME: Now, where to from here?
+
+Tinaldo: I overheard the blue cars talking about a hangar.
+
+Gearson: A hangar, huh? There's really only one hangar in Westerton skeevy enough for Percy...
+Gearson: And it does happen to be in East Westerton.
+
+// It's night when you walk out.
+// On the way, you're forced to walk through this square with some drunk people in it. 
+// One of them is driving in circles.
+
+CAR 1: Hey! Slow down! You're way too drunk! We need to call you a tow-truck!
+
+CAR 2: NO WAY! I feel great!
+
+// CAR 2 continues driving in circles then drives into a stump or a rock and a human flies out of the front windshield and 
+// into a wall. 
+
+thing that came out of CAR 2: *SPLAT*
+
+CARS: Oh my god! Oh no!
+
+// Humans get out of their cars.
+
+thing that came out of CAR 1: What are you doing just sitting in your car? Get out and help!
+
+Wheely: What the flip is that?
+
+// Wheely wheels over to the empty car with the cracked windshield.
+
+Wheely: Is he dead? Hello?
+
+thing that came out of CAR 1: What? Stop joking around!
+thing that came out of CAR 1: Ok I think this is a piece of his head. Is that an elbow?
+
+Wheely: We gotta get out of here...
+
+// On route to the hangar you see Percy and Tony bringing GEARSON_FRIEND and PLAYER_NAME's brother down the road.
+// You follow behind.
+
+// You eventually make it up to the hangar doors. 
+// You enter and there are boxes in front of you blocking you from being seen.
+// The screen pans up to reveal Percy, Tony, GEARSON_FRIEND, and PLAYER_NAME's brother in the middle of the large hangar.
+// A portal opens up and a humanoid in a black cloak walks out of it.
+
+BIG_BAD: So, you've acquired the two cars I requested?
+
+Percy: Of course, you're excellency.
+
+BIG_BAD: Let me see...
+
+// Music stops.
+
+BIG_BAD: you fool.
+
+Percy: Pardon?
+
+BIG_BAD: YOU FOOL! This... this is not the right Wheelson!
+
+Percy: I know.
+
+// Percy strikes BIG_BAD and BIG_BAD blocks the attack effortlessly. Percy is thrown into a wall.
+
+Tony: Ahhh!!!
+
+// Tony drives directly at BIG_BAD and also gets cast aside.
+
+BIG_BAD: Pitiful. 
+
+// BIG_BAD walks over to GEARSON_FRIEND
+
+BIG_BAD: You're the necromancer?
+
+GEARSON_FRIEND: Y-y-yes...
+
+BIG_BAD: Your services will be of assistance.
+
+// BIG_BAD turns to PLAYER_NAME's brother.
+
+BIG_BAD: You aren't worth my time.
+
+// BIG_BAD and GEARSON_FRIEND exit through the portal which then closes up.
+
+// The camera pans back to your character and you regain control.
+
+// Character with highest proficiency points in the mechanic class that isn't PLAYER_NAME goes to heal Percy and Tony.
+
+// Wheel over to your brother. When you get close enough to you he sees you.
+
+PLAYER_NAME's brother: PLAYER_NAME!?
+
+PLAYER_NAME: You're safe now!
+
+// Percy and Tony wheel back with your mechanic expert.
+
+Percy: Thanks so much fellas. And I'm sorry about all the carjacking and murdering I've been doing.
+
+PLAYER_NAME: Yeah, that wasn't cool.
+
+Percy: But I've changed. I discovered things about Overton that you wouldn't believe. It's bigger than any of us. I need to fix it.
+
+Wheely: What are you rattling on about?
+
+Percy: Cars are being harvested... Their brains are being scooped out and discarded. Their remains being occupied by these... things.
+
+Gov Gearson: This is ridiculous. He's just trying to stop us from turning him over to the Queen.
+
+PLAYER_NAME's brother: He's telling the truth.
+
+Percy: I can show you! Follow me.
+
+
+final scene you think you're about to fight Percy but you walk in on him in an altercation 
+with the big bad guy. You are unseen. Maybe BIG_BAD is a human in a black cloak.
+BIG_BAD: This isn't him you fool! You picked up the wrong Gearson!
+Percy: I know...
+// Percy attacks BIG_BAD. The attack gets blocked by BIG_BAD and Percy crashes into the wall.
+Percy: Ughhhhh..
+BIG_BAD: Hahaha! You really thought that would work on ME?!
+// Turns to your little brother and Tony.
+BIG_BAD: You two aren't worth my time.
+// Whichever member of your party has most proficiency points in Mechanic will go heal Percy.
+// 
+// You converse with Percy and Tony and they ultimately join your team.
+
+
+

@@ -1,47 +1,203 @@
 --- Open Act II ---
 
+--- scene i ---
 /*
     We pick up from where we left off. The trio is in the middle of Underton Square.
 */
 Shop Keeper 1: Oi Gearson! You son of a bike!
 Shop Keeper 2: Gearson! Why I oughtta. Lot a nerve showin' your face around here.
-FRIEND: Wow! You do seem to be a regular around here, Governor.
+Wheely: Wow! You do seem to be a regular around here, Governor.
 Gov. Gearson: Why uh yes!.. This is like a second home to me! I suppose I should get back to work in Overton...
-FRIEND: Wait! Governor, can we ask for another favor?
+Wheely: Wait! Governor, can we ask for another favor?
 Gov. Gearson: Go for your life, kid!
-FRIEND: Well we witnessed a car-napping the other day and we were looking for the perpetrator.
+Wheely: Well we witnessed a car-napping the other day and we were looking for the perpetrator.
 Gov. Gearson: Okayyy. What did this perpetrator look like?
-FRIEND: (Describes Percy)
+Wheely: (Describes Percy)
 Gov. Gearson: Your sticking your grill where it don't belong, kid.
-FRIEND: You know him? You have to tell us!
+Wheely: You know him? You have to tell us!
 Gov. Gearson: And risk my gears? Forget about it!
-FRIEND: But we need to save my brother!
+Wheely: But we need to save my brother!
 Gov. Gearson: It's your brother... ughh sorry, I can't help you.
 // Gov. Gearson turns away. PLAYER_NAME turns away
 Gov. Gearson: His name is Percy.
-// FRIEND and PLAYER_NAME turns back
-FRIEND: Percy who? Where can I find him?
-Gov. Gearson: Ask around at {insert first place}.
+// Wheely and PLAYER_NAME turns back
+Wheely: Percy who? Where can I find him?
+Gov. Gearson: There's an old bar on the other side of town called the Rust Bucket. He's a regular there.
+	But you didn't hear it from me!
 // At this point if you lost the Race to the Rubble against Gov. Gearson, he will return back to Overton through the rubble portal.
 // If you won the race:
-Gov. Gearson: Hey kid, you really shouldn't be goin down this path alone.
-FRIEND: Well we have to do it somehow!
+Gov. Gearson: Hey kid, you really shouldn't be goin' down this path alone.
+Wheely: Well we have to do it somehow!
 Gov. Gearson: I know. That's why I'm going with you.
 
 // Gov. Gearson joins the party.
-// Player regains control and goes to {insert first place}
+// Player regains control and goes to the Rust Bucket}
+
+//If the player talks to the barkeep first....
+
+Wheely: Hey mister! We're looking for a car that goes by the name of "Percy"!
+//all the cars in the bar stop moving and the music stops.
+
+Barkeep: ...
+
+BAR_BOSS: Who's askin'?
+
+Wheely: Uhh....
+
+Gov.Gearson: None of your business! That's who!
+
+BAR_BOSS: Alright Gearson, that's how it's gonna be? On a normal day I'd just let you go with a simple beating
+	but this attitude. I'm gonna beatchya till ya leaking oil!
+
+	(Commence boss fight thing)
+
+	// Idle banter during fight?
+
+	(Win boss fight)
+
+BAR_BOSS: Okok! I give in! Just ease up! I'll tellya whatchya wanna know!
+	There's a mechanic at the other side of town. Matthew and Sons. Matthew there
+	will know where to find him.
+
+Wheely: Whaddya mean? Your too chicken to tell us his location yourself??
+
+BAR_BOSS: Naw naw, you got it all wrong! I don't know where he is. I hardly know the guy!
+
+Wheely: Then why did you fight us when we came in here asking for him?
+
+BAR_BOSS: Oh, I just like to fight.
+// This character will be here from now on for you to fight against. He should level scale.
+// Just for a testground for new abilities and such. losing will not result in game over just return to overworld
+
+Wheely: ...
+Wheely: Ok! Mechanic it is!
+
+---close scene i---
+
+---scene ii---
+// Travel to mechanic....
+// Only one person inside, the Matthew's partner is in there
+
+Wheely: Hey there! We were advised to speak with Matthew.
+
+Sons: Ah, I apologize but Matthew isn't in at the moment. 
+    But my name is Sons. I'm Matthew's business partner. And I can help you with anything you might need help with.
+
+Gov Gearson: Oh we appreciate it but we aren't here for mechanic services today.
+
+Sons: Oh? Perhaps information is what you seek?
+
+Wheely: You got it!
+
+Sons: Well then. You're more then welcome to wait here for him.
+Sons: However, I some work that I could use help with.
+	I bet by the time you're done with them Matthew will be just getting back.
+	And I'll put in a good word for you if you do a good job.
+
+Wheely: What kinda work is it?...
+
+Sons: It is... package retreival work.
+
+Wheely: Ok, we aren't a delivery service!
+
+Sons: Well these particular packages have been reacquired by some unsavory characters.
+
+Wheely: Ah, so you want us to knock some sense into a couple a thugs and get your goods back from them?
+
+Sons: Precisely! I hoped you'd would be interested.
+
+Wheely: Yeah! Of course we're interested!
+
+Sons: Excellent! Take these Rollie-Talkies. I'll communicate to you through those. Each of the pieces has a proximity sensor
+	synced with the rollie-Talkies so I'll know when you've picked up each piece.
+	You first location is the hideout of the Underton Car Cartel. (Describes location)
+	Best of luck! And I'll call you with updates as you progress.
+
+	// Quest to collect parts that were stolen by thugs from Sons.
+	// Sons will send you to various thug hideouts and call you after you obtain each item to tell you the
+	// location of the next hideout to ransack.
+
+Sons: Excellent work! Matthew just arrived a few minutes ago. He's out back and ready for you.
+//player goes out back
+
+Matthew: So, you all are the lot that took care of all of those thugs for Sons.
+	What can I do for ya?
+
+Wheely: We need to find Percy.
+
+Matthew: Percy? What in the world would you wanna find Percy for?
+
+Wheely: He's wanted for a carjacking!
+
+PLAYER_CAR: Yeah! He carjacked my little brother!
+
+Matthew: Oh dear, then I guess you do need to find Percy, don't you?...
+	Ok I'll tell ya what. Do take care of one more errand for us and I'll tell you exactly where he is.
+
+Wheely: Deal!
+
+Matthew: Ok, just east of town, there's a forest with some nasty CRITTERs in it. It has a path going through it
+	that used to be a well traveled path for merchants but has been all but abandoned with the CRITTER altercations
+	on the rise. Well anyway, my last trip through there I was attacked by fiends and lost all the contents of my trunk.
+	I had some really useful tools in that lot. If you retreive that stuff for me, I'll let you know where Percy is.
+	And there's something in there that I think might help you with your impending altercation with Percy.
+
+Wheely: You've got it!
+
+Matthew: Excellent! The tracking on the cargo is still functional so I'll mark its location on your map.
+
+//Go in woods and find the cargo and bring it back.
+
+Matthew: Well done! I never thought I'd see this cargo again! and.... yes! Here it is! Gray blinker fuild!
+Matthew: This blinker fluid, when equipped will allow you to fight as a Black Mage class and give you
+	access to elemental magic.
+Matthew: I think you'll find that a number of Percy's lackeys are vulnerable to lightning damage.
+Matthew: To find him, you want to go to roof of the Rich Carlton. That's where he's hiding out.
+Matthew: Best of luck and thank you again for all of your help today! You're welcome here anytime!
+
+---close scene ii---
 
 
-*The big reveal that there are actually humans in the cars in Underton.*
-One of the mainline quests will result in FRIEND and PLAYER_NAME getting drunk with a group of Underton citizens. One of the citizens is so drunk that he can't drive. His friends call him a Tow-ber for a tow.
-The friend insists on proving that he's not drunk by driving around really fast. He hits a tree stump and the human inside of the car comes flying out of the car and SPLATs on a wall. The other humans get out
-of their cars to run up to the deceased's remains. They turn to PLAYER_NAME and FRIEND and ask what they're still doing in their car. Someone has died! FRIEND turns to PLAYER_NAME. "What are those things? 
-And how did they just get out of those cars? Oh my god, I think the cars they were in are dead. Hello? Hellllooo?! We need to get out of here, PLAYER_NAME!!" This will be a turning point in the story. From this
-point on, all of the cars in Underton will be hostile. Maybe the shops are still functional though? They still like money? lol
+---scene iii---
+//Drive to Rich Carlton.
+// On each floor you'll fight a wave of enemies. The enemies will be weak to lightning or something related to
+// the new class you can play as.
+// Each floor should have a clearly displayed number so the player can keep track of how many floors are left.
 
 
-Percy should have a dumb henchman. 
-Henchman: Hey, Boss! How come none of these peoples gots a garage on they's house?
-Percy: Because 
-Henchman: Hey, Boss! How come there's so much traffic?
-Percy: Because everyone has to drive themself.
+// When you reach the top floor of the building, Percy and Tony are there ready to talk.
+
+Percy: So you actually found us?
+
+Wheely: You better bet! And now you're going down! Give us back PLAYER_NAME's brother!
+
+Percy: Hey Tony, I'll take care of these goons. Go tell the big man that we've been infiltrated then I'll meet you 
+	at the safe house.
+
+Tony: Sure thing Boss! On it.
+
+// Tony wheels out for backup.
+
+// Battle ensues
+// As you kill him, the big evil's lackeys enter and stand in between you and Percy. Percy has a clear exit from the 
+// building and he makes his departure and you need to fight the lackeys in order to leave but it gives you time to 
+// heal after the Percy fight. Though the lackeys will be pretty easy comparatively. More just general goons.
+// So Percy is given ample time to get away.
+
+// After defeating the lackeys...
+
+Wheely: Ugh! Now we're back to square one! We've got no lead on where his safe house is.
+
+Gov Gearson: Don't give up hope so quickly! Your forgetting where we are. This is his hideout! And he definitely didn't
+	have time to clean up before his exit. There might be some clues about where the safe house is.
+
+// You search for clues.
+// One desk you can interact with will say East-Westerton.
+
+Wheely: East-Westerton? Where is that?
+
+Gov Gearson: Ah, that's a neighborhood in the eastern part of Westerton, the town just west of Underton. I have an old friend in West-Westerton! We should meet up with him first.
+
+// Wheel on over to East-Westerton
+---close scene iii---
+---close Act II---
