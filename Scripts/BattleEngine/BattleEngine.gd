@@ -3,7 +3,6 @@ extends Node2D
 @onready var player_fighter = preload("res://Scenes/Battle/player_fighter.tscn")
 @onready var enemy = preload("res://Scenes/Battle/enemy_fighter.tscn")
 @onready var battle_timer = preload("res://Scenes/Battle/UI/battle_timer.tscn")
-@onready var move_selection_box = preload("res://Scenes/Battle/UI/move_selection_dialogue.tscn")
 
 
 var global_fighters_list = []

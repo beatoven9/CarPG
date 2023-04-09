@@ -1,18 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwrwst1clrken"]
+[gd_scene load_steps=10 format=3 uid="uid://bwrwst1clrken"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter_HUD.gd" id="1_i6g4p"]
+[ext_resource type="Shader" path="res://Shaders/Battle/UI/fighter_hud.gdshader" id="1_kxudg"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_2ch8l"]
 [ext_resource type="FontFile" uid="uid://delt4i65lerp5" path="res://Fonts/poco/Poco.ttf" id="3_ifr7q"]
 [ext_resource type="PackedScene" uid="uid://b05mqi8dsapm7" path="res://Scenes/Battle/UI/hud_bar_base.tscn" id="4_spv6q"]
 [ext_resource type="PackedScene" uid="uid://bmma2bgo5hf7f" path="res://Scenes/Battle/UI/boost_hud.tscn" id="5_0a2ef"]
 [ext_resource type="PackedScene" uid="uid://5k362788qlme" path="res://Scenes/Battle/UI/battle_timer_hud.tscn" id="6_vrj22"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdvw7"]
+shader = ExtResource("1_kxudg")
+shader_parameter/selected = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q53yl"]
+shader = ExtResource("1_kxudg")
+shader_parameter/selected = false
+
 [node name="FighterHUD" type="MarginContainer"]
+material = SubResource("ShaderMaterial_qdvw7")
 offset_right = 256.0
 script = ExtResource("1_i6g4p")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 3
+material = SubResource("ShaderMaterial_q53yl")
 layout_mode = 2
 texture = ExtResource("2_2ch8l")
 patch_margin_left = 4

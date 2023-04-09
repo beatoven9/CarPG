@@ -22,6 +22,9 @@ func set_fighter_name(this_fighter_name):
 		fighter_name_label.set_text("LARRY")
 	else:
 		fighter_name_label.set_text(fighter_name)
+	
+func _on_fighter_selected():
+	material.set_shader_param("selected", true)
 
 func _ready():
 	set_fighter_name(fighter_name)
