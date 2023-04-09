@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu5kib73hrkto"]
+[gd_scene load_steps=3 format=3 uid="uid://cu5kib73hrkto"]
 
 [ext_resource type="PackedScene" uid="uid://etca8w110ckb" path="res://Scenes/Battle/fighter.tscn" id="1_h7mf2"]
+[ext_resource type="Script" path="res://Scripts/BattleEngine/EnemyFighter.gd" id="2_cd0dn"]
 
 [node name="EnemyFighter" instance=ExtResource("1_h7mf2")]
 rotation = 1.5708
+script = ExtResource("2_cd0dn")
 
 [node name="SelectedSprite" parent="." index="3"]
 visible = false

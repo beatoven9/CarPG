@@ -15,6 +15,7 @@ zoom = Vector2(2, 2)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerPartyHUD" parent="CanvasLayer" instance=ExtResource("1_2p71r")]
+script = null
 
 [node name="EnemyPartyHUD" parent="CanvasLayer" instance=ExtResource("2_diyhc")]
 anchors_preset = 1

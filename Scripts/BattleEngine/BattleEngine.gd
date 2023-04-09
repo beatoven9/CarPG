@@ -91,7 +91,6 @@ func instantiate_player_fighters(player_fighters_data):
 		add_child(new_player_fighter)
 		player_fighters_list.append(new_player_fighter)
 	arrange_fighters_on_y_axis(player_fighters_list, 96, 0)
-	player_party_hud.create_party(player_fighters_list)
 
 	return player_fighters_list
 
@@ -105,7 +104,6 @@ func instantiate_enemy_members(enemy_members_data):
 		add_child(new_enemy_member)
 		enemy_members_list.append(new_enemy_member)
 	arrange_fighters_on_y_axis(enemy_members_list, 96, 0)
-	enemy_party_hud.create_party(enemy_members_list)
 
 	return enemy_members_list
 

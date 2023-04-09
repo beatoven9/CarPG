@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwrwst1clrken"]
+[gd_scene load_steps=9 format=3 uid="uid://bwrwst1clrken"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter_HUD.gd" id="1_i6g4p"]
 [ext_resource type="Shader" path="res://Shaders/Battle/UI/fighter_hud.gdshader" id="1_kxudg"]
@@ -8,22 +8,32 @@
 [ext_resource type="PackedScene" uid="uid://bmma2bgo5hf7f" path="res://Scenes/Battle/UI/boost_hud.tscn" id="5_0a2ef"]
 [ext_resource type="PackedScene" uid="uid://5k362788qlme" path="res://Scenes/Battle/UI/battle_timer_hud.tscn" id="6_vrj22"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdvw7"]
-shader = ExtResource("1_kxudg")
-shader_parameter/selected = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q53yl"]
+resource_local_to_scene = true
 shader = ExtResource("1_kxudg")
 shader_parameter/selected = false
 
 [node name="FighterHUD" type="MarginContainer"]
-material = SubResource("ShaderMaterial_qdvw7")
 offset_right = 256.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 script = ExtResource("1_i6g4p")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="BoxFrame" type="NinePatchRect" parent="."]
 texture_filter = 3
 material = SubResource("ShaderMaterial_q53yl")
+layout_mode = 2
+texture = ExtResource("2_2ch8l")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="FlashingBorder" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 3
 layout_mode = 2
 texture = ExtResource("2_2ch8l")
 patch_margin_left = 4

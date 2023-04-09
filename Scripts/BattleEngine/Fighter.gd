@@ -5,6 +5,7 @@ extends Area2D
 @onready var battle_timer = get_node("BattleTimer")
 @onready var selected_ui = get_node("SelectedSprite")
 
+var fighter_hud
 var fighter_name
 var fighter_speed
 var fighter_class
@@ -87,9 +88,11 @@ func _on_move_ready(move, target):
 	move_ready.emit(move_info)
 
 func get_unselected():
+	fighter_hud._on_fighter_unselected()
 	selected_ui.set_visible(false)
 	selected_ui.stop()
 
 func get_selected():
+	fighter_hud._on_fighter_selected()
 	selected_ui.set_visible(true)
 	selected_ui.play()

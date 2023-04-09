@@ -73,7 +73,7 @@ func prompt_for_target(move, battle_state):
 func _on_target_selection_changed(target_index):
 	var enemies = current_battle_state["enemy_fighters"]
 	# var party_members = current_battle_state["party_members"]
-	if previously_selected_target != null:
+	if is_instance_valid(previously_selected_target):
 		previously_selected_target.get_unselected()
 
 	var target = enemies[target_index]

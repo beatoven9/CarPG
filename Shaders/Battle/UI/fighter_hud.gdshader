@@ -4,7 +4,9 @@ uniform bool selected = false;
 
 void fragment() {
 	COLOR = texture(TEXTURE, UV);
+
+	//COLOR += clamp(sin(TIME * 10.0), 0, .2);
 	if (selected == true){
-		COLOR.b = 1.0;
+		COLOR += clamp(sin(TIME * 10.0), 0, .2);
 	}
 }
