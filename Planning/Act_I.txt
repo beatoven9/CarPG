@@ -4,6 +4,11 @@ What's your special skill?
 What's your favorite social media? Every answer except "I don't like social media" will result in an immediate Game Over.
 
 
+--- The rubble should not be rubble. It is a blockade into underton
+--- Because no one is supposed to see how they live down there.
+--- Like Market City. Dirty and dangerous but so alive
+
+
 --- Open Act I ---
 --- Prologue ---
 /*
@@ -258,6 +263,9 @@ Sounds from house: HIIIRraaaYaaaAA revvv yraa yraaaa vroooom!
 
 // Player follows noises up the stairs.
 // Walks into the governor and another car in a bed together.
+// 
+// Maybe they get up to his door and then here him say. "Yeah, now just put it right in my boot."
+// And they walk in and his rear trunk is wide open.
 Governor Gearson: WHAT ARE YOU TWO BOYS DOING IN HERE!
 Wheely: Oh.. we were checking to see if you needed any help!
 Governor Gearson: We don't! So get out!
