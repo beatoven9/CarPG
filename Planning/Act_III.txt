@@ -106,12 +106,13 @@ thing that came out of CAR 1: Ok I think this is a piece of his head. Is that an
 
 Wheely: We gotta get out of here...
 
-// On route to the hangar you see Percy and Tony bringing GEARSON_FRIEND and PLAYER_NAME's brother down the road.
+// En route to the hangar you see Percy and Tony bringing GEARSON_FRIEND and PLAYER_NAME's brother down the road.
 // You follow behind.
 
 // You eventually make it up to the hangar doors. 
 // You enter and there are boxes in front of you blocking you from being seen.
 // The screen pans up to reveal Percy, Tony, GEARSON_FRIEND, and PLAYER_NAME's brother in the middle of the large hangar.
+// There is a conveyor belt of cars being transported along the back wall.
 // A portal opens up and a humanoid in a black cloak walks out of it.
 
 BIG_BAD: So, you've acquired the two cars I requested?
@@ -172,27 +173,24 @@ Percy: But I've changed. I discovered things about Overton that you wouldn't bel
 
 Wheely: What are you rattling on about?
 
-Percy: Cars are being harvested... Their brains are being scooped out and discarded. Their remains being occupied by these... things.
+Percy: Cars are being harvested... Their brains are being dismantled and discarded. Their remains being occupied by these... things.
 
 Gov Gearson: This is ridiculous. He's just trying to stop us from turning him over to the Queen.
 
 PLAYER_NAME's brother: He's telling the truth.
 
-Percy: I can show you! Follow me.
+PLAYER_NAME: There's no way! That's absolutely insane!
 
+Gearson: PLAYER_NAME! Think about it! What did we just see out there? That thing that flew out of that poor car's face. 
+ 	This conveyor belt full of dead bodies that no one has addressed yet?!
+	This explains it all!
 
-final scene you think you're about to fight Percy but you walk in on him in an altercation 
-with the big bad guy. You are unseen. Maybe BIG_BAD is a human in a black cloak.
-BIG_BAD: This isn't him you fool! You picked up the wrong Gearson!
-Percy: I know...
-// Percy attacks BIG_BAD. The attack gets blocked by BIG_BAD and Percy crashes into the wall.
-Percy: Ughhhhh..
-BIG_BAD: Hahaha! You really thought that would work on ME?!
-// Turns to your little brother and Tony.
-BIG_BAD: You two aren't worth my time.
-// Whichever member of your party has most proficiency points in Mechanic will go heal Percy.
-// 
-// You converse with Percy and Tony and they ultimately join your team.
+Wheely: If this is true... All of Overton is in danger. The whole planet! We have to notify the Queen!
 
+Percy: You don't think I've tried? It's impossible to gain audience with the Queen right now.
 
+PLAYER_NAME: Even... for a Governor?
 
+Gearson: I think I have a plan, gang.
+
+---close scene ii---
