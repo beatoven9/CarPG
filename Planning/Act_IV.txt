@@ -1,7 +1,120 @@
-Act IV
+The palace guards can't be normal cars. Maybe the blue cars are the palace guards. And the whole time the 
+team thinks that they are imposters posing as palace guards.
 
-final boss is the queen
-You eventually gain audience with the queen.
+Maybe BIG_BAD actually IS the queen's henchman. And he's been using his henchmen out and about. They are variations on
+the palace guards. Maybe Palace Guards and BIG_BAD's henchmen are specially bred for fighting so they ARE allowed to harm 
+cars.
+
+---Act IV---
+---scene i---
+
+// the team goes to the palace and tries to use the Governor's influence to gain audience but it doesn't work.
+
+---close scene i---
+
+---scene ii---
+
+Wedge: Drat! What are we gonna do now?
+
+Wheely: Well... we could always break in...
+
+Percy: Good luck with that. This is the most heavily guarded palace on the planet.
+
+Gearson: I think I might know a way in.
+
+Wheely: That's what I'm talking about!
+
+Gearson: There's an escape route that we used when I was in Parliment.
+Gearson: We never used it and it's highly secret. I bet there aren't many guards stationed out there.
+Gearson: The entrance is a cave just north of the mountain.
+
+// The team enters through the north and comes to a locked door.
+
+Gearson: Don't worry fellas, I got this. If the code is still the same....
+Gearson: Dangit!! I figured they'd change the code. It's been a while.
+
+Percy: You said that you were given the code when you were a member of Parliment?
+
+Gearson: That's right...
+
+Percy: Well then, my mechanic's partner Sons should know the code.
+
+Wheely: Sons is a member of Parliment?
+
+Percy: Ah, so you know him!
+
+Wedge: Of course we know him! He had us running all around Underton running errands for him.
+
+Percy: Sounds about right...
+Percy: I think he's the only car in Underton that would believe us and trust us with the codes.
+
+---close scene ii---
+
+---scene iii---
+// You get to Matthew and Sons and find that the place looks abandoned and ransacked
+
+Wedge: What happened here?
+
+Percy: This is not good. Look around for clues but stay on the alert.
+
+Wheely: I hope Matthew and Sons are okay.
+
+// Two heavily armed robots drop from the ceiling and battle you.
+
+Wheely: Phew! That was close!
+
+Matthew: (distant) Wheely?
+
+// Matthew wheels out from behind somewhere.
+
+Wheely: Matthew! You're alive!
+
+Matthew: Barely! Thank you for dismantling the last of the assailants.
+
+Wheely: All in a day's work! Now where's Sons? We need to speak with him.
+
+Matthew: I'm afraid... They took him.
+
+Wedge: Took him!!! Do you have any idea who did this?
+
+Matthew: I don't know what it is. He wasn't like any car I'd seen, that's for sure.
+Matthew: He was wearing a black robe and when he wheeled around, he made this ominous clacking sound.
+
+Percy: BIG_BAD...
+Percy: It seems that BIG_BAD had the same idea as we did about entering the palace through the escape route.
+
+Matthew: The Queen's palace?? You've got to stop them! You might be able to catch up with them. They only left here
+	a couple of minutes ago!
+
+Wheely: Let's hit it fellas!!
+
+---close scene iii---
+
+---scene iv---
+
+// You arrive at the door to the escape route only to see that the door is wide open.
+
+Tony: Not good.
+
+Percy: Not good at all, Tony.
+Percy: We've gotta get in there before BIG_BAD gets to the Queen.
+
+// You fight your way against BIG_BAD's henchman through the escape route all the way to the throne room.
+
+---close scene iv---
+
+---scene v---
+
+
+
+// You enter the Queen's throne room.
+// There are no guards and the Queen is silent.
+
+Wheely: Thank God you're ok, your Majesty!
+
+Percy: Where are all the guards?
+
+Gearson: I have a bad feeling about this.
 
 Wheely: Your majesty, we come to you with heavy hearts.
 Wheely: For we have seen fellow cars reduced to shells of their former selves.
@@ -36,4 +149,6 @@ Percy: We've gotta get out of here! This whole cave system is about to collapse!
 // You race off to the exit.
 // As you make it out of the cave, all party members kind of spread out a bit to catch their breath and ninja
 // cars swoop in as dark blurs and carjack each one of the players. When PLAYER_CAR gets swooped, the screen goes black.
+
+---close scene v---
 ---Close of Act IV---

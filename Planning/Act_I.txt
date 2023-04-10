@@ -206,7 +206,12 @@ Wheely: Looks like the only path we haven't been able to search down is the one 
     Dad: Oh you didn't tell me you saw an accident. What happened?
     Wheely: Oh yeah, your youngest son was car-jacked.
     Dad: No he did not.. He stayed home safe with the babysitter. And anyway, car-jacking only happens in movies. You know that. Cars aren't able to bring intentional harm to other cars. It's part of our hive DNA!
-    Wheely: I promise that's what we saw! We even saw where they went! But one of the paths was blocked off so we couldn't check everywhere!
+	Wheely: It's not part of the palace guards' DNA! They are
+		allowed to harm other cars!
+	Dad: Were these cars palace guards?
+	Wheely: no...
+	Dad: Uhuh.
+    PLAYER_NAME: I promise that's what we saw! We even saw where they went! But one of the paths was blocked off so we couldn't check everywhere!
     Dad: You couldn't check everywhere?
     Dad: Is this why you were almost late to your graduation??
     // Babysitter races out of house.

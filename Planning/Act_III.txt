@@ -194,3 +194,4 @@ PLAYER_NAME: Even... for a Governor?
 Gearson: I think I have a plan, gang.
 
 ---close scene ii---
+---close Act III---
