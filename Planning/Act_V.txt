@@ -1,0 +1,11 @@
+Act V
+Next thing the player sees is a scene of PLAYER_NAME sitting in a jail cell.
+FRIEND breaks in and frees PLAYER_NAME.
+...
+
+This whole act will be mostly just finding your friends in the apocalyptic landscape.
+Along journey one of the main quest items will be to explore ancient ruins for forgotten magic. You do find the forgotten
+magic and also an ancient fertilized queen egg ready to be incubated and hatched.
+
+final boss is the demon guy/previous queen henchman
+

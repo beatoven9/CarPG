@@ -1,0 +1,39 @@
+Act IV
+
+final boss is the queen
+You eventually gain audience with the queen.
+
+Wheely: Your majesty, we come to you with heavy hearts.
+Wheely: For we have seen fellow cars reduced to shells of their former selves.
+Wheely: Cars who have had their consciousnesses ripped out so their empty carcasses could 
+	be sold on other planets to collectors.
+
+// Music fades to silence. All is silent.
+
+Queen: ...
+
+Wheely: Your majesty?
+
+// audible footsteps, If I decide to make BIGBAD a humanoid
+
+BIGBAD: She can't hear you, you know?
+BIGBAD: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
+
+Wheely: NOOOO!!!
+All: // Shouts out of despair
+
+BIGBAD: And how fitting will it be for her to be the one to take you lot out of your misery?
+
+// hand extends from cloak *snaps* 
+// queen attacks
+
+// you defeat the queen.
+Queen: YIEAHHHOOHSHSH!!!!!
+// Queen starts bashing around and the whole room starts shaking.
+
+Percy: We've gotta get out of here! This whole cave system is about to collapse!
+
+// You race off to the exit.
+// As you make it out of the cave, all party members kind of spread out a bit to catch their breath and ninja
+// cars swoop in as dark blurs and carjack each one of the players. When PLAYER_CAR gets swooped, the screen goes black.
+---Close of Act IV---
