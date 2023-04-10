@@ -43,3 +43,8 @@ Tony: Monk
 Frog:
 		Doesn't speak English. Not entirely clear if he speaks at all Is an amphibious vehicle that came out of the water.
 	Probably came from the bottom of the ocean somewhere. Has he socialized with anything before?
+
+		Perhaps Frog is the blue mage in purple robes that I made for Cantation. He speaks in a foreign language.
+	When you find the Queen egg from his people, the leader speaks this language at first too until his assistant
+	sets up the translator. The guy then tells him a bit more about Frog's people. Before this, Frog's origin
+	and why he's even with you is a total mystery.
