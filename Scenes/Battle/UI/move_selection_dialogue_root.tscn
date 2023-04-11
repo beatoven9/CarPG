@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://df0op0sihb0d7"]
+
+[ext_resource type="Script" path="res://Scripts/BattleEngine/move_selection_dialogue_root.gd" id="1_lruvl"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_jcspx"]
+[ext_resource type="PackedScene" uid="uid://bgcmapasnhqw5" path="res://Scenes/Battle/UI/move_selection_entry_box.tscn" id="3_j03dv"]
+[ext_resource type="PackedScene" uid="uid://bcmk0jg2tlydf" path="res://Scenes/Battle/UI/move_selection_sub_box.tscn" id="4_rmkti"]
+[ext_resource type="PackedScene" uid="uid://cgsr4dyrmg78w" path="res://Scenes/Battle/UI/move_selection_target_select_box.tscn" id="5_jwagt"]
+
+[node name="MoveSelectionDialogue" type="MarginContainer"]
+visible = false
+texture_filter = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+offset_right = 252.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_lruvl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_jcspx")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Entry" parent="MarginContainer" instance=ExtResource("3_j03dv")]
+visible = false
+layout_mode = 2
+item_count = 4
+item_0/text = " Attack"
+item_1/text = " Magic"
+item_2/text = " Abilities"
+item_3/text = " Items"
+
+[node name="Magic" parent="MarginContainer" instance=ExtResource("4_rmkti")]
+visible = false
+layout_mode = 2
+fixed_column_width = 72
+item_0/text = " Fire"
+item_1/text = " Blizzard"
+item_2/text = " Thunder"
+
+[node name="Abilities" parent="MarginContainer" instance=ExtResource("5_jwagt")]
+visible = false
+layout_mode = 2
+
+[node name="Items" parent="MarginContainer" instance=ExtResource("5_jwagt")]
+visible = false
+layout_mode = 2
+
+[node name="Flex" parent="MarginContainer" instance=ExtResource("5_jwagt")]
+visible = false
+layout_mode = 2
+
+[node name="EnemyTargets" parent="MarginContainer" instance=ExtResource("5_jwagt")]
+visible = false
+layout_mode = 2
+
+[node name="PlayerTargets" parent="MarginContainer" instance=ExtResource("5_jwagt")]
+visible = false
+layout_mode = 2
+
+[node name="Targets" parent="MarginContainer" instance=ExtResource("5_jwagt")]
+visible = false
+layout_mode = 2

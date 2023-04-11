@@ -15,3 +15,156 @@ Magic - fire, ice, thunder, etc (This will double for black, blue mage)
 Necromancy - This is available for necromancers that already have their beast raised. It is a move list of the raised.
 Abilites - repair, steal, jump
 Item - usable items in this list
+
+
+******************************
+******MOVE*SELECT*MENU********
+******************************
+
+
+Perhaps we have the dialogue boxes named:
+	DialogueBox_L1
+	DialogueBox_L2
+	DialogueBox_L3
+	DialogueBox_L4
+	etc...
+
+
+	Then when a move is selected that needs a subdir it makes a request to the next dialogue box in the list
+	with a payload containing the options that need to be displayed on the DialogueBox. This next dialogue box
+	will return the information that the first DialogueBox requested and with this information, the first
+	DialogueBox creates the move and sends it back to the requester of the move. We can have these all connected to request.
+
+
+
+	When an item from the root list is selected, that item is checked to see if sub_options == null: 
+	If it is null, then the target selection is triggered.
+
+	If it is instead a list, we iterate through the list and add the item.option_string to the itemList ui node.
+	A dialogue box is popped out of the list and is populated with the option_strings. The item_selected (enter key)
+	signal is connected to a method called Dialogue2ToDialogue1. This method will 
+
+	Maybe we have a global selection_list variable on a Move.
+	When a move is requested, we use the character class to get a list of moves of type Move that are available.
+	We use that list to query for a move in the root dialogue box. This returns and connects to a method that creates
+	a new instance of the Move class that was chosen. This new move class has a method on it that will be used
+	to populate all of the chosen options and save it on this instance of the Move. 
+
+	Maybe each DialogueBox has a property on it that is used as a unique identifier for a specific option?
+	When we query the Move for its options list, create a dictionary of UUIDs for keys and the option name for
+	values and store it in a property. 
+
+
+	Actually.... What if each Move, had a method which was used to create its dialogue box structure?
+	So we have the root dialogue box that has four sub-boxes. One for Magic, one for Abilities, one for Items, and one
+	that can be used flexibly.
+
+	Maybe.. a list can be kept called box_history. this will contain a list of the previous dialogue boxes. Everytime a
+	dialogue box is connected and we start listening for it to respond, we add that dialogue box to the end of the list.
+	When the "back" button is pressed, the current dialogue box gets popped off, and the last item in the list becomes the 
+	current one.
+
+
+	------This is the one.
+	When a class is queried for moves. An AvailableMoves object will be created with a property called "attack" which
+	will be a Move that is the character's base attack move. There will be a property called Magic which will contain
+	a list of all of the SpellMoves a character can perform. It will also have similar list structures for the 
+	Abilities and Items categories. This object will be sent to the Fighter who queried for available moves.
+	When the Fighter receives this, he calls _request_move_from_player() method which creates a new DialogueBox object,
+	childs it to the propery node on the canvas layer and then saves a reference to the object in a property. The box then has
+	its _populate_dialogue_options() method called with the AvailableMoves object passed as a parameter. This method will
+	populate all the DialogueBoxes in the tree with the appropriate moves.
+
+	(in the case of Magic/Abilities/etc,
+	a dictionary with a single key will be created with the move selection index as the value. {"magic": selection_idx})
+
+	This AvailableMoves object will be passed to the root dialogueBox object. This root box is mostly static. There are 4
+	options always present and an additional one that is optionally present. This DialogueBox has it's own script. It will
+	have five distinct signals. One for each option.
+
+	The AvailableMoves object will be stored as a property on the root DialogueBox. This box will have individual
+	methods for Attack, Magic, Abilities, Items, and the optional 5th selection. 
+		-Attack will prompt the user for a target. The _on_target_selected method returns the move to the Fighter.
+		-Magic will populate the 'Magic' DialogueBox with available spells and wait for a response.
+			-The Magic subselection dialogue box will return the index of it's selection to a specific event handler
+			 on the root DialogueBox object that takes the index and puts it in a single item dictionary of form:
+				{
+					"move": {
+						"magic": selection_idx
+					}
+				} 
+					or 
+				{
+					"move": "attack"
+				} 
+					or 
+				{
+					"move": {
+						"item": selection_idx
+					}
+				}
+			* This handler then passes this dictionary to a method on the AvailableMoves object (which has a
+			list of all Move classes) It uses this dictionary to create a new instance of this selected Move
+			with the default construction of the class. This move is then set as the selected_move property on the 
+			root dialogue box. And a DialogueBox who is the child of this one is opened for target selection.
+			we can use the 'selected_move' property to inform the dialogue box of its options. If the move hits
+			all opponents, I still want there to be a target selection box for consistency. Also I want magic 
+			moves to have the option to hit all opponents for weaker or one opponent for stronger.
+
+		-Abilities will populate the 'Abilities' DialogueBox with available spells and wait for a response.
+		-Items will populate the 'Items' DialogueBox with available spells and wait for a response.
+		-final option will do the same as Magic, Abilities, and Items.
+	
+
+
+	MoveResponse:
+		var user: string
+		var target: [string, string, string]
+		var move: 
+
+
+	Move:
+		var move_name: string
+		var base_power: int
+		var sub_options: list = [
+			MoveOptions,
+			MoveOptions,
+			MoveOptions
+		]
+
+		func create_new(move_name, base_power, sub_options):
+			# set stuff
+
+
+	move_name = "punch attack"
+	base_power = 90
+
+	sub_options = 
+
+
+	MoveOptions:
+
+	var option_string = "move_name"
+
+	var options: list = [
+		MoveOptions,
+		MoveOptions,
+		MoveOptions,
+	]
+
+	func create_new(move_name, options):
+		option_string = move_name
+		options = options
+
+
+class FireMagic:
+	var move_name = "Fire"
+	var base_power = 90
+	var sub_options = [
+		
+	]
+
+
+
+
+
