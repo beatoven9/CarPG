@@ -15,5 +15,5 @@ func _ready():
 
 	fighter_hud = new_fighter_hud
 
-#func request_move(battle_state):
-#	pass
+func _on_death():
+	super._on_death()

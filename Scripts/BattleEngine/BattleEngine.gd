@@ -18,11 +18,20 @@ func get_living_fighters():
 
 	var living_players = []
 	for fighter in global_fighters_dict["players"]:
-		living_players.append(fighter)	
+		if fighter.dead == false:
+			living_players.append(fighter)	
 
 	var living_enemies = []
 	for fighter in global_fighters_dict["enemies"]:
-		living_enemies.append(fighter)	
+		if fighter.dead == false:
+			living_enemies.append(fighter)	
+
+	var living_fighters_dict = {
+		"players": living_players,
+		"enemies": living_enemies
+	}
+
+	return living_fighters_dict
 
 func start_engine(
 	player_fighters_data,
@@ -174,3 +183,15 @@ func apply_move(move_info):
 func _handle_fighter_death(fighter):
 
 	print(fighter.fighter_name, " HAS DIED")
+	check_for_battle_over_state()
+
+func check_for_battle_over_state():
+	var living_fighters = get_living_fighters()
+	print(living_fighters)
+	
+	if len(living_fighters["players"]) <= 0:
+		print("GAME OVER")
+	elif len(living_fighters["enemies"]) <= 0:
+		print("BATTLE WON!!!")
+
+
