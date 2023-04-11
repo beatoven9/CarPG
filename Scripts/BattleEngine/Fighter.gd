@@ -14,6 +14,8 @@ var class_proficiency
 
 var max_health
 var current_health
+var max_boost
+var current_boost
 
 var dead = false
 
@@ -40,6 +42,8 @@ func set_data(
 
 	max_health = data["max_health"]
 	current_health = max_health
+	max_boost = data["max_boost"]
+	current_boost = max_boost
 
 func _ready():
 	battle_timer.battle_timer_out.connect(_timer_out)
@@ -53,6 +57,7 @@ func update_timer_bar():
 
 func update_hud():
 	fighter_hud.update_health_bar(current_health, max_health)
+	fighter_hud.update_boost_bar(current_boost, max_boost)
 	
 
 func _process(_delta):
@@ -147,3 +152,7 @@ func _on_death():
 	health_changed.emit(current_health, max_health)
 	battle_timer.stop()
 	fighter_death.emit(self)	
+
+func expend_bp(bp_cost):
+	current_boost -= bp_cost	
+	boost_changed.emit(current_boost, max_boost)

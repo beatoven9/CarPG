@@ -172,6 +172,7 @@ func apply_move(move_info):
 	var user = move_info["user"]
 	var target = move_info["target"]
 
+	user.expend_bp(move.bp_cost)
 
 	target.handle_move_receipt(move)
 
