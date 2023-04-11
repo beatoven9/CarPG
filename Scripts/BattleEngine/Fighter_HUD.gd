@@ -13,11 +13,13 @@ var fighter_name
 func update_timer_bar(value):
 	battle_timer_progress.value = value
 
-func update_boost_bar(value):
-	boost_bar.value = value
+func update_boost_bar(current_boost, max_boost):
+	var displayed_boost = (float(current_boost) / float(max_boost)) * 100.0
+	boost_bar.value = displayed_boost
+	var boost_label = str(current_boost) + "/" + str(max_boost)
+	boost_bar_label.set_text(boost_label)
 
 func update_health_bar(current_health, max_health):
-	print(current_health, "/", max_health)
 	var displayed_health = (float(current_health) / float(max_health)) * 100.0
 	health_bar.value = displayed_health
 	var health_label = str(current_health) + "/" + str(max_health)
@@ -30,8 +32,6 @@ func set_fighter_name(this_fighter_name):
 		fighter_name_label.set_text(fighter_name)
 	
 func _on_fighter_selected():
-	# I should just make a border that always flashes.
-	# It'll be a texture that I make visible and invisible
 	box_frame.material.set_shader_parameter("selected", true)
 
 func _on_fighter_unselected():

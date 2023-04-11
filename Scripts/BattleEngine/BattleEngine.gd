@@ -182,12 +182,10 @@ func apply_move(move_info):
 
 func _handle_fighter_death(fighter):
 
-	print(fighter.fighter_name, " HAS DIED")
 	check_for_battle_over_state()
 
 func check_for_battle_over_state():
 	var living_fighters = get_living_fighters()
-	print(living_fighters)
 	
 	if len(living_fighters["players"]) <= 0:
 		print("GAME OVER")
