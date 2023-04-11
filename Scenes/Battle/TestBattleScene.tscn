@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://crhf1b4ede2qk"]
+[gd_scene load_steps=5 format=3 uid="uid://crhf1b4ede2qk"]
 
 [ext_resource type="PackedScene" uid="uid://puqlsbb83hsx" path="res://Scenes/Battle/UI/player_party_hud.tscn" id="1_2p71r"]
 [ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/TileMapTerrain.tscn" id="1_b2mwo"]
 [ext_resource type="PackedScene" uid="uid://nxi76mylq08e" path="res://Scenes/Battle/UI/enemy_party_hud.tscn" id="2_diyhc"]
 [ext_resource type="Script" path="res://Scripts/BattleEngine/BattleEngine.gd" id="2_n0sb6"]
-[ext_resource type="PackedScene" uid="uid://b0jlthqfv2n2a" path="res://Scenes/Battle/UI/MoveSelection/move_selection_dialogue_root.tscn" id="4_ujyn3"]
 
 [node name="TestBattleScene" type="Node2D"]
 texture_filter = 1
@@ -24,18 +23,6 @@ anchor_right = 1.0
 offset_left = -304.0
 offset_right = 0.0
 grow_horizontal = 0
-
-[node name="MoveSelectionBoxes" type="Control" parent="CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MoveSelectionDialogue" parent="CanvasLayer" instance=ExtResource("4_ujyn3")]
-script = null
 
 [node name="MoveSelectionControl" type="Control" parent="CanvasLayer"]
 layout_mode = 3
