@@ -13,6 +13,13 @@ var move_queue = []
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
 
+func get_living_fighters():
+	fighters_list = global_player_fighters + global_enemy_fighters
+	
+	var living_fighters = []
+	for fighter in global_player_fighters:
+		
+
 func start_engine(
 	player_fighters_data,
 	enemy_members_data,
@@ -26,6 +33,11 @@ func start_engine(
 	)
 	global_enemy_fighters = enemy_members_list
 
+	global_fighters_list = player_fighters_list + enemy_members_list
+
+	for fighter in global_fighters_list:
+		fighter.fighter_death.connect(_handle_fighter_death)
+	
 	arrange_fighters_on_x_axis(player_fighters_list, enemy_members_list, 256)
 
 	start_play(player_fighters_list, enemy_members_list)
@@ -79,7 +91,7 @@ func arrange_fighters_on_x_axis(player_list, enemy_list, available_space):
 		enemy_member.position.x = space_segment_size
 
 func start_play(player_fighters, enemy_members):
-	global_fighters_list = player_fighters + enemy_members
+	update_fighter_huds()
 
 	initiate_atb_meters(player_fighters)
 	initiate_atb_meters(enemy_members)
@@ -91,6 +103,10 @@ func initiate_atb_meters(
 		member.ready_to_move.connect(request_move)
 		member.move_ready.connect(receive_move_info)
 		member.start_battle_timer()
+
+func update_fighter_huds():
+	for fighter in global_fighters_list:
+		fighter.update_hud()
 
 func get_battle_state():
 	var battle_state = {
@@ -141,5 +157,8 @@ func apply_move(move_info):
 	# user.play_attack_animation()
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
 
+func _handle_fighter_death(fighter):
+# 	var fighter_index = global_fighters_list.find(fighter)
+# 	global_fighters_list.remove_at(fighter_index)
 
-
+	print(fighter.fighter_name, " HAS DIED")

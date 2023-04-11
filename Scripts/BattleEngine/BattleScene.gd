@@ -20,14 +20,16 @@ func load_enemy_data():
 		"texture": texture1,
 		"speed": 10,
 		"fighter_class": GunnerClass,
-		"class_proficiency": 30
+		"class_proficiency": 30,
+		"max_health": 20
 	}
 	var enemy_member2 = {
 		"name": "Big Bad Guy b",
 		"texture": texture1,
 		"speed": 10,
 		"fighter_class": GunnerClass,
-		"class_proficiency": 30
+		"class_proficiency": 30,
+		"max_health": 20
 	}
 
 	var enemy_members_data = [enemy_member1, enemy_member2]
@@ -40,7 +42,8 @@ func load_player_data():
 		"texture": texture1,
 		"speed": 20,
 		"fighter_class": GunnerClass,
-		"class_proficiency": 30
+		"class_proficiency": 30,
+		"max_health": 5,
 	}
 
 	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
@@ -50,6 +53,7 @@ func load_player_data():
 		"speed": 12,
 		"fighter_class": BlackMageClass,
 		"class_proficiency": 30,
+		"max_health": 5,
 	}
 
 	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
@@ -59,6 +63,7 @@ func load_player_data():
 		"speed": 16,
 		"fighter_class": GunnerClass,
 		"class_proficiency": 30,
+		"max_health": 5,
 	}
 
 	var player_fighters_data = [

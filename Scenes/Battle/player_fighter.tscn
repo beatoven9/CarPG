@@ -8,3 +8,10 @@ script = ExtResource("2_5c7u5")
 
 [node name="SelectedSprite" parent="." index="3"]
 visible = false
+
+[node name="DamageHUD" parent="." index="4"]
+anchors_preset = 15
+offset_left = 30.0
+offset_top = -8.99989
+offset_right = 48.0
+offset_bottom = 14.0001

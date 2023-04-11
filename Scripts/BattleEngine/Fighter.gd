@@ -4,6 +4,7 @@ extends Area2D
 @onready var collision_shape2d: CollisionShape2D = get_node("CollisionShape2D")
 @onready var battle_timer = get_node("BattleTimer")
 @onready var selected_ui = get_node("SelectedSprite")
+@onready var damage_hud = $DamageHUD
 
 var fighter_hud
 var fighter_name
@@ -11,12 +12,18 @@ var fighter_speed
 var fighter_class
 var class_proficiency
 
+var max_health
+var current_health
+
+var dead = false
+
 signal move_ready(move, user, target)
 signal ready_to_move
 
 signal health_changed(value)
 signal timer_changed(value)
 signal boost_changed(value)
+signal fighter_death(fighter)
 
 func get_battle_timer_length():
 	var timer_length = (100.0/fighter_speed)
@@ -31,6 +38,9 @@ func set_data(
 	fighter_class = data["fighter_class"]
 	class_proficiency = data["class_proficiency"]
 
+	max_health = data["max_health"]
+	current_health = max_health
+
 func _ready():
 	battle_timer.battle_timer_out.connect(_timer_out)
 	set_collision_box_size()
@@ -40,6 +50,10 @@ func update_timer_bar():
 	var max_time = get_battle_timer_length()
 	var timer_bar_val = 100 - ((time_left / max_time) * 100)
 	timer_changed.emit(timer_bar_val)
+
+func update_hud():
+	fighter_hud.update_health_bar(current_health, max_health)
+	
 
 func _process(_delta):
 	update_timer_bar()
@@ -77,16 +91,38 @@ func resume_timer():
 func handle_move_receipt(move):
 	# This code should be using fighter stats to determine
 	# how much damage should be done
+
+	var damage_inflicted
+	var critical
+
 	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
-		var damage_inflicted = (move.base_power / 10)
-		health_changed.emit(-damage_inflicted)	
+		damage_inflicted = (move.base_power / 10)
 
 	elif move.move_type == MOVE_TYPE.BLACK_MAGIC_ATTACK:
-		var damage_inflicted = (move.base_power / 10)
-		health_changed.emit(-damage_inflicted)	
+		damage_inflicted = (move.base_power / 10)
+
+
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+
+	critical = false if (random.randfn() < 0) else true
+	
+	if critical:
+		damage_inflicted += 10
+
+	handle_damage(damage_inflicted, critical)
+
+func handle_damage(damage_inflicted, critical):
+
+	damage_hud.display_damage(damage_inflicted, critical)
+	current_health -= damage_inflicted
+
+	health_changed.emit(current_health, max_health)	
+
+	if current_health <= 0:
+		_on_death()	
 
 func _on_move_ready(move, target):
-	print("MOVE: ", move.move_name)
 	var move_info = {
 		"move": move,
 		"user": self,
@@ -103,3 +139,11 @@ func get_selected():
 	fighter_hud._on_fighter_selected()
 	selected_ui.set_visible(true)
 	selected_ui.play()
+
+func _on_death():
+	sprite2d.set_visible(false)	
+	current_health = 0
+	dead = true
+	health_changed.emit(current_health, max_health)
+	battle_timer.stop()
+	fighter_death.emit(self)	

@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://etca8w110ckb"]
+[gd_scene load_steps=17 format=3 uid="uid://etca8w110ckb"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="1_ljcyq"]
 [ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Car_Sprites/Sedan_a.png" id="2_a0v5c"]
 [ext_resource type="PackedScene" uid="uid://cp3nxeddaosie" path="res://Scenes/Battle/UI/battle_timer.tscn" id="3_d0vl4"]
 [ext_resource type="Texture2D" uid="uid://ccp8lrhyjhao1" path="res://Sprites/UI_Sprites/ArrowAnim.png" id="4_4smwk"]
+[ext_resource type="Shader" path="res://Shaders/Battle/UI/blinking.gdshader" id="5_cmjfo"]
+[ext_resource type="FontFile" path="res://Fonts/poco/Poco.tres" id="6_acy5p"]
+[ext_resource type="Script" path="res://Scripts/BattleEngine/DamageHUD.gd" id="7_u2klh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlpd"]
 size = Vector2(20, 31)
@@ -58,6 +61,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8aanr"]
+shader = ExtResource("5_cmjfo")
+shader_parameter/critical = false
+
 [node name="Fighter" type="Area2D"]
 texture_filter = 3
 rotation = -1.5708
@@ -78,3 +85,22 @@ rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_wy7hk")
 animation = &"ArrowAnimation"
 frame_progress = 0.454628
+
+[node name="DamageHUD" type="Label" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8aanr")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -13.9999
+offset_right = 60.0
+offset_bottom = 12.0001
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_fonts/font = ExtResource("6_acy5p")
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_u2klh")
