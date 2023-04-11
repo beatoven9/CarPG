@@ -13,61 +13,23 @@ var move_queue = []
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
 
+func start_engine(
+	player_fighters_data,
+	enemy_members_data,
+	items_list
+):
+	var player_fighters_list = instantiate_player_fighters(player_fighters_data)
+	global_player_fighters = player_fighters_list
 
-func load_enemy_data():
-	var texture1 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
-	var enemy_member1 = {
-		"name": "Big Bad Guy b",
-		"texture": texture1,
-		"speed": 10,
-		"fighter_class": GunnerClass,
-		"class_proficiency": 30
-	}
-	var enemy_member2 = {
-		"name": "Big Bad Guy a",
-		"texture": texture1,
-		"speed": 10,
-		"fighter_class": GunnerClass,
-		"class_proficiency": 30
-	}
+	var enemy_members_list = instantiate_enemy_members(
+		enemy_members_data
+	)
+	global_enemy_fighters = enemy_members_list
 
-	var enemy_members_data = [enemy_member1, enemy_member2]
-	return enemy_members_data
+	arrange_fighters_on_x_axis(player_fighters_list, enemy_members_list, 256)
 
-func load_player_data():
-	var texture1 = load("res://Sprites/Car_Sprites/Sedan_a.png")
-	var player_fighter1 = {
-		"name": "Rusty",
-		"texture": texture1,
-		"speed": 20,
-		"fighter_class": GunnerClass,
-		"class_proficiency": 30
-	}
+	start_play(player_fighters_list, enemy_members_list)
 
-	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
-	var player_fighter2 = {
-		"name": "Wheely",
-		"texture": texture2,
-		"speed": 12,
-		"fighter_class": BlackMageClass,
-		"class_proficiency": 30,
-	}
-
-	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
-	var player_fighter3 = {
-		"name": "Gov. Gearwright",
-		"texture": texture3,
-		"speed": 16,
-		"fighter_class": GunnerClass,
-		"class_proficiency": 30,
-	}
-
-	var player_fighters_data = [
-		player_fighter1,
-		player_fighter2,
-		player_fighter3
-	]
-	return player_fighters_data
 
 func arrange_fighters_on_y_axis(
 	fighter_list: Array,
@@ -180,21 +142,4 @@ func apply_move(move_info):
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
 
 
-func _ready():
 
-	var player_fighters_data = load_player_data()
-	var player_fighters_list = instantiate_player_fighters(player_fighters_data)
-	global_player_fighters = player_fighters_list
-
-	var enemy_members_data = load_enemy_data()
-	var enemy_members_list = instantiate_enemy_members(
-		enemy_members_data
-	)
-	global_enemy_fighters = enemy_members_list
-
-	arrange_fighters_on_x_axis(player_fighters_list, enemy_members_list, 256)
-
-	start_play(player_fighters_list, enemy_members_list)
-
-func _process(_delta):
-	pass

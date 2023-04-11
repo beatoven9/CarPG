@@ -19,7 +19,7 @@ signal timer_changed(value)
 signal boost_changed(value)
 
 func get_battle_timer_length():
-	var timer_length = fighter_speed * .50
+	var timer_length = (100.0/fighter_speed)
 	return timer_length
 
 func set_data(
