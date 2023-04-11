@@ -233,12 +233,14 @@ func prompt_for_target():
 			target_box.add_item(enemy.fighter_name)
 	elif selected_move.friendly == false:
 		for enemy in current_battle_state["enemy_fighters"]:
-			target_list.append(enemy)
-			target_box.add_item(enemy.fighter_name)
+			if enemy.dead == false:
+				target_list.append(enemy)
+				target_box.add_item(enemy.fighter_name)
 
 		for player in current_battle_state["player_fighters"]:
-			target_list.append(player)
-			target_box.add_item(player.fighter_name)
+			if player.dead == false:
+				target_list.append(player)
+				target_box.add_item(player.fighter_name)
 
 	target_box.grab_focus()
 	target_box.select(0)
