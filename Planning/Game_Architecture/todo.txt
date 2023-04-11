@@ -5,4 +5,11 @@ next, I should create one or two more FighterClasses for testing Magic and a few
 
 I also need to add player names to the move selection box.
 
+I think, where magic learned while using a class weapon is retained when you don't have the weapon equipped
+	but it is much less powerful and much less boost efficient might be cool. So it's still useable.
 
+
+I think I'm gonna make blue mage more intuitive. There's gonna be some sort of pokedex type of thing for 
+learnable moves. So when you see a learnable move is used, you get a notification that it is learnable
+and your move_dex is updated. When you look through your move dex, you can see all the moves you've seen
+with the monsters that can learn them. Maybe there could be a move dex and a monster dex.

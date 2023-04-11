@@ -49,7 +49,7 @@ func load_player_data():
 		"name": "Wheely",
 		"texture": texture2,
 		"speed": 12,
-		"fighter_class": GunnerClass,
+		"fighter_class": BlackMageClass,
 		"class_proficiency": 30,
 	}
 
@@ -175,11 +175,8 @@ func apply_move(move_info):
 	target.handle_move_receipt(move)
 
 	resume_timers()
-	# user.play_attack_animation()
-	#
-	# THIS IS WHERE I LEFT OFF ^^^
 
-		
+	# user.play_attack_animation()
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
 
 

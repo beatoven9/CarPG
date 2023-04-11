@@ -75,11 +75,18 @@ func resume_timer():
 	battle_timer.set_paused(false)
 
 func handle_move_receipt(move):
+	# This code should be using fighter stats to determine
+	# how much damage should be done
 	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
 		var damage_inflicted = (move.base_power / 10)
 		health_changed.emit(-damage_inflicted)	
 
+	elif move.move_type == MOVE_TYPE.BLACK_MAGIC_ATTACK:
+		var damage_inflicted = (move.base_power / 10)
+		health_changed.emit(-damage_inflicted)	
+
 func _on_move_ready(move, target):
+	print("MOVE: ", move.move_name)
 	var move_info = {
 		"move": move,
 		"user": self,
