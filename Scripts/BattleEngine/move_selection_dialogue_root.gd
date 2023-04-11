@@ -130,10 +130,10 @@ func _on_entry_level_selection(idx):
 
 
 func prompt_for_magic(spells):
-	box_stack.push_back(magic_box)
 	magic_box.clear()
 
 	if len(spells) > 0:
+		box_stack.push_back(magic_box)
 		for spell in spells:
 			magic_box.add_item(spell.move_name)
 
@@ -152,10 +152,10 @@ func _on_magic_selected(magic_idx):
 
 
 func prompt_for_ability(abilities_list):
-	box_stack.push_back(abilities_box)
 	abilities_box.clear()
 	
 	if len(abilities_list) > 0:
+		box_stack.push_back(abilities_box)
 
 		for ability in abilities_list:
 			abilities_box.add_item(ability.move_name)
@@ -175,10 +175,10 @@ func _on_ability_selected(ability_idx):
 
 
 func prompt_for_item(items_list):
-	box_stack.push_back(items_box)
 	items_box.clear()
 
 	if len(items_list) > 0:
+		box_stack.push_back(items_box)
 		
 		for item in items_list:
 			items_box.add_item(item.item_name)
