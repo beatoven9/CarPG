@@ -13,6 +13,7 @@ var move_queue = []
 
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
+@onready var move_announcer_box = get_tree().get_root().get_child(0).get_node("CanvasLayer/MoveAnnouncerBox")
 
 func get_living_fighters():
 
@@ -172,9 +173,17 @@ func apply_move(move_info):
 	var user = move_info["user"]
 	var target = move_info["target"]
 
-	user.expend_bp(move.bp_cost)
+	var success = user.expend_bp(move.bp_cost)
+	# critical hits should be calculated here. That way, we can keep the randomizer on a property here.
+	# Also, we have access to all of the information we need here.
 
-	target.handle_move_receipt(move)
+	move_info["success"] = success
+
+	if success:
+		target.handle_move_receipt(move)
+		move_announcer_box.make_announcement(move_info)
+	else:
+		move_announcer_box.make_announcement(move_info)
 
 	resume_timers()
 

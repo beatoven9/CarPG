@@ -150,6 +150,9 @@ BATTLE MECHANICS IDEAS / LEVELING MECHANICS
     then path finds it's way back to being in the circle. (Or it's hard coded.)
 
 
+	boost is expendable however it regenerates. You start every battle with a full bar (maybe same as your overworld boost)
+	boost regenerates through the battle too. This way you need to manage boost regen/capacity/bpCost.
+
 ------------------------------------------------------------------------------------
 ECONOMY MECHANICS
 ------------------------------------------------------------------------------------

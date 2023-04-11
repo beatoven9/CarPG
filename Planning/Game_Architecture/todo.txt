@@ -1,6 +1,15 @@
 overhauled user prompt box has just been completed as has the back functionality.
 
-hook up boost/pp usage to magic and abilities
+So the dialogue box on the bottom right tells the moves as they are happening. Including failures and crit notifs.
+This needs to be linked in with signals from the ends of animations too...
+
+The move itself should have a get_attack_string(user_name, target_name, critical, success) method that returns 
+a string to be fed to the dialogue box.
+
+when updating the dialogue box, we will get the current string and then add the new string to the front with a few
+newlines in between and set that as the new text. We will probably also have to put this label inside a vertical
+scrolling container
+
 
 I think, magic learned while using a class weapon is retained when you don't have the weapon equipped
 	but it is much less powerful and much less boost efficient might be cool. So it's still useable.

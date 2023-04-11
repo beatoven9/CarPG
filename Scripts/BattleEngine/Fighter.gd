@@ -154,5 +154,11 @@ func _on_death():
 	fighter_death.emit(self)	
 
 func expend_bp(bp_cost):
-	current_boost -= bp_cost	
-	boost_changed.emit(current_boost, max_boost)
+	if current_boost > bp_cost:
+		current_boost -= bp_cost	
+		boost_changed.emit(current_boost, max_boost)
+		return true
+	else:
+		current_boost = 0
+		boost_changed.emit(current_boost, max_boost)
+		return false

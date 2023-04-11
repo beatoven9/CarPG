@@ -117,6 +117,13 @@ Perhaps we have the dialogue boxes named:
 	
 
 
+------------------------------------
+There will be a move announcer in the bottom right of the viewport.
+There will be a different one for success and failure of moves.
+------------------------------------
+
+
+
 	MoveResponse:
 		var user: string
 		var target: [string, string, string]
