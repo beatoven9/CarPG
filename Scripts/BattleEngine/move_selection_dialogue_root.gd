@@ -96,14 +96,18 @@ func _on_entry_level_selection(idx):
 func prompt_for_magic(spells):
 	magic_box.clear()
 
-	for spell in spells:
-		magic_box.add_item(spell.move_name)
+	if len(spells) > 0:
+		for spell in spells:
+			magic_box.add_item(spell.move_name)
 
-	close_all_boxes()
+		close_all_boxes()
 
-	magic_box.grab_focus()
-	magic_box.select(0)
-	magic_box.set_visible(true)
+		magic_box.grab_focus()
+		magic_box.select(0)
+		magic_box.set_visible(true)
+	else:
+		# play a noise and briefly change the color of something to red
+		print("NO MAGIC")
 
 func _on_magic_selected(magic_idx):
 	selected_move = magic_spells[magic_idx]
@@ -112,15 +116,20 @@ func _on_magic_selected(magic_idx):
 
 func prompt_for_ability(abilities_list):
 	abilities_box.clear()
+	
+	if len(abilities_list) > 0:
 
-	for ability in abilities_list:
-		abilities_box.add_item(ability.move_name)
+		for ability in abilities_list:
+			abilities_box.add_item(ability.move_name)
 
-	close_all_boxes()
+		close_all_boxes()
 
-	abilities_box.grab_focus()
-	abilities_box.select(0)
-	abilities_box.set_visible(true)
+		abilities_box.grab_focus()
+		abilities_box.select(0)
+		abilities_box.set_visible(true)
+
+	else:
+		print("No abilities")
 
 func _on_ability_selected(ability_idx):
 	selected_move = abilities[ability_idx]
@@ -130,14 +139,19 @@ func _on_ability_selected(ability_idx):
 func prompt_for_item(items_list):
 	items_box.clear()
 
-	for item in items_list:
-		items_box.add_item(item.item_name)
+	if len(items_list) > 0:
+		
+		for item in items_list:
+			items_box.add_item(item.item_name)
 
-	close_all_boxes()
+		close_all_boxes()
 
-	items_box.grab_focus()
-	items_box.select(0)
-	items_box.set_visible(true)
+		items_box.grab_focus()
+		items_box.select(0)
+		items_box.set_visible(true)
+
+	else:
+		print("No items")
 
 func _on_item_selected(item_idx):
 	selected_move = items[item_idx]
