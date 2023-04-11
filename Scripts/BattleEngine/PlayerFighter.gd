@@ -4,7 +4,8 @@ extends "res://Scripts/BattleEngine/Fighter.gd"
 @onready var fighter_hud_resource = preload("res://Scenes/Battle/UI/fighter_hud.tscn")
 
 @onready var move_select_box_parent = get_tree().get_root().get_child(0).get_node("CanvasLayer/MoveSelectionControl")
-@onready var move_selection_box = preload("res://Scenes/Battle/UI/move_selection_dialogue_root.tscn")
+# @onready var move_selection_box = preload("res://Scenes/Battle/UI/move_selection_dialogue_root.tscn")
+@onready var move_selection_box = preload("res://Scenes/Battle/UI/MoveSelection/move_selection_dialogue_root.tscn")
 
 var dialogue_box
 
@@ -34,6 +35,7 @@ func request_move(battle_state):
 	var available_moves = get_available_moves()
 
 	dialogue_box.prompt_for_move(
+		self,
 		available_moves,
 		battle_state
 	)

@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0jlthqfv2n2a"]
+
+[ext_resource type="Script" path="res://Scripts/BattleEngine/move_selection_dialogue_root.gd" id="1_lruvl"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_jcspx"]
+[ext_resource type="FontFile" path="res://Fonts/poco/Poco.tres" id="3_nhecg"]
+[ext_resource type="PackedScene" uid="uid://re24n1rxutwn" path="res://Scenes/Battle/UI/MoveSelection/move_selection_entry_box.tscn" id="3_w2071"]
+[ext_resource type="Texture2D" uid="uid://nyfk3oblp3dk" path="res://Sprites/DriveTrain.png" id="3_yavma"]
+[ext_resource type="PackedScene" path="res://Scenes/Battle/UI/MoveSelection/move_selection_sub_box.tscn" id="4_bebub"]
+[ext_resource type="PackedScene" path="res://Scenes/Battle/UI/MoveSelection/move_selection_target_select_box.tscn" id="5_c52cw"]
+
+[node name="MoveSelectionDialogue" type="MarginContainer"]
+visible = false
+texture_filter = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+offset_right = 252.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_lruvl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_jcspx")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="FighterNameMargin" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/FighterNameMargin"]
+layout_mode = 2
+texture = ExtResource("3_yavma")
+
+[node name="FighterNameLabel" type="Label" parent="VBoxContainer/FighterNameMargin"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_nhecg")
+text = "fighter"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Entry" parent="VBoxContainer/MarginContainer" instance=ExtResource("3_w2071")]
+visible = false
+layout_mode = 2
+item_count = 4
+item_0/text = " Attack"
+item_1/text = " Magic"
+item_2/text = " Abilities"
+item_3/text = " Items"
+
+[node name="Magic" parent="VBoxContainer/MarginContainer" instance=ExtResource("4_bebub")]
+visible = false
+layout_mode = 2
+fixed_column_width = 72
+item_0/text = " Fire"
+item_1/text = " Blizzard"
+item_2/text = " Thunder"
+
+[node name="Abilities" parent="VBoxContainer/MarginContainer" instance=ExtResource("5_c52cw")]
+visible = false
+layout_mode = 2
+
+[node name="Items" parent="VBoxContainer/MarginContainer" instance=ExtResource("5_c52cw")]
+visible = false
+layout_mode = 2
+
+[node name="Flex" parent="VBoxContainer/MarginContainer" instance=ExtResource("5_c52cw")]
+visible = false
+layout_mode = 2
+
+[node name="EnemyTargets" parent="VBoxContainer/MarginContainer" instance=ExtResource("5_c52cw")]
+visible = false
+layout_mode = 2
+
+[node name="PlayerTargets" parent="VBoxContainer/MarginContainer" instance=ExtResource("5_c52cw")]
+visible = false
+layout_mode = 2
+
+[node name="Targets" parent="VBoxContainer/MarginContainer" instance=ExtResource("5_c52cw")]
+visible = false
+layout_mode = 2

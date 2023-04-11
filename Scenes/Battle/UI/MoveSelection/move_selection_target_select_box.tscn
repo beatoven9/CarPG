@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" uid="uid://cborj2q7bm5ew" path="res://Scenes/Battle/UI/MoveSelection/move_selection_box_base.tscn" id="1_t6k4e"]
+
+[node name="MoveSelectionTargetSelectBox" instance=ExtResource("1_t6k4e")]

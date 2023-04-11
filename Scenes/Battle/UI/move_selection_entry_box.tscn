@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgcmapasnhqw5"]
-
-[ext_resource type="PackedScene" uid="uid://cborj2q7bm5ew" path="res://Scenes/Battle/UI/move_selection_box_base.tscn" id="1_v4vmm"]
-
-[node name="MoveSelectionEntryBox" instance=ExtResource("1_v4vmm")]

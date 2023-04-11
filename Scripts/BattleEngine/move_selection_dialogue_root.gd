@@ -2,14 +2,16 @@ extends MarginContainer
 
 signal move_complete(move, target)
 
-@onready var entry_box = $MarginContainer/Entry
-@onready var magic_box = $MarginContainer/Magic
-@onready var abilities_box = $MarginContainer/Abilities
-@onready var items_box = $MarginContainer/Items
-@onready var flex_box = $MarginContainer/Flex
-@onready var enemy_target_box = $MarginContainer/EnemyTargets
-@onready var player_target_box = $MarginContainer/PlayerTargets
-@onready var target_box = $MarginContainer/Targets
+@onready var fighter_name_label = $VBoxContainer/FighterNameMargin/FighterNameLabel
+
+@onready var entry_box = $VBoxContainer/MarginContainer/Entry
+@onready var magic_box = $VBoxContainer/MarginContainer/Magic
+@onready var abilities_box = $VBoxContainer/MarginContainer/Abilities
+@onready var items_box = $VBoxContainer/MarginContainer/Items
+@onready var flex_box = $VBoxContainer/MarginContainer/Flex
+@onready var enemy_target_box = $VBoxContainer/MarginContainer/EnemyTargets
+@onready var player_target_box = $VBoxContainer/MarginContainer/PlayerTargets
+@onready var target_box = $VBoxContainer/MarginContainer/Targets
 
 @onready var boxes_list = [
 	entry_box,
@@ -71,7 +73,9 @@ func ui_back():
 		previously_selected_target.get_unselected()
 
 
-func prompt_for_move(new_available_moves, new_battle_state):
+func prompt_for_move(fighter, new_available_moves, new_battle_state):
+	fighter_name_label.set_text(" " + fighter.fighter_name)
+
 	available_moves = new_available_moves
 
 	current_battle_state = new_battle_state
