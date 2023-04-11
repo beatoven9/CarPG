@@ -1,0 +1,8 @@
+overhauled user prompt box has just been completed as has the back functionality.
+
+next, I should create one or two more FighterClasses for testing Magic and a few more abilities.
+	include Boost/PP usage in this process
+
+I also need to add player names to the move selection box.
+
+
