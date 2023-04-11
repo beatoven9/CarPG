@@ -5,20 +5,24 @@ extends Node2D
 @onready var battle_timer = preload("res://Scenes/Battle/UI/battle_timer.tscn")
 
 
-var global_fighters_list = []
-var global_player_fighters = []
-var global_enemy_fighters = []
+var global_fighters_dict = {
+	"players": null,
+	"enemies": null
+}
 var move_queue = []
 
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
 
 func get_living_fighters():
-	fighters_list = global_player_fighters + global_enemy_fighters
-	
-	var living_fighters = []
-	for fighter in global_player_fighters:
-		
+
+	var living_players = []
+	for fighter in global_fighters_dict["players"]:
+		living_players.append(fighter)	
+
+	var living_enemies = []
+	for fighter in global_fighters_dict["enemies"]:
+		living_enemies.append(fighter)	
 
 func start_engine(
 	player_fighters_data,
@@ -26,16 +30,16 @@ func start_engine(
 	items_list
 ):
 	var player_fighters_list = instantiate_player_fighters(player_fighters_data)
-	global_player_fighters = player_fighters_list
+	global_fighters_dict["players"] = player_fighters_list
 
 	var enemy_members_list = instantiate_enemy_members(
 		enemy_members_data
 	)
-	global_enemy_fighters = enemy_members_list
+	global_fighters_dict["enemies"] = enemy_members_list
 
-	global_fighters_list = player_fighters_list + enemy_members_list
-
-	for fighter in global_fighters_list:
+	for fighter in global_fighters_dict["players"]:
+		fighter.fighter_death.connect(_handle_fighter_death)
+	for fighter in global_fighters_dict["enemies"]:
 		fighter.fighter_death.connect(_handle_fighter_death)
 	
 	arrange_fighters_on_x_axis(player_fighters_list, enemy_members_list, 256)
@@ -105,13 +109,17 @@ func initiate_atb_meters(
 		member.start_battle_timer()
 
 func update_fighter_huds():
-	for fighter in global_fighters_list:
+	for fighter in global_fighters_dict["players"]:
 		fighter.update_hud()
+
+	for fighter in global_fighters_dict["enemies"]:
+		fighter.update_hud()
+
 
 func get_battle_state():
 	var battle_state = {
-		"player_fighters": global_player_fighters,
-		"enemy_fighters": global_enemy_fighters
+		"player_fighters": global_fighters_dict["players"],
+		"enemy_fighters": global_fighters_dict["enemies"]
 	}
 
 	return battle_state
@@ -123,11 +131,17 @@ func request_move(fighter):
 
 
 func pause_timers():
-	for fighter in global_fighters_list:
+	for fighter in global_fighters_dict["players"]:
+		fighter.pause_timer()
+
+	for fighter in global_fighters_dict["enemies"]:
 		fighter.pause_timer()
 
 func resume_timers():
-	for fighter in global_fighters_list:
+	for fighter in global_fighters_dict["players"]:
+		fighter.resume_timer()
+
+	for fighter in global_fighters_dict["enemies"]:
 		fighter.resume_timer()
 
 func receive_move_info(move_info):
@@ -158,7 +172,5 @@ func apply_move(move_info):
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
 
 func _handle_fighter_death(fighter):
-# 	var fighter_index = global_fighters_list.find(fighter)
-# 	global_fighters_list.remove_at(fighter_index)
 
 	print(fighter.fighter_name, " HAS DIED")
