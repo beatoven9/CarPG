@@ -24,6 +24,9 @@ signal move_complete(move, target)
 	target_box
 ]
 
+# @onready var current_box = entry_box
+var box_stack = []
+
 var friendly_target_list = []
 var enemy_target_list = []
 
@@ -60,20 +63,33 @@ func close_all_boxes():
 
 func _input(_event):
 	if Input.is_action_just_pressed("ui_left"):
-		ui_back()
+		ui_back(box_stack)
 
 
-func ui_back():
-	close_all_boxes()
+func ui_back(current_box_stack):
+	if len(box_stack) > 0:
+		var current_box = current_box_stack.pop_back()
+		if current_box.has_focus():
+			if current_box == entry_box:
+				box_stack = [entry_box]
+			else:
+				var previous_box = box_stack.pop_back()
+				box_stack.append(previous_box)
 
-	entry_box.grab_focus()
-	entry_box.set_visible(true)
+				close_all_boxes()
 
-	if is_instance_valid(previously_selected_target):
-		previously_selected_target.get_unselected()
+				if is_instance_valid(previously_selected_target):
+					previously_selected_target.get_unselected()
 
+				previous_box.set_visible(true)
+				previous_box.grab_focus.call_deferred()
+
+		else:
+			pass
 
 func prompt_for_move(fighter, new_available_moves, new_battle_state):
+	box_stack.push_back(entry_box)
+
 	fighter_name_label.set_text(" " + fighter.fighter_name)
 
 	available_moves = new_available_moves
@@ -114,6 +130,7 @@ func _on_entry_level_selection(idx):
 
 
 func prompt_for_magic(spells):
+	box_stack.push_back(magic_box)
 	magic_box.clear()
 
 	if len(spells) > 0:
@@ -135,6 +152,7 @@ func _on_magic_selected(magic_idx):
 
 
 func prompt_for_ability(abilities_list):
+	box_stack.push_back(abilities_box)
 	abilities_box.clear()
 	
 	if len(abilities_list) > 0:
@@ -157,6 +175,7 @@ func _on_ability_selected(ability_idx):
 
 
 func prompt_for_item(items_list):
+	box_stack.push_back(items_box)
 	items_box.clear()
 
 	if len(items_list) > 0:
@@ -179,6 +198,7 @@ func _on_item_selected(item_idx):
 
 
 func prompt_for_flex(flex_options_list):
+	box_stack.push_back(flex_box)
 	flex_box.clear()
 
 	for flex_option in flex_options_list:
@@ -195,6 +215,7 @@ func _on_flex_option_selected(flex_option_idx):
 	prompt_for_target()	
 
 func prompt_for_target():
+	box_stack.push_back(target_box)
 	close_all_boxes()
 
 	# enemy_target_box.clear()
