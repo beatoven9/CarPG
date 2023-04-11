@@ -18,7 +18,8 @@ signal move_complete(move, target)
 	items_box,
 	flex_box,
 	enemy_target_box,
-	player_target_box
+	player_target_box,
+	target_box
 ]
 
 var friendly_target_list = []
@@ -53,6 +54,21 @@ func _ready():
 func close_all_boxes():
 	for box in boxes_list:
 		box.set_visible(false)
+		box.release_focus()
+
+func _input(_event):
+	if Input.is_action_just_pressed("ui_left"):
+		ui_back()
+
+
+func ui_back():
+	close_all_boxes()
+
+	entry_box.grab_focus()
+	entry_box.set_visible(true)
+
+	if is_instance_valid(previously_selected_target):
+		previously_selected_target.get_unselected()
 
 
 func prompt_for_move(new_available_moves, new_battle_state):
