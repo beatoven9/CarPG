@@ -10,7 +10,7 @@ func _ready():
 	move_announcement_label.set_text(intro_message)
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func make_announcement(move_info, damage_incurred):

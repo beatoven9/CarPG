@@ -6,12 +6,15 @@ extends Area2D
 @onready var selected_ui = get_node("SelectedSprite")
 @onready var damage_hud = $DamageHUD
 
+var second_tick_timer: Timer
+
 var fighter_hud
 var fighter_name
 var fighter_speed
 var fighter_class
 var class_proficiency
-
+var boost_per_sec
+var health_per_sec
 var max_health
 var current_health
 var max_boost
@@ -44,9 +47,15 @@ func set_data(
 	current_health = max_health
 	max_boost = data["max_boost"]
 	current_boost = max_boost
+	boost_per_sec = data["boost_per_sec"]
+	health_per_sec = data["health_per_sec"]
 
 func _ready():
 	battle_timer.battle_timer_out.connect(_timer_out)
+	second_tick_timer = Timer.new()
+	second_tick_timer.timeout.connect(_on_second_tick)
+	add_child(second_tick_timer)
+	second_tick_timer.start(1)
 	set_collision_box_size()
 
 func update_timer_bar():
@@ -88,9 +97,11 @@ func _timer_out(fighter):
 	ready_to_move.emit(fighter)
 
 func pause_timer():
+	second_tick_timer.set_paused(true)
 	battle_timer.set_paused(true)
 
 func resume_timer():
+	second_tick_timer.set_paused(false)
 	battle_timer.set_paused(false)
 
 func handle_move_receipt(move):
@@ -164,3 +175,14 @@ func expend_bp(bp_cost):
 		current_boost = 0
 		boost_changed.emit(current_boost, max_boost)
 		return false
+
+func _on_second_tick():
+	current_boost += boost_per_sec
+	if current_boost >= max_boost:
+		current_boost = max_boost
+	current_health += health_per_sec
+	if current_health >= max_health:
+		current_health = max_health
+
+	fighter_hud.update_health_bar(current_health, max_health)
+	fighter_hud.update_boost_bar(current_boost, max_boost)

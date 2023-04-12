@@ -41,7 +41,7 @@ var available_moves
 var magic_spells: Array
 var abilities: Array
 var items: Array
-var flex_options_list: Array
+var flex_options: Array
 
 
 func _ready():
@@ -100,15 +100,15 @@ func prompt_for_move(fighter, new_available_moves, new_battle_state):
 	abilities = available_moves.abilities
 	items = available_moves.items
 
-	if len(available_moves.flex_options_list) > 0:
-		flex_options_list = available_moves.flex
+	if len(available_moves.flex_options) > 0:
+		flex_options = available_moves.flex
 		var flex_name = available_moves.flex_name
 		if entry_box.get_item_at_position(4) != -1:
 			entry_box.remove_item(4)
 
 		entry_box.add_item(flex_name)
 	else:
-		flex_options_list = []
+		flex_options = []
 
 	set_visible(true)
 	entry_box.grab_focus()
@@ -126,7 +126,7 @@ func _on_entry_level_selection(idx):
 	elif idx == 3:
 		prompt_for_item(items)
 	elif idx == 4:
-		prompt_for_flex(flex_options_list)
+		prompt_for_flex(flex_options)
 
 
 func prompt_for_magic(spells):
