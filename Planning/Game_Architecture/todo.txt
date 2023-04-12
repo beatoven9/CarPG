@@ -11,6 +11,19 @@ newlines in between and set that as the new text. We will probably also have to 
 scrolling container
 
 
+
+
+
+
+Dialogue box basically done:
+	next
+		handle the slowly regenerating BP based on a bp_regen stat
+
+
+
+
+
+
 I think, magic learned while using a class weapon is retained when you don't have the weapon equipped
 	but it is much less powerful and much less boost efficient might be cool. So it's still useable.
 

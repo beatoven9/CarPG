@@ -179,11 +179,12 @@ func apply_move(move_info):
 
 	move_info["success"] = success
 
+
 	if success:
-		target.handle_move_receipt(move)
-		move_announcer_box.make_announcement(move_info)
+		var damage_incurred = target.handle_move_receipt(move)
+		move_announcer_box.make_announcement(move_info, damage_incurred)
 	else:
-		move_announcer_box.make_announcement(move_info)
+		move_announcer_box.make_announcement(move_info, null)
 
 	resume_timers()
 

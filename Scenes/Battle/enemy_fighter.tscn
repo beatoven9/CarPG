@@ -11,9 +11,10 @@ flip_v = true
 
 [node name="SelectedSprite" parent="." index="3"]
 visible = false
+position = Vector2(2.08165e-12, -40)
+flip_v = true
 
 [node name="DamageHUD" parent="." index="4"]
-anchors_preset = 15
 offset_left = 30.0
 offset_top = -7.99989
 offset_right = 48.0

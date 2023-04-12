@@ -3,13 +3,17 @@ extends MarginContainer
 @onready var move_announcement_label = $MarginContainer/ScrollContainer/MoveAnnouncement
 
 func _ready():
-	pass # Replace with function body.
+	var newlines = "\n\n"
+	var separator = "----------------"
+
+	var intro_message = "Big Bad Evil guys want to do battle" + newlines + separator
+	move_announcement_label.set_text(intro_message)
 
 
 func _process(delta):
 	pass
 
-func make_announcement(move_info):
+func make_announcement(move_info, damage_incurred):
 	var move = move_info["move"]
 	var user = move_info["user"]
 	var target = move_info["target"]
@@ -29,7 +33,12 @@ func make_announcement(move_info):
 	var previous_text = move_announcement_label.get_text()
 	var new_message = user.fighter_name + " did " + move.move_name + " against " + target.fighter_name
 
-	var new_text = new_message + newlines + separator + newlines + previous_text
+	# ADDD THE DAMAGE INCURRED STUFF HERE
+	var damage_dealt = target.fighter_name + " lost " + str(damage_incurred) + " hp" + newlines
+
+	var success_message = damage_dealt if success else "but it failed... his BP has been exhausted" + newlines
+
+	var new_text = new_message + newlines + success_message + separator + newlines + previous_text
 
 	move_announcement_label.set_text(new_text)
 

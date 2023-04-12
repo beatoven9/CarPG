@@ -117,6 +117,8 @@ func handle_move_receipt(move):
 
 	handle_damage(damage_inflicted, critical)
 
+	return damage_inflicted
+
 func handle_damage(damage_inflicted, critical):
 
 	damage_hud.display_damage(damage_inflicted, critical)

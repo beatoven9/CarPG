@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://etca8w110ckb"]
+[gd_scene load_steps=20 format=3 uid="uid://etca8w110ckb"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="1_ljcyq"]
 [ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Car_Sprites/Sedan_a.png" id="2_a0v5c"]
@@ -11,50 +11,71 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwlpd"]
 size = Vector2(20, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dnlk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpe6o"]
 atlas = ExtResource("4_4smwk")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ho2hm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0rm0"]
 atlas = ExtResource("4_4smwk")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7xg5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj8v7"]
 atlas = ExtResource("4_4smwk")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hi25r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gfqb"]
 atlas = ExtResource("4_4smwk")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1qwg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sei5"]
 atlas = ExtResource("4_4smwk")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7pmwp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv52k"]
 atlas = ExtResource("4_4smwk")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cyli"]
+atlas = ExtResource("4_4smwk")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqy1w"]
+atlas = ExtResource("4_4smwk")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0aid"]
+atlas = ExtResource("4_4smwk")
+region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wy7hk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2dnlk")
+"texture": SubResource("AtlasTexture_mpe6o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ho2hm")
+"texture": SubResource("AtlasTexture_b0rm0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s7xg5")
+"texture": SubResource("AtlasTexture_uj8v7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hi25r")
+"texture": SubResource("AtlasTexture_7gfqb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w1qwg")
+"texture": SubResource("AtlasTexture_3sei5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7pmwp")
+"texture": SubResource("AtlasTexture_yv52k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cyli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqy1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0aid")
 }],
 "loop": true,
 "name": &"ArrowAnimation",
@@ -80,16 +101,16 @@ shape = SubResource("RectangleShape2D_qwlpd")
 [node name="BattleTimer" parent="." instance=ExtResource("3_d0vl4")]
 
 [node name="SelectedSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.08165e-12, 32)
+position = Vector2(2.08165e-12, 40)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_wy7hk")
 animation = &"ArrowAnimation"
-frame_progress = 0.454628
+speed_scale = 3.0
 
 [node name="DamageHUD" type="Label" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_8aanr")
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
