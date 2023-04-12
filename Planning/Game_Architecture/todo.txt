@@ -17,7 +17,8 @@ scrolling container
 
 Dialogue box basically done:
 	next
-		handle the slowly regenerating BP based on a bp_regen stat
+		--- Add generate_announcement_string() to Moves
+		--- Handle the slowly regenerating BP based on a bp_regen stat
 
 
 
