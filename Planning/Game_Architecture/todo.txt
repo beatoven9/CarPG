@@ -17,11 +17,32 @@ scrolling container
 
 Dialogue box basically done:
 	next
+		--- *Add attack, magic, (handiness? prolly just uses magic), defense, and magic-defense stats to the battle system.
+			*Add mechanic class with some healing spells
+			*Create moves that utilize these stats. I think it would be good to put the "calculate_move_damage"
+			methods on the base move. We could have different ones for offensive_magic, defensive_magic, healing magic, 
+			melee, long_range
+			*each method will take a user, a target, and the success_roll. It will use the relevant stats from each one 
+			to calculate the appropriate damage and determine if the success roll was high enough. it will return a 
+			dictionary of form:
+
+			var move_result = {
+				move_string: "",
+				damage_output: 90,
+			}
+
+				it could just apply the move to the target itself. however, this would make it hard to handle animations and all.
+
 		--- Add generate_announcement_string() to Moves
 				It would be cool if this had a large pool of randomized phrases about how great, mediocre, or bad
 				a move was. Maybe chatGPT generated. A huge list.
 
 
+		--- Get the bars to lerp. maybe there is a "real_value" and a "displayed_value" on the fighter_hud for each bar.
+			in the _process() method, the "displayed_value" is always lerping toward the "real_value"
+
+
+		--- Write documentation for the BattleEngine so that I can understand it a month from now.
 
 
 
