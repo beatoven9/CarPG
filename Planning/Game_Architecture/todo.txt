@@ -18,8 +18,8 @@ scrolling container
 Dialogue box basically done:
 	next
 		--- Add generate_announcement_string() to Moves
-		--- Handle the slowly regenerating BP based on a bp_regen stat
-
+				It would be cool if this had a large pool of randomized phrases about how great, mediocre, or bad
+				a move was. Maybe chatGPT generated. A huge list.
 
 
 
