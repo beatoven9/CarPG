@@ -13,7 +13,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-func make_announcement(move_info, damage_incurred):
+func make_announcement(move_info, damage_incurred, item_stolen):
 	var move = move_info["move"]
 	var user = move_info["user"]
 	var target = move_info["target"]
@@ -25,7 +25,8 @@ func make_announcement(move_info, damage_incurred):
 		move,
 		user,
 		target,
-		damage_incurred
+		damage_incurred,
+		item_stolen
 	)
 	# This needs to be animated somehow. it's way too jarring
 	# one possible fix to this is to make the container actually
@@ -45,7 +46,8 @@ func generate_announcement(
 	move,
 	user,
 	target,
-	damage_incurred
+	damage_incurred,
+	item_stolen
 ):
 	var attack_announcement = user.fighter_name + " performed " + move.move_name +  " against " + target.fighter_name + "."
 	
@@ -55,8 +57,14 @@ func generate_announcement(
 	else:
 		defense_announcement = "but it failed!..."
 
+	var steal_announcement
+	if item_stolen != "Nothing":
+		steal_announcement = str(item_stolen) + " was stolen!"
+	else:
+		steal_announcement = ""
+
 	var newline = "\n\n"
 
-	var announcement = attack_announcement + newline + defense_announcement
+	var announcement = attack_announcement + newline + defense_announcement + newline + steal_announcement
 
 	return announcement

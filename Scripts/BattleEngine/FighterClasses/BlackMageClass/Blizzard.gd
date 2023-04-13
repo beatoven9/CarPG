@@ -8,4 +8,5 @@ var friendly = false
 var elemental_damage = ELEMENTAL_DAMAGE.BLIZZARD
 var bp_cost = 15
 var crit_rate = .25
+var steal_item = false
 

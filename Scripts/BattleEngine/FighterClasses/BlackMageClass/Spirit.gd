@@ -9,3 +9,4 @@ var friendly = false
 var elemental_damage = ELEMENTAL_DAMAGE.NONE
 var bp_cost = 5
 var crit_rate = .25
+var steal_item = false

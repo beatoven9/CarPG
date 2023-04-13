@@ -10,3 +10,4 @@ var sub_selection = ["Single Target", "All Targets"]
 var bp_cost = 10
 var friendly = false
 var crit_rate = .25
+var steal_item = false

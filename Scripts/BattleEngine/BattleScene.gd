@@ -31,6 +31,10 @@ func load_enemy_data():
 		"max_boost": 50,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
+		"weapon_bonus": 0,
+		"armor_bonus": 0,
+		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 	var enemy_member2 = {
 		"name": "Big Bad Guy b",
@@ -48,6 +52,10 @@ func load_enemy_data():
 		"max_boost": 30,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
+		"weapon_bonus": 0,
+		"armor_bonus": 0,
+		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
 	var enemy_members_data = [enemy_member1, enemy_member2]
@@ -65,12 +73,16 @@ func load_player_data():
 		"speed": 20,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": GunnerClass,
+		"fighter_class": ThiefClass,
 		"class_proficiency": 30,
 		"max_health": 500,
 		"max_boost": 50,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
+		"weapon_bonus": 0,
+		"armor_bonus": 0,
+		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
 	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
@@ -90,6 +102,10 @@ func load_player_data():
 		"max_boost": 70,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
+		"weapon_bonus": 0,
+		"armor_bonus": 0,
+		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
 	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
@@ -109,6 +125,10 @@ func load_player_data():
 		"max_boost": 55,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
+		"weapon_bonus": 0,
+		"armor_bonus": 0,
+		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
 	var player_fighters_data = [

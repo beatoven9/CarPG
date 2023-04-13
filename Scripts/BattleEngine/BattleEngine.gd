@@ -199,6 +199,9 @@ func apply_move(move_info):
 		highest_crit_roll,
 	)
 
+	var item_stolen	= "Nothing"
+	if move.steal_item && move_output["success"]:
+		item_stolen = barter_steal(user, target)
 
 	var damage_incurred = target.receive_move(
 		move,
@@ -210,9 +213,19 @@ func apply_move(move_info):
 	# Announcement should only play AFTER animation is over.
 	var announcement_string = move_announcer_box.make_announcement(
 		move_info,
-		damage_incurred
+		damage_incurred,
+		item_stolen
 	)
 	resume_timers()
+
+func barter_steal(perp, victim):
+	if len(victim.snatchable_inventory) > 0:
+		var new_item = victim.snatchable_inventory.pick_random()
+		var new_item_name = new_item
+		perp.inventory.append(new_item)
+		return new_item_name
+	else:
+		return "Nothing"
 
 
 func _handle_fighter_death(fighter):

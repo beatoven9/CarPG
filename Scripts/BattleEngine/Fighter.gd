@@ -23,6 +23,11 @@ var fighter_speed
 var fighter_luck
 var fighter_vitality
 
+var inventory = []
+var snatchable_inventory = []
+var weapon_bonus = 0
+var armor_bonus = 0
+
 var fighter_hud
 var fighter_name
 var fighter_class
@@ -64,6 +69,11 @@ func set_data(
 	current_boost = max_boost
 	boost_per_sec = data["boost_per_sec"]
 	health_per_sec = data["health_per_sec"]
+
+	weapon_bonus = data["weapon_bonus"]
+	armor_bonus = data["armor_bonus"]
+	inventory = data["inventory"]
+	snatchable_inventory = data["snatchable_inventory"]
 
 func _ready():
 	battle_timer.battle_timer_out.connect(_timer_out)
@@ -253,6 +263,28 @@ func use_item_attack(move, success_roll, crit_roll):
 func use_item_healing(move, success_roll, crit_roll):
 	pass
 
+func calculate_move_success(move, success_roll):
+	var bp_cost = move.bp_cost
+
+	if current_boost >= bp_cost:
+		current_boost -= bp_cost
+		fighter_hud.update_boost_bar(current_boost, max_boost)
+		return true
+	else:
+		var diff = bp_cost - current_boost
+		var ratio = diff / bp_cost
+		if success_roll < ratio:
+			# There is another steal check on the targetted fighter which selects which item the player receives
+			# One of the items should be "spare change" or "pocket lint" as a euphemism for "failure".
+			# Inventory will be a list of objects on all fighters. It will be set when a fighter is instantiated.
+			# Then, GetStolen from will choose from this list at random.
+			# It will not remove old items from list.
+			return true
+		else:
+			return false
+		
+
+
 func use_physical_attack(move, success_roll, crit_roll):
 	var crit = false
 
@@ -269,9 +301,12 @@ func use_physical_attack(move, success_roll, crit_roll):
 	if crit:
 		damage_output *= 1.1
 
+	var success = calculate_move_success(move, success_roll)
+
 	return {
 		"damage_output": damage_output,
-		"crit": crit
+		"crit": crit,
+		"success": success
 	}
 
 func use_magic_attack(move, success_roll, crit_roll):
@@ -291,9 +326,12 @@ func use_magic_attack(move, success_roll, crit_roll):
 	if crit:
 		damage_output *= 1.1
 
+	var success = calculate_move_success(move, success_roll)
+
 	return {
 		"damage_output": damage_output,
-		"crit": crit
+		"crit": crit,
+		"success": success
 	}
 
 func use_magic_healing(move, success_roll, crit_roll):
@@ -314,9 +352,12 @@ func use_magic_healing(move, success_roll, crit_roll):
 		damage_output *= 1.1
 	
 	var damage = damage_output * -1
+	var success = calculate_move_success(move, success_roll)
+
 	return {
 		"damage_output": damage,
-		"crit": crit
+		"crit": crit,
+		"success": success
 	}
 
 

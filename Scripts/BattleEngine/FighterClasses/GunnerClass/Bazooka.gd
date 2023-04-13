@@ -9,3 +9,4 @@ var sub_selection = []
 var friendly = false
 var bp_cost = 10
 var crit_rate = .25
+var steal_item = false
