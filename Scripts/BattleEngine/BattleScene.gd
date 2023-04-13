@@ -31,9 +31,9 @@ func load_enemy_data():
 		"max_boost": 50,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
-		"weapon_bonus": 0,
-		"armor_bonus": 0,
-		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"weapon_bonus": 10,
+		"armor_bonus": 10,
+		"inventory": [],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 	var enemy_member2 = {
@@ -52,8 +52,8 @@ func load_enemy_data():
 		"max_boost": 30,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
-		"weapon_bonus": 0,
-		"armor_bonus": 0,
+		"weapon_bonus": 10,
+		"armor_bonus": 10,
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
@@ -64,7 +64,7 @@ func load_enemy_data():
 func load_player_data():
 	var texture1 = load("res://Sprites/Car_Sprites/Sedan_a.png")
 	var player_fighter1 = {
-		"name": "Rusty",
+		"name": "Wedge",
 		"texture": texture1,
 		"attack": 15,
 		"defense": 15,
@@ -74,13 +74,13 @@ func load_player_data():
 		"luck": 5,
 		"vitality": 10,
 		"fighter_class": ThiefClass,
-		"class_proficiency": 30,
+		"class_proficiency": 100,
 		"max_health": 500,
 		"max_boost": 50,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
-		"weapon_bonus": 0,
-		"armor_bonus": 0,
+		"weapon_bonus": 10,
+		"armor_bonus": 10,
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
@@ -102,8 +102,8 @@ func load_player_data():
 		"max_boost": 70,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
-		"weapon_bonus": 0,
-		"armor_bonus": 0,
+		"weapon_bonus": 10,
+		"armor_bonus": 10,
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
@@ -125,8 +125,8 @@ func load_player_data():
 		"max_boost": 55,
 		"boost_per_sec": 2,
 		"health_per_sec": 0,
-		"weapon_bonus": 0,
-		"armor_bonus": 0,
+		"weapon_bonus": 10,
+		"armor_bonus": 10,
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}

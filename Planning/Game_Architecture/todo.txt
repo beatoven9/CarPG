@@ -38,13 +38,43 @@ Dialogue box basically done:
 *done*				a move was. Maybe chatGPT generated. A huge list.
 
 
-		--- Get the bars to lerp. maybe there is a "real_value" and a "displayed_value" on the fighter_hud for each bar.
-			in the _process() method, the "displayed_value" is always lerping toward the "real_value"
+
+------------------------------------------------------------------------------------------------------------------------------
+|----------
+|		--- Figure out a good way to keep health and boost values locked to integers. This will require planning out
+|			how to use stats in combat. This will likely help this vvvv situation
+# 				base_hp = 250
+# 				base_attack = 20
+# 				base_defense = 15
+# 				weapon_bonus = 10
+# 				armor_bonus = 15
+# 				base_power = 90
+# 
+# 				total_attack = (attack + weapon_bonus) = 30
+# 				total_defense = (defense + armor_bonus) + (armor_bonus if crit) = 30 or 45
+# 				damage_output = (total_attack + base_power) + (weapon_bonus if crit) = 120 or 130
+# 				damage_incurred = (damage_output - total_defense) = 90, 100, 75, or 85
+|
+|
+|		--- Get the bars to lerp. maybe there is a "real_value" and a "displayed_value" on the fighter_hud for each bar.
+|			in the _process() method, the "displayed_value" is always lerping toward the "real_value"
+|----------
+
+
+|----------
+|*done*	--- Add more values to the move_info object. so we can pass just that to all of these methods
+|				if the "stolen_item" key is not set, that means that stealing wasn't attempted.
+|				This way, the receive_move method is able to set the string. So it can be unique.
+|*done*	--- MoveInfo should have a constructor which is just a function that returns the full dictionary with defaults set
+|
+|		--- Move the generate_announcement method off of the announcement box and put it on the moves. it will take move_info
+|				For this chatgpt prompt, "Tell me a sentence describing sally hitting bob and stealing her keys."
+|				Run this for each move to get a bank of formula sentences that we put user & target into
+|----------
+
 
 
 		--- Write documentation for the BattleEngine so that I can understand it a month from now.
-
-
 
 I think, magic learned while using a class weapon is retained when you don't have the weapon equipped
 	but it is much less powerful and much less boost efficient might be cool. So it's still useable.
