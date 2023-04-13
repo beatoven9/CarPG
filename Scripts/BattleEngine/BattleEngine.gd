@@ -11,9 +11,14 @@ var global_fighters_dict = {
 }
 var move_queue = []
 
+var random = RandomNumberGenerator.new()
+
 @onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
 @onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
 @onready var move_announcer_box = get_tree().get_root().get_child(0).get_node("CanvasLayer/MoveAnnouncerBox")
+
+func _ready():
+	random.randomize()
 
 func get_living_fighters():
 
@@ -169,30 +174,48 @@ func execute_move():
 func apply_move(move_info):
 	pause_timers()
 
+	# move_info["success"] = success
+	var crit_rolls = []
+	for i in range(move_info["user"].fighter_luck):
+		var crit_roll = random.randf_range(0, 1)
+		crit_rolls.append(crit_roll)
+
+	var success_rolls = []
+	for i in range(move_info["user"].fighter_luck):
+		var success_roll = random.randf_range(0, 1)
+		success_rolls.append(success_roll)
+
+	var highest_crit_roll = crit_rolls.min()
+	var highest_success_roll = success_rolls.min()
+
+
 	var move = move_info["move"]
 	var user = move_info["user"]
 	var target = move_info["target"]
 
-	var success = user.expend_bp(move.bp_cost)
-	# critical hits should be calculated here. That way, we can keep the randomizer on a property here.
-	# Also, we have access to all of the information we need here.
+	var move_output = user.use_move(
+		move,
+		highest_success_roll,
+		highest_crit_roll,
+	)
 
-	move_info["success"] = success
 
-
-	if success:
-		var damage_incurred = target.handle_move_receipt(move)
-		move_announcer_box.make_announcement(move_info, damage_incurred)
-	else:
-		move_announcer_box.make_announcement(move_info, null)
-
-	resume_timers()
+	var damage_incurred = target.receive_move(
+		move,
+		move_output
+	)
 
 	# user.play_attack_animation()
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
+	# Announcement should only play AFTER animation is over.
+	var announcement_string = move_announcer_box.make_announcement(
+		move_info,
+		damage_incurred
+	)
+	resume_timers()
+
 
 func _handle_fighter_death(fighter):
-
 	check_for_battle_over_state()
 
 func check_for_battle_over_state():
@@ -202,5 +225,3 @@ func check_for_battle_over_state():
 		print("GAME OVER")
 	elif len(living_fighters["enemies"]) <= 0:
 		print("BATTLE WON!!!")
-
-

@@ -8,17 +8,25 @@ extends Area2D
 
 var second_tick_timer: Timer
 
-var fighter_hud
-var fighter_name
-var fighter_speed
-var fighter_class
-var class_proficiency
-var boost_per_sec
-var health_per_sec
 var max_health
 var current_health
 var max_boost
 var current_boost
+var boost_per_sec
+var health_per_sec
+
+var fighter_attack
+var fighter_defense
+var fighter_magic
+var fighter_magic_defense
+var fighter_speed
+var fighter_luck
+var fighter_vitality
+
+var fighter_hud
+var fighter_name
+var fighter_class
+var class_proficiency
 
 var dead = false
 
@@ -39,9 +47,16 @@ func set_data(
 ):
 	fighter_name = data["name"]
 	get_node("Sprite2D").set_texture(data["texture"])
-	fighter_speed = data["speed"]
 	fighter_class = data["fighter_class"]
 	class_proficiency = data["class_proficiency"]
+
+	fighter_attack = data["attack"]
+	fighter_defense = data["defense"]
+	fighter_magic = data["magic"]
+	fighter_magic_defense = data["magic_defense"]
+	fighter_speed = data["speed"]
+	fighter_luck = data["luck"]
+	fighter_vitality = data["vitality"]
 
 	max_health = data["max_health"]
 	current_health = max_health
@@ -104,31 +119,31 @@ func resume_timer():
 	second_tick_timer.set_paused(false)
 	battle_timer.set_paused(false)
 
-func handle_move_receipt(move):
-	# This code should be using fighter stats to determine
-	# how much damage should be done
-
-	var damage_inflicted
-	var critical
-
-	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
-		damage_inflicted = (move.base_power / 10)
-
-	elif move.move_type == MOVE_TYPE.BLACK_MAGIC_ATTACK:
-		damage_inflicted = (move.base_power / 10)
-
-
-	var random = RandomNumberGenerator.new()
-	random.randomize()
-
-	critical = false if (random.randfn() < 0) else true
-	
-	if critical:
-		damage_inflicted += 10
-
-	handle_damage(damage_inflicted, critical)
-
-	return damage_inflicted
+# func handle_move_receipt(move):
+# 	# This code should be using fighter stats to determine
+# 	# how much damage should be done
+# 
+# 	var damage_inflicted
+# 	var critical
+# 
+# 	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
+# 		damage_inflicted = (move.base_power) - fighter_defense
+# 
+# 	elif move.move_type == MOVE_TYPE.BLACK_MAGIC_ATTACK:
+# 		damage_inflicted = (move.base_power) - fighter_magic_defense
+# 
+# 
+# 	var random = RandomNumberGenerator.new()
+# 	random.randomize()
+# 
+# 	critical = false if (random.randfn() < 0) else true
+# 	
+# 	if critical:
+# 		damage_inflicted += 10
+# 
+# 	handle_damage(damage_inflicted, critical)
+# 
+# 	return damage_inflicted
 
 func handle_damage(damage_inflicted, critical):
 
@@ -186,3 +201,196 @@ func _on_second_tick():
 
 	fighter_hud.update_health_bar(current_health, max_health)
 	fighter_hud.update_boost_bar(current_boost, max_boost)
+
+
+
+
+
+func use_move(
+	move,
+	success_roll,
+	crit_roll
+):
+	var move_type = move.move_type
+
+
+	var move_func = {
+		"melee_attack": use_melee_attack,
+		"gun_attack": use_gun_attack,
+		"black_magic_attack": use_black_magic_attack,
+		"white_magic_attack": use_white_magic_attack,
+		"white_magic_healing": use_white_magic_healing,
+		"item_attack": use_item_attack,
+		"item_healing": use_item_healing,
+	}.get(move_type, null) 
+	
+	if move_func == null:
+		print("BIG UFF the move_type key was not found: ", move_type)
+		
+	var move_results = move_func.call(move, success_roll, crit_roll)
+
+	return move_results
+			
+
+func use_melee_attack(move, success_roll, crit_roll):
+	return use_physical_attack(move, success_roll, crit_roll)
+
+func use_gun_attack(move, success_roll, crit_roll):
+	return use_physical_attack(move, success_roll, crit_roll)
+	
+func use_black_magic_attack(move, success_roll, crit_roll):
+	return use_magic_attack(move, success_roll, crit_roll)
+
+func use_white_magic_attack(move, success_roll, crit_roll):
+	return use_magic_attack(move, success_roll, crit_roll)
+
+func use_white_magic_healing(move, success_roll, crit_roll):
+	return use_magic_healing(move, success_roll, crit_roll)
+
+func use_item_attack(move, success_roll, crit_roll):
+	pass
+
+func use_item_healing(move, success_roll, crit_roll):
+	pass
+
+func use_physical_attack(move, success_roll, crit_roll):
+	var crit = false
+
+	if crit_roll < move.crit_rate:
+		crit = true
+	else:
+		crit = false
+
+	# Possibly, in here we may have to check for elemental powerup?
+
+	var move_base_power = move.base_power
+	var damage_output = fighter_attack + move_base_power
+
+	if crit:
+		damage_output *= 1.1
+
+	return {
+		"damage_output": damage_output,
+		"crit": crit
+	}
+
+func use_magic_attack(move, success_roll, crit_roll):
+	var crit = false
+
+	if crit_roll < move.crit_rate:
+		crit = true
+	else:
+		crit = false
+
+	# Possibly, in here we may have to check for elemental powerup?
+
+
+	var move_base_power = move.base_power
+	var damage_output = fighter_magic + move_base_power
+
+	if crit:
+		damage_output *= 1.1
+
+	return {
+		"damage_output": damage_output,
+		"crit": crit
+	}
+
+func use_magic_healing(move, success_roll, crit_roll):
+	var crit = false
+
+	if crit_roll < move.crit_rate:
+		crit = true
+	else:
+		crit = false
+
+	# Possibly, in here we may have to check for elemental powerup?
+
+
+	var move_base_power = move.base_power
+	var damage_output = fighter_magic + move_base_power
+
+	if crit:
+		damage_output *= 1.1
+	
+	var damage = damage_output * -1
+	return {
+		"damage_output": damage,
+		"crit": crit
+	}
+
+
+
+func receive_move(
+	move,
+	move_output
+):
+	var move_type = move.move_type
+	var damage_output = move_output["damage_output"]
+	var crit = move_output["crit"]
+
+	var move_func = {
+		"melee_attack": receive_melee_attack,
+		"gun_attack": receive_gun_attack,
+		"black_magic_attack": receive_black_magic_attack,
+		"white_magic_attack": receive_white_magic_attack,
+		"white_magic_healing": receive_white_magic_healing,
+		"item_attack": receive_item_attack,
+		"item_healing": receive_item_healing,
+	}.get(move_type, null) 
+	
+	if move_func == null:
+		print("BIG UFF the move_type key was not found: ", move_type)
+		
+	var move_results = move_func.call(move, damage_output, crit)
+
+	return move_results
+			
+
+func receive_melee_attack(move, damage_output, crit):
+	return receive_physical_attack(move, damage_output, crit)
+
+func receive_gun_attack(move, damage_output, crit):
+	return receive_physical_attack(move, damage_output, crit)
+	
+func receive_black_magic_attack(move, damage_output, crit):
+	return receive_magic_attack(move, damage_output, crit)
+
+func receive_white_magic_attack(move, damage_output, crit):
+	return receive_magic_attack(move, damage_output, crit)
+
+func receive_white_magic_healing(move, damage_output, crit):
+	return receive_magic_healing(move, damage_output, crit)
+
+func receive_item_attack(move, damage_output, crit):
+	pass
+
+func receive_item_healing(move, damage_output, crit):
+	pass
+
+func receive_physical_attack(move, damage_output, crit):
+	var damage_incurred = damage_output - fighter_magic_defense
+	
+	if damage_incurred < 0:
+		damage_incurred = 0
+
+	damage_incurred = int(damage_incurred)
+	handle_damage(damage_incurred, crit)
+	return damage_incurred
+
+func receive_magic_attack(move, damage_output, crit):
+	var damage_incurred = damage_output - fighter_magic_defense
+	
+	if damage_incurred < 0:
+		damage_incurred = 0
+
+	damage_incurred = int(damage_incurred)
+	handle_damage(damage_incurred, crit)
+	return damage_incurred
+
+func receive_magic_healing(move, damage_output, crit):
+	var damage_incurred = damage_output
+		
+	handle_damage(damage_incurred, crit)
+
+	return damage_incurred
