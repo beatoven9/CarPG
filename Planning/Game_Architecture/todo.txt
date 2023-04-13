@@ -73,7 +73,7 @@ Dialogue box basically done:
 |				This way, the receive_move method is able to set the string. So it can be unique.
 |*done*	--- MoveInfo should have a constructor which is just a function that returns the full dictionary with defaults set
 |
-|		--- Move the generate_announcement method off of the announcement box and put it on the moves. it will take move_info
+|*done*	--- Move the generate_announcement method off of the announcement box and put it on the moves. it will take move_info
 |				For this chatgpt prompt, "Tell me a sentence describing sally hitting bob and stealing her keys."
 |				Run this for each move to get a bank of formula sentences that we put user & target into
 |

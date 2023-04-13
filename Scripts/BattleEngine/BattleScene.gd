@@ -55,7 +55,7 @@ func load_enemy_data():
 		"weapon_bonus": 10,
 		"armor_bonus": 10,
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
-		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
+		"snatchable_inventory": []
 	}
 
 	var enemy_members_data = [enemy_member1, enemy_member2]
@@ -96,7 +96,7 @@ func load_player_data():
 		"speed": 12,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": BlackMageClass,
+		"fighter_class": MonkClass,
 		"class_proficiency": 30,
 		"max_health": 500,
 		"max_boost": 70,
