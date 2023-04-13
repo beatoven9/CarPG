@@ -134,32 +134,6 @@ func resume_timer():
 	second_tick_timer.set_paused(false)
 	battle_timer.set_paused(false)
 
-# func handle_move_receipt(move):
-# 	# This code should be using fighter stats to determine
-# 	# how much damage should be done
-# 
-# 	var damage_inflicted
-# 	var critical
-# 
-# 	if move.move_type == MOVE_TYPE.LONG_RANGE_ATTACK:
-# 		damage_inflicted = (move.base_power) - fighter_defense
-# 
-# 	elif move.move_type == MOVE_TYPE.BLACK_MAGIC_ATTACK:
-# 		damage_inflicted = (move.base_power) - fighter_magic_defense
-# 
-# 
-# 	var random = RandomNumberGenerator.new()
-# 	random.randomize()
-# 
-# 	critical = false if (random.randfn() < 0) else true
-# 	
-# 	if critical:
-# 		damage_inflicted += 10
-# 
-# 	handle_damage(damage_inflicted, critical)
-# 
-# 	return damage_inflicted
-
 func handle_damage(damage_inflicted, critical):
 
 	damage_hud.display_damage(damage_inflicted, critical)
@@ -169,6 +143,15 @@ func handle_damage(damage_inflicted, critical):
 
 	if current_health <= 0:
 		_on_death()	
+
+func handle_healing(healing_amount, critical):
+	damage_hud.display_healing(healing_amount)
+	current_health += healing_amount
+
+	health_changed.emit(current_health, max_health)	
+
+	if current_health >= max_health:
+		current_health = max_health
 
 func _on_move_ready(move, target):
 	var move_info = gen_move_info(
@@ -313,7 +296,7 @@ func use_physical_attack(move_info, success_roll, crit_roll):
 		damage_output += weapon_bonus
 
 	move_info["success"] = calculate_move_success(move_info, success_roll)
-	move_info["damage_output"] = damage_output
+	move_info["move_power"] = damage_output
 	move_info["critical"] = crit
 
 	return move_info
@@ -341,7 +324,7 @@ func use_magic_attack(move_info, success_roll, crit_roll):
 		damage_output += weapon_bonus
 
 	move_info["success"] = calculate_move_success(move_info, success_roll)
-	move_info["damage_output"] = damage_output
+	move_info["move_power"] = damage_output
 	move_info["critical"] = crit
 
 	return move_info
@@ -360,7 +343,7 @@ func use_magic_healing(move_info, success_roll, crit_roll):
 
 	var move_base_power = move.base_power
 	var damage_output = 0
-	if move_base_power < 0:
+	if move_base_power > 0:
 		damage_output = fighter_magic + move_base_power + weapon_bonus
 	elif move_base_power == 0:
 		damage_output = 0
@@ -368,9 +351,8 @@ func use_magic_healing(move_info, success_roll, crit_roll):
 	if crit:
 		damage_output += weapon_bonus
 	
-	var damage = damage_output * -1
 	move_info["success"] = calculate_move_success(move_info, success_roll)
-	move_info["damage_output"] = damage_output
+	move_info["move_power"] = damage_output
 	move_info["critical"] = crit
 
 	return move_info
@@ -382,7 +364,7 @@ func receive_move(
 ):
 	var move = move_info["move"]
 	var move_type = move.move_type
-	var damage_output = move_info["damage_output"]
+	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
 	
 	if damage_output == 0:
@@ -430,7 +412,7 @@ func receive_item_healing(move_info):
 	pass
 
 func receive_physical_attack(move_info):
-	var damage_output = move_info["damage_output"]
+	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
 	var damage_incurred = damage_output - fighter_magic_defense
 	
@@ -442,7 +424,7 @@ func receive_physical_attack(move_info):
 	return damage_incurred
 
 func receive_magic_attack(move_info):
-	var damage_output = move_info["damage_output"]
+	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
 	var damage_incurred = damage_output - fighter_magic_defense
 	
@@ -454,11 +436,11 @@ func receive_magic_attack(move_info):
 	return damage_incurred
 
 func receive_magic_healing(move_info):
-	var damage_output = move_info["damage_output"]
+	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
 	var damage_incurred = damage_output
-		
-	handle_damage(damage_incurred, crit)
+
+	handle_healing(damage_incurred, crit)
 
 	return damage_incurred
 
@@ -473,7 +455,7 @@ func gen_move_info(
 		"target": target,
 		"stolen_item": "",
 		"critical": false,
-		"damage_output": 0,
+		"move_power": 0,
 		"damage_incurred": 0,
 	}
 

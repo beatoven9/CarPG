@@ -13,14 +13,15 @@ func _ready():
 func _process(_delta):
 	pass
 
-func make_announcement(move_info):
+func make_announcement(announcement_string):
 
 	# var critical = move_info["critical"]
 
+	var new_announcement = announcement_string
 
-	var new_announcement = generate_announcement(
-		move_info
-	)
+	# var new_announcement = generate_announcement(
+	# 	move_info
+	# )
 
 	# This needs to be animated somehow. it's way too jarring
 	# one possible fix to this is to make the container actually

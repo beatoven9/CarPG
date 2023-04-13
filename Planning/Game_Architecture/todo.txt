@@ -62,6 +62,8 @@ Dialogue box basically done:
 |				A higher vitality means that the timer is longer. (maybe time = vitality * .1 (or .01))
 |				Each timeout signal, the health is decreased by 1 until target_health == current_health
 | 				There's an issue here with healing. That shouldn't be negatively affected by good vitality.
+|
+|*done* --- Do we check for health being over the max health during a heal? Check this when receiving a healing move.
 |----------
 
 

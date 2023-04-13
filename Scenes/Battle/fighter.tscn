@@ -85,6 +85,8 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8aanr"]
 shader = ExtResource("5_cmjfo")
 shader_parameter/critical = false
+shader_parameter/healing = false
+shader_parameter/healing_color = Quaternion(0, 0.8, 0.8, 1)
 
 [node name="Fighter" type="Area2D"]
 texture_filter = 3

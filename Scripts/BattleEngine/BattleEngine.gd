@@ -209,9 +209,11 @@ func apply_move(move_info):
 	# user.play_attack_animation()
 	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
 	# Announcement should only play AFTER animation is over.
-	var announcement_string = move_announcer_box.make_announcement(
-		move_info,
-	)
+	# var announcement_string = move_announcer_box.make_announcement(
+	# 	move_info,
+	# )
+	var announcement_string = move.generate_announcement_string(move_info)
+	move_announcer_box.make_announcement(announcement_string)
 	resume_timers()
 
 func barter_steal(perp, victim):
