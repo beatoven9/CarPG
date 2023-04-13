@@ -1,0 +1,58 @@
+We should have a class generator and a move generator.
+
+a json file of the form:
+
+{
+	"class_name": "BlackMageClass",
+	"move_list": [
+		{
+			"move_name": "Fire",
+			"base_power": 90,
+			"move_type": "black_magic_attack",
+			"friendly": false,
+			"elemental_damage": "fire",
+			"bp_cost": 15,
+			"crit_rate": 1.0,
+			"steal_item": false,
+		},
+		{
+			"move_name": "Frost",
+			"base_power": 90,
+			"move_type": "black_magic_attack",
+			"friendly": false,
+			"elemental_damage": "frost",
+			"bp_cost": 15,
+			"crit_rate": 1.0,
+			"steal_item": false,
+		},
+		{
+			"move_name": "Shock",
+			"base_power": 90,
+			"move_type": "black_magic_attack",
+			"friendly": false,
+			"elemental_damage": "shock",
+			"bp_cost": 15,
+			"crit_rate": 1.0,
+			"steal_item": false,
+		},
+	]
+}
+
+We should also have a move generator. This will create just the move file. I think this will speed up development. We will
+still have to create animations for each new move. There might be a way to automate that as well. Maybe each move has a 
+base animation based on the type. And the "animation_intensity" tag in the json file modifies some value on that animation
+that will show that it was a bigger move. For spells, the particle effects could be more intense. For combat moves, maybe 
+the animation is just faster or slower depending. Or gun moves just last longer
+
+json file of the form:
+
+{
+	"move_name": "Shock",
+	"base_power": 90,
+	"move_type": "black_magic_attack",
+	"friendly": false,
+	"elemental_damage": "shock",
+	"bp_cost": 15,
+	"crit_rate": 1.0,
+	"steal_item": false,
+}
