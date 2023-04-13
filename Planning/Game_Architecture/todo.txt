@@ -17,25 +17,25 @@ scrolling container
 
 Dialogue box basically done:
 	next
-		--- *Add attack, magic, (handiness? prolly just uses magic), defense, and magic-defense stats to the battle system.
-			*Add mechanic class with some healing spells
-			*Create moves that utilize these stats. I think it would be good to put the "calculate_move_damage"
-			methods on the base move. We could have different ones for offensive_magic, defensive_magic, healing magic, 
-			melee, long_range
-			*each method will take a user, a target, and the success_roll. It will use the relevant stats from each one 
-			to calculate the appropriate damage and determine if the success roll was high enough. it will return a 
-			dictionary of form:
-
-			var move_result = {
-				move_string: "",
-				damage_output: 90,
-			}
-
-				it could just apply the move to the target itself. however, this would make it hard to handle animations and all.
-
-		--- Add generate_announcement_string() to Moves
-				It would be cool if this had a large pool of randomized phrases about how great, mediocre, or bad
-				a move was. Maybe chatGPT generated. A huge list.
+*done*		--- *Add attack, magic, (handiness? prolly just uses magic), defense, and magic-defense stats to the battle system.
+*done*			*Add mechanic class with some healing spells
+*done*			*Create moves that utilize these stats. I think it would be good to put the "calculate_move_damage"
+*done*			methods on the base move. We could have different ones for offensive_magic, defensive_magic, healing magic, 
+*done*			melee, long_range
+*done*			*each method will take a user, a target, and the success_roll. It will use the relevant stats from each one 
+*done*			to calculate the appropriate damage and determine if the success roll was high enough. it will return a 
+*done*			dictionary of form:
+*done*
+*done*			var move_result = {
+*done*				move_string: "",
+*done*				damage_output: 90,
+*done*			}
+*done*
+*done*				it could just apply the move to the target itself. however, this would make it hard to handle animations and all.
+*done*
+*done*		--- Add generate_announcement_string() to Moves
+*done*				It would be cool if this had a large pool of randomized phrases about how great, mediocre, or bad
+*done*				a move was. Maybe chatGPT generated. A huge list.
 
 
 		--- Get the bars to lerp. maybe there is a "real_value" and a "displayed_value" on the fighter_hud for each bar.
@@ -54,7 +54,3 @@ I think I'm gonna make blue mage more intuitive. There's gonna be some sort of p
 learnable moves. So when you see a learnable move is used, you get a notification that it is learnable
 and your move_dex is updated. When you look through your move dex, you can see all the moves you've seen
 with the monsters that can learn them. Maybe there could be a move dex and a monster dex.
-
-
-
-
