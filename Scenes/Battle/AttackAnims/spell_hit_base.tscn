@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8w1rt21hamxa"]
+
+[ext_resource type="Texture2D" uid="uid://dn51a47cxx0lk" path="res://Sprites/AttackAnims/FireAnimAttack.png" id="1_rat3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcviw"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kfmn"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi26p"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go8ia"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75idq"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd15n"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16614"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv7i8"]
+atlas = ExtResource("1_rat3w")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfuqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcviw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kfmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi26p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go8ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75idq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd15n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16614")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv7i8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpellHitBase" type="Node2D"]
+
+[node name="SpellAnim" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_kfuqy")
+speed_scale = 1.2

@@ -38,6 +38,11 @@ Dialogue box basically done:
 *done*				a move was. Maybe chatGPT generated. A huge list.
 
 
+			--- Perhaps it would be more intuitive if the left arrow key switched to a "player targets" dialogue box
+				and the right arrow switched to the "enemy target".
+				If the move is friendly, the player box is the first one opened.
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 |----------
@@ -94,7 +99,11 @@ Dialogue box basically done:
 |			 with particle effects for that spell type to the target. The node should have a timer that is connected
 | 			 to a method that destroys that node. The same scene can be used for all sizes of a particular spell.
 |			 The difference between the spells will be amount of particle effects and maybe the size of the actual node.
-|
+|			-okokok perhaps, when the battle engine places the spell anim node on the target, it also creates a move_info
+| 			 property on the anim and hooks up the timeout on the anim to the handle_damage() method. And when the attack
+|			 anim finishes, it send the move_info to the recipient's receive_move() method. We would also need to hook up 
+| 			 each Fighter's receive_move() method to the announcer_box
+|			 
 |----------
 
 
