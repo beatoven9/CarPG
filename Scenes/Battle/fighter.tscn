@@ -98,6 +98,7 @@ texture_filter = 3
 texture = ExtResource("2_a0v5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_qwlpd")
 
 [node name="BattleTimer" parent="." instance=ExtResource("3_d0vl4")]

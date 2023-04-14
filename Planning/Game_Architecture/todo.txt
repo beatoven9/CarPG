@@ -79,9 +79,21 @@ Dialogue box basically done:
 |
 |*done* --- Add Monk class
 |
-|		--- Add Dragoon Class
+|*done*	--- Add Dragoon Class
 |
 |		--- Start thinking about BlueMage class
+|
+|		--- I neeeeed to make battle animations. I will probably have to restructure things to accomodate them
+|			Even if it's just one attack animation and one "receive attack" animation. They can be triggered in
+| 			the "receive_attack" method.
+|			-The completion of a "receive_attack" animation just has to be connected to something that makes a 
+|    		 resume_timers() call
+|			-When to start this animation is a little bit trickier.
+|			-It may be muuuuuuucch easier to handle the entire animation in the use_move() method.
+|			 This will actually be really easy this way. Spells can be a casting animation and then attach a node
+|			 with particle effects for that spell type to the target. The node should have a timer that is connected
+| 			 to a method that destroys that node. The same scene can be used for all sizes of a particular spell.
+|			 The difference between the spells will be amount of particle effects and maybe the size of the actual node.
 |
 |----------
 
