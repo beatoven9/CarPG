@@ -77,7 +77,9 @@ Dialogue box basically done:
 |				For this chatgpt prompt, "Tell me a sentence describing sally hitting bob and stealing her keys."
 |				Run this for each move to get a bank of formula sentences that we put user & target into
 |
-|		--- Add Dragoon and Monk classes
+|*done* --- Add Monk class
+|
+|		--- Add Dragoon Class
 |
 |		--- Start thinking about BlueMage class
 |

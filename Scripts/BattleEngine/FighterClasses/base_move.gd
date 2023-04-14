@@ -17,6 +17,9 @@ var generic_healing_templates = [
 ]
 
 func generate_announcement_string(move_info):
+	print("MOVE INFO IS: ")
+	print(move_info)
+
 	var move = move_info["move"]
 	var user = move_info["user"]
 	var target = move_info["target"]
@@ -24,6 +27,8 @@ func generate_announcement_string(move_info):
 	var critical = move_info["critical"]
 	var damage_output = move_info["move_power"]
 	var damage_incurred = move_info["damage_incurred"]
+	print(move.move_name)
+	print(move.move_type)
 
 	var selected_template = generic_attempt_templates.pick_random()
 	var announcement_string = selected_template.replace(

@@ -199,19 +199,26 @@ func apply_move(move_info):
 		highest_crit_roll,
 	)
 
-	if move.steal_item && move_info["success"]:
-		move_info["stolen_item"] = barter_steal(user, target)
+	if move_info["wait"] == true:
+		pass
+		# user.play_attack_animation()
+	else:
 
-	move_info = target.receive_move(
-		move_info,
-	)
+		if move.steal_item && move_info["success"]:
+			move_info["stolen_item"] = barter_steal(user, target)
 
-	# user.play_attack_animation()
-	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
-	# Announcement should only play AFTER animation is over.
-	# var announcement_string = move_announcer_box.make_announcement(
-	# 	move_info,
-	# )
+		move_info = target.receive_move(
+			move_info,
+		)
+
+		# user.play_attack_animation()
+		# This needs to connect the "move_complete" signal to the resume_timers() method on this script
+		# Announcement should only play AFTER animation is over.
+		# var announcement_string = move_announcer_box.make_announcement(
+		# 	move_info,
+		# )
+
+
 	var announcement_string = move.generate_announcement_string(move_info)
 	move_announcer_box.make_announcement(announcement_string)
 	resume_timers()

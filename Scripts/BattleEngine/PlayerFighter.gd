@@ -32,10 +32,14 @@ func get_available_moves():
 
 
 func request_move(battle_state):
-	var available_moves = get_available_moves()
+	if len(move_queue) == 0:
+		var available_moves = get_available_moves()
 
-	dialogue_box.prompt_for_move(
-		self,
-		available_moves,
-		battle_state
-	)
+		dialogue_box.prompt_for_move(
+			self,
+			available_moves,
+			battle_state
+		)
+	elif len(move_queue) > 0:
+		var move_info = pop_move_from_queue()
+		move_ready.emit(move_info)

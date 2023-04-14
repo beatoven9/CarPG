@@ -35,6 +35,8 @@ var class_proficiency
 
 var dead = false
 
+var move_queue = []
+
 signal move_ready(move, user, target)
 signal ready_to_move
 
@@ -161,6 +163,12 @@ func _on_move_ready(move, target):
 	)
 	move_ready.emit(move_info)
 
+func pop_move_from_queue():
+	if len(move_queue) > 0:
+		return move_queue.pop_back()
+	else:
+		print(fighter_name, "Tried to pop from an empty move_queue")
+
 func get_unselected():
 	fighter_hud._on_fighter_unselected()
 	selected_ui.set_visible(false)
@@ -201,9 +209,6 @@ func _on_second_tick():
 	fighter_hud.update_boost_bar(current_boost, max_boost)
 
 
-
-
-
 func use_move(
 	move_info,
 	success_roll,
@@ -212,23 +217,27 @@ func use_move(
 	var move = move_info["move"]
 	var move_type = move.move_type
 
-
-	var move_func = {
-		"melee_attack": use_melee_attack,
-		"gun_attack": use_gun_attack,
-		"black_magic_attack": use_black_magic_attack,
-		"white_magic_attack": use_white_magic_attack,
-		"white_magic_healing": use_white_magic_healing,
-		"item_attack": use_item_attack,
-		"item_healing": use_item_healing,
-	}.get(move_type, null) 
-	
-	if move_func == null:
-		print("BIG UFF the move_type key was not found: ", move_type)
+	if move_info["wait"] == true:
+		move_info["wait"] = false
+		return move_info
+	else:
+		var move_func = {
+			"melee_attack": use_melee_attack,
+			"gun_attack": use_gun_attack,
+			"jump_attack": use_jump_attack,
+			"black_magic_attack": use_black_magic_attack,
+			"white_magic_attack": use_white_magic_attack,
+			"white_magic_healing": use_white_magic_healing,
+			"item_attack": use_item_attack,
+			"item_healing": use_item_healing,
+		}.get(move_type, null) 
 		
-	var move_results = move_func.call(move_info, success_roll, crit_roll)
+		if move_func == null:
+			print("BIG UFF the move_type key was not found: ", move_type)
+			
+		var move_results = move_func.call(move_info, success_roll, crit_roll)
 
-	return move_results
+		return move_results
 			
 
 func use_melee_attack(move_info, success_roll, crit_roll):
@@ -236,6 +245,17 @@ func use_melee_attack(move_info, success_roll, crit_roll):
 
 func use_gun_attack(move_info, success_roll, crit_roll):
 	return use_physical_attack(move_info, success_roll, crit_roll)
+
+func use_jump_attack(move_info, success_roll, crit_roll):
+	var following_turn_move = use_physical_attack(
+		move_info,
+		success_roll,
+		crit_roll
+	)	
+	move_queue.push_back(following_turn_move)	
+	move_info["wait"] = true
+
+	return move_info
 	
 func use_black_magic_attack(move_info, success_roll, crit_roll):
 	return use_magic_attack(move_info, success_roll, crit_roll)
@@ -374,6 +394,7 @@ func receive_move(
 		var move_func = {
 			"melee_attack": receive_melee_attack,
 			"gun_attack": receive_gun_attack,
+			"jump_attack": receive_jump_attack,
 			"black_magic_attack": receive_black_magic_attack,
 			"white_magic_attack": receive_white_magic_attack,
 			"white_magic_healing": receive_white_magic_healing,
@@ -394,6 +415,9 @@ func receive_melee_attack(move_info):
 	return receive_physical_attack(move_info)
 
 func receive_gun_attack(move_info):
+	return receive_physical_attack(move_info)
+
+func receive_jump_attack(move_info):
 	return receive_physical_attack(move_info)
 	
 func receive_black_magic_attack(move_info):
@@ -457,6 +481,7 @@ func gen_move_info(
 		"critical": false,
 		"move_power": 0,
 		"damage_incurred": 0,
+		"wait": false
 	}
 
 	return move_info
