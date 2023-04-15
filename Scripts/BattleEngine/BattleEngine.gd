@@ -163,7 +163,7 @@ func receive_move_info(move_info):
 	move_queue.append(move_info)
 	execute_move()
 
-	resume_timers()
+	# resume_timers()
 
 
 func execute_move():
@@ -207,6 +207,9 @@ func apply_move(move_info):
 		if move.steal_item && move_info["success"]:
 			move_info["stolen_item"] = barter_steal(user, target)
 
+		move_info["announcer_box"] = move_announcer_box
+		move_info["resume_timers"] = resume_timers
+
 		move_info = target.receive_move(
 			move_info,
 		)
@@ -219,9 +222,10 @@ func apply_move(move_info):
 		# )
 
 
-	var announcement_string = move.generate_announcement_string(move_info)
-	move_announcer_box.make_announcement(announcement_string)
-	resume_timers()
+	# var announcement_string = move.generate_announcement_string(move_info)
+	# move_announcer_box.make_announcement(announcement_string)
+
+	# resume_timers()
 
 func barter_steal(perp, victim):
 	if len(victim.snatchable_inventory) > 0:

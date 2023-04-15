@@ -6,6 +6,8 @@ extends Area2D
 @onready var selected_ui = get_node("SelectedSprite")
 @onready var damage_hud = $DamageHUD
 
+@onready var fire_hit_anim = preload("res://Scenes/Battle/AttackAnims/fire_hit.tscn")
+
 var second_tick_timer: Timer
 
 var max_health
@@ -136,7 +138,9 @@ func resume_timer():
 	second_tick_timer.set_paused(false)
 	battle_timer.set_paused(false)
 
-func handle_damage(damage_inflicted, critical):
+func handle_damage(move_info):
+	var damage_inflicted = move_info["damage_incurred"]
+	var critical = move_info["critical"]
 
 	damage_hud.display_damage(damage_inflicted, critical)
 	current_health -= damage_inflicted
@@ -146,11 +150,19 @@ func handle_damage(damage_inflicted, critical):
 	if current_health <= 0:
 		_on_death()	
 
-func handle_healing(healing_amount, critical):
-	damage_hud.display_healing(healing_amount)
-	current_health += healing_amount
+func handle_healing(move_info):
+	var damage_inflicted = move_info["damage_incurred"]
+	var critical = move_info["critical"]
+
+	damage_hud.display_damage(damage_inflicted, critical)
+	current_health += damage_inflicted
 
 	health_changed.emit(current_health, max_health)	
+
+	# damage_hud.display_healing(healing_amount)
+	# current_health += healing_amount
+
+	# health_changed.emit(current_health, max_health)	
 
 	if current_health >= max_health:
 		current_health = max_health
@@ -406,7 +418,7 @@ func receive_move(
 			print("BIG UFF the move_type key was not found: ", move_type)
 			
 		var damage_incurred = move_func.call(move_info)
-		move_info["damage_incurred"] = damage_incurred
+		#move_info["damage_incurred"] = damage_incurred
 
 		return move_info
 			
@@ -421,13 +433,67 @@ func receive_jump_attack(move_info):
 	return receive_physical_attack(move_info)
 	
 func receive_black_magic_attack(move_info):
-	return receive_magic_attack(move_info)
+	var animation_string = {
+		"Frost": "frost_hit",
+		"Fire": "fire_hit",
+		"Zap": "zap_hit",
+		"Spirit": "spirit_hit"
+	}[move_info["move"].move_name]
+
+	move_info["damage_incurred"] = receive_magic_attack(move_info)
+	var damage_output = move_info["move_power"]
+
+	var damage_incurred = damage_output - fighter_magic_defense
+	
+	if damage_incurred < 0:
+		damage_incurred = 0
+
+	damage_incurred = int(damage_incurred)
+
+
+	var hit_anim_node = fire_hit_anim.instantiate()
+
+	hit_anim_node.move_info = move_info
+
+	move_info["target"].add_child(hit_anim_node)
+
+	hit_anim_node.spell_finished.connect(
+		move_info["target"].handle_damage
+	)
+
+	hit_anim_node.animated_sprite.play(animation_string)
+
+	return move_info
 
 func receive_white_magic_attack(move_info):
 	return receive_magic_attack(move_info)
 
 func receive_white_magic_healing(move_info):
-	return receive_magic_healing(move_info)
+	var animation_string = {
+		"Cure": "cure_hit"
+	}[move_info["move"].move_name]
+
+	move_info["damage_incurred"] = receive_magic_attack(move_info)
+	var damage_output = move_info["move_power"]
+
+	var damage_incurred = damage_output - fighter_magic_defense
+	
+	damage_incurred = int(damage_incurred)
+
+
+	var hit_anim_node = fire_hit_anim.instantiate()
+
+	hit_anim_node.move_info = move_info
+
+	move_info["target"].add_child(hit_anim_node)
+
+	hit_anim_node.spell_finished.connect(
+		move_info["target"].handle_healing
+	)
+
+	hit_anim_node.animated_sprite.play(animation_string)
+
+	return move_info
 
 func receive_item_attack(move_info):
 	pass
@@ -444,7 +510,7 @@ func receive_physical_attack(move_info):
 		damage_incurred = 0
 
 	damage_incurred = int(damage_incurred)
-	handle_damage(damage_incurred, crit)
+	handle_damage(move_info)
 	return damage_incurred
 
 func receive_magic_attack(move_info):
@@ -452,19 +518,18 @@ func receive_magic_attack(move_info):
 	var crit = move_info["critical"]
 	var damage_incurred = damage_output - fighter_magic_defense
 	
+	# This is necessary because if the magic defense is higher than the damage_output, we don't want healing to occur
+	# We could clamp the value instead
 	if damage_incurred < 0:
 		damage_incurred = 0
 
 	damage_incurred = int(damage_incurred)
-	handle_damage(damage_incurred, crit)
 	return damage_incurred
 
 func receive_magic_healing(move_info):
 	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
 	var damage_incurred = damage_output
-
-	handle_healing(damage_incurred, crit)
 
 	return damage_incurred
 
@@ -481,7 +546,10 @@ func gen_move_info(
 		"critical": false,
 		"move_power": 0,
 		"damage_incurred": 0,
-		"wait": false
+		"wait": false,
+		"announcer_box": null,
+		"resume_timer_method": null
+
 	}
 
 	return move_info

@@ -1,7 +1,7 @@
 extends base_move
 class_name BLIZZARD
 
-var move_name = "Blizzard"
+var move_name = "Frost"
 var base_power = 90
 var move_type = "black_magic_attack"
 var friendly = false

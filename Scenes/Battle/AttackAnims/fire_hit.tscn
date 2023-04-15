@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1fjcbkd36gxl"]
+
+[ext_resource type="PackedScene" uid="uid://b8w1rt21hamxa" path="res://Scenes/Battle/AttackAnims/spell_hit_base.tscn" id="1_euhcm"]
+
+[node name="FireHit" instance=ExtResource("1_euhcm")]
+
+[node name="SpellAnim" parent="." index="0"]
+animation = &"fire_hit"

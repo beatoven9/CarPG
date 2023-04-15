@@ -103,6 +103,17 @@ Dialogue box basically done:
 | 			 property on the anim and hooks up the timeout on the anim to the handle_damage() method. And when the attack
 |			 anim finishes, it send the move_info to the recipient's receive_move() method. We would also need to hook up 
 | 			 each Fighter's receive_move() method to the announcer_box
+|			-Maybe each move does have it's own use_move() method. This way, I can pass everything into this method and
+| 			 The move script handles everything else. So it will handle basically everything inside of use_move().
+|			 The benefit of this is that I don't need a fuckload of branching logic. I just call the method and it handles
+|			 the rest, including putting the spell anim node on the target, connecting the anim_ended signal and playing the
+|			 user's anim and if it's a melee attack, connecting THAT anim_ended signal to the move_complete logic.
+|				-I shouldn't put any of this logic into base_move. That's just a band-aid. implement new logic in each 
+|				 move. If there are some shared functionalities, I can create parent methods then.
+|			-The plan right now is to just put all of this move logic right into Fighter.gd script. There should be a hash table in
+|			 Spell receiving handler that chooses the appropriate spell_anim from the preloaded Scenes, attaches it to the 
+| 			 Target, sets the move_info property on the animation scene and then connects its anim_finished signal to the 
+|			 Fighter's handle_damage method. The Anim ended will also have to be connected to the resume_timers method.
 |			 
 |----------
 
