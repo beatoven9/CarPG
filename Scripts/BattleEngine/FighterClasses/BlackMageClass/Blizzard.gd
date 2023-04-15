@@ -1,4 +1,4 @@
-extends base_move
+extends BlackMagicBase
 class_name BLIZZARD
 
 var move_name = "Frost"

@@ -12,9 +12,9 @@ var steal_item = false
 var next_move = JUMP.new()
 
 var jump_template_strings = [
-	"{USER} jumped up so high.",
-	"{USER} sprung into the air.",
-	"{USER} leapt into the sky.",
+	"-{USER} jumped up so high.",
+	"-{USER} sprung into the air.",
+	"-{USER} leapt into the sky.",
 ]
 
 func generate_announcement_string(move_info):

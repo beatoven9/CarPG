@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var animated_sprite = $AnimatedSprite
 @onready var animation_player = $AnimationPlayer
 @onready var sprite2d: Sprite2D = get_node("Sprite2D")
 @onready var collision_shape2d: CollisionShape2D = get_node("CollisionShape2D")
@@ -112,7 +113,7 @@ func start_battle_timer():
 
 func request_move(battle_state):
 	var player_fighters = battle_state["player_fighters"]
-	var move = SPIRIT.new()
+	var move = FIRE.new()
 	var move_info = gen_move_info(
 		move,
 		self,
@@ -272,7 +273,6 @@ func use_gun_attack(move_info, success_roll, crit_roll):
 	return use_physical_attack(move_info, success_roll, crit_roll)
 
 func use_jump_prep(move_info, success_roll, crit_roll):
-	print("prepping_jump")
 	var jump_attack = gen_move_info(
 		move_info["move"].next_move,
 		move_info["user"],
@@ -336,12 +336,8 @@ func calculate_move_success(move_info, success_roll):
 		fighter_hud.update_boost_bar(current_boost, max_boost)
 
 		if success_roll < success_rate:
-			print(success_roll, " ", success_rate)
-			print(true)
 			return true
 		else:
-			print(success_roll, " ", success_rate)
-			print(false)
 			return false
 		# There is another steal check on the targetted fighter which selects which item the player receives
 		# One of the items should be "spare change" or "pocket lint" as a euphemism for "failure".
@@ -577,13 +573,15 @@ func receive_physical_attack(move_info):
 	var crit = move_info["critical"]
 
 	var damage_incurred
-	if move_info["success"]:
-		damage_incurred = damage_output - fighter_magic_defense
+	if move_info["success"] == true:
+		damage_incurred = damage_output - fighter_defense
 	else:
 		damage_incurred = 0
 	
 	if damage_incurred < 0:
 		damage_incurred = 0
+
+	move_info["damage_incurred"] = damage_incurred
 
 	damage_incurred = int(damage_incurred)
 	handle_damage(move_info)
@@ -634,7 +632,7 @@ func gen_move_info(
 		"damage_incurred": 0,
 		"wait": false,
 		"announcer_box": null,
-		"resume_timer_method": null
+		"resume_timers": null
 
 	}
 

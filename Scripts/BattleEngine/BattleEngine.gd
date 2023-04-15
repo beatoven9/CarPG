@@ -163,8 +163,6 @@ func receive_move_info(move_info):
 	move_queue.append(move_info)
 	execute_move()
 
-	# resume_timers()
-
 
 func execute_move():
 	if len(move_queue) > 0:
@@ -196,7 +194,7 @@ func apply_move(move_info):
 	var user = move_info["user"]
 	var target = move_info["target"]
 
-	move_info = user.use_move(
+	move_info = move.use_move(
 		move_info,
 		highest_success_roll,
 		highest_crit_roll,
@@ -205,22 +203,10 @@ func apply_move(move_info):
 	if move.steal_item && move_info["success"]:
 		move_info["stolen_item"] = barter_steal(user, target)
 
-	move_info = target.receive_move(
-		move_info,
-	)
+	#move_info = target.receive_move(
+	#	move_info,
+	#)
 
-	# user.play_attack_animation()
-	# This needs to connect the "move_complete" signal to the resume_timers() method on this script
-	# Announcement should only play AFTER animation is over.
-	# var announcement_string = move_announcer_box.make_announcement(
-	# 	move_info,
-	# )
-
-
-	# var announcement_string = move.generate_announcement_string(move_info)
-	# move_announcer_box.make_announcement(announcement_string)
-
-	# resume_timers()
 
 func barter_steal(perp, victim):
 	if len(victim.snatchable_inventory) > 0:

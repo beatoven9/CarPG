@@ -43,7 +43,7 @@ func load_enemy_data():
 		"defense": 15,
 		"magic": 15,
 		"magic_defense": 15,
-		"speed": 100,
+		"speed": 15,
 		"luck": 5,
 		"vitality": 10,
 		"fighter_class": BlackMageClass,
