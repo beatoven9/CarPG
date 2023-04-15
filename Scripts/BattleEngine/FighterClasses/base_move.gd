@@ -85,15 +85,15 @@ func use_move(
 			"melee_attack": use_melee_attack,
 			"gun_attack": use_gun_attack,
 			"jump_prep": use_jump_prep,
-			"black_magic_attack": use_black_magic_attack,
-			"white_magic_attack": use_white_magic_attack,
-			"white_magic_healing": use_white_magic_healing,
 			"item_attack": use_item_attack,
 			"item_healing": use_item_healing,
 		}.get(move_type, null) 
 		
 		if move_func == null:
-			print("BIG UFF the move_type key was not found: ", move_type)
+			print(
+				"BIG UFF the move_type key was not found: ",
+				move_type
+			)
 			
 		move_info = move_func.call(move_info, success_roll, crit_roll)
 
@@ -131,15 +131,6 @@ func use_jump_prep(move_info, success_roll, crit_roll):
 
 	return move_info
 
-func use_black_magic_attack(move_info, success_roll, crit_roll):
-	return use_magic_attack(move_info, success_roll, crit_roll)
-
-func use_white_magic_attack(move_info, success_roll, crit_roll):
-	return use_magic_attack(move_info, success_roll, crit_roll)
-
-func use_white_magic_healing(move_info, success_roll, crit_roll):
-	return use_magic_healing(move_info, success_roll, crit_roll)
-
 func use_item_attack(move_info, success_roll, crit_roll):
 	pass
 
@@ -176,73 +167,6 @@ func use_physical_attack(move_info, success_roll, crit_roll):
 	move_info["critical"] = crit
 
 	return move_info
-
-func use_magic_attack(move_info, success_roll, crit_roll):
-	var move = move_info["move"]
-	var user = move_info["user"]
-	var target = move_info["target"]
-	var fighter_magic = user.fighter_magic
-	var weapon_bonus = user.weapon_bonus
-
-	var crit = false
-
-	if crit_roll < move.crit_rate:
-		crit = true
-	else:
-		crit = false
-
-	# Possibly, in here we may have to check for elemental powerup?
-	
-
-	var move_base_power = move.base_power
-	var damage_output = 0
-	if move_base_power > 0:
-		damage_output = fighter_magic + move_base_power + weapon_bonus
-	elif move_base_power == 0:
-		damage_output = 0
-
-	if crit:
-		damage_output += weapon_bonus
-
-	move_info["success"] = calculate_move_success(move_info, success_roll)
-	move_info["move_power"] = damage_output
-	move_info["critical"] = crit
-
-	return move_info
-
-func use_magic_healing(move_info, success_roll, crit_roll):
-	var move = move_info["move"]
-	var user = move_info["user"]
-	var target = move_info["target"]
-	var fighter_magic = user.fighter_magic
-	var weapon_bonus = user.weapon_bonus
-
-	var crit = false
-
-	if crit_roll < move.crit_rate:
-		crit = true
-	else:
-		crit = false
-
-	# Possibly, in here we may have to check for elemental powerup?
-
-
-	var move_base_power = move.base_power
-	var damage_output = 0
-	if move_base_power > 0:
-		damage_output = fighter_magic + move_base_power + weapon_bonus
-	elif move_base_power == 0:
-		damage_output = 0
-
-	if crit:
-		damage_output += weapon_bonus
-	
-	move_info["success"] = calculate_move_success(move_info, success_roll)
-	move_info["move_power"] = damage_output
-	move_info["critical"] = crit
-
-	return move_info
-
 
 func calculate_move_success(move_info, success_roll):
 	var bp_cost = move_info["move"].bp_cost

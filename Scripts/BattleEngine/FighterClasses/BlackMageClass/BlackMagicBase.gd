@@ -62,6 +62,7 @@ func _on_cast_complete():
 	var target = current_move_info["user"]	
 
 	user.animated_sprite.set_visible(false)
+	user.animated_sprite.stop()
 	user.animated_sprite.animation_looped.disconnect(
 		_on_cast_complete
 	)

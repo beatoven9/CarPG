@@ -58,7 +58,7 @@ func use_jump_attack(move_info, success_roll, crit_roll):
 		success_roll,
 		crit_roll
 	)	
-	user.z_index += 11
+	user.z_index += 1
 	user.animation_player.play("jump_attack")
 	user.animation_player.animation_finished.connect(
 		_on_jump_complete
@@ -73,12 +73,22 @@ func _on_jump_complete(_animation_name):
 	user.animation_player.animation_finished.disconnect(
 		_on_jump_complete
 	)
-	current_move_info["resume_timers"].call()
 	var announcement = generate_announcement_string(current_move_info)
 	current_move_info["announcer_box"].make_announcement(
 		announcement
 	)
 	user.position.x = user_original_x_position
 	user.z_index -= 1	
+
+	user.animation_player.animation_finished.connect(
+		_on_jump_return
+	)
 	user.animation_player.play("jump_return")
+	current_move_info["resume_timers"].call()
+
+func _on_jump_return(_animation_name):
+	var user = current_move_info["user"]
+	user.animation_player.animation_finished.disconnect(
+		_on_jump_return
+	)
 	current_move_info["resume_timers"].call()

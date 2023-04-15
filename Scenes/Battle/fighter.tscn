@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://etca8w110ckb"]
+[gd_scene load_steps=78 format=3 uid="uid://etca8w110ckb"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="1_ljcyq"]
 [ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Car_Sprites/Sedan_a.png" id="2_a0v5c"]
@@ -211,11 +211,44 @@ tracks/2/keys = {
 "values": [Vector2(5, 5), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_t5iuc"]
+resource_name = "ram_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.14354, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12), Vector2(2.08165e-12, 512)]
+}
+
+[sub_resource type="Animation" id="Animation_3hymu"]
+resource_name = "ram_return"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -256), Vector2(2.08165e-12, -256), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_83a5k"]
 _data = {
 "jump_attack": SubResource("Animation_ad8sr"),
 "jump_prep": SubResource("Animation_5edsv"),
-"jump_return": SubResource("Animation_f6pbt")
+"jump_return": SubResource("Animation_f6pbt"),
+"ram_attack": SubResource("Animation_t5iuc"),
+"ram_return": SubResource("Animation_3hymu")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0tic"]
