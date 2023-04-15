@@ -4,7 +4,7 @@ class_name DragoonClass
 static func get_available_moves(class_proficiency):
 	var available_moves = AvailableMoves.new()
 
-	var attack = JUMP.new()
+	var attack = JUMP_PREP.new()
 
 	var abilities = []
 

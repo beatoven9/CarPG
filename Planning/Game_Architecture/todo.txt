@@ -119,6 +119,13 @@ Dialogue box basically done:
 |			 user's anim and if it's a melee attack, connecting THAT anim_ended signal to the move_complete logic.
 |				-I shouldn't put any of this logic into base_move. That's just a band-aid. implement new logic in each 
 |				 move. If there are some shared functionalities, I can create parent methods then.
+|				-I think this is going to be the best way to do this for animations too.
+|				 This way, when an attack animation is used, that move can connect its animation_finished signal
+|				 to a method that calls receive_move() on the target. This is good for multiple reasons.
+|				 Biggest of these reasons is that move_info will be available as a property on the move.
+|				 With this said, it might be best to have the spell attacks actually be animations in an animated sprite node
+|				 that is kept on the Fighter node but is not visible by default. So then, when it needs to be used,
+|				 it is made visible and then plays.
 |			-The plan right now is to just put all of this move logic right into Fighter.gd script. There should be a hash table in
 |			 Spell receiving handler that chooses the appropriate spell_anim from the preloaded Scenes, attaches it to the 
 | 			 Target, sets the move_info property on the animation scene and then connects its anim_finished signal to the 

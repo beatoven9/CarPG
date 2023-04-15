@@ -1,12 +1,13 @@
 extends Area2D
 
+@onready var animation_player = $AnimationPlayer
 @onready var sprite2d: Sprite2D = get_node("Sprite2D")
 @onready var collision_shape2d: CollisionShape2D = get_node("CollisionShape2D")
 @onready var battle_timer = get_node("BattleTimer")
 @onready var selected_ui = get_node("SelectedSprite")
 @onready var damage_hud = $DamageHUD
 
-@onready var fire_hit_anim = preload("res://Scenes/Battle/AttackAnims/fire_hit.tscn")
+@onready var spell_hit_anim = preload("res://Scenes/Battle/AttackAnims/spell_hit_base.tscn")
 
 var second_tick_timer: Timer
 
@@ -247,6 +248,7 @@ func use_move(
 		var move_func = {
 			"melee_attack": use_melee_attack,
 			"gun_attack": use_gun_attack,
+			"jump_prep": use_jump_prep,
 			"jump_attack": use_jump_attack,
 			"black_magic_attack": use_black_magic_attack,
 			"white_magic_attack": use_white_magic_attack,
@@ -258,9 +260,9 @@ func use_move(
 		if move_func == null:
 			print("BIG UFF the move_type key was not found: ", move_type)
 			
-		var move_results = move_func.call(move_info, success_roll, crit_roll)
+		move_info = move_func.call(move_info, success_roll, crit_roll)
 
-		return move_results
+		return move_info
 			
 
 func use_melee_attack(move_info, success_roll, crit_roll):
@@ -269,14 +271,42 @@ func use_melee_attack(move_info, success_roll, crit_roll):
 func use_gun_attack(move_info, success_roll, crit_roll):
 	return use_physical_attack(move_info, success_roll, crit_roll)
 
+func use_jump_prep(move_info, success_roll, crit_roll):
+	print("prepping_jump")
+	var jump_attack = gen_move_info(
+		move_info["move"].next_move,
+		move_info["user"],
+		move_info["target"],
+	)
+	move_queue.push_back(
+		jump_attack
+	)
+
+	animation_player.play("jump_prep")
+
+	move_info["success"] = calculate_move_success(
+		move_info,
+		success_roll
+	)
+
+	if move_info["success"]:
+		move_info["resume_timers"].call()			
+		var announcement_string = move_info["move"].generate_announcement_string(move_info)
+		move_info["announcer_box"].make_announcement(announcement_string)
+
+	return move_info
+
 func use_jump_attack(move_info, success_roll, crit_roll):
-	var following_turn_move = use_physical_attack(
+	move_info = use_physical_attack(
 		move_info,
 		success_roll,
 		crit_roll
 	)	
-	move_queue.push_back(following_turn_move)	
-	move_info["wait"] = true
+
+	animation_player.play("jump_attack")
+	animation_player.animation_finished.connect(
+		move_info["target"].move_finished
+	)
 
 	return move_info
 	
@@ -313,25 +343,11 @@ func calculate_move_success(move_info, success_roll):
 			print(success_roll, " ", success_rate)
 			print(false)
 			return false
-#	if current_boost >= bp_cost:
-#		current_boost -= bp_cost
-#		fighter_hud.update_boost_bar(current_boost, max_boost)
-#		return true
-#	else:
-#		current_boost = 0
-#		fighter_hud.update_boost_bar(current_boost, max_boost)
-#		var diff = bp_cost - current_boost
-#		var ratio = diff / bp_cost
-#		print(success_roll)
-#		if success_roll < ratio:
-			# There is another steal check on the targetted fighter which selects which item the player receives
-			# One of the items should be "spare change" or "pocket lint" as a euphemism for "failure".
-			# Inventory will be a list of objects on all fighters. It will be set when a fighter is instantiated.
-			# Then, GetStolen from will choose from this list at random.
-#			# It will not remove old items from list.
-#			return true
-#		else:
-#			return false
+		# There is another steal check on the targetted fighter which selects which item the player receives
+		# One of the items should be "spare change" or "pocket lint" as a euphemism for "failure".
+		# Inventory will be a list of objects on all fighters. It will be set when a fighter is instantiated.
+		# Then, GetStolen from will choose from this list at random.
+		# It will not remove old items from list.
 		
 
 
@@ -475,7 +491,7 @@ func receive_black_magic_attack(move_info):
 	var damage_incurred
 	if move_info["success"]:
 		damage_incurred = damage_output - fighter_magic_defense
-		var hit_anim_node = fire_hit_anim.instantiate()
+		var hit_anim_node = spell_hit_anim.instantiate()
 		hit_anim_node.move_info = move_info
 		move_info["target"].add_child(hit_anim_node)
 		hit_anim_node.spell_finished.connect(
@@ -486,7 +502,7 @@ func receive_black_magic_attack(move_info):
 		damage_incurred = 0
 
 		# This vv should actually be the failure animation
-		var hit_anim_node = fire_hit_anim.instantiate()
+		var hit_anim_node = spell_hit_anim.instantiate()
 		hit_anim_node.move_info = move_info
 		move_info["target"].add_child(hit_anim_node)
 		hit_anim_node.spell_finished.connect(
@@ -518,7 +534,7 @@ func receive_white_magic_healing(move_info):
 	var damage_incurred
 	if move_info["success"]:
 		damage_incurred = damage_output - fighter_magic_defense
-		var hit_anim_node = fire_hit_anim.instantiate()
+		var hit_anim_node = spell_hit_anim.instantiate()
 		hit_anim_node.move_info = move_info
 		move_info["target"].add_child(hit_anim_node)
 		hit_anim_node.spell_finished.connect(
@@ -529,7 +545,7 @@ func receive_white_magic_healing(move_info):
 	else:
 		damage_incurred = 0
 		# This vv should actually be the failure animation
-		var hit_anim_node = fire_hit_anim.instantiate()
+		var hit_anim_node = spell_hit_anim.instantiate()
 		hit_anim_node.move_info = move_info
 		move_info["target"].add_child(hit_anim_node)
 		hit_anim_node.spell_finished.connect(
@@ -543,6 +559,12 @@ func receive_white_magic_healing(move_info):
 
 
 	return move_info
+
+func _on_move_complete(move_info):
+	move_info["resume_timers"].call()
+	var announcement_string = move_info["move"].generate_announcement_string(move_info)
+	move_info["announcer_box"].make_announcement(announcement_string)
+	move_info["resume_timers"].call()
 
 func receive_item_attack(move_info):
 	pass

@@ -12,9 +12,6 @@ func _ready():
 func _on_anim_finished():
 	spell_finished.emit(move_info)
 	animated_sprite.stop()
-	move_info["resume_timers"].call()
-	var announcement_string = move_info["move"].generate_announcement_string(move_info)
-	move_info["announcer_box"].make_announcement(announcement_string)
 	queue_free()
 
 

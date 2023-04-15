@@ -6,23 +6,22 @@ var base_power = 90
 var move_type = "jump_attack"
 var sub_selection = []
 var friendly = false
-var bp_cost = 10
+var bp_cost = 0
 var crit_rate = .25
 var steal_item = false
 
 var jump_template_strings = [
-	"{USER} jumped up so high.",
-	"{USER} sprung into the air.",
-	"{USER} leapt into the sky.",
+	"{USER} fell from the sky on top of {TARGET}",
+	"{USER} slammed onto {TARGET}",
+	"{USER} leapt onto {TARGET}",
 ]
 
 func generate_announcement_string(move_info):
-	if move_info["wait"] == true:
-		var new_announcement = jump_template_strings.pick_random().replace(
-			"{USER}",
-			move_info["user"].fighter_name
-		)
-		return new_announcement
-
-	else:
-		return super.generate_announcement_string(move_info)
+	var announcement = jump_template_strings.pick_random().replace(
+		"{USER}",
+		move_info["user"].fighter_name
+	).replace(
+		"{TARGET}",
+		move_info["target"].fighter_name
+	)
+	return announcement
