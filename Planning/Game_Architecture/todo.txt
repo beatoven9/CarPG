@@ -10,7 +10,16 @@ when updating the dialogue box, we will get the current string and then add the 
 newlines in between and set that as the new text. We will probably also have to put this label inside a vertical
 scrolling container
 
-
+boost usage on moves.
+	total_cost
+	current_boost
+	value_after_cast = current_boost - total_cost
+	if value_after_cast >= 0:	
+		current_boost = value_after_cast
+		updat_boost
+		return -1
+	elif value_after_cast < 0:
+		success_rate = (total_cost - abs(value_after_cast)) / total_cost
 
 
 

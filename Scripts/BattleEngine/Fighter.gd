@@ -111,7 +111,7 @@ func start_battle_timer():
 
 func request_move(battle_state):
 	var player_fighters = battle_state["player_fighters"]
-	var move = GUN_DOWN.new()
+	var move = SPIRIT.new()
 	var move_info = gen_move_info(
 		move,
 		self,
@@ -122,6 +122,7 @@ func request_move(battle_state):
 		"user" = self,
 		"target" = player_fighters.pick_random()
 	}
+
 	move_ready.emit(move_info)
 
 func send_move():
@@ -200,14 +201,24 @@ func _on_death():
 	fighter_death.emit(self)	
 
 func expend_bp(bp_cost):
-	if current_boost > bp_cost:
-		current_boost -= bp_cost	
-		boost_changed.emit(current_boost, max_boost)
-		return true
-	else:
-		current_boost = 0
-		boost_changed.emit(current_boost, max_boost)
-		return false
+# 	if current_boost > bp_cost:
+# 		current_boost -= bp_cost	
+# 		boost_changed.emit(current_boost, max_boost)
+# 		return true
+# 	else:
+# 		current_boost = 0
+# 		boost_changed.emit(current_boost, max_boost)
+# 		return false
+
+	var bp_after_cast = current_boost - bp_cost
+	if bp_after_cast >= 0:
+		current_boost -= bp_cost
+		#boost_changed.emit(current_boost, max_boost)
+		return -1
+	elif bp_after_cast < 0:
+		var success_rate = (float(bp_cost) - abs(bp_after_cast)) / float(bp_cost)
+		return success_rate
+		
 
 func _on_second_tick():
 	current_boost += boost_per_sec
@@ -286,23 +297,41 @@ func use_item_healing(move_info, success_roll, crit_roll):
 
 func calculate_move_success(move_info, success_roll):
 	var bp_cost = move_info["move"].bp_cost
-
-	if current_boost >= bp_cost:
-		current_boost -= bp_cost
+	var success_rate = expend_bp(bp_cost)
+	if success_rate == -1:
 		fighter_hud.update_boost_bar(current_boost, max_boost)
 		return true
 	else:
-		var diff = bp_cost - current_boost
-		var ratio = diff / bp_cost
-		if success_roll < ratio:
+		current_boost = 0
+		fighter_hud.update_boost_bar(current_boost, max_boost)
+
+		if success_roll < success_rate:
+			print(success_roll, " ", success_rate)
+			print(true)
+			return true
+		else:
+			print(success_roll, " ", success_rate)
+			print(false)
+			return false
+#	if current_boost >= bp_cost:
+#		current_boost -= bp_cost
+#		fighter_hud.update_boost_bar(current_boost, max_boost)
+#		return true
+#	else:
+#		current_boost = 0
+#		fighter_hud.update_boost_bar(current_boost, max_boost)
+#		var diff = bp_cost - current_boost
+#		var ratio = diff / bp_cost
+#		print(success_roll)
+#		if success_roll < ratio:
 			# There is another steal check on the targetted fighter which selects which item the player receives
 			# One of the items should be "spare change" or "pocket lint" as a euphemism for "failure".
 			# Inventory will be a list of objects on all fighters. It will be set when a fighter is instantiated.
 			# Then, GetStolen from will choose from this list at random.
-			# It will not remove old items from list.
-			return true
-		else:
-			return false
+#			# It will not remove old items from list.
+#			return true
+#		else:
+#			return false
 		
 
 
@@ -343,7 +372,7 @@ func use_magic_attack(move_info, success_roll, crit_roll):
 		crit = false
 
 	# Possibly, in here we may have to check for elemental powerup?
-
+	
 
 	var move_base_power = move.base_power
 	var damage_output = 0
@@ -443,25 +472,34 @@ func receive_black_magic_attack(move_info):
 	move_info["damage_incurred"] = receive_magic_attack(move_info)
 	var damage_output = move_info["move_power"]
 
-	var damage_incurred = damage_output - fighter_magic_defense
+	var damage_incurred
+	if move_info["success"]:
+		damage_incurred = damage_output - fighter_magic_defense
+		var hit_anim_node = fire_hit_anim.instantiate()
+		hit_anim_node.move_info = move_info
+		move_info["target"].add_child(hit_anim_node)
+		hit_anim_node.spell_finished.connect(
+			move_info["target"].handle_damage
+		)
+		hit_anim_node.animated_sprite.play(animation_string)
+	else:
+		damage_incurred = 0
+
+		# This vv should actually be the failure animation
+		var hit_anim_node = fire_hit_anim.instantiate()
+		hit_anim_node.move_info = move_info
+		move_info["target"].add_child(hit_anim_node)
+		hit_anim_node.spell_finished.connect(
+			move_info["target"].handle_healing
+		)
+
+		hit_anim_node.animated_sprite.play(animation_string)
 	
 	if damage_incurred < 0:
 		damage_incurred = 0
 
 	damage_incurred = int(damage_incurred)
 
-
-	var hit_anim_node = fire_hit_anim.instantiate()
-
-	hit_anim_node.move_info = move_info
-
-	move_info["target"].add_child(hit_anim_node)
-
-	hit_anim_node.spell_finished.connect(
-		move_info["target"].handle_damage
-	)
-
-	hit_anim_node.animated_sprite.play(animation_string)
 
 	return move_info
 
@@ -470,28 +508,39 @@ func receive_white_magic_attack(move_info):
 
 func receive_white_magic_healing(move_info):
 	var animation_string = {
-		"Cure": "cure_hit"
+		"Cure": "cure_hit",
+		"Cure 2": "cure_hit"
 	}[move_info["move"].move_name]
 
 	move_info["damage_incurred"] = receive_magic_attack(move_info)
 	var damage_output = move_info["move_power"]
 
-	var damage_incurred = damage_output - fighter_magic_defense
+	var damage_incurred
+	if move_info["success"]:
+		damage_incurred = damage_output - fighter_magic_defense
+		var hit_anim_node = fire_hit_anim.instantiate()
+		hit_anim_node.move_info = move_info
+		move_info["target"].add_child(hit_anim_node)
+		hit_anim_node.spell_finished.connect(
+			move_info["target"].handle_healing
+		)
+
+		hit_anim_node.animated_sprite.play(animation_string)
+	else:
+		damage_incurred = 0
+		# This vv should actually be the failure animation
+		var hit_anim_node = fire_hit_anim.instantiate()
+		hit_anim_node.move_info = move_info
+		move_info["target"].add_child(hit_anim_node)
+		hit_anim_node.spell_finished.connect(
+			move_info["target"].handle_healing
+		)
+
+		hit_anim_node.animated_sprite.play(animation_string)
 	
 	damage_incurred = int(damage_incurred)
 
 
-	var hit_anim_node = fire_hit_anim.instantiate()
-
-	hit_anim_node.move_info = move_info
-
-	move_info["target"].add_child(hit_anim_node)
-
-	hit_anim_node.spell_finished.connect(
-		move_info["target"].handle_healing
-	)
-
-	hit_anim_node.animated_sprite.play(animation_string)
 
 	return move_info
 
@@ -504,7 +553,12 @@ func receive_item_healing(move_info):
 func receive_physical_attack(move_info):
 	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
-	var damage_incurred = damage_output - fighter_magic_defense
+
+	var damage_incurred
+	if move_info["success"]:
+		damage_incurred = damage_output - fighter_magic_defense
+	else:
+		damage_incurred = 0
 	
 	if damage_incurred < 0:
 		damage_incurred = 0
@@ -516,7 +570,12 @@ func receive_physical_attack(move_info):
 func receive_magic_attack(move_info):
 	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
-	var damage_incurred = damage_output - fighter_magic_defense
+
+	var damage_incurred
+	if move_info["success"]:
+		damage_incurred = damage_output - fighter_magic_defense
+	else:
+		damage_incurred = 0
 	
 	# This is necessary because if the magic defense is higher than the damage_output, we don't want healing to occur
 	# We could clamp the value instead
@@ -529,7 +588,12 @@ func receive_magic_attack(move_info):
 func receive_magic_healing(move_info):
 	var damage_output = move_info["move_power"]
 	var crit = move_info["critical"]
-	var damage_incurred = damage_output
+
+	var damage_incurred
+	if move_info["success"]:
+		damage_incurred = damage_output - fighter_magic_defense
+	else:
+		damage_incurred = 0
 
 	return damage_incurred
 

@@ -16,6 +16,9 @@ var generic_healing_templates = [
 	"-{TARGET} was healed by {DAMAGE_INCURRED} hp",
 ]
 
+func generate_failure_string():
+	return "But it failed..."
+
 func generate_announcement_string(move_info):
 
 	var move = move_info["move"]

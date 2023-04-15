@@ -6,7 +6,7 @@ var base_power = 90
 var move_type = "white_magic_healing"
 var friendly = false
 var elemental_damage = null
-var bp_cost = 15
+var bp_cost = 10
 var crit_rate = 1.0
 var steal_item = false
 
@@ -43,7 +43,9 @@ func generate_announcement_string(move_info):
 	)
 	var damage_string
 
-	if damage_incurred < 0:
+	if move_info["success"] == false:
+		damage_string = generate_failure_string()
+	elif damage_incurred < 0:
 		damage_string = generic_damage_templates.pick_random().replace(
 			"{TARGET}",
 			target.fighter_name
