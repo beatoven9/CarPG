@@ -11,6 +11,7 @@ var crit_rate = .25
 var steal_item = false
 
 var current_move_info
+var rotation_delta
 
 func use_move(
 	move_info,
@@ -32,7 +33,8 @@ func use_move(
 func use_ram_attack(move_info, success_roll, crit_roll):
 	var user = move_info["user"]
 	var target = move_info["target"]
-	#user.position.x = target.position.x
+	rotation_delta = user.position.angle_to_point(target.position)
+	user.rotation += rotation_delta
 	move_info = use_physical_attack(
 		move_info,
 		success_roll,
@@ -63,6 +65,7 @@ func _on_ram_complete(_animation_name):
 	user.animation_player.animation_finished.connect(
 		_on_ram_return
 	)
+	user.rotation -= rotation_delta
 	user.animation_player.play("ram_return")
 
 func _on_ram_return(_animation_name):

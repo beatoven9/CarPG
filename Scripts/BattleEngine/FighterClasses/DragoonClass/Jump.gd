@@ -84,7 +84,6 @@ func _on_jump_complete(_animation_name):
 		_on_jump_return
 	)
 	user.animation_player.play("jump_return")
-	current_move_info["resume_timers"].call()
 
 func _on_jump_return(_animation_name):
 	var user = current_move_info["user"]
