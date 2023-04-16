@@ -167,7 +167,10 @@ Matthew: Excellent! The tracking on the cargo is still functional so I'll mark i
 Frogg: Glib chierah pir dua aiutasa!
 Wedge: What?
 Frogg: Glib chi.. Glib chier... ughhhh!... Za slatsuzon ze roht!!
-Wheely: I have no idea what he's saying but it looks like he wants to come with us.
+Wheely: I have no idea what he's saying...
+Frogg: ... Me help you.
+Wedge: Does you want to join us?
+Frogg: (jumps up and down in agreement)
 
 // Frogg joins the party.
 // Get the cargo and go back to Matthew.
