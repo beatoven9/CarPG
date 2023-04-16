@@ -226,20 +226,22 @@ func prompt_for_target():
 
 	if selected_move.friendly == true:
 		for player in current_battle_state["player_fighters"]:
-			target_list.append(player)
-			target_box.add_item(player.fighter_name)
+			if player.jumped == false:
+				target_list.append(player)
+				target_box.add_item(player.fighter_name)
 
 		for enemy in current_battle_state["enemy_fighters"]:
-			target_list.append(enemy)
-			target_box.add_item(enemy.fighter_name)
+			if enemy.jumped == false:
+				target_list.append(enemy)
+				target_box.add_item(enemy.fighter_name)
 	elif selected_move.friendly == false:
 		for enemy in current_battle_state["enemy_fighters"]:
-			if enemy.dead == false:
+			if enemy.dead == false and enemy.jumped == false:
 				target_list.append(enemy)
 				target_box.add_item(enemy.fighter_name)
 
 		for player in current_battle_state["player_fighters"]:
-			if player.dead == false:
+			if player.dead == false && player.jumped == false:
 				target_list.append(player)
 				target_box.add_item(player.fighter_name)
 

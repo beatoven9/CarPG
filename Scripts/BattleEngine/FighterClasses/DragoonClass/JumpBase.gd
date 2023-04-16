@@ -62,7 +62,8 @@ func _on_jump_complete(_animation_name):
 
 func _on_jump_return(_animation_name):
 	var user = current_move_info["user"]
+	user.jumped = false
 	user.animation_player.animation_finished.disconnect(
 		_on_jump_return
 	)
-	current_move_info["resume_timers"].call()
+	current_move_info["on_move_complete"].call()

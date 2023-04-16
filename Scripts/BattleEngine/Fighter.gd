@@ -14,6 +14,7 @@ extends Area2D
 
 var second_tick_timer: Timer
 
+# stat vars
 var max_health
 var current_health
 var max_boost
@@ -34,12 +35,15 @@ var snatchable_inventory = []
 var weapon_bonus = 0
 var armor_bonus = 0
 
+
 var fighter_hud
 var fighter_name
 var fighter_class
 var class_proficiency
 
+# state vars
 var dead = false
+var jumped = false
 
 var move_queue = []
 
@@ -352,11 +356,10 @@ func receive_white_magic_healing(move_info):
 
 	return move_info
 
-func _on_move_complete(move_info):
-	move_info["resume_timers"].call()
-	var announcement_string = move_info["move"].generate_announcement_string(move_info)
-	move_info["announcer_box"].make_announcement(announcement_string)
-	move_info["resume_timers"].call()
+#func _on_move_complete(move_info):
+#	var announcement_string = move_info["move"].generate_announcement_string(move_info)
+#	move_info["announcer_box"].make_announcement(announcement_string)
+#	move_info["resume_timers"].call()
 
 func receive_item_attack(move_info):
 	pass
@@ -425,7 +428,7 @@ func gen_move_info(
 		"damage_incurred": 0,
 		"wait": false,
 		"announcer_box": null,
-		"resume_timers": null
+		"on_move_complete": null
 
 	}
 

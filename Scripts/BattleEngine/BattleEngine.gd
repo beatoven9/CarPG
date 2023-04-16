@@ -152,12 +152,18 @@ func pause_timers():
 	for fighter in global_fighters_dict["enemies"]:
 		fighter.pause_timer()
 
+func on_move_complete():
+	resume_timers()
+	execute_move()
+
 func resume_timers():
 	for fighter in global_fighters_dict["players"]:
 		fighter.resume_timer()
 
 	for fighter in global_fighters_dict["enemies"]:
 		fighter.resume_timer()
+
+	execute_move()
 
 func receive_move_info(move_info):
 	move_queue.append(move_info)
@@ -169,10 +175,13 @@ func execute_move():
 		var move_info = move_queue.pop_at(0)
 		apply_move(move_info)
 
+	else:
+		print("no move on the queue")
+
 func apply_move(move_info):
 
 	move_info["announcer_box"] = move_announcer_box
-	move_info["resume_timers"] = resume_timers
+	move_info["on_move_complete"] = on_move_complete
 	pause_timers()
 
 	# move_info["success"] = success

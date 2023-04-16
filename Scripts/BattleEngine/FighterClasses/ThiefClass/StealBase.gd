@@ -73,7 +73,7 @@ func _on_steal_return(_animation_name):
 	current_user.animation_player.animation_finished.disconnect(
 		_on_steal_return
 	)
-	current_move_info["resume_timers"].call()
+	current_move_info["on_move_complete"].call()
 	
 func move_toward_anim():
 	current_user.z_index += 1

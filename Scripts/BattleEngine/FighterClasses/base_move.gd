@@ -125,7 +125,7 @@ func use_jump_prep(move_info, success_roll, crit_roll):
 	)
 
 	if move_info["success"]:
-		move_info["resume_timers"].call()			
+		move_info["on_move_complete"].call()			
 		var announcement_string = move_info["move"].generate_announcement_string(move_info)
 		move_info["announcer_box"].make_announcement(announcement_string)
 

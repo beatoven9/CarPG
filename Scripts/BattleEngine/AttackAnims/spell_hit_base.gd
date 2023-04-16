@@ -10,7 +10,7 @@ func _ready():
 	animated_sprite.animation_looped.connect(_on_anim_finished)
 
 func _on_anim_finished():
-	move_info["resume_timers"].call()
+	move_info["on_move_complete"].call()
 	var announcement =move_info["move"].generate_announcement_string(move_info)
 	move_info["announcer_box"].make_announcement(announcement)
 	spell_finished.emit(move_info)

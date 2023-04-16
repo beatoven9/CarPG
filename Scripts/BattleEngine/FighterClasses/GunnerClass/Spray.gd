@@ -99,4 +99,4 @@ func _on_move_complete():
 	current_move_info["announcer_box"].make_announcement(
 		announcement
 	)
-	current_move_info["resume_timers"].call()
+	current_move_info["on_move_complete"].call()
