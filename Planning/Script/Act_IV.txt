@@ -1,14 +1,14 @@
 ---Act IV---
 ---scene i---
 
-// The team goes to the palace and talks to the guards.
+    // The team goes to the palace and talks to the guards.
 
 Gov. Gearson: Hello there guards! We have very important matters that we need to discuss with the Queen.
 Guard: We have strict orders not to let anyone through to see the Queen. Now beat it!
 Gov. Gearson: That's hardly a way to talk to a Governor!
 Guard: You have no jurisdiction here. Scram!
 
-// The team leaves the palace
+    // The team leaves the palace
 
 ---close scene i---
 
@@ -32,7 +32,7 @@ Gearson: There's an escape route that we used when I was in Parliment.
 Gearson: We never used it and it's highly secret. I bet there aren't many guards stationed out there.
 Gearson: The entrance is a cave just north of the mountain.
 
-// The team enters through the north and comes to a locked door.
+    // The team enters through the north and comes to a locked door.
 
 Gearson: Don't worry fellas, I got this. If the code is still the same....
 Gearson: Dangit!! I figured they'd change the code. It's been a while.
@@ -56,7 +56,7 @@ Percy: I think he and Matthew are about the only cars in Underton that would bel
 ---close scene ii---
 
 ---scene iii---
-// You get to Matthew and Sons and find that the place looks abandoned and ransacked
+    // You get to Matthew and Sons and find that the place looks abandoned and ransacked
 
 Tinaldo: They really don't take care of their shop.
 
@@ -66,13 +66,13 @@ Percy: This is not good. Look around for clues but stay on the alert.
 
 Wedge: I hope Matthew and Sons are okay.
 
-// Two heavily armed robots drop from the ceiling and battle you.
+    // Two heavily armed robots drop from the ceiling and battle you.
 
 Wheely: Phew! That was close!
 
 Matthew: (distant) Wheely?
 
-// Matthew wheels out from behind somewhere.
+    // Matthew wheels out from behind somewhere.
 
 Wheely: Matthew! You're alive!
 
@@ -99,22 +99,22 @@ Wheely: Let's hit it fellas!!
 
 ---scene iv---
 
-// You arrive at the door to the escape route only to see that the door is wide open.
+    // You arrive at the door to the escape route only to see that the door is wide open.
 
 Tony: Not good.
 
 Percy: Not good at all, Tony.
 Percy: We've gotta get in there before BIG_BAD gets to the Queen.
 
-// You fight your way against BIG_BAD's henchman through the escape route all the way to the throne room.
+    // You fight your way against BIG_BAD's henchman through the escape route all the way to the throne room.
 
 ---close scene iv---
 
 ---scene v---
 
-// You enter the Queen's throne room.
-// There are no guards and the Queen is silent.
-// Tinaldo races up to the Queen
+    // You enter the Queen's throne room.
+    // There are no guards and the Queen is silent.
+    // Tinaldo races up to the Queen
 
 Tinaldo: Thank God you're ok, your Majesty!
 
@@ -127,13 +127,13 @@ Tinaldo: For we have seen fellow cars reduced to shells of their former selves.
 Tinaldo: Cars who have had their consciousnesses ripped out so their empty carcasses could 
 	be sold on other planets to collectors.
 
-// Music fades to silence. All is silent.
+    // Music fades to silence. All is silent.
 
 Queen: ...
 
 Tinaldo: Your majesty?
 
-// audible footsteps
+    // audible footsteps
 
 BIG_BAD: She can't hear you, you know?
 BIG_BAD: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
@@ -150,7 +150,7 @@ BIG_BAD: And how fitting will it be for her to be the one to take you lot out of
 ##################################################################
 
 Queen: YIEAHHHOOHSHSH!!!!!
-// Queen starts bashing around and the whole room starts shaking.
+    // Queen starts bashing around and the whole room starts shaking.
 
 Percy: We've gotta get out of here! This whole cave system is about to collapse!
 

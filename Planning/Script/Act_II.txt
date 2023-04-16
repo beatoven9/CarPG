@@ -2,7 +2,7 @@
 
 --- scene i ---
 
-// We pick up from where we left off. The trio is in the middle of Underton Square.
+	// We pick up from where we left off. The trio is in the middle of Underton Square.
 
 Shop Keeper 1: Oi Gearson! You son of a bike!
 Shop Keeper 2: Gearson! Why I oughtta. Lot a nerve showin' your face around here.
@@ -19,18 +19,18 @@ Gov. Gearson: And risk my gears? Forget about it!
 Wheely: But we need to save my brother!
 Gov. Gearson: It's your brother... ughh sorry, I can't help you.
 
-// Gov. Gearson turns away. Wedge turns away
+	// Gov. Gearson turns away. Wedge turns away
 
 Gov. Gearson: His name is Percy.
 
-// Wheely and Wedge turns back
+	// Wheely and Wedge turns back
 
 Wheely: Percy who? Where can I find him?
 Gov. Gearson: There's an old bar on the other side of town called the Rust Bucket. He's a regular there.
 	But you didn't hear it from me!
 
-// At this point if you lost the Race to the Rubble against Gov. Gearson, he will return back to Overton through the tunnel.
-// If you won the race:
+	// At this point if you lost the Race to the Rubble against Gov. Gearson, he will return back to Overton through the tunnel.
+	// If you won the race:
 
 	Gov. Gearson: Hey kid, you really shouldn't be goin' down this path alone.
 	Wheely: Well we have to do it somehow!
@@ -40,12 +40,12 @@ Gov. Gearson: There's an old bar on the other side of town called the Rust Bucke
 		Gov. Gearson joins the party.
 	##################################################################
 
-//Player regains control and goes to the Rust Bucket}
-// If the player talks to the barkeep first....
+	//Player regains control and goes to the Rust Bucket}
+	// If the player talks to the barkeep first....
 
 Wheely: Hey mister! We're looking for a car that goes by the name of "Percy"!
 
-// all the cars in the bar stop moving and the music stops.
+	// all the cars in the bar stop moving and the music stops.
 
 Barkeep: ...
 
@@ -60,7 +60,7 @@ BAR_BOSS: Alright Gearson, that's how it's gonna be? On a normal day I'd just le
 
 	(Commence boss fight)
 
-	// Idle banter during fight?
+		// Idle banter during fight?
 
 	(Win boss fight)
 
@@ -77,8 +77,8 @@ Wedge: Then why did you fight us when we came in here asking for him?
 BAR_BOSS: Oh, I just like to fight. In fact!.. if you ever feel like practicing some new battle techniques,
 	come talk to me!
 
-// This character will be here from now on for you to fight against. He should level scale.
-// Just for a testground for new abilities and such. losing will not result in game over just return to overworld
+	// This character will be here from now on for you to fight against. He should level scale.
+	// Just for a testground for new abilities and such. losing will not result in game over just return to overworld
 
 Wheely: ...
 Wheely: Ok! Mechanic it is!
@@ -86,8 +86,8 @@ Wheely: Ok! Mechanic it is!
 ---close scene i---
 
 ---scene ii---
-// Travel to mechanic....
-// Only one person inside, the Matthew's partner is in there
+	// Travel to mechanic....
+	// Only one person inside, the Matthew's partner is in there
 
 Wedge: Hey there! We were advised to speak with Matthew.
 
@@ -124,12 +124,12 @@ Sons: Excellent! Take these Rollie-Talkies. I'll communicate to you through thos
 	You first location is the hideout of the Underton Car Cartel. (Describes location)
 	Best of luck! And I'll call you with updates as you progress.
 
-	// Quest to collect parts that were stolen by thugs from Sons.
-	// Sons will send you to various thug hideouts and call you after you obtain each item to tell you the
-	// location of the next hideout to ransack.
+		// Quest to collect parts that were stolen by thugs from Sons.
+		// Sons will send you to various thug hideouts and call you after you obtain each item to tell you the
+		// location of the next hideout to ransack.
 
 Sons: Excellent work! Matthew just arrived a few minutes ago. He's out back and ready for you.
-//player goes out back
+	//player goes out back
 
 Matthew: So, you all are the lot that took care of all of those thugs for Sons.
 	What can I do for ya?
@@ -172,8 +172,8 @@ Frogg: ... Me help you.
 Wedge: Does you want to join us?
 Frogg: (jumps up and down in agreement)
 
-// Frogg joins the party.
-// Get the cargo and go back to Matthew.
+	// Frogg joins the party.
+	// Get the cargo and go back to Matthew.
 
 Matthew: Well done! I never thought I'd see this cargo again! and.... yes! Here it is! Gray blinker fuild!
 Matthew: And it looks like you picked up a new friend along the way! (turns toward Frogg)
@@ -206,7 +206,7 @@ Percy: Hey Tony, I'll take care of these goons. Go tell the big man that we've b
 
 Tony: Sure thing Boss! On it.
 
-// Tony wheels out for backup.
+	// Tony wheels out for backup.
 
 ##################################################################
 	Battle ensues
@@ -216,20 +216,20 @@ Tony: Sure thing Boss! On it.
 	So Percy is given ample time to get away.
 ##################################################################
 
-// After defeating the lackeys...
+	// After defeating the lackeys...
 
 Wheely: Ugh! Now we're back to square one! We've got no lead on where his safe house is.
 
 Gov Gearson: Don't give up hope so quickly! Your forgetting where we are. This is his hideout! And he definitely didn't
 	have time to clean up before his exit. There might be some clues about where the safe house is.
 
-// You search for clues.
-// One desk you can interact with will say East-Westerton.
+	// You search for clues.
+	// One desk you can interact with will say East-Westerton.
 
 Wedge: East-Westerton? Where is that?
 
 Gov Gearson: Ah, that's a neighborhood in the eastern part of Westerton, the town just west of Underton. I have an old friend in West-Westerton! We should meet up with him first.
 
-// Wheel on over to East-Westerton
+	// Wheel on over to East-Westerton
 ---close scene iii---
 ---close Act II---

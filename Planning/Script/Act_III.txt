@@ -1,28 +1,28 @@
 ---Act III---
 ---scene i---
 
-// The team enters the gates of the city.
+	// The team enters the gates of the city.
 
 Gov Gearson: We're here! Ok, he lives on the far side of town in an inn called The Spare Tire. 
 
-// The team explores the city and eventually makes its way to The Spare Tire
+	// The team explores the city and eventually makes its way to The Spare Tire
 
 Gov Gearson: Hey Keepa! I'm an old friend of Carisco. Can you remind me which room he's in?
 
 Barkeep: Course! He's on the second floor at the end of the hall! Just had a group of visitors this morning.
 	a couple blue cars. real sporty looking (describing big bad's lackeys.)
 
-// Music stops
+	// Music stops
 
 Gov Gearson: What?
 
-// Regain player control. You wheel to Carisco's room and enter the room (All with no music)
-// The friend is nowhere to be seen and there's a small car crying that attacks. Maybe the music should be more sad or dramatic here. maybe mourning and anger.
+	// Regain player control. You wheel to Carisco's room and enter the room (All with no music)
+	// The friend is nowhere to be seen and there's a small car crying that attacks. Maybe the music should be more sad or dramatic here. maybe mourning and anger.
 
 Tinaldo: GET OUT!!!!!!
 
-// Tinaldo raises two rust golems for you to fight
-// This should be pretty tough. Once you beat the rust golems Tinaldo breaks down crying.
+	// Tinaldo raises two rust golems for you to fight
+	// This should be pretty tough. Once you beat the rust golems Tinaldo breaks down crying.
 
 Tinaldo: Ahhh where did you take him??
 
@@ -63,7 +63,7 @@ Wedge: You don't have to do what he says... Just be safe and helpful.
 
 Tinaldo: You don't have to worry about that! You won't know how you ever survived without me!
 
-// Tinaldo joins your party as a necromancer.
+	// Tinaldo joins your party as a necromancer.
 
 ---close scene i---
 
@@ -86,20 +86,20 @@ CAR 1: Hey! Slow down! You're way too drunk! We need to call you a tow-truck!
 
 CAR 2: NO WAY! I feel great!
 
-// CAR 2 continues driving in circles then drives into a stump or a rock and a human flies out of the front windshield and 
-// into a wall. 
+	// CAR 2 continues driving in circles then drives into a stump or a rock and a human flies out of the front windshield and 
+	// into a wall. 
 
 thing that came out of CAR 2: *SPLAT*
 
 CARS: Oh my god! Oh no!
 
-// Humans get out of their cars.
+	// Humans get out of their cars.
 
 thing that came out of CAR 1: What are you doing just sitting in your car? Get out and help!
 
 Wheely: What the flip is that?
 
-// Wheely wheels over to the empty car with the cracked windshield.
+	// Wheely wheels over to the empty car with the cracked windshield.
 
 Wheely: Is he dead? Hello?
 
@@ -125,7 +125,7 @@ Percy: Of course, you're excellency.
 
 BIG_BAD: Let me see...
 
-// Music stops.
+	// Music stops.
 
 BIG_BAD: you fool.
 
@@ -135,15 +135,15 @@ BIG_BAD: YOU FOOL! This... this is not the right Wheelson!
 
 Percy: I know.
 
-// Percy strikes BIG_BAD and BIG_BAD blocks the attack effortlessly. Percy is thrown into a wall.
+	// Percy strikes BIG_BAD and BIG_BAD blocks the attack effortlessly. Percy is thrown into a wall.
 
 Tony: Ahhh!!!
 
-// Tony drives directly at BIG_BAD and also gets cast aside.
+	// Tony drives directly at BIG_BAD and also gets cast aside.
 
 BIG_BAD: Pitiful. 
 
-// BIG_BAD walks over to Carisco
+	// BIG_BAD walks over to Carisco
 
 BIG_BAD: You're the mage?
 
@@ -151,7 +151,7 @@ Carisco: Y-y-yes...
 
 BIG_BAD: Your services will be of assistance.
 
-// BIG_BAD turns to Wedge's brother.
+		// BIG_BAD turns to Wedge's brother.
 
 BIG_BAD: You aren't worth my time.
 
@@ -167,7 +167,7 @@ Wedge's brother: Wedge!?
 
 Wedge: You're safe now!
 
-// Percy and Tony wheel back with your mechanic expert.
+	// Percy and Tony wheel back with your mechanic expert.
 
 Percy: Thanks so much fellas. And I'm sorry about all the carjacking and murdering I've been doing.
 

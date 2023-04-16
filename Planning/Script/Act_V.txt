@@ -13,7 +13,7 @@ Wheely: Hiya Wedge! Been a while!
 Wedge: Wheely!! What's going on?
 Wheely: Let's get out of here! I'll explain the rest once we get to safety at Matthew and Sons!
 
-// The pair leaves and finds refuge back at Matthew and Sons.
+    // The pair leaves and finds refuge back at Matthew and Sons.
 
 Matthew: Wedge! I'm so glad you're safe.
 
@@ -38,38 +38,38 @@ Wheely: Let's hit it!
 
 --- scene ii ----
 
-// While traveling through the woods you come across Frogg running away from a few Palace Guards.
+    // While traveling through the woods you come across Frogg running away from a few Palace Guards.
 
 Frogg: Blurghhhh!!!
 
 Wheely: Hey! Leave our friend alone!
 
-// Frogg joins the party for a battle against the Palace Guards.
+    // Frogg joins the party for a battle against the Palace Guards.
 
 Frogg: Blurgha wurgha.
 
 Wheely: Yup! My thoughts exactly. Now come help us save Gearson!
 
-// The team continues on to save Gearson
+    // The team continues on to save Gearson
 
 --- close scene ii ---
 
 --- scene iii ---
 
-// The team approaches the Royal Outpost.
+    // The team approaches the Royal Outpost.
 
 Wheely: Now stay on alert. These places used to be safe havens in the wilderness but now that
 	BIG_BAD has taken over, they're extremely hostile. We're gonna have to fight our way through to
 	Gearson's cell, if he's even in there.
 
-// The team fights the two Royal Guards outside and enter the Outpost fighting waves of
+    // The team fights the two Royal Guards outside and enter the Outpost fighting waves of
 	enemies until they make it to Gearson's cell.
 
 Gearson: Took you guys long enough!!
 
 Wheely: Quit your moaning and help us find the other!
 
-// Upon exiting you hear but don't yet see Tinaldo and Tony
+    // Upon exiting you hear but don't yet see Tinaldo and Tony
 
 Tinaldo: Come on Tony! We've see if the intel was right! Gearson could be captive in here.
 
@@ -79,7 +79,7 @@ Tinaldo: It's the only chance we have of finding the others.
 
 Wedge: Tinaldo? Tony?
 
-// Tinaldo and Tony wheel on from off-screen
+    // Tinaldo and Tony wheel on from off-screen
 
 Tinaldo: Fellas!! You've found Gearson!
 
@@ -129,7 +129,7 @@ Tinaldo: Well, if he's immortal, how come he's keeping the palace so heavily gua
 
 Matthew: Hmmm... excellent point little one. I seem to recall another prophecy about an immortal evil. Let me see here.
 
-// Matthew wheels back and forth along his bookshelf.
+    // Matthew wheels back and forth along his bookshelf.
 
 Matthew: Ah here it is. Yes, the ancient magic! Of course! There is another prophecy of an ancient magic held in
 	a cave. It can only be acquired by one true of heart with intentions of saving the planet. Wow! How fortuitous!
@@ -141,7 +141,7 @@ Matthew: Well, it looks like it's (describes location of cave).
 
 Wheely: Perfect! Let's go get that magic fellas!
 
-// Team goes to cave.
+    // Team goes to cave.
 
 ##################################################################
 	-While exploring the cave, the team stumbles upon a large lake.
@@ -202,13 +202,13 @@ Being 1: Yes, well when we still had 4 Eggs, we got hungry and figured that we c
 
 Being 1: Anyway! We're off! Send our best to the new Queen! And put in a good word for us! Here's your new translator, Frogg!
 
-// hands Frogg a translator and then the Beings quickly dive back into the water.
+    // hands Frogg a translator and then the Beings quickly dive back into the water.
 
 Percy: Well that was a trip...
 
 Wheely: Tell me about it. Frogg, you knew this the whole time and you were trying to tell us about it?
 
-// Frogg trips while putting the translator on and breaks the new translator.
+    // Frogg trips while putting the translator on and breaks the new translator.
 
 Frogg: Blurgh Dammit!!!!
 
@@ -221,7 +221,7 @@ Frogg: Blurgh Dammit!!!!
 
 Horse: You have proven yourself worthy of the Ancient Magic. Now go and save our planet before it's too late!!
 
-// The team exits the cave
+    // The team exits the cave
 
 --- close scene iv ---
 
@@ -244,19 +244,19 @@ Wedge: You should be afraid, we have the Ancient Magic!
 BIG_BAD: Hahahah! And you think some antiquated magic will be my undoing?! Laughable!
 	Sure, it will lower my first layer of defenses, but you still have to take me down!
 
-// Battle ensues
+    // Battle ensues
 
 BIG_BAD: NOOOOOOO!!!!!
 
-// He fades away.
+    // He fades away.
 
 Wedge: Now, there's only one thing left to do...
 
-// Wedge puts the egg on the throne. It shakes once or twice and then a fully grown Queen springs out of the Egg.
+    // Wedge puts the egg on the throne. It shakes once or twice and then a fully grown Queen springs out of the Egg.
 
 All: Hurray!
 
-// Spinning around, confetti falling from sky, credits start to roll.
+    // Spinning around, confetti falling from sky, credits start to roll.
 
 --- close scene v ---
 
