@@ -1,0 +1,50 @@
+Wedge: Mechanic
+		Stands up for his principles but is much more on the Lawful Good side of the Good spectrum compared 
+	to Wheely. Wedge is a dreamer. He has a hard time in school because he questions topics that aren't meant 
+	to be questioned and he would much rather spend the day under a tree in a quiet field than in a dusty old 
+	classroom.
+		He has a little brother who looks up to him. As a result, Wedge feels pressure from his Dad to grow up to 
+	be a better role model for his little brother. There is slight tension with his father over this issue. 
+	However, they generally have a very good relationship.
+	
+
+Wheely: Thief
+		Wheely is the youngest in a large family. Was always a mischeif maker. He would get in trouble at school
+	for swiping the janitor's keys and getting onto the roof or sneaking into the school late at night to do donuts
+	in the center plaza area.
+		Fights for what he believes is right until the very end. Sometimes ends up doing questionable things to achieve
+	his righteous goals.
+
+
+Governor Gearson: Gunner
+		A sure philanderer. Is jaded. Has seen the worst of how the government operates.
+	Is well aware of how the people in Underton live. He is someone who frequents Underton because though he won't 
+	admit it, it makes him feel alive. Underton is a culturally vibrant city with a lot of character.
+		Gearson will grow toward the end of the game to understand the importance of giving a shit. This will
+	likely culminate with the death of the Queen. Where we'd expect him to shut down and give in to the feelings
+	of nihilism. However, he stands up to it and swears to end this once and for all.
+
+
+Percy: Dragoon
+		Percy is a mercenary/hired gun. When we first meet him, he is deeply and unashamedly into the mercenary gig.
+	He successfully steals Wedge's brother and makes way to his hideout. He contacts BIG_BAD to let him know of his success.
+	etcetcetc....   At the end of this journey and by the time we meet him. He has made an arch. He is fully on
+	board with saving the world. He represents what Gearson should be striving to be. A redeemed nihilist full 
+	of hope for the future.
+
+Finaldino: Necromancer
+		Finaldino is the child-son of the kidnapped friend of Governor Gearson. Finaldino is a uniquely gifted 
+	Necromancer, a gift he learned from his dad, the Necromancer, Finaldo Axel IV. Finaldino is anxious to prove
+	himself. Doesn't want to be treated differently for being so young.
+
+Tony: Monk
+		Tony is a simple Tow-Truck. Your Lenny character. Not much depth to this one.
+
+Frog:
+		Doesn't speak English. Not entirely clear if he speaks at all Is an amphibious vehicle that came out of the water.
+	Probably came from the bottom of the ocean somewhere. Has he socialized with anything before?
+
+		Perhaps Frog is the blue mage in purple robes that I made for Cantation. He speaks in a foreign language.
+	When you find the Queen egg from his people, the leader speaks this language at first too until his assistant
+	sets up the translator. The guy then tells him a bit more about Frog's people. Before this, Frog's origin
+	and why he's even with you is a total mystery.
