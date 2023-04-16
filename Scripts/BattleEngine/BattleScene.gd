@@ -138,7 +138,7 @@ func load_player_data():
 		"defense": 15,
 		"magic": 15,
 		"magic_defense": 15,
-		"speed": 40,
+		"speed": 200,
 		"luck": 5,
 		"vitality": 10,
 		"fighter_class": DragoonClass,

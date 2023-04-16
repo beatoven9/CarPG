@@ -1,4 +1,4 @@
-extends base_move
+extends JumpPrepBase
 class_name JUMP_PREP
 
 var move_name = "Jump"
@@ -24,3 +24,13 @@ func generate_announcement_string(move_info):
 	)
 	return new_announcement
 
+func push_next_move(move_info):
+	var user = move_info["user"]
+	var jump_attack = user.gen_move_info(
+		next_move,
+		move_info["user"],
+		move_info["target"],
+	)
+	user.move_queue.push_back(
+		jump_attack
+	)
