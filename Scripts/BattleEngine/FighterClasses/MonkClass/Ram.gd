@@ -23,7 +23,6 @@ func use_move(
 	current_move_info = move_info
 	current_user = move_info["user"]
 	var move = move_info["move"]
-	var move_type = move.move_type
 
 	move_info = use_ram_attack(
 		move_info,

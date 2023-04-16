@@ -232,7 +232,6 @@ func receive_move(
 	var move = move_info["move"]
 	var move_type = move.move_type
 	var damage_output = move_info["move_power"]
-	var crit = move_info["critical"]
 	
 	if damage_output == 0:
 		move_info["damage_incurred"] = 0
@@ -367,7 +366,6 @@ func receive_item_healing(move_info):
 
 func receive_physical_attack(move_info):
 	var damage_output = move_info["move_power"]
-	var crit = move_info["critical"]
 
 	var damage_incurred
 	if move_info["success"] == true:
@@ -386,7 +384,6 @@ func receive_physical_attack(move_info):
 
 func receive_magic_attack(move_info):
 	var damage_output = move_info["move_power"]
-	var crit = move_info["critical"]
 
 	var damage_incurred
 	if move_info["success"]:
@@ -404,7 +401,6 @@ func receive_magic_attack(move_info):
 
 func receive_magic_healing(move_info):
 	var damage_output = move_info["move_power"]
-	var crit = move_info["critical"]
 
 	var damage_incurred
 	if move_info["success"]:
