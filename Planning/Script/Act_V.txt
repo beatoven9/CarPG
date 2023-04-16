@@ -21,7 +21,7 @@ Wedge: If not for Wheely, I'd still be locked away. Where are the others?
 
 Matthew: Still locked away I'm afraid... along with Sons.
 
-Wheely: BIG_BAD locked us up for getting in the way of his coup. I broke out a couple days after that 
+Wheely: Jeremy locked us up for getting in the way of his coup. I broke out a couple days after that 
 	day with the Queen and have been looking for everyone for the past few months. You're the first 
 	person I've found.
 
@@ -59,7 +59,7 @@ Wheely: Yup! My thoughts exactly. Now come help us save Gearson!
     // The team approaches the Royal Outpost.
 
 Wheely: Now stay on alert. These places used to be safe havens in the wilderness but now that
-	BIG_BAD has taken over, they're extremely hostile. We're gonna have to fight our way through to
+	Jeremy has taken over, they're extremely hostile. We're gonna have to fight our way through to
 	Gearson's cell, if he's even in there.
 
     // The team fights the two Royal Guards outside and enter the Outpost fighting waves of
@@ -93,9 +93,9 @@ Tinaldo: yes...
 
 Wheely: Right on! Let's go save him!
 
-Tinaldo: Unfortunately it's not going to be that easy. He's being kept in the Royal Palace by BIG_BAD.
-	Apparently, BIG_BAD had some special plans for him. And if you thought the palace was well guarded
-	before, you're in for a surprise now. The place is a fortress since BIG_BAD has been using it as his
+Tinaldo: Unfortunately it's not going to be that easy. He's being kept in the Royal Palace by Jeremy.
+	Apparently, Jeremy had some special plans for him. And if you thought the palace was well guarded
+	before, you're in for a surprise now. The place is a fortress since Jeremy has been using it as his
 	stronghold.
 
 Wheely: Well then... let's regroup back at Matthew and Sons and talk to Matthew. He might have some idea.
@@ -161,7 +161,7 @@ Being 1: Hello? Ah much better. Sorry, my translator wasn't on. Good to see you 
 
 Wheely: Wait! You know Frogg?
 
-Being 1: Why of course! We sent him to help you defeat BIG_BAD. Your planet is in grave danger.
+Being 1: Why of course! We sent him to help you defeat Jeremy. Your planet is in grave danger.
 	How goes the journey Frogg?
 
 Frogg: Blurgha!
@@ -173,7 +173,7 @@ Frogg: Blurghhhh....
 
 Being 1: You have exceeded our expectations in every way so far my friends. But your final steps will not be easy.
 	You must venture deeper into the cave to find the Well of Ancient Magic. Here your heart will be tested.
-	Once you acquire the Ancient Magic, it alone will not stop BIG_BAD. It will merely lower his first layer
+	Once you acquire the Ancient Magic, it alone will not stop Jeremy. It will merely lower his first layer
 	of defenses and allow you to conduct battle with him. This will be no easy task. You will need to prepare well.
 
 Tinaldo: That won't be a problem for us!!
@@ -181,7 +181,7 @@ Tinaldo: That won't be a problem for us!!
 Being 1: Ho Ho Ho!! That's the spirit! Now, there's one last thing. Regarding your queen. I understand that you murdered
 	her before she was able to lay another Queen Egg.
 
-Wheely: Hey! We didn't murder her! BIG_BAD was controlling her and made her attack us.
+Wheely: Hey! We didn't murder her! Jeremy was controlling her and made her attack us.
 
 Being 1: Yes yes! no matter. The Queen has contracted us for situations just like this! She has put 4 Queen Eggs in
 	our care to be given Wedge when the time is right.
@@ -231,22 +231,22 @@ Horse: You have proven yourself worthy of the Ancient Magic. Now go and save our
 	The team travels to the Royal Palace.
 	They have to fight their way past all the Palace Guards but they should be pretty easy by now.
 
-	The team enters the throne room and BIG_BAD is sitting on the throne.
-	Throne is laughably big compared to BIG_BAD
+	The team enters the throne room and Jeremy is sitting on the throne.
+	Throne is laughably big compared to Jeremy
 ##################################################################
 
-Wheely: Surrender now BIG_BAD!
+Wheely: Surrender now Jeremy!
 
-BIG_BAD: Right, you think I'm afraid of you with my current powers. I could squash you like a tricycle.
+Jeremy: Right, you think I'm afraid of you with my current powers. I could squash you like a tricycle.
 
 Wedge: You should be afraid, we have the Ancient Magic!
 
-BIG_BAD: Hahahah! And you think some antiquated magic will be my undoing?! Laughable!
+Jeremy: Hahahah! And you think some antiquated magic will be my undoing?! Laughable!
 	Sure, it will lower my first layer of defenses, but you still have to take me down!
 
     // Battle ensues
 
-BIG_BAD: NOOOOOOO!!!!!
+Jeremy: NOOOOOOO!!!!!
 
     // He fades away.
 

@@ -87,8 +87,8 @@ Gov. Gearson: Took him!!! Do you have any idea who did this?
 Matthew: I don't know what it is. He wasn't like any car I'd seen, that's for sure.
 Matthew: He was wearing a black robe and when he wheeled around, he made this ominous clacking sound.
 
-Percy: BIG_BAD...
-Percy: It seems that BIG_BAD had the same idea as we did about entering the palace through the escape route.
+Percy: Jeremy...
+Percy: It seems that Jeremy had the same idea as we did about entering the palace through the escape route.
 
 Matthew: The Queen's palace?? You've got to stop them! You might be able to catch up with them. They only left here
 	a couple of minutes ago!
@@ -104,9 +104,9 @@ Wheely: Let's hit it fellas!!
 Tony: Not good.
 
 Percy: Not good at all, Tony.
-Percy: We've gotta get in there before BIG_BAD gets to the Queen.
+Percy: We've gotta get in there before Jeremy gets to the Queen.
 
-    // You fight your way against BIG_BAD's henchman through the escape route all the way to the throne room.
+    // You fight your way against Jeremy's henchman through the escape route all the way to the throne room.
 
 ---close scene iv---
 
@@ -135,13 +135,13 @@ Tinaldo: Your majesty?
 
     // audible footsteps
 
-BIG_BAD: She can't hear you, you know?
-BIG_BAD: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
+Jeremy: She can't hear you, you know?
+Jeremy: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
 
 Tinaldo: NOOOO!!!
 All: // Shouts out of despair
 
-BIG_BAD: And how fitting will it be for her to be the one to take you lot out of your misery?
+Jeremy: And how fitting will it be for her to be the one to take you lot out of your misery?
 
 ##################################################################
 	hand extends from cloak *snaps* 

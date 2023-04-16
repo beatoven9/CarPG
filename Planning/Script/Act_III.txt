@@ -114,56 +114,56 @@ Wheely: We gotta get out of here...
 	
 	You eventually make it up to the hangar doors. 
 	You enter and there are boxes in front of you blocking you from being seen.
-	The screen pans up to reveal Percy, Tony, Carisco, and Wedge's brother in the middle of the large hangar.
+	The screen pans up to reveal Percy, Tony, Carisco, and Wedge's brother, Tiratio in the middle of the large hangar.
 	There is a conveyor belt of cars being transported along the back wall.
 	A portal opens up and a humanoid in a black cloak walks out of it.
 ##################################################################
 
-BIG_BAD: So, you've acquired the two cars I requested?
+EVIL_VILLAIN: So, you've acquired the two cars I requested?
 
 Percy: Of course, you're excellency.
 
-BIG_BAD: Let me see...
+EVIL_VILLAIN: Let me see...
 
 	// Music stops.
 
-BIG_BAD: you fool.
+EVIL_VILLAIN: you fool.
 
 Percy: Pardon?
 
-BIG_BAD: YOU FOOL! This... this is not the right Wheelson!
+EVIL_VILLAIN: YOU FOOL! This... this is not the right Wheelson!
 
-Percy: I know.
+Percy: I know. This ends now Jeremy.
 
-	// Percy strikes BIG_BAD and BIG_BAD blocks the attack effortlessly. Percy is thrown into a wall.
+	// Percy strikes Jeremy and he blocks Percy's attack effortlessly. Percy is thrown into a wall.
 
 Tony: Ahhh!!!
 
-	// Tony drives directly at BIG_BAD and also gets cast aside.
+	// Tony drives directly at Jeremy and also gets cast aside.
 
-BIG_BAD: Pitiful. 
+Jeremy: Pitiful. 
 
-	// BIG_BAD walks over to Carisco
+	// Jeremy walks over to Carisco
 
-BIG_BAD: You're the mage?
+Jeremy: You're the Necromancer?
 
 Carisco: Y-y-yes...
 
-BIG_BAD: Your services will be of assistance.
+Jeremy: Your services will be of assistance.
 
-		// BIG_BAD turns to Wedge's brother.
+		// Jeremy turns to Wedge's brother.
 
-BIG_BAD: You aren't worth my time.
+Jeremy: You aren't worth my time.
 
 ##################################################################
-	BIG_BAD and Carisco exit through the portal which then closes up.
+	Jeremy and Carisco exit through the portal which then closes up.
 
 	The camera pans back to your character and you regain control.
 	Character with highest proficiency points in the mechanic class that isn't Wedge goes to heal Percy and Tony.
 	Wheel over to your brother. When you get close enough to you he sees you.
 ##################################################################
 
-Wedge's brother: Wedge!?
+Tiratio: Wedge!?
 
 Wedge: You're safe now!
 

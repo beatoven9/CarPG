@@ -61,7 +61,7 @@ Dad: I know son, I know. I've known from the moment you were dropped on my doors
 	and they'll send you off to the glue factory. 
 Wedge: It's just... class is so boring and pointless. It's so much more fulfilling to race
 	around the junkyard track.
-Dad: Look if you can't do it for yourself, do it for your little brother. He looks up to you, Wedge. Imagine 
+Dad: Look if you can't do it for yourself, do it for your little brother, Tiratio. He looks up to you, Wedge. Imagine 
 	how heart broken he would be if this time next year he was building furniture with glue made from his 
 	older brother!
 
@@ -101,17 +101,17 @@ Wheely: Hey there Wedge! Fancy meeting you out here, you here on your way to gra
 
 	##################################################################
 		Just then, a sudden commotion.
-		Enter BROTHER being pursued by Percy, a fancy car man and Tony, a tow-truck (For the carjacking)
+		Enter Tiratio being pursued by Percy, a fancy car man and Tony, a tow-truck (For the carjacking)
 	##################################################################
 
-BROTHER: HELLLLLPPP!!! He's trying to killlll meeeee!!!
+Tiratio: HELLLLLPPP!!! He's trying to killlll meeeee!!!
 Wheely: Wedge, is that your little brother?
 Percy: Get back here this instant, you little scoundrel!
 Tony: Yeah! Get back here! // Tony is a bad driver.
 Wheely: Hey! Get away from him!
-BROTHER: NOoOOOooO!!!!
+Tiratio: NOoOOOooO!!!!
 
-	// BROTHER is captured and taken behind a broken wall. Percy rolls back out. And looks at Wedge
+	// Tiratio is captured and taken behind a broken wall. Percy rolls back out. And looks at Wedge
 
 Percy: As for you two... You'll be keeping this to yourselves or I'll hear about it.
 Tony: Yeah! We'll killll ya!!
@@ -187,7 +187,7 @@ Wedge: Looks like the only path we haven't been able to search down is the one w
     Dad: I was the only father in that audience who didn't have a son on that stage.
     Dad: ...
     Wedge: ...
-    Dad: And also, your brother has been missing for hours. This is the worst day so far this week. One of my sons is missing, the other is going to be turned into glue.
+    Dad: And also, your brother, Tiratio, has been missing for hours. This is the worst day so far this week. One of my sons is missing, the other is going to be turned into glue.
     Dad: Now I'm going to have to make a request of the Queen to find one of my sons and spare the other!
 		// Dad walks inside.
 
@@ -219,7 +219,7 @@ Wedge: Looks like the only path we haven't been able to search down is the one w
     Dad: Is this why you were almost late to your graduation??
 		// Babysitter races out of house.
 
-    Babysitter: BROTHER!! Where are you?
+    Babysitter: Tiratio!! Where are you?
     Dad: Don't worry, he'll turn up, we just need to inquire with the Queen to find out where he is. She knows all.
 
 
@@ -237,7 +237,7 @@ Wedge: Looks like the only path we haven't been able to search down is the one w
 
 --- Scene 3 ---
 
-Dad: I have an appointment with the Queen this afternoon. I'm sure that BROTHER is just stuck in a well.
+Dad: I have an appointment with the Queen this afternoon. I'm sure that Tiratio is just stuck in a well.
 
 	// Wedge leaves his house.
 	// Wheely rolls up
