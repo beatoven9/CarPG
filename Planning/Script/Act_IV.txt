@@ -1,14 +1,14 @@
-The palace guards can't be normal cars. Maybe the blue cars are the palace guards. And the whole time the 
-team thinks that they are imposters posing as palace guards.
-
-Maybe BIG_BAD actually IS the queen's henchman. And he's been using his henchmen out and about. They are variations on
-the palace guards. Maybe Palace Guards and BIG_BAD's henchmen are specially bred for fighting so they ARE allowed to harm 
-cars.
-
 ---Act IV---
 ---scene i---
 
-// the team goes to the palace and tries to use the Governor's influence to gain audience but it doesn't work.
+// The team goes to the palace and talks to the guards.
+
+Gov. Gearson: Hello there guards! We have very important matters that we need to discuss with the Queen.
+Guard: We have strict orders not to let anyone through to see the Queen. Now beat it!
+Gov. Gearson: That's hardly a way to talk to a Governor!
+Guard: You have no jurisdiction here. Scram!
+
+// The team leaves the palace
 
 ---close scene i---
 
@@ -24,6 +24,10 @@ Gearson: I think I might know a way in.
 
 Wheely: That's what I'm talking about!
 
+Percy: Don't get too excited kid, look where his last plan landed us.
+
+Tinaldo: Yeah, yeah, very funny. I don't see you coming up with any plans. Go ahead Governor!
+
 Gearson: There's an escape route that we used when I was in Parliment.
 Gearson: We never used it and it's highly secret. I bet there aren't many guards stationed out there.
 Gearson: The entrance is a cave just north of the mountain.
@@ -33,11 +37,11 @@ Gearson: The entrance is a cave just north of the mountain.
 Gearson: Don't worry fellas, I got this. If the code is still the same....
 Gearson: Dangit!! I figured they'd change the code. It's been a while.
 
-Percy: You said that you were given the code when you were a member of Parliment?
+Percy: You said that you had access when you were a member of Parliment?
 
 Gearson: That's right...
 
-Percy: Well then, my mechanic's partner Sons should know the code.
+Percy: Well then, my mechanic's partner, Sons, should know the code.
 
 Wheely: Sons is a member of Parliment?
 
@@ -46,18 +50,21 @@ Percy: Ah, so you know him!
 Wedge: Of course we know him! He had us running all around Underton running errands for him.
 
 Percy: Sounds about right...
-Percy: I think he's the only car in Underton that would believe us and trust us with the codes.
+Percy: I think he and Matthew are about the only cars in Underton that would believe us and trust us with a code
+	that important.
 
 ---close scene ii---
 
 ---scene iii---
 // You get to Matthew and Sons and find that the place looks abandoned and ransacked
 
-Wedge: What happened here?
+Tinaldo: They really don't take care of their shop.
+
+Wedge: It looks like the place has been ransacked.
 
 Percy: This is not good. Look around for clues but stay on the alert.
 
-Wheely: I hope Matthew and Sons are okay.
+Wedge: I hope Matthew and Sons are okay.
 
 // Two heavily armed robots drop from the ceiling and battle you.
 
@@ -75,7 +82,7 @@ Wheely: All in a day's work! Now where's Sons? We need to speak with him.
 
 Matthew: I'm afraid... They took him.
 
-Wedge: Took him!!! Do you have any idea who did this?
+Gov. Gearson: Took him!!! Do you have any idea who did this?
 
 Matthew: I don't know what it is. He wasn't like any car I'd seen, that's for sure.
 Matthew: He was wearing a black robe and when he wheeled around, he made this ominous clacking sound.
@@ -105,50 +112,53 @@ Percy: We've gotta get in there before BIG_BAD gets to the Queen.
 
 ---scene v---
 
-
-
 // You enter the Queen's throne room.
 // There are no guards and the Queen is silent.
+// Tinaldo races up to the Queen
 
-Wheely: Thank God you're ok, your Majesty!
+Tinaldo: Thank God you're ok, your Majesty!
 
 Percy: Where are all the guards?
 
 Gearson: I have a bad feeling about this.
 
-Wheely: Your majesty, we come to you with heavy hearts.
-Wheely: For we have seen fellow cars reduced to shells of their former selves.
-Wheely: Cars who have had their consciousnesses ripped out so their empty carcasses could 
+Tinaldo: Your majesty, we come to you with heavy hearts.
+Tinaldo: For we have seen fellow cars reduced to shells of their former selves.
+Tinaldo: Cars who have had their consciousnesses ripped out so their empty carcasses could 
 	be sold on other planets to collectors.
 
 // Music fades to silence. All is silent.
 
 Queen: ...
 
-Wheely: Your majesty?
+Tinaldo: Your majesty?
 
-// audible footsteps, If I decide to make BIGBAD a humanoid
+// audible footsteps
 
-BIGBAD: She can't hear you, you know?
-BIGBAD: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
+BIG_BAD: She can't hear you, you know?
+BIG_BAD: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
 
-Wheely: NOOOO!!!
+Tinaldo: NOOOO!!!
 All: // Shouts out of despair
 
-BIGBAD: And how fitting will it be for her to be the one to take you lot out of your misery?
+BIG_BAD: And how fitting will it be for her to be the one to take you lot out of your misery?
 
-// hand extends from cloak *snaps* 
-// queen attacks
+##################################################################
+	hand extends from cloak *snaps* 
+	Queen attacks
+	you defeat the Queen.
+##################################################################
 
-// you defeat the queen.
 Queen: YIEAHHHOOHSHSH!!!!!
 // Queen starts bashing around and the whole room starts shaking.
 
 Percy: We've gotta get out of here! This whole cave system is about to collapse!
 
-// You race off to the exit.
-// As you make it out of the cave, all party members kind of spread out a bit to catch their breath and ninja
-// cars swoop in as dark blurs and carjack each one of the players. When PLAYER_CAR gets swooped, the screen goes black.
+##################################################################
+	You race off to the exit.
+	As you make it out of the cave, all party members kind of spread out a bit to catch their breath and ninja
+	cars swoop in as dark blurs and carjack each one of the players. When PLAYER_CAR gets swooped, the screen goes black.
+##################################################################
 
 ---close scene v---
 ---Close of Act IV---

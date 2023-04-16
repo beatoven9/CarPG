@@ -1,9 +1,9 @@
 --- Open Act II ---
 
 --- scene i ---
-/*
-    We pick up from where we left off. The trio is in the middle of Underton Square.
-*/
+
+// We pick up from where we left off. The trio is in the middle of Underton Square.
+
 Shop Keeper 1: Oi Gearson! You son of a bike!
 Shop Keeper 2: Gearson! Why I oughtta. Lot a nerve showin' your face around here.
 Wheely: Wow! You do seem to be a regular around here, Governor.
@@ -18,25 +18,34 @@ Wheely: You know him? You have to tell us!
 Gov. Gearson: And risk my gears? Forget about it!
 Wheely: But we need to save my brother!
 Gov. Gearson: It's your brother... ughh sorry, I can't help you.
-// Gov. Gearson turns away. PLAYER_NAME turns away
+
+// Gov. Gearson turns away. Wedge turns away
+
 Gov. Gearson: His name is Percy.
-// Wheely and PLAYER_NAME turns back
+
+// Wheely and Wedge turns back
+
 Wheely: Percy who? Where can I find him?
 Gov. Gearson: There's an old bar on the other side of town called the Rust Bucket. He's a regular there.
 	But you didn't hear it from me!
-// At this point if you lost the Race to the Rubble against Gov. Gearson, he will return back to Overton through the rubble portal.
+
+// At this point if you lost the Race to the Rubble against Gov. Gearson, he will return back to Overton through the tunnel.
 // If you won the race:
-Gov. Gearson: Hey kid, you really shouldn't be goin' down this path alone.
-Wheely: Well we have to do it somehow!
-Gov. Gearson: I know. That's why I'm going with you.
 
-// Gov. Gearson joins the party.
-// Player regains control and goes to the Rust Bucket}
+	Gov. Gearson: Hey kid, you really shouldn't be goin' down this path alone.
+	Wheely: Well we have to do it somehow!
+	Gov. Gearson: I know. That's why I'm going with you.
+	
+	##################################################################
+		Gov. Gearson joins the party.
+	##################################################################
 
-//If the player talks to the barkeep first....
+//Player regains control and goes to the Rust Bucket}
+// If the player talks to the barkeep first....
 
 Wheely: Hey mister! We're looking for a car that goes by the name of "Percy"!
-//all the cars in the bar stop moving and the music stops.
+
+// all the cars in the bar stop moving and the music stops.
 
 Barkeep: ...
 
@@ -47,9 +56,9 @@ Wheely: Uhh....
 Gov.Gearson: None of your business! That's who!
 
 BAR_BOSS: Alright Gearson, that's how it's gonna be? On a normal day I'd just let you go with a simple beating
-	but this attitude. I'm gonna beatchya till ya leaking oil!
+	but with this attitude... I'm gonna beatchya till ya leaking oil!
 
-	(Commence boss fight thing)
+	(Commence boss fight)
 
 	// Idle banter during fight?
 
@@ -59,13 +68,15 @@ BAR_BOSS: Okok! I give in! Just ease up! I'll tellya whatchya wanna know!
 	There's a mechanic at the other side of town. Matthew and Sons. Matthew there
 	will know where to find him.
 
-Wheely: Whaddya mean? Your too chicken to tell us his location yourself??
+Wheely: Whaddya mean? You're too chicken to tell us his location yourself??
 
 BAR_BOSS: Naw naw, you got it all wrong! I don't know where he is. I hardly know the guy!
 
-Wheely: Then why did you fight us when we came in here asking for him?
+Wedge: Then why did you fight us when we came in here asking for him?
 
-BAR_BOSS: Oh, I just like to fight.
+BAR_BOSS: Oh, I just like to fight. In fact!.. if you ever feel like practicing some new battle techniques,
+	come talk to me!
+
 // This character will be here from now on for you to fight against. He should level scale.
 // Just for a testground for new abilities and such. losing will not result in game over just return to overworld
 
@@ -78,20 +89,20 @@ Wheely: Ok! Mechanic it is!
 // Travel to mechanic....
 // Only one person inside, the Matthew's partner is in there
 
-Wheely: Hey there! We were advised to speak with Matthew.
+Wedge: Hey there! We were advised to speak with Matthew.
 
 Sons: Ah, I apologize but Matthew isn't in at the moment. 
     But my name is Sons. I'm Matthew's business partner. And I can help you with anything you might need help with.
 
-Gov Gearson: Oh we appreciate it but we aren't here for mechanic services today.
+Wedge: Oh we appreciate it but we aren't here for mechanic services today.
 
 Sons: Oh? Perhaps information is what you seek?
 
 Wheely: You got it!
 
-Sons: Well then. You're more then welcome to wait here for him.
-Sons: However, I some work that I could use help with.
-	I bet by the time you're done with them Matthew will be just getting back.
+Sons: Well then. You're more than welcome to wait here for him.
+Sons: However, I have some work that I could use help with.
+	I bet by the time you're done with it, Matthew will be just getting back.
 	And I'll put in a good word for you if you do a good job.
 
 Wheely: What kinda work is it?...
@@ -100,7 +111,7 @@ Sons: It is... package retreival work.
 
 Wheely: Ok, we aren't a delivery service!
 
-Sons: Well these particular packages have been reacquired by some unsavory characters.
+Sons: Well these particular packages are in the possession of some unsavory characters. Stolen from me in fact.
 
 Wheely: Ah, so you want us to knock some sense into a couple a thugs and get your goods back from them?
 
@@ -129,7 +140,7 @@ Matthew: Percy? What in the world would you wanna find Percy for?
 
 Wheely: He's wanted for a carjacking!
 
-PLAYER_CAR: Yeah! He carjacked my little brother!
+Wedge: Yeah! He carjacked my little brother!
 
 Matthew: Oh dear, then I guess you do need to find Percy, don't you?...
 	Ok I'll tell ya what. Do take care of one more errand for us and I'll tell you exactly where he is.
@@ -146,10 +157,27 @@ Wheely: You've got it!
 
 Matthew: Excellent! The tracking on the cargo is still functional so I'll mark its location on your map.
 
-//Go in woods and find the cargo and bring it back.
+##################################################################
+	Go in woods
+
+	There will be a lake along the way that you pass by. When you get close enough to it, a character named Frogg
+	exits the lake.
+##################################################################
+
+Frogg: Glib chierah pir dua aiutasa!
+Wedge: What?
+Frogg: Glib chi.. Glib chier... ughhhh!... Za slatsuzon ze roht!!
+Wheely: I have no idea what he's saying...
+Frogg: ... Me help you.
+Wedge: Does you want to join us?
+Frogg: (jumps up and down in agreement)
+
+// Frogg joins the party.
+// Get the cargo and go back to Matthew.
 
 Matthew: Well done! I never thought I'd see this cargo again! and.... yes! Here it is! Gray blinker fuild!
-Matthew: This blinker fluid, when equipped will allow you to fight as a Black Mage class and give you
+Matthew: And it looks like you picked up a new friend along the way! (turns toward Frogg)
+Matthew: This blinker fluid, when equipped will allow you to fight as a Black Mage and give you
 	access to elemental magic.
 Matthew: I think you'll find that a number of Percy's lackeys are vulnerable to lightning damage.
 Matthew: To find him, you want to go to roof of the Rich Carlton. That's where he's hiding out.
@@ -159,17 +187,19 @@ Matthew: Best of luck and thank you again for all of your help today! You're wel
 
 
 ---scene iii---
-//Drive to Rich Carlton.
-// On each floor you'll fight a wave of enemies. The enemies will be weak to lightning or something related to
-// the new class you can play as.
-// Each floor should have a clearly displayed number so the player can keep track of how many floors are left.
 
+##################################################################
+	Drive to Rich Carlton.
+	On each floor you'll fight a wave of enemies. The enemies will be weak to lightning or something related to
+	the new class you can play as.
+	Each floor should have a clearly displayed number so the player can keep track of how many floors are left.
 
-// When you reach the top floor of the building, Percy and Tony are there ready to talk.
+	When you reach the top floor of the building, Percy and Tony are there ready to talk.
+##################################################################
 
 Percy: So you actually found us?
 
-Wheely: You better bet! And now you're going down! Give us back PLAYER_NAME's brother!
+Wheely: You better bet! And now you're going down! Give us back Wedge's brother!
 
 Percy: Hey Tony, I'll take care of these goons. Go tell the big man that we've been infiltrated then I'll meet you 
 	at the safe house.
@@ -178,11 +208,13 @@ Tony: Sure thing Boss! On it.
 
 // Tony wheels out for backup.
 
-// Battle ensues
-// As you kill him, the big evil's lackeys enter and stand in between you and Percy. Percy has a clear exit from the 
-// building and he makes his departure and you need to fight the lackeys in order to leave but it gives you time to 
-// heal after the Percy fight. Though the lackeys will be pretty easy comparatively. More just general goons.
-// So Percy is given ample time to get away.
+##################################################################
+	Battle ensues
+	As you kill him, the big evil's lackeys enter and stand in between you and Percy. Percy has a clear exit from the 
+	building and he makes his departure and you need to fight the lackeys in order to leave but it gives you time to 
+	heal after the Percy fight. Though the lackeys will be pretty easy comparatively. More just general goons.
+	So Percy is given ample time to get away.
+##################################################################
 
 // After defeating the lackeys...
 
@@ -194,7 +226,7 @@ Gov Gearson: Don't give up hope so quickly! Your forgetting where we are. This i
 // You search for clues.
 // One desk you can interact with will say East-Westerton.
 
-Wheely: East-Westerton? Where is that?
+Wedge: East-Westerton? Where is that?
 
 Gov Gearson: Ah, that's a neighborhood in the eastern part of Westerton, the town just west of Underton. I have an old friend in West-Westerton! We should meet up with him first.
 

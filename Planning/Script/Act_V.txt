@@ -1,0 +1,265 @@
+--- Open Act V ---
+
+--- scene i ---
+
+##################################################################
+	-Open to a scene of Wedge sitting in a jail cell.
+	-Maybe there are lots of tally marks on the floor to show that it has been a really long time.
+	-Suddenly there is a rumble and some noise and then a wall breaks open and 
+	 Wheely wheels in.
+##################################################################
+
+Wheely: Hiya Wedge! Been a while!
+Wedge: Wheely!! What's going on?
+Wheely: Let's get out of here! I'll explain the rest once we get to safety at Matthew and Sons!
+
+// The pair leaves and finds refuge back at Matthew and Sons.
+
+Matthew: Wedge! I'm so glad you're safe.
+
+Wedge: If not for Wheely, I'd still be locked away. Where are the others?
+
+Matthew: Still locked away I'm afraid... along with Sons.
+
+Wheely: BIG_BAD locked us up for getting in the way of his coup. I broke out a couple days after that 
+	day with the Queen and have been looking for everyone for the past few months. You're the first 
+	person I've found.
+
+Wedge: So we don't know where the others are yet?
+
+Wheely: Well, I've got a lead on Gearson but my past couple leads have turned out to be dead ends.
+	I think they're keeping Gearson at a remote Royal Outpost in the woods just North of Easterton.
+
+Wedge: What are we waiting for? Let's investigate before they move him!
+
+Wheely: Let's hit it!
+
+--- close scene i ---
+
+--- scene ii ----
+
+// While traveling through the woods you come across Frogg running away from a few Palace Guards.
+
+Frogg: Blurghhhh!!!
+
+Wheely: Hey! Leave our friend alone!
+
+// Frogg joins the party for a battle against the Palace Guards.
+
+Frogg: Blurgha wurgha.
+
+Wheely: Yup! My thoughts exactly. Now come help us save Gearson!
+
+// The team continues on to save Gearson
+
+--- close scene ii ---
+
+--- scene iii ---
+
+// The team approaches the Royal Outpost.
+
+Wheely: Now stay on alert. These places used to be safe havens in the wilderness but now that
+	BIG_BAD has taken over, they're extremely hostile. We're gonna have to fight our way through to
+	Gearson's cell, if he's even in there.
+
+// The team fights the two Royal Guards outside and enter the Outpost fighting waves of
+	enemies until they make it to Gearson's cell.
+
+Gearson: Took you guys long enough!!
+
+Wheely: Quit your moaning and help us find the other!
+
+// Upon exiting you hear but don't yet see Tinaldo and Tony
+
+Tinaldo: Come on Tony! We've see if the intel was right! Gearson could be captive in here.
+
+Tony: Bu-bu-but... That place is gonna be crawling with guards.
+
+Tinaldo: It's the only chance we have of finding the others.
+
+Wedge: Tinaldo? Tony?
+
+// Tinaldo and Tony wheel on from off-screen
+
+Tinaldo: Fellas!! You've found Gearson!
+
+Tony: Thank god! I did NOT want to fight those guards.
+
+Gearson: Good to know you've got my back Tony...
+
+Wedge: Tinaldo, do you have any idea where Percy is?
+
+Tinaldo: yes...
+
+Wheely: Right on! Let's go save him!
+
+Tinaldo: Unfortunately it's not going to be that easy. He's being kept in the Royal Palace by BIG_BAD.
+	Apparently, BIG_BAD had some special plans for him. And if you thought the palace was well guarded
+	before, you're in for a surprise now. The place is a fortress since BIG_BAD has been using it as his
+	stronghold.
+
+Wheely: Well then... let's regroup back at Matthew and Sons and talk to Matthew. He might have some idea.
+
+--- close scene iii ---
+
+--- scene iv ---
+
+##################################################################
+	-Scene fades in and the group is at Matthew and Sons in mid
+	 conversation with Matthew.
+##################################################################
+
+
+Matthew: Hmmm... have you heard of the prophecy of the Evil Bi-Wheel?
+
+Tinaldo: The Evil what?
+
+Matthew: Bi-Wheel. There's an old prophecy of an evil being that travels on it's back two wheels that
+	comes, kills the queen, and attempts to reign over our planet. It's quite an obscure prophecy. But from
+	what you tell me of this character, he seems to fit the description of the evil in the prophecy remarkably well.
+
+Wheely: Well how do they kill him in the prophecy?
+
+Matthew: Whoa! Hold your horsepower! The being in this particular story is an immortal. Incapable of being harmed
+	by your standard combat.
+
+Percy: That explains how he was able to so easily cast me aside when I tried to jump him.
+
+Tinaldo: Well, if he's immortal, how come he's keeping the palace so heavily guarded? He must be afraid of SOMETHING!
+
+Matthew: Hmmm... excellent point little one. I seem to recall another prophecy about an immortal evil. Let me see here.
+
+// Matthew wheels back and forth along his bookshelf.
+
+Matthew: Ah here it is. Yes, the ancient magic! Of course! There is another prophecy of an ancient magic held in
+	a cave. It can only be acquired by one true of heart with intentions of saving the planet. Wow! How fortuitous!
+	That's you guys!
+
+Wedge: Where do we find this cave?
+
+Matthew: Well, it looks like it's (describes location of cave).
+
+Wheely: Perfect! Let's go get that magic fellas!
+
+// Team goes to cave.
+
+##################################################################
+	-While exploring the cave, the team stumbles upon a large lake.
+	-Frogg goes ballistic. 
+	-Three beings who look exactly like Frogg emerge from the lake carrying an egg.
+##################################################################
+
+Being 1: Blurgha lurgha durgha burgh!
+
+Wheely: Oh great!...
+
+Being 1: (Turning to Being 2) Blurgha!
+
+*Zzzt!*
+
+Being 1: Hello? Ah much better. Sorry, my translator wasn't on. Good to see you again Frogg!
+
+Wheely: Wait! You know Frogg?
+
+Being 1: Why of course! We sent him to help you defeat BIG_BAD. Your planet is in grave danger.
+	How goes the journey Frogg?
+
+Frogg: Blurgha!
+
+Being 1: Oh dear, it seems your translator has malfunctioned. You can have mine when I'm done telling
+	these brave cars about the next steps in their journey.
+
+Frogg: Blurghhhh....
+
+Being 1: You have exceeded our expectations in every way so far my friends. But your final steps will not be easy.
+	You must venture deeper into the cave to find the Well of Ancient Magic. Here your heart will be tested.
+	Once you acquire the Ancient Magic, it alone will not stop BIG_BAD. It will merely lower his first layer
+	of defenses and allow you to conduct battle with him. This will be no easy task. You will need to prepare well.
+
+Tinaldo: That won't be a problem for us!!
+
+Being 1: Ho Ho Ho!! That's the spirit! Now, there's one last thing. Regarding your queen. I understand that you murdered
+	her before she was able to lay another Queen Egg.
+
+Wheely: Hey! We didn't murder her! BIG_BAD was controlling her and made her attack us.
+
+Being 1: Yes yes! no matter. The Queen has contracted us for situations just like this! She has put 4 Queen Eggs in
+	our care to be given Wedge when the time is right.
+
+Wedge: To... me?
+
+Being 1: Yes of course! You're a very special car. Here is the Queen Egg.
+
+Wheely: Wait, I thought you said that she gave you 4 eggs.
+
+Being 1: Right, I gave the other 2 to travelers that I mistook for Wedge. Sorry, all cars look the same to our eyes.
+
+Gearson: But that still leaves 1 Queen Egg unaccounted for.
+
+Being 1: Yes, well when we still had 4 Eggs, we got hungry and figured that we could spare just one egg for a nice brunch.
+
+!!!!!!!!
+
+Being 1: Anyway! We're off! Send our best to the new Queen! And put in a good word for us! Here's your new translator, Frogg!
+
+// hands Frogg a translator and then the Beings quickly dive back into the water.
+
+Percy: Well that was a trip...
+
+Wheely: Tell me about it. Frogg, you knew this the whole time and you were trying to tell us about it?
+
+// Frogg trips while putting the translator on and breaks the new translator.
+
+Frogg: Blurgh Dammit!!!!
+
+##################################################################
+	The team continues toward the Well of Ancient Magic and eventually comes upon a clearing with the well in the center.
+	The cave shakes, the back closes and a horse-drawn carriage falls from the ceiling to battle.
+
+	Once the battle ends, the horse-drawn carriage begins to talk to you
+##################################################################
+
+Horse: You have proven yourself worthy of the Ancient Magic. Now go and save our planet before it's too late!!
+
+// The team exits the cave
+
+--- close scene iv ---
+
+--- scene v ---
+
+##################################################################
+	The team travels to the Royal Palace.
+	They have to fight their way past all the Palace Guards but they should be pretty easy by now.
+
+	The team enters the throne room and BIG_BAD is sitting on the throne.
+	Throne is laughably big compared to BIG_BAD
+##################################################################
+
+Wheely: Surrender now BIG_BAD!
+
+BIG_BAD: Right, you think I'm afraid of you with my current powers. I could squash you like a tricycle.
+
+Wedge: You should be afraid, we have the Ancient Magic!
+
+BIG_BAD: Hahahah! And you think some antiquated magic will be my undoing?! Laughable!
+	Sure, it will lower my first layer of defenses, but you still have to take me down!
+
+// Battle ensues
+
+BIG_BAD: NOOOOOOO!!!!!
+
+// He fades away.
+
+Wedge: Now, there's only one thing left to do...
+
+// Wedge puts the egg on the throne. It shakes once or twice and then a fully grown Queen springs out of the Egg.
+
+All: Hurray!
+
+// Spinning around, confetti falling from sky, credits start to roll.
+
+--- close scene v ---
+
+--- close Act V ---
+
+--- The End ---

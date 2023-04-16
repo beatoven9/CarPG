@@ -1,13 +1,13 @@
 ---Act III---
 ---scene i---
 
-// You enter the gates of the city.
+// The team enters the gates of the city.
 
 Gov Gearson: We're here! Ok, he lives on the far side of town in an inn called The Spare Tire. 
 
-// You explore the city and eventually make your way to The Spare Tire
+// The team explores the city and eventually makes its way to The Spare Tire
 
-Gov Gearson: Hey Keepa! I'm an old friend of GEARSON_FRIEND. Can you remind me which room he's in?
+Gov Gearson: Hey Keepa! I'm an old friend of Carisco. Can you remind me which room he's in?
 
 Barkeep: Course! He's on the second floor at the end of the hall! Just had a group of visitors this morning.
 	a couple blue cars. real sporty looking (describing big bad's lackeys.)
@@ -16,8 +16,7 @@ Barkeep: Course! He's on the second floor at the end of the hall! Just had a gro
 
 Gov Gearson: What?
 
-// Regain player control. You wheel to GEARSON_FRIEND's room and enter the room (All with no music)
-
+// Regain player control. You wheel to Carisco's room and enter the room (All with no music)
 // The friend is nowhere to be seen and there's a small car crying that attacks. Maybe the music should be more sad or dramatic here. maybe mourning and anger.
 
 Tinaldo: GET OUT!!!!!!
@@ -27,14 +26,15 @@ Tinaldo: GET OUT!!!!!!
 
 Tinaldo: Ahhh where did you take him??
 
-Gearson: We didn't take anyone anywhere, are you talking about those blue cars? We are not with them. I'm a friend of GEARSON_FRIEND.
+Gearson: We didn't take anyone anywhere, are you talking about those blue cars? We are not with them. 
+	I'm a friend of Carisco.
 	We were coming to say hi. You must be... his son?
 
 Tinaldo: ...
 
 Wheely: You don't have to worry! Those blue cars are our enemies too! We're trying to put an end to all of this violence.
 
-BLUE_MAGE_CHARACTER: With violence!
+Frogg: Blurgh!
 
 Tinaldo: I want to come with you!
 
@@ -50,18 +50,18 @@ Gearson: Normally I would agree with you... But weren't you also just a little b
 
 Wheely: I guess so...
 
-Gearson: I've seen the kinds of necromancy his father has done and he obviously has been teaching him. He could be a huge help
+Gearson: I've seen the kinds of magic his father is capable of and he obviously has been teaching him. He could be a huge help
 	in saving your brother and his father.
 
-PLAYER_NAME: Ok! You're in!
+Wedge: Ok! You're in!
 
 Wheely: But you have to do what we say!
 
 Tinaldo: No way!
 
-PLAYER_NAME: You don't have to do what he says... Just be helpful.
+Wedge: You don't have to do what he says... Just be safe and helpful.
 
-Tinaldo: You don't have to worry about that! You won't know how you every survived without me!
+Tinaldo: You don't have to worry about that! You won't know how you ever survived without me!
 
 // Tinaldo joins your party as a necromancer.
 
@@ -69,16 +69,18 @@ Tinaldo: You don't have to worry about that! You won't know how you every surviv
 
 ---scene ii---
 
-PLAYER_NAME: Now, where to from here?
+Wedge: Now, where to from here?
 
 Tinaldo: I overheard the blue cars talking about a hangar.
 
 Gearson: A hangar, huh? There's really only one hangar in Westerton skeevy enough for Percy...
 Gearson: And it does happen to be in East Westerton.
 
-// It's night when you walk out.
-// On the way, you're forced to walk through this square with some drunk people in it. 
-// One of them is driving in circles.
+##################################################################
+	It's night when you walk out.
+	On the way, you're forced to walk through this square with some drunk people in it. 
+	One of them is driving in circles.
+##################################################################
 
 CAR 1: Hey! Slow down! You're way too drunk! We need to call you a tow-truck!
 
@@ -106,14 +108,16 @@ thing that came out of CAR 1: Ok I think this is a piece of his head. Is that an
 
 Wheely: We gotta get out of here...
 
-// En route to the hangar you see Percy and Tony bringing GEARSON_FRIEND and PLAYER_NAME's brother down the road.
-// You follow behind.
-
-// You eventually make it up to the hangar doors. 
-// You enter and there are boxes in front of you blocking you from being seen.
-// The screen pans up to reveal Percy, Tony, GEARSON_FRIEND, and PLAYER_NAME's brother in the middle of the large hangar.
-// There is a conveyor belt of cars being transported along the back wall.
-// A portal opens up and a humanoid in a black cloak walks out of it.
+##################################################################
+	En route to the hangar you see Percy and Tony bringing Carisco and Wedge's brother down the road.
+	You follow behind.
+	
+	You eventually make it up to the hangar doors. 
+	You enter and there are boxes in front of you blocking you from being seen.
+	The screen pans up to reveal Percy, Tony, Carisco, and Wedge's brother in the middle of the large hangar.
+	There is a conveyor belt of cars being transported along the back wall.
+	A portal opens up and a humanoid in a black cloak walks out of it.
+##################################################################
 
 BIG_BAD: So, you've acquired the two cars I requested?
 
@@ -139,35 +143,35 @@ Tony: Ahhh!!!
 
 BIG_BAD: Pitiful. 
 
-// BIG_BAD walks over to GEARSON_FRIEND
+// BIG_BAD walks over to Carisco
 
-BIG_BAD: You're the necromancer?
+BIG_BAD: You're the mage?
 
-GEARSON_FRIEND: Y-y-yes...
+Carisco: Y-y-yes...
 
 BIG_BAD: Your services will be of assistance.
 
-// BIG_BAD turns to PLAYER_NAME's brother.
+// BIG_BAD turns to Wedge's brother.
 
 BIG_BAD: You aren't worth my time.
 
-// BIG_BAD and GEARSON_FRIEND exit through the portal which then closes up.
+##################################################################
+	BIG_BAD and Carisco exit through the portal which then closes up.
 
-// The camera pans back to your character and you regain control.
+	The camera pans back to your character and you regain control.
+	Character with highest proficiency points in the mechanic class that isn't Wedge goes to heal Percy and Tony.
+	Wheel over to your brother. When you get close enough to you he sees you.
+##################################################################
 
-// Character with highest proficiency points in the mechanic class that isn't PLAYER_NAME goes to heal Percy and Tony.
+Wedge's brother: Wedge!?
 
-// Wheel over to your brother. When you get close enough to you he sees you.
-
-PLAYER_NAME's brother: PLAYER_NAME!?
-
-PLAYER_NAME: You're safe now!
+Wedge: You're safe now!
 
 // Percy and Tony wheel back with your mechanic expert.
 
 Percy: Thanks so much fellas. And I'm sorry about all the carjacking and murdering I've been doing.
 
-PLAYER_NAME: Yeah, that wasn't cool.
+Wedge: Yeah, that wasn't cool.
 
 Percy: But I've changed. I discovered things about Overton that you wouldn't believe. It's bigger than any of us. I need to fix it.
 
@@ -175,21 +179,21 @@ Wheely: What are you rattling on about?
 
 Percy: Cars are being harvested... Their brains are being dismantled and discarded. Their remains being occupied by these... things.
 
-Gov Gearson: This is ridiculous. He's just trying to stop us from turning him over to the Queen.
+Wheely: This is ridiculous. He's just trying to stop us from turning him over to the Queen.
 
-PLAYER_NAME's brother: He's telling the truth.
+Wedge's brother: He's telling the truth.
 
-PLAYER_NAME: There's no way! That's absolutely insane!
+Wheely: There's no way! That's absolutely insane!
 
-Gearson: PLAYER_NAME! Think about it! What did we just see out there? That thing that flew out of that poor car's face. 
- 	This conveyor belt full of dead bodies that no one has addressed yet?!
+Gearson: Wheely! Think about it! What did we just see out there? That thing that flew out of that poor car's face. 
+ 	This conveyor belt full of dead bodies that no one has addressed yet?! (turns toward conveyor belt with cars on it)
 	This explains it all!
 
-Wheely: If this is true... All of Overton is in danger. The whole planet! We have to notify the Queen!
+Tinaldo: If this is true... All of Overton is in danger. The whole planet! We have to notify the Queen!
 
 Percy: You don't think I've tried? It's impossible to gain audience with the Queen right now.
 
-PLAYER_NAME: Even... for a Governor?
+Wheely: Even... for a Governor?
 
 Gearson: I think I have a plan, gang.
 

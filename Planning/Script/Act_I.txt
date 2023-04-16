@@ -1,0 +1,357 @@
+What's your favorite type of food?
+What's your favorite color?
+What's your special skill?
+What's your favorite social media? Every answer except "I don't like social media" will result in an immediate Game Over.
+
+
+--- The rubble should not be rubble. It is a blockade into underton
+--- Because no one is supposed to see how they live down there.
+--- Like Market City. Dirty and dangerous but so alive
+
+
+--- Open Act I ---
+--- Prologue ---
+
+##################################################################
+    emotional music (The Heroes Return part 1 from Earthbound)
+    Black screen.
+##################################################################
+
+VOICE: Wedge, wake up!
+VOICE: ...
+VOICE: Wake Up!!!
+
+// Player fades into view in the black screen.
+
+VOICE: You are a very special car.
+VOICE: You're very own story is about to unfold. And it will change everything.
+
+--- Close Prologue ---
+
+--- Scene 1 ---
+
+##################################################################
+	Player wakes up in a junkyard under the shade of a lone tree.
+	Despite being a junkyard, the scene is pleasant and interesting to explore.
+##################################################################
+
+
+Wedge: Wow that was a nice nap. And a weird dream.
+
+##################################################################
+    Pan to Player's house. (Door sound and fade into the inside of the house.) 
+    Player's dad is on the phone.
+##################################################################
+
+Dad: Yes I know I know, I'm very sorry.
+Telephone: Unfortunately Mr. Wheelson, you're apologies won't help your son to pass his Hive History class. You're weak! Your son must obey you!
+Dad: What CAN I do to help him?
+Telephone: At this point, the only way for him to pass Hive History and attend graduation next week is to complete extra credit.
+Dad: Yes? What does he need to do?
+Telephone: Rabble rabble rabble rabble...
+
+##################################################################
+    Fade out into wide view of the house and pan over to the field where the Player lies asleep. He wakes up slowly.
+
+    Player gets control of the car for the first time. Here in an empty field so that they can experiment with the controls.
+    There should be plenty of fuel and boost restoring items scattered around so the player feels free to drive around here as much as they want.
+    Eventually they do need to go home to see their dad. When the player leaves the field it will trigger their Dad calling out for them.
+##################################################################
+
+Dad: Wedge! Come on home!
+
+// At this point, the Player must go straight home.
+
+Dad: Wedge, I just got off of the phone with Mr. Gearwright. He said you missed class again today.
+Wedge: I'm sorry Dad. I just lost track of time exploring the junkyard.
+Dad: I know son, I know. I've known from the moment you were dropped on my doorstep that you would 
+	march to the beat of your own drum (Make this a car pun).
+    I want you to follow your dreams. But I also want you to have a future. Mr. Gearwright said that 
+	you're failing behind in Hive History class. If you don't pass Hive History you won't be able to 
+	graduate and if you don't graduate you won't be able to get a job and contribute back to the Hive 
+	and they'll send you off to the glue factory. 
+Wedge: It's just... class is so boring and pointless. It's so much more fulfilling to race
+	around the junkyard track.
+Dad: Look if you can't do it for yourself, do it for your little brother. He looks up to you, Wedge. Imagine 
+	how heart broken he would be if this time next year he was building furniture with glue made from his 
+	older brother!
+
+Dad: Now, the extra credit that Mr. Gearwright has assigned you...
+
+// Dad describes Mr. Gearwright's quest.
+// Player regains control and completes quest.
+
+Dad: Wow! That was fast! You really are such a brilliant baby boy.
+Dad: I'll call Mr. Gearwright right away! Now you get yourself ready for bed.
+
+// Player must go up to their room and interact with their bed. Your Dad enters.
+
+Dad: Mr. Gearwright says that you can graduate tomorrow! I know this doesn't mean much to you 
+	but it means so much to me and your brother that you won't be turned into glue!
+Dad: Now get your rest!
+
+// Dad rolls out of the room and the lights fade.
+
+--- Close Scene I ---
+
+--- Scene II ---
+
+// The lights illuminate and Wedge gets out of his bed.
+
+Wedge: I guess it's time to head over to the stadium for graduation!
+
+##################################################################
+    Player regains control. Player must drive to the stadium. There will be a road that the 
+	player must travel on to get to the stadium. At a certain point along this road, a cutscene 
+	will be triggered.
+
+    Player bumps into another car named Wheely.
+##################################################################
+
+Wheely: Hey there Wedge! Fancy meeting you out here, you here on your way to graduation too?
+
+##################################################################
+	Just then, a sudden commotion.
+	Enter BROTHER being pursued by Percy, a fancy car man and Tony, a tow-truck (For the carjacking)
+##################################################################
+
+BROTHER: HELLLLLPPP!!! He's trying to killlll meeeee!!!
+Wheely: Wedge, is that your little brother?
+Percy: Get back here this instant, you little scoundrel!
+Tony: Yeah! Get back here! // Tony is a bad driver.
+Wheely: Hey! Get away from him!
+BROTHER: NOoOOOooO!!!!
+
+// BROTHER is captured and taken behind a broken wall. Percy rolls back out. And looks at Wedge
+
+Percy: As for you two... You'll be keeping this to yourselves or I'll hear about it.
+Tony: Yeah! We'll killll ya!!
+Percy: ... Tony.
+Tony: Yeah Boss?
+Percy: Shut up.
+Tony: oh...
+
+// Percy and Tony exit
+
+Wheely: We're gonna go after him, right?
+
+##################################################################
+    Wedge looks left, looks right, looks back, and then to the hole in the wall.
+	He takes one more look at the road that leads to graduation (down).
+##################################################################
+ 
+Wheely: You're not seriously thinking of going to graduation after this. Right? Your brother has been car-jacked!
+
+##################################################################
+    Wedge slowly backs away from the road to graduation. Then quickly speeds forwards into a 
+	turn away from graduation and towards the hole in the wall.
+##################################################################
+
+Wheely: WOOT!
+
+// He follows after Wedge
+// Player regains control. there is a cul-de-sac with roads branching off of it. One branch has a government blockade 
+// with a few guards that you can interact with.
+
+Guard: If you need to get through, you'll have to get special permission from the state office.
+
+(Before exploring all other paths, Wheely's response to this interaction is vvvv)
+Wheely: Don't worry Wedge! Let's explore the other paths and if we can't find the cars that took your brother,
+	we'll visit the state office.
+
+##################################################################
+    Wedge continues down the remaining paths at the fork in the road. 
+	The end of each fork will have some sort of task that will help the 
+	player make use of all of the different abilities. the final cutscene 
+	is triggered when the player enters the 'lobby' of the forks after having 
+	completed the final task.
+##################################################################
+
+Wedge: Looks like the only path we haven't been able to search down is the one with the blockade. So we'll go 
+	to the state office first thing in the morning. For now, let's go back to... Oh no, GRADUATION! What time 
+	is it? XX:XX! I am so late! I only have XX:XX to get there before my name is called.
+
+##################################################################
+    Timer starts and Wedge has to use his newly acquired skills to try and get to his graduation on time.
+	The streets are empty because everyone is at the graduation. Just try beat the clock and not get totalled.
+
+    3-4 tiers to the timer. In each bracket, Wedge is rewarded something different depending on how late they 
+	were to their own graduation. Each tier will trigger a slightly different cutscene, but ultimately they 
+	will all result in your dad being disappointed in you for being late to the graduation.
+##################################################################
+
+--------(LONGEST TIME)
+    // Arrives at stadium
+    Wheely: Oh no... everyone's gone.
+    // Player needs to pilot Wedge back home. Using gas on the trip is the penalty for the bad time on the quest.
+
+	// Dad is sitting on the porch alone.
+
+    Wedge: Dad?
+    Dad: ...
+    Wedge: Dad.. I'm sorry.
+    Dad: ...
+    Dad: You're sorry.
+    Dad: That's okay. 
+    Dad: I understand it's hard for you. 
+    Dad: But please understand that it's hard for me too.
+    Dad: I was the only father in that audience who didn't have a son on that stage.
+    Dad: ...
+    Wedge: ...
+    Dad: And also, your brother has been missing for hours. This is the worst day so far this week. One of my sons is missing, the other is going to be turned into glue.
+    Dad: Now I'm going to have to make a request of the Queen to find one of my sons and spare the other!
+    // Dad walks inside.
+
+
+--------(SHORTEST TIME)
+    // Arrives at stadium just in time to have his name called. He was out of breath.
+    SPEAKER_DUDE: Wedge! 
+    //Wedge rushes on stage at the last second
+    Wedge: *pant* *cough* *wheeze*
+    //Wedge takes diploma and rolls off screen.
+    //Empty stadium Wedge goes up to his dad in audience.
+    Dad: You made it! I was worried there for a moment.
+    Wheely: Oh.. uh yeah! We were here! Just took a bit longer to get our grills done than we thought.
+    Dad: I'm the happiest Father in the world for you to have been there. I don't care if you barely made it!
+    // the three walk home together. in mid conversation.
+    Wheely: Yeah and then bumped into each other right before the accident...
+    Dad: Oh you didn't tell me you saw an accident. What happened?
+    Wheely: Oh yeah, your youngest son was car-jacked.
+    Dad: No he was not.. He stayed home safe with the babysitter. And anyway, car-jacking only happens in movies. 
+		You know that. Cars aren't able to bring intentional harm to other cars. It's part of our hive DNA!
+	Wheely: It's not part of the palace guards' DNA! They are
+		allowed to harm other cars!
+	Dad: Were these cars palace guards?
+	Wheely: well... no...
+	Dad: Uhuh...
+    Wedge: I promise that's what we saw! We even saw where they went! But one of the paths was blocked off so we 
+		couldn't check everywhere!
+    Dad: You couldn't check everywhere?
+    Dad: Is this why you were almost late to your graduation??
+    // Babysitter races out of house.
+
+    Babysitter: BROTHER!! Where are you?
+    Dad: Don't worry, he'll turn up, we just need to inquire with the Queen to find out where he is. She knows all.
+
+
+##################################################################
+    Player is allowed to explore the city at night. Quite a lot is closed 
+	because it's night but the player can still ride around and test out their
+	car which has been upgraded due to the graduation?
+    When the Player is ready, they just need to go to sleep in their bed in order to trigger the next cutscene.
+
+    Wedge wakes up. Dad can be talked to.
+##################################################################
+
+--- Close Scene 2 ---
+
+
+--- Scene 3 ---
+
+Dad: I have an appointment with the Queen this afternoon. I'm sure that BROTHER is just stuck in a well.
+
+// Wedge leaves his house.
+// Wheely rolls up
+
+Wheely: Ok, so all we need to do is go to the city building to talk to someone about getting special permission
+	to pass that blockade!
+
+// Player regains control to go to the city building. Side quests are available along the way.
+// Player enters City building. Goes up to the reception desk.
+
+Receptionist: Can I help you?
+Wedge: Yes ma'am! We're hoping to get special permission to pass a government blockade on the east side of town.
+Receptionist: The blockade on the east side of town? I'm sorry, but that is strictly off limits to civilians.
+Wheely: Well, who is it NOT off limits to?
+Receptionist: Government officials and palace guards are the only people who have access. 
+Wheely: Come on! There must be some way for civilians to get through!
+Receptionist: hmmm... In special circumstances civilians can get permission to complete certain jobs.
+Wedge: Perfect! Are there any jobs you're hiring for on the other side of the blockade?
+Receptionist: Sorry if I was misleading, those jobs are incredibly rare. Hardly anyone crosses that blockade.
+	I haven't even been across! Or anyone I know personally for that matter.
+	And I'm not qualified to sign you off on a job even if we had contracts in waiting. 
+	The only person who has the authority to contract a worker in that area is the governor of the city.
+Wheely: Perfect! So we just need a meeting with the governor!
+
+// Wedge and Wheely roll away.
+
+Receptionist: Hey! That's not what I meant!!
+
+##################################################################
+	Player takes control and finds the governor's house.
+	Wheely beeps at the door.
+	No one answers the door.
+##################################################################
+
+Sounds from house: REevvvvv! HONK! RubbleRubble!
+Wheely: He sounds like he's in distress! He might need help! 
+Wedge: But his doors are locked and no one is answering.
+Wheely: We can't just leave him to die! We should check to see if a back door is unlocked so we can help him!
+Wedge: I've got a bad feeling about this...
+
+// Player regains control. There's a key hidden under a rock that the player uses to open the back door.
+
+Sounds from house: HIIIRraaaYaaaAA revvv yraa yraaaa vroooom!
+
+##################################################################
+	Player follows noises up the stairs.
+	Walks into the governor and another car in a bed together.
+	
+	Maybe they get up to his door and then here him say. "Yeah, now just put it right in my boot."
+	And they walk in and his rear trunk is wide open.
+##################################################################
+
+Governor Gearson: WHAT ARE YOU TWO BOYS DOING IN HERE!
+Wedge: Oh.. we were checking to see if you needed any help!
+Governor Gearson: We don't! So get out!
+Wheely: Well, we were also wondering if you could hear a proposal.
+Governor Gearson: WHAT?!?!
+Wheely: Well, there's this road down the street that --
+Governor Gearson: NO! Get out!
+
+// Wedge and Wheely start to drive away.
+
+Governor Gearson: WAIT!
+Governor Gearson: Are your dashcams recording?..
+Governor Gearson: Give me the recordings.
+Wheely: Hear our proposal and we will.
+Governor Gearson: I don't negotiate with terrorists!
+
+**** First boss battle ensues ****
+
+// Governor Gearson is defeated.
+
+Gov. Gearson: I have to admit. You two are quite impressive fighters. Your style almost reminds me of...
+	no that's nonsense. Anyway, I'll hear your proposal. But you'll have to promise me that you won't show those 
+    videos to ANYONE. Trust runs both ways.
+Wheely: You've got yourself a deal!
+Gov. Gearson: So what is it that you boys want?
+Wheely: Well there's a blocked road on the east side of town that we really want to investigate but we need special
+	permission to access it.
+Gov. Gearson: Which road are we talking about here boys?
+Wheely: right at the entrance to Train Drive.
+Gov. Gearson: The entrance to Train Drive?...
+
+// Gov. Gearson flabbergasted.
+
+Gov. Gearson: Why would you two want to travel down that road?..
+Wheely: Well...
+Gov. Gearson: You don't know!
+Wheely: Know what?
+Gov. Gearson: That's it! Have I got something to show you boys! Race ya to the blockade! Keep up if ya can!
+
+//Race Gov. Gearson to the blockade. Don't run into anyone!
+
+Gov. Gearson: (to boys) Here we are! (to guards) Gentlemen! I'd like you to let us through.
+Guards: Yes, of course Governor!
+
+// As the team walks through the doors the screen fades to black. Maybe it's a tunnel with the city on the other side.
+
+Gov. Gearson: Welcome to Underton!
+
+// Black screen illuminates to a bustling city square
+// The camera pans out until it fades to black. 
+
+--- Close Scene III ---
+--- Close Act I ---
+
