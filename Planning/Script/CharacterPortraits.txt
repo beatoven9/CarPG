@@ -32,7 +32,7 @@ Percy: Dragoon
 	board with saving the world. He represents what Gearson should be striving to be. A redeemed nihilist full 
 	of hope for the future.
 
-Finaldino: Necromancer
+Tinaldo: Necromancer
 		Finaldino is the child-son of the kidnapped friend of Governor Gearson. Finaldino is a uniquely gifted 
 	Necromancer, a gift he learned from his dad, the Necromancer, Finaldo Axel IV. Finaldino is anxious to prove
 	himself. Doesn't want to be treated differently for being so young.
@@ -40,7 +40,7 @@ Finaldino: Necromancer
 Tony: Monk
 		Tony is a simple Tow-Truck. Your Lenny character. Not much depth to this one.
 
-Frog:
+Frogg:
 		Doesn't speak English. Not entirely clear if he speaks at all Is an amphibious vehicle that came out of the water.
 	Probably came from the bottom of the ocean somewhere. Has he socialized with anything before?
 
