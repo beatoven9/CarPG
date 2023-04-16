@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b05mqi8dsapm7"]
+
+[ext_resource type="FontVariation" uid="uid://bn104iyv12owi" path="res://Fonts/hud_bar_text.tres" id="1_yxy7m"]
+[ext_resource type="Texture2D" uid="uid://mmthnmxmekn" path="res://Sprites/UI_Sprites/ProgressBarFrame.png" id="3_qat5v"]
+[ext_resource type="Texture2D" uid="uid://dvholimj2xge8" path="res://Sprites/UI_Sprites/HealthBarFill.png" id="4_hcapb"]
+
+[node name="HUD_Bar_Base" type="MarginContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="GaugeName" type="Label" parent="HBoxContainer"]
+texture_filter = 3
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_yxy7m")
+theme_override_font_sizes/font_size = 10
+text = "Health"
+vertical_alignment = 1
+
+[node name="Gauge" type="TextureProgressBar" parent="HBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_over = ExtResource("3_qat5v")
+texture_progress = ExtResource("4_hcapb")
+texture_progress_offset = Vector2(2, 2)
+
+[node name="GaugeValueLabel" type="Label" parent="HBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_yxy7m")
+theme_override_font_sizes/font_size = 10
+text = "100/100"
+vertical_alignment = 1

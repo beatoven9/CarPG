@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccdt6ixb1j6vo"]
+
+[ext_resource type="PackedScene" uid="uid://b05mqi8dsapm7" path="res://Scenes/Battle/UI/hud_bar_base.tscn" id="1_e10sl"]
+
+[node name="HealthHUD" instance=ExtResource("1_e10sl")]
+
+[node name="Gauge" parent="HBoxContainer" index="1"]
+texture_filter = 0

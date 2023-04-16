@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://nxi76mylq08e"]
+
+[ext_resource type="PackedScene" uid="uid://cw8bjn8er1nyy" path="res://Scenes/Battle/UI/base_team_battle_hud.tscn" id="1_ovct4"]
+
+[node name="EnemyPartyHUD" instance=ExtResource("1_ovct4")]

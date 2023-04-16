@@ -24,8 +24,8 @@ Once all fighters are loaded in the scene, the battle begins.
 ---ATB--MACHINE---
 ------------------
 
-The ATB machine starts a timer for each fighter and links it to that fighter's ATB meter. When a fighter's ATB meter is full, the ATB Machine will call a method on that fighter's Fighter class called request_move which will 
-return an instance of Move.
+The ATB machine starts the timer for each fighter and links it to that fighter's battle meter. When a fighter's battle meter is full, the ATB Machine will call a method on that fighter's Fighter class called request_move which will 
+return an instance of dictionary containing move, user, and target.
 
 A call to move_request on an enemy fighter will accept the battle state as an argument (contains info about fighter stats/health on the board). It will then query the FighterClass for available moves if the Fighter's move queue is empty.
 It will then calculate damage output of each move on each enemy and pick the best option (also consider healing/buffs). (Super basic ai that we will further develop later.)
@@ -45,7 +45,7 @@ the FighterMove property is another class which contains information about the m
 The execution of a move plays out as follows:
     1. User calls perform_move().
     2. attack_animation() is called.
-    3. a. attack power is calculated. attack is applied to target who has its get_hit(attack_power, attack_type) method called
+    3. a. attack power is calculated. attack is applied to target who has its get_hit(attack_power, attack_type) method called # This is a bit dumb. the ATB machine should really be the one calculating this
        b. if move is a multi-turn move, the next turn's move will be added the Fighter's move_queue) 
     4. signal denoting end of attack is emitted (sent to ATB machine to check queue for next move)
 

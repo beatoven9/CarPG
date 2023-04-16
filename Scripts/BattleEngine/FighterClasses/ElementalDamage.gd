@@ -1,0 +1,11 @@
+
+class_name ELEMENTAL_DAMAGE
+
+enum {
+	NONE,
+	FIRE,
+	BLIZZARD,
+	THUNDER,
+	WATER,
+	WIND
+}

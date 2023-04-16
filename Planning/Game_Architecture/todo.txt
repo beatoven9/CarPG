@@ -1,0 +1,157 @@
+overhauled user prompt box has just been completed as has the back functionality.
+
+So the dialogue box on the bottom right tells the moves as they are happening. Including failures and crit notifs.
+This needs to be linked in with signals from the ends of animations too...
+
+The move itself should have a get_attack_string(user_name, target_name, critical, success) method that returns 
+a string to be fed to the dialogue box.
+
+when updating the dialogue box, we will get the current string and then add the new string to the front with a few
+newlines in between and set that as the new text. We will probably also have to put this label inside a vertical
+scrolling container
+
+boost usage on moves.
+	total_cost
+	current_boost
+	value_after_cast = current_boost - total_cost
+	if value_after_cast >= 0:	
+		current_boost = value_after_cast
+		updat_boost
+		return -1
+	elif value_after_cast < 0:
+		success_rate = (total_cost - abs(value_after_cast)) / total_cost
+
+
+
+
+Dialogue box basically done:
+	next
+*done*		--- *Add attack, magic, (handiness? prolly just uses magic), defense, and magic-defense stats to the battle system.
+*done*			*Add mechanic class with some healing spells
+*done*			*Create moves that utilize these stats. I think it would be good to put the "calculate_move_damage"
+*done*			methods on the base move. We could have different ones for offensive_magic, defensive_magic, healing magic, 
+*done*			melee, long_range
+*done*			*each method will take a user, a target, and the success_roll. It will use the relevant stats from each one 
+*done*			to calculate the appropriate damage and determine if the success roll was high enough. it will return a 
+*done*			dictionary of form:
+*done*
+*done*			var move_result = {
+*done*				move_string: "",
+*done*				damage_output: 90,
+*done*			}
+*done*
+*done*				it could just apply the move to the target itself. however, this would make it hard to handle animations and all.
+*done*
+*done*		--- Add generate_announcement_string() to Moves
+*done*				It would be cool if this had a large pool of randomized phrases about how great, mediocre, or bad
+*done*				a move was. Maybe chatGPT generated. A huge list.
+
+
+			--- Perhaps it would be more intuitive if the left arrow key switched to a "player targets" dialogue box
+				and the right arrow switched to the "enemy target".
+				If the move is friendly, the player box is the first one opened.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+|----------
+|*done*	--- Figure out a good way to keep health and boost values locked to integers. This will require planning out
+|			how to use stats in combat. This will likely help this vvvv situation
+| 				base_hp = 250
+| 				base_attack = 20
+| 				base_defense = 15
+| 				weapon_bonus = 10
+| 				armor_bonus = 15
+| 				base_power = 90
+| 
+| 				total_attack = (attack + weapon_bonus) = 30
+| 				total_defense = (defense + armor_bonus) + (armor_bonus if crit) = 30 or 45
+| 				damage_output = (total_attack + base_power) + (weapon_bonus if crit) = 120 or 130
+| 				damage_incurred = (damage_output - total_defense) = 90, 100, 75, or 85
+|
+|
+|		--- Get the bars to lerp. maybe there is a "real_value" and a "displayed_value" on the fighter_hud for each bar.
+|			in the _process() method, the "displayed_value" is always lerping toward the "real_value"
+|				Maybe for this, there is a "health_tick_timer". The length of the timer is determined by the vitality stat.
+|				A higher vitality means that the timer is longer. (maybe time = vitality * .1 (or .01))
+|				Each timeout signal, the health is decreased by 1 until target_health == current_health
+| 				There's an issue here with healing. That shouldn't be negatively affected by good vitality.
+|
+|*done* --- Do we check for health being over the max health during a heal? Check this when receiving a healing move.
+|----------
+
+
+|----------
+|*done*	--- Add more values to the move_info object. so we can pass just that to all of these methods
+|				if the "stolen_item" key is not set, that means that stealing wasn't attempted.
+|				This way, the receive_move method is able to set the string. So it can be unique.
+|*done*	--- MoveInfo should have a constructor which is just a function that returns the full dictionary with defaults set
+|
+|*done*	--- Move the generate_announcement method off of the announcement box and put it on the moves. it will take move_info
+|				For this chatgpt prompt, "Tell me a sentence describing sally hitting bob and stealing her keys."
+|				Run this for each move to get a bank of formula sentences that we put user & target into
+|
+|*done* --- Add Monk class
+|
+|*done*	--- Add Dragoon Class
+|
+|		--- Start thinking about BlueMage class
+|
+|*done*	--- I neeeeed to make battle animations. I will probably have to restructure things to accomodate them
+|			Even if it's just one attack animation and one "receive attack" animation. They can be triggered in
+| 			the "receive_attack" method.
+|			-The completion of a "receive_attack" animation just has to be connected to something that makes a 
+|    		 resume_timers() call
+|			-When to start this animation is a little bit trickier.
+|			-It may be muuuuuuucch easier to handle the entire animation in the use_move() method.
+|			 This will actually be really easy this way. Spells can be a casting animation and then attach a node
+|			 with particle effects for that spell type to the target. The node should have a timer that is connected
+| 			 to a method that destroys that node. The same scene can be used for all sizes of a particular spell.
+|			 The difference between the spells will be amount of particle effects and maybe the size of the actual node.
+|			-okokok perhaps, when the battle engine places the spell anim node on the target, it also creates a move_info
+| 			 property on the anim and hooks up the timeout on the anim to the handle_damage() method. And when the attack
+|			 anim finishes, it send the move_info to the recipient's receive_move() method. We would also need to hook up 
+| 			 each Fighter's receive_move() method to the announcer_box
+|			-Maybe each move does have it's own use_move() method. This way, I can pass everything into this method and
+| 			 The move script handles everything else. So it will handle basically everything inside of use_move().
+|			 The benefit of this is that I don't need a fuckload of branching logic. I just call the method and it handles
+|			 the rest, including putting the spell anim node on the target, connecting the anim_ended signal and playing the
+|			 user's anim and if it's a melee attack, connecting THAT anim_ended signal to the move_complete logic.
+|				-I shouldn't put any of this logic into base_move. That's just a band-aid. implement new logic in each 
+|				 move. If there are some shared functionalities, I can create parent methods then.
+|				-I think this is going to be the best way to do this for animations too.
+|				 This way, when an attack animation is used, that move can connect its animation_finished signal
+|				 to a method that calls receive_move() on the target. This is good for multiple reasons.
+|				 Biggest of these reasons is that move_info will be available as a property on the move.
+|				 With this said, it might be best to have the spell attacks actually be animations in an animated sprite node
+|				 that is kept on the Fighter node but is not visible by default. So then, when it needs to be used,
+|				 it is made visible and then plays.
+|			-The plan right now is to just put all of this move logic right into Fighter.gd script. There should be a hash table in
+|			 Spell receiving handler that chooses the appropriate spell_anim from the preloaded Scenes, attaches it to the 
+| 			 Target, sets the move_info property on the animation scene and then connects its anim_finished signal to the 
+|			 Fighter's handle_damage method. The Anim ended will also have to be connected to the resume_timers method.
+|			 
+|			
+|*done*		-Make at least 3 moves for each class.
+|
+|			-Make blue mage with a couple learned moves. It would probably make sense to have learned moves be attached to
+| 			 the weapon? The learned moves will be fed in alongside the BlueMageClass.new() class to the set_data() method.
+|			 Maybe the way is to pass a list of the moves.
+|		
+|----------
+
+#########
+######## BUG ALERT!!! If a dialogue box gets opened above another dialogue box, it's likely because the resume_timers() method
+######## 			  is being called twice.
+########
+
+		--- Write documentation for the BattleEngine so that I can understand it a month from now.
+
+I think, magic learned while using a class weapon is retained when you don't have the weapon equipped
+	but it is much less powerful and much less boost efficient might be cool. So it's still useable.
+
+
+I think I'm gonna make blue mage more intuitive. There's gonna be some sort of pokedex type of thing for 
+learnable moves. So when you see a learnable move is used, you get a notification that it is learnable
+and your move_dex is updated. When you look through your move dex, you can see all the moves you've seen
+with the monsters that can learn them. Maybe there could be a move dex and a monster dex.
