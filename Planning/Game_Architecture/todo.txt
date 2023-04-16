@@ -131,6 +131,13 @@ Dialogue box basically done:
 | 			 Target, sets the move_info property on the animation scene and then connects its anim_finished signal to the 
 |			 Fighter's handle_damage method. The Anim ended will also have to be connected to the resume_timers method.
 |			 
+|			
+|*done*		-Make at least 3 moves for each class.
+|
+|			-Make blue mage with a couple learned moves. It would probably make sense to have learned moves be attached to
+| 			 the weapon? The learned moves will be fed in alongside the BlueMageClass.new() class to the set_data() method.
+|			 Maybe the way is to pass a list of the moves.
+|		
 |----------
 
 #########

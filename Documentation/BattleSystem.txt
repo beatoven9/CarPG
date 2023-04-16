@@ -1,0 +1,136 @@
+BATTLE SYSTEM DOCUMENTATION
+
+	########### BattleScene.gd ###########
+		load_enemy_data() and load_player_data()
+			These are mostly placeholder methods right now.
+			We will need a way to load in this data along with the player item list data. (inventory system is placeholder for now)
+
+			Each one returns a list of fighters of the format:
+				var player_fighter2 = {
+					"name": "Wheely",
+					"texture": Texture2D,
+					"attack": 15,
+					"defense": 15,
+					"magic": 15,
+					"magic_defense": 15,
+					"speed": 20,
+					"luck": 5,
+					"vitality": 10,
+					"fighter_class": ThiefClass,
+					"class_proficiency": 30,
+					"max_health": 500,
+					"max_boost": 100,
+					"boost_per_sec": 2,
+					"health_per_sec": 0,
+					"weapon_bonus": 10,
+					"armor_bonus": 10,
+					"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+					"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
+				}
+
+		_ready()
+			This method uses the Player list, Enemy list, and item list and calls the 
+			BattleEngine.gd script's start_engine() method.
+
+
+	############ BattleEngine.gd #############
+		DATA_TYPES
+			battle_state: 		acquired by calling BattleEngine.get_battle_state()
+				var battle_state = {
+					"player_fighters": [Fighter, Fighter],
+					"enemy_fighters": [Fighter, Fighter]
+				}
+
+			move_info: 			generator method is Fighter.gen_move_info(move: Move, user: Fighter, target: Fighter)
+				var move_info = {
+					"move": move,
+					"user": user,
+					"target": target,
+					"stolen_item": "",
+					"critical": false,
+					"move_power": 0,
+					"damage_incurred": 0,
+					"wait": false,
+					"announcer_box": BattleEngine.move_announcer_box,
+					"on_move_complete": BattleEngine.on_move_complete  # This is a method object
+				}
+
+
+		---THE MOVE QUEUE---
+			The move queue is the heart of the BattleEngine.
+
+			When a Fighter is ready to make a move, it will emit the ready_to_move signal.
+			This signal is received by the BattleEngine's request_move(Fighter) method.
+			This method then pauses all of the Fighters' battle_timers, calls the Fighter's
+			request_move(battle_state) method.
+
+			When the Fighter's move has been selected, the move_ready signal is emitted.
+			This signal is caught by the BattleEngine's receive_move_info(move_info) method.
+
+			----receive_move_info(move_info)----
+				This method receives a move_info object
+				It pushes this object to the back of the move_queue and then calls execute_move()
+
+			----execute_move()---
+				This method checks to see if the length of the move_queue is greater than 0
+					if it is, it pops the move off of the queue and then calls BattleEngine.apply_move(move_info)
+						with the move_info object it popped off of the move_queue
+					if it is not, it simply returns from the function.
+
+			----apply_move(move_info)----
+				-This method uses the move_info["user"].fighter_luck property to determine
+				how many rolls the move's user gets for critical hits and successful hits.
+				-It then rolls that many times for random floats between 0 and 1.
+				-It takes the lowest of those rolls and saves them.
+				-Then the move_announcer and resume_timers values are set on the move_info object
+					(This could be set in the gen_move_info() method if we get a 
+					 reference to the BattleEngine in the Fighter object)
+				-Then the Move.use_move(move_info, success_roll, crit_roll) method is called
+				-At this point, the BattleEngine is in a waiting state until the BattleEngine.on_move_complete() 
+				 method is called when the move has completed.
+
+			----on_move_complete()----
+				-The on_move_complete method really has two purposes.
+					-resume the battle_timers
+					-attempt to execute another move in case there is a move in the queue.
+
+	Fighter.gd
+		DamageHUD.gd
+			-This is a scene which is a child of every Fighter.
+			-It displays damage/healing when a move is used.
+			-it is interfaced with by using the display_damage(damage_inflicted, critical) and
+			 display_healing(healing_amount) methods.
+			-These methods are called at the end of the Fighter.receive_move() method
+
+		FighterHUD.gd
+			-This is a scene which is a child of every PlayerFighter.
+			-It displays the health, boost, and timer of each fighter.
+			-It gets updated using the Fighter.update_hud() method.
+
+		battle_timer.gd
+			-This timer, which is a child of each Fighter has a length set based on the Fighter's speed
+			-When this timer runs out, the ready_to_move signal is emitted and caught by the 
+			 BattleEngine.request_move() method.
+
+		receive_move(move_info)
+			-This method is used to handle receipt of a move when the Fighter is the target of an attack.	
+			-For most attacks, this is called at the end of the attack animation and just handles calculating
+			 damage dealt.
+			-For magic attacks, this method also handles playing the animated_sprite associated with a particular
+			 spell.
+			-the on_move_complete() method is called from the base_spell_hit.gd script when the animation is complete.
+
+		----SubClasses----
+			EnemyFighter.gd
+				fighter_ai - not yet implemented
+
+			PlayerFighter.gd
+				move_selection_dialogue.gd
+					
+
+	FighterClasses
+		---MOVES---
+			use_move(move_info)
+
+
+######### MoveAnnouncer ###########

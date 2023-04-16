@@ -163,7 +163,7 @@ func handle_healing(move_info):
 	var damage_inflicted = move_info["damage_incurred"]
 	var critical = move_info["critical"]
 
-	damage_hud.display_damage(damage_inflicted, critical)
+	damage_hud.display_healing(damage_inflicted, critical)
 	current_health += damage_inflicted
 
 	health_changed.emit(current_health, max_health)	
@@ -226,9 +226,7 @@ func _on_second_tick():
 	if current_health >= max_health:
 		current_health = max_health
 
-	fighter_hud.update_health_bar(current_health, max_health)
-	fighter_hud.update_boost_bar(current_boost, max_boost)
-
+	update_hud()
 
 func receive_move(
 	move_info,
