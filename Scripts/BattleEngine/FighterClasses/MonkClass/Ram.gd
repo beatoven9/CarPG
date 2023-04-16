@@ -69,7 +69,6 @@ func _on_ram_complete(_animation_name):
 	current_user.animation_player.play("ram_return")
 
 func _on_ram_return(_animation_string):
-	print("RAM RETURN")
 	current_user.animation_player.animation_finished.disconnect(
 		_on_ram_return
 	)

@@ -3,7 +3,8 @@ BATTLE SYSTEM DOCUMENTATION
 	########### BattleScene.gd ###########
 		load_enemy_data() and load_player_data()
 			These are mostly placeholder methods right now.
-			We will need a way to load in this data along with the player item list data. (inventory system is placeholder for now)
+			We will need a way to load in this data along with the player item list data.
+				(inventory system is placeholder for now)
 
 			Each one returns a list of fighters of the format:
 				var player_fighter2 = {
@@ -126,11 +127,39 @@ BATTLE SYSTEM DOCUMENTATION
 
 			PlayerFighter.gd
 				move_selection_dialogue.gd
-					
+					-This is a complicated scene.
+					-This is made up of several ItemList objects inside dialogue boxes.
+						-Entry
+							-base attack
+							-magic
+							-abilities
+							-items
+							-flex (only shows up if necessary)
+						-Magic
+						-Abilities
+						-Items
+						-Flex
+						-Target_box
+
+					-Each item in the Entry box is linked to a method which makes Entry invisible
+					 and the targetted dialogue box visible.
+					-The items are populated with an AvailableMoves object.
+					-A box_stack is kept so that the back arrow can pop the stack to make you go back in history.
+
 
 	FighterClasses
 		---MOVES---
 			use_move(move_info)
+				-each move has a unique use_move(move_info, success_roll, crit_roll) method
+				-Generally, this method calculates the damage_output by the user, calls target.receive_move(move_info)
+				 to update the move_info dictionary with the "damage_incurred" tag and then creates an announcement
+				 string with generate_announcement_string and then makes the announcement with the move_announcer_box
+				 stored on move_info.
+
+			generate_announcement_string(move_info, critical)
+				-This method is unique to each move.
 
 
 ######### MoveAnnouncer ###########
+	-Very basic scene which gets updated with calls to its method make_announcement(announcement_string)
+	-it will prepend the new announcement to a list of announcements which is displayed in a scroll box.
