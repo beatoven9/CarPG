@@ -59,8 +59,6 @@ func _on_ram_complete(_animation_name):
 	current_move_info["announcer_box"].make_announcement(
 		announcement
 	)
-	#user.position.x = user_original_x_position
-	#This ^^ should reset rotation
 	user.z_index -= 1	
 	user.animation_player.animation_finished.connect(
 		_on_ram_return

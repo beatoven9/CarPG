@@ -1,4 +1,4 @@
-extends base_move
+extends StealBase
 class_name STEAL
 
 var move_name = "Steal"

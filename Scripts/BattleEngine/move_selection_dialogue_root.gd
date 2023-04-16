@@ -94,6 +94,7 @@ func prompt_for_move(fighter, new_available_moves, new_battle_state):
 
 	available_moves = new_available_moves
 
+	entry_box.set_item_text(0, " " + available_moves.attack.move_name)
 	current_battle_state = new_battle_state
 
 	magic_spells = available_moves.magic

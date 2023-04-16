@@ -10,7 +10,6 @@ script = ExtResource("2_cd0dn")
 flip_v = true
 
 [node name="SelectedSprite" parent="." index="3"]
-visible = false
 position = Vector2(2.08165e-12, -40)
 flip_v = true
 
@@ -19,3 +18,6 @@ offset_left = 30.0
 offset_top = -7.99989
 offset_right = 48.0
 offset_bottom = 15.0001
+
+[node name="GunnerAttackAnims" parent="." index="6"]
+offset = Vector2(-16, 2.08165e-12)

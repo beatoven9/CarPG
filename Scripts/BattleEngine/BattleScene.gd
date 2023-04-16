@@ -70,10 +70,10 @@ func load_player_data():
 		"defense": 15,
 		"magic": 15,
 		"magic_defense": 15,
-		"speed": 200,
+		"speed": 35,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": MonkClass,
+		"fighter_class": GunnerClass,
 		"class_proficiency": 200,
 		"max_health": 500,
 		"max_boost": 100,
@@ -96,7 +96,7 @@ func load_player_data():
 		"speed": 20,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": BlackMageClass,
+		"fighter_class": ThiefClass,
 		"class_proficiency": 30,
 		"max_health": 500,
 		"max_boost": 100,
@@ -119,7 +119,29 @@ func load_player_data():
 		"speed": 30,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": BlackMageClass,
+		"fighter_class": MonkClass,
+		"class_proficiency": 100,
+		"max_health": 500,
+		"max_boost": 55,
+		"boost_per_sec": 2,
+		"health_per_sec": 0,
+		"weapon_bonus": 10,
+		"armor_bonus": 10,
+		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
+		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
+	}
+	var texture4 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
+	var player_fighter4 = {
+		"name": "Percy",
+		"texture": texture4,
+		"attack": 15,
+		"defense": 15,
+		"magic": 15,
+		"magic_defense": 15,
+		"speed": 40,
+		"luck": 5,
+		"vitality": 10,
+		"fighter_class": DragoonClass,
 		"class_proficiency": 100,
 		"max_health": 500,
 		"max_boost": 55,
@@ -134,7 +156,8 @@ func load_player_data():
 	var player_fighters_data = [
 		player_fighter1,
 		player_fighter2,
-		player_fighter3
+		player_fighter3,
+		player_fighter4
 	]
 	return player_fighters_data
 

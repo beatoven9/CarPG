@@ -200,22 +200,6 @@ func apply_move(move_info):
 		highest_crit_roll,
 	)
 
-	if move.steal_item && move_info["success"]:
-		move_info["stolen_item"] = barter_steal(user, target)
-
-	#move_info = target.receive_move(
-	#	move_info,
-	#)
-
-
-func barter_steal(perp, victim):
-	if len(victim.snatchable_inventory) > 0:
-		var new_item = victim.snatchable_inventory.pick_random()
-		var new_item_name = new_item
-		perp.inventory.append(new_item)
-		return new_item_name
-	else:
-		return ""
 
 
 func _handle_fighter_death(fighter):

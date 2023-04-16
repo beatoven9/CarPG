@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var animated_sprite = $AnimatedSprite
+@onready var gunner_attack_anims = $GunnerAttackAnims
 @onready var animation_player = $AnimationPlayer
 @onready var sprite2d: Sprite2D = get_node("Sprite2D")
 @onready var collision_shape2d: CollisionShape2D = get_node("CollisionShape2D")
@@ -9,6 +10,7 @@ extends Area2D
 @onready var damage_hud = $DamageHUD
 
 @onready var spell_hit_anim = preload("res://Scenes/Battle/AttackAnims/spell_hit_base.tscn")
+@onready var bullet_scene = preload("res://Scenes/Battle/AttackAnims/Bullet.tscn")
 
 var second_tick_timer: Timer
 
@@ -203,19 +205,9 @@ func _on_death():
 	fighter_death.emit(self)	
 
 func expend_bp(bp_cost):
-# 	if current_boost > bp_cost:
-# 		current_boost -= bp_cost	
-# 		boost_changed.emit(current_boost, max_boost)
-# 		return true
-# 	else:
-# 		current_boost = 0
-# 		boost_changed.emit(current_boost, max_boost)
-# 		return false
-
 	var bp_after_cast = current_boost - bp_cost
 	if bp_after_cast >= 0:
 		current_boost -= bp_cost
-		#boost_changed.emit(current_boost, max_boost)
 		return -1
 	elif bp_after_cast < 0:
 		var success_rate = (float(bp_cost) - abs(bp_after_cast)) / float(bp_cost)
