@@ -227,21 +227,39 @@ Horse: You have proven yourself worthy of the Ancient Magic. Now go and save our
 
 --- scene v ---
 
-// The team confronts BIG_BAD in the palace.
+##################################################################
+	The team travels to the Royal Palace.
+	They have to fight their way past all the Palace Guards but they should be pretty easy by now.
+
+	The team enters the throne room and BIG_BAD is sitting on the throne.
+	Throne is laughably big compared to BIG_BAD
+##################################################################
+
+Wheely: Surrender now BIG_BAD!
+
+BIG_BAD: Right, you think I'm afraid of you with my current powers. I could squash you like a tricycle.
+
+Wedge: You should be afraid, we have the Ancient Magic!
+
+BIG_BAD: Hahahah! And you think some antiquated magic will be my undoing?! Laughable!
+	Sure, it will lower my first layer of defenses, but you still have to take me down!
+
+// Battle ensues
+
+BIG_BAD: NOOOOOOO!!!!!
+
+// He fades away.
+
+Wedge: Now, there's only one thing left to do...
+
+// Wedge puts the egg on the throne. It shakes once or twice and then a fully grown Queen springs out of the Egg.
+
+All: Hurray!
+
+// Spinning around, confetti falling from sky, credits start to roll.
 
 --- close scene v ---
 
 --- close Act V ---
 
 --- The End ---
-
-
-This whole act will be mostly just finding your friends in the apocalyptic landscape.
-Along journey one of the main quest items will be to explore ancient ruins for forgotten magic. You do find the forgotten
-magic and also an ancient fertilized queen egg ready to be incubated and hatched. Perhaps it's given to you by Frogg's people.
-You come to a giant pond in the ruins and Frogg's people come out with the egg. The leader first talks to you in the language
-Frogg has been speaking. Then the leader turns on his translator device and you can understand him. He explains that Frogg
-was sent to you by his people to help you complete your mission. That Frogg has know all the specifics of the problem 
-with the big evil dude the whole time but no one has been able to understand him and his translator broke. Big bummer.
-The leader explains that the egg is a queen egg ready to be incubated. He gives Frogg a translator. On your way out of the
-cave, someone asks Frogg a question and before he can respond, he trips and breaks the translator.
