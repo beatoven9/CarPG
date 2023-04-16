@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://etca8w110ckb"]
+[gd_scene load_steps=113 format=3 uid="uid://etca8w110ckb"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter.gd" id="1_ljcyq"]
 [ext_resource type="Texture2D" uid="uid://bdrm7y1pvq07k" path="res://Sprites/Car_Sprites/Sedan_a.png" id="2_a0v5c"]
@@ -244,8 +244,24 @@ tracks/0/keys = {
 "values": [Vector2(2.08165e-12, -256), Vector2(2.08165e-12, -256), Vector2(2.08165e-12, 2.08165e-12)]
 }
 
+[sub_resource type="Animation" id="Animation_xmxdv"]
+resource_name = "back_off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12), Vector2(2.08165e-12, -256)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_83a5k"]
 _data = {
+"back_off": SubResource("Animation_xmxdv"),
 "jump_attack": SubResource("Animation_ad8sr"),
 "jump_prep": SubResource("Animation_5edsv"),
 "jump_return": SubResource("Animation_f6pbt"),

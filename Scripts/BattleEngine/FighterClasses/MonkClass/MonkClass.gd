@@ -1,6 +1,5 @@
 class_name MonkClass
 
-
 static func get_available_moves(class_proficiency):
 	var available_moves = AvailableMoves.new()
 
