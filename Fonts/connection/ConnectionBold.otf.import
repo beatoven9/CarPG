@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://6n4ffr27ibbx"
-path="res://.godot/imported/ConnectionBold.otf-3613454c490963f1c008ceb2c681e078.fontdata"
+path="res://.godot/imported/ConnectionBold.otf-32697a65007ac42c4090947d23bd64d5.fontdata"
 
 [deps]
 
-source_file="res://fonts/connection/ConnectionBold.otf"
-dest_files=["res://.godot/imported/ConnectionBold.otf-3613454c490963f1c008ceb2c681e078.fontdata"]
+source_file="res://Fonts/connection/ConnectionBold.otf"
+dest_files=["res://.godot/imported/ConnectionBold.otf-32697a65007ac42c4090947d23bd64d5.fontdata"]
 
 [params]
 
