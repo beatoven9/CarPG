@@ -26,7 +26,7 @@ Wheely: That's what I'm talking about!
 
 Percy: Don't get too excited kid, look where his last plan landed us.
 
-Wheely: Yeah, yeah, very funny. I don't see you coming up with any plans. Go ahead Governor!
+Tinaldo: Yeah, yeah, very funny. I don't see you coming up with any plans. Go ahead Governor!
 
 Gearson: There's an escape route that we used when I was in Parliment.
 Gearson: We never used it and it's highly secret. I bet there aren't many guards stationed out there.
@@ -58,7 +58,9 @@ Percy: I think he and Matthew are about the only cars in Underton that would bel
 ---scene iii---
 // You get to Matthew and Sons and find that the place looks abandoned and ransacked
 
-Wedge: What happened here?
+Tinaldo: They really don't take care of their shop.
+
+Wedge: It looks like the place has been ransacked.
 
 Percy: This is not good. Look around for clues but stay on the alert.
 
@@ -112,30 +114,31 @@ Percy: We've gotta get in there before BIG_BAD gets to the Queen.
 
 // You enter the Queen's throne room.
 // There are no guards and the Queen is silent.
+// Tinaldo races up to the Queen
 
-Wedge: Thank God you're ok, your Majesty!
+Tinaldo: Thank God you're ok, your Majesty!
 
 Percy: Where are all the guards?
 
 Gearson: I have a bad feeling about this.
 
-Wheely: Your majesty, we come to you with heavy hearts.
-Wheely: For we have seen fellow cars reduced to shells of their former selves.
-Wheely: Cars who have had their consciousnesses ripped out so their empty carcasses could 
+Tinaldo: Your majesty, we come to you with heavy hearts.
+Tinaldo: For we have seen fellow cars reduced to shells of their former selves.
+Tinaldo: Cars who have had their consciousnesses ripped out so their empty carcasses could 
 	be sold on other planets to collectors.
 
 // Music fades to silence. All is silent.
 
 Queen: ...
 
-Wheely: Your majesty?
+Tinaldo: Your majesty?
 
 // audible footsteps
 
 BIG_BAD: She can't hear you, you know?
 BIG_BAD: Unfortunately, your dear queen has also been reduced to... what were your words? An "empty carcass"?
 
-Wheely: NOOOO!!!
+Tinaldo: NOOOO!!!
 All: // Shouts out of despair
 
 BIG_BAD: And how fitting will it be for her to be the one to take you lot out of your misery?
