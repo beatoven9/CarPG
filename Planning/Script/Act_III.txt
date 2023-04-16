@@ -116,22 +116,23 @@ Wheely: We gotta get out of here...
 	You enter and there are boxes in front of you blocking you from being seen.
 	The screen pans up to reveal Percy, Tony, Carisco, and Wedge's brother, Tiratio in the middle of the large hangar.
 	There is a conveyor belt of cars being transported along the back wall.
+
 	A portal opens up and a humanoid in a black cloak walks out of it.
 ##################################################################
 
-EVIL_VILLAIN: So, you've acquired the two cars I requested?
+Jeremy: So, you've acquired the two cars I requested?
 
 Percy: Of course, you're excellency.
 
-EVIL_VILLAIN: Let me see...
+Jeremy: Let me see...
 
 	// Music stops.
 
-EVIL_VILLAIN: you fool.
+Jeremy: you fool.
 
 Percy: Pardon?
 
-EVIL_VILLAIN: YOU FOOL! This... this is not the right Wheelson!
+Jeremy: YOU FOOL! This... this is not the right Wheelson!
 
 Percy: I know. This ends now Jeremy.
 
