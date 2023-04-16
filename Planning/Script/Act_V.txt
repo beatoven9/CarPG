@@ -104,26 +104,136 @@ Wheely: Well then... let's regroup back at Matthew and Sons and talk to Matthew.
 
 --- scene iv ---
 
-
--Maybe Tony and Tinaldo went to the same prison or found each other some other way.
--He's such a kid, he shouldnt be alone. But it would be funny if it was Tinaldo being the adult.
--It might be cool to have Tinaldo and Tony break out and at the same time, Gearson breaks Wedge out.
-	Wedge and Gearson go on a journey to find the others. Wedge and Gearson find Wheely and Frogg.
-	Tinaldo and Tony find Percy.
-	They all meet up. If we have enough time, it would be cool
-	to have the two story lines played interleaved.
+##################################################################
+	-Scene fades in and the group is at Matthew and Sons in mid
+	 conversation with Matthew.
+##################################################################
 
 
--After you find all of your friends, Frogg starts freaking out and trying to get you to follow him.
-You all chase after him and go into a cave. At the end of the cave you find a giant lake inside the cave and Frogg's people come
-out with the egg. The leader first talks to you in the language Frogg has been speaking. Then the leader turns on his 
-translator device and you can understand him. He explains that Frogg was sent to you by his people to help you complete your 
-mission. That Frogg has know all the specifics of the problem with the big evil dude the whole time but no one has been able to 
-understand him and his translator broke. Big bummer. The leader explains that the egg is a queen egg ready to be incubated. 
+Matthew: Hmmm... have you heard of the prophecy of the Evil Bi-Wheel?
 
+Tinaldo: The Evil what?
 
+Matthew: Bi-Wheel. There's an old prophecy of an evil being that travels on it's back two wheels that
+	comes, kills the queen, and attempts to reign over our planet. It's quite an obscure prophecy. But from
+	what you tell me of this character, he seems to fit the description of the evil in the prophecy remarkably well.
 
+Wheely: Well how do they kill him in the prophecy?
 
+Matthew: Whoa! Hold your horsepower! The being in this particular story is an immortal. Incapable of being harmed
+	by your standard combat.
+
+Percy: That explains how he was able to so easily cast me aside when I tried to jump him.
+
+Tinaldo: Well, if he's immortal, how come he's keeping the palace so heavily guarded? He must be afraid of SOMETHING!
+
+Matthew: Hmmm... excellent point little one. I seem to recall another prophecy about an immortal evil. Let me see here.
+
+// Matthew wheels back and forth along his bookshelf.
+
+Matthew: Ah here it is. Yes, the ancient magic! Of course! There is another prophecy of an ancient magic held in
+	a cave. It can only be acquired by one true of heart with intentions of saving the planet. Wow! How fortuitous!
+	That's you guys!
+
+Wedge: Where do we find this cave?
+
+Matthew: Well, it looks like it's (describes location of cave).
+
+Wheely: Perfect! Let's go get that magic fellas!
+
+// Team goes to cave.
+
+##################################################################
+	-While exploring the cave, the team stumbles upon a large lake.
+	-Frogg goes ballistic. 
+	-Three beings who look exactly like Frogg emerge from the lake carrying an egg.
+##################################################################
+
+Being 1: Blurgha lurgha durgha burgh!
+
+Wheely: Oh great!...
+
+Being 1: (Turning to Being 2) Blurgha!
+
+*Zzzt!*
+
+Being 1: Hello? Ah much better. Sorry, my translator wasn't on. Good to see you again Frogg!
+
+Wheely: Wait! You know Frogg?
+
+Being 1: Why of course! We sent him to help you defeat BIG_BAD. Your planet is in grave danger.
+	How goes the journey Frogg?
+
+Frogg: Blurgha!
+
+Being 1: Oh dear, it seems your translator has malfunctioned. You can have mine when I'm done telling
+	these brave cars about the next steps in their journey.
+
+Frogg: Blurghhhh....
+
+Being 1: You have exceeded our expectations in every way so far my friends. But your final steps will not be easy.
+	You must venture deeper into the cave to find the Well of Ancient Magic. Here your heart will be tested.
+	Once you acquire the Ancient Magic, it alone will not stop BIG_BAD. It will merely lower his first layer
+	of defenses and allow you to conduct battle with him. This will be no easy task. You will need to prepare well.
+
+Tinaldo: That won't be a problem for us!!
+
+Being 1: Ho Ho Ho!! That's the spirit! Now, there's one last thing. Regarding your queen. I understand that you murdered
+	her before she was able to lay another Queen Egg.
+
+Wheely: Hey! We didn't murder her! BIG_BAD was controlling her and made her attack us.
+
+Being 1: Yes yes! no matter. The Queen has contracted us for situations just like this! She has put 4 Queen Eggs in
+	our care to be given Wedge when the time is right.
+
+Wedge: To... me?
+
+Being 1: Yes of course! You're a very special car. Here is the Queen Egg.
+
+Wheely: Wait, I thought you said that she gave you 4 eggs.
+
+Being 1: Right, I gave the other 2 to travelers that I mistook for Wedge. Sorry, all cars look the same to our eyes.
+
+Gearson: But that still leaves 1 Queen Egg unaccounted for.
+
+Being 1: Yes, well when we still had 4 Eggs, we got hungry and figured that we could spare just one egg for a nice brunch.
+
+!!!!!!!!
+
+Being 1: Anyway! We're off! Send our best to the new Queen! And put in a good word for us! Here's your new translator, Frogg!
+
+// hands Frogg a translator and then the Beings quickly dive back into the water.
+
+Percy: Well that was a trip...
+
+Wheely: Tell me about it. Frogg, you knew this the whole time and you were trying to tell us about it?
+
+// Frogg trips while putting the translator on and breaks the new translator.
+
+Frogg: Blurgh Dammit!!!!
+
+##################################################################
+	The team continues toward the Well of Ancient Magic and eventually comes upon a clearing with the well in the center.
+	The cave shakes, the back closes and a horse-drawn carriage falls from the ceiling to battle.
+
+	Once the battle ends, the horse-drawn carriage begins to talk to you
+##################################################################
+
+Horse: You have proven yourself worthy of the Ancient Magic. Now go and save our planet before it's too late!!
+
+// The team exits the cave
+
+--- close scene iv ---
+
+--- scene v ---
+
+// The team confronts BIG_BAD in the palace.
+
+--- close scene v ---
+
+--- close Act V ---
+
+--- The End ---
 
 
 This whole act will be mostly just finding your friends in the apocalyptic landscape.
@@ -135,6 +245,3 @@ was sent to you by his people to help you complete your mission. That Frogg has 
 with the big evil dude the whole time but no one has been able to understand him and his translator broke. Big bummer.
 The leader explains that the egg is a queen egg ready to be incubated. He gives Frogg a translator. On your way out of the
 cave, someone asks Frogg a question and before he can respond, he trips and breaks the translator.
-
-
-final boss is the demon guy/previous queen henchman
