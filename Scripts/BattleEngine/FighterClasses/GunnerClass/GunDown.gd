@@ -11,7 +11,11 @@ var crit_rate = .25
 var steal_item = false
 
 var current_move_info
-var rotation_delta
+
+var original_rotation
+
+var current_user
+var current_target
 
 func use_move(
 	move_info,
@@ -31,10 +35,10 @@ func use_move(
 
 func use_gun_down_attack(move_info, success_roll, crit_roll):
 	var move = move_info["move"]
-	var user = move_info["user"]
-	var target = move_info["target"]
-	var fighter_attack = user.fighter_attack
-	var weapon_bonus = user.weapon_bonus
+	current_user = move_info["user"]
+	current_target = move_info["target"]
+	var fighter_attack = current_user.fighter_attack
+	var weapon_bonus = current_user.weapon_bonus
 
 	var crit = false
 
@@ -60,35 +64,37 @@ func use_gun_down_attack(move_info, success_roll, crit_roll):
 	move_info["move_power"] = damage_output
 	move_info["critical"] = crit
 
-	user.gunner_attack_anims.animation_looped.connect(
+	current_user.gunner_attack_anims.animation_looped.connect(
 		_on_shot_complete
 	)
 
-	rotation_delta = user.position.angle_to_point(target.position)
-	user.rotation += rotation_delta
-
-	user.gunner_attack_anims.set_visible(true)
-	user.gunner_attack_anims.play("gun_down_shot")
-	target.gunner_attack_anims.set_visible(true)
-	target.gunner_attack_anims.play("gun_down_hit")
-	target.receive_move(current_move_info)
+	original_rotation = current_user.rotation
+	var rotation_delta = current_user.position.angle_to_point(current_target.position)
+	var target_rotation = original_rotation + rotation_delta
+	current_user.rotate_to(target_rotation, .2, fire_shots)
 
 	return move_info
 
 func _on_shot_complete():
-	var user = current_move_info["user"]	
-	var target = current_move_info["target"]	
 
-	user.gunner_attack_anims.set_visible(false)
-	user.gunner_attack_anims.stop()
-	target.gunner_attack_anims.set_visible(false)
-	target.gunner_attack_anims.stop()
+	current_user.gunner_attack_anims.set_visible(false)
+	current_user.gunner_attack_anims.stop()
+	current_target.gunner_attack_anims.set_visible(false)
+	current_target.gunner_attack_anims.stop()
 
-	user.rotation -= rotation_delta
-	user.gunner_attack_anims.animation_looped.disconnect(
+	current_user.rotate_to(original_rotation, .2, _on_move_complete)
+	current_user.gunner_attack_anims.animation_looped.disconnect(
 		_on_shot_complete
 	)
 
+func fire_shots():
+	current_user.gunner_attack_anims.set_visible(true)
+	current_user.gunner_attack_anims.play("gun_down_shot")
+	current_target.gunner_attack_anims.set_visible(true)
+	current_target.gunner_attack_anims.play("gun_down_hit")
+	current_target.receive_move(current_move_info)
+
+func _on_move_complete():
 	var announcement = generate_announcement_string(current_move_info)
 	current_move_info["announcer_box"].make_announcement(
 		announcement

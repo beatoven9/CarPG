@@ -434,3 +434,13 @@ func gen_move_info(
 	}
 
 	return move_info
+
+func rotate_to(target_rotation, duration, next_func):
+	var tween = get_tree().create_tween()
+	tween.tween_property(
+		self,
+		"rotation",
+		target_rotation,
+		duration
+	)
+	tween.tween_callback(next_func)

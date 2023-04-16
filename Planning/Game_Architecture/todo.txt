@@ -97,7 +97,7 @@ Dialogue box basically done:
 |
 |		--- Start thinking about BlueMage class
 |
-|		--- I neeeeed to make battle animations. I will probably have to restructure things to accomodate them
+|*done*	--- I neeeeed to make battle animations. I will probably have to restructure things to accomodate them
 |			Even if it's just one attack animation and one "receive attack" animation. They can be triggered in
 | 			the "receive_attack" method.
 |			-The completion of a "receive_attack" animation just has to be connected to something that makes a 
@@ -133,7 +133,10 @@ Dialogue box basically done:
 |			 
 |----------
 
-
+#########
+######## BUG ALERT!!! If a dialogue box gets opened above another dialogue box, it's likely because the resume_timers() method
+######## 			  is being called twice.
+########
 
 		--- Write documentation for the BattleEngine so that I can understand it a month from now.
 

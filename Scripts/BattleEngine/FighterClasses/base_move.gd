@@ -193,3 +193,6 @@ func calculate_move_success(move_info, success_roll):
 		# Inventory will be a list of objects on all fighters. It will be set when a fighter is instantiated.
 		# Then, GetStolen from will choose from this list at random.
 		# It will not remove old items from list.
+
+func empty_callback():
+	pass

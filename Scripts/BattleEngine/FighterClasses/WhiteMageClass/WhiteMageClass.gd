@@ -4,7 +4,7 @@ class_name WhiteMageClass
 static func get_available_moves(class_proficiency):
 	var available_moves = AvailableMoves.new()
 
-	var attack = HIT.new()
+	var attack = SPIRIT.new()
 
 	var magic = []
 
