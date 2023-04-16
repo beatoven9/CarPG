@@ -1,26 +1,124 @@
-Act V
-Next thing the player sees is a scene of PLAYER_NAME sitting in a jail cell.
-FRIEND breaks in and frees PLAYER_NAME.
-...
+--- Open Act V ---
+
+--- scene i ---
+
+##################################################################
+	-Open to a scene of Wedge sitting in a jail cell.
+	-Maybe there are lots of tally marks on the floor to show that it has been a really long time.
+	-Suddenly there is a rumble and some noise and then a wall breaks open and 
+	 Wheely wheels in.
+##################################################################
+
+Wheely: Hiya Wedge! Been a while!
+Wedge: Wheely!! What's going on?
+Wheely: Let's get out of here! I'll explain the rest once we get to safety at Matthew and Sons!
+
+// The pair leaves and finds refuge back at Matthew and Sons.
+
+Matthew: Wedge! I'm so glad you're safe.
+
+Wedge: If not for Wheely, I'd still be locked away. Where are the others?
+
+Matthew: Still locked away I'm afraid... along with Sons.
+
+Wheely: BIG_BAD locked us up for getting in the way of his coup. I broke out a couple days after that 
+	day with the Queen and have been looking for everyone for the past few months. You're the first 
+	person I've found.
+
+Wedge: So we don't know where the others are yet?
+
+Wheely: Well, I've got a lead on Gearson but my past couple leads have turned out to be dead ends.
+	I think they're keeping Gearson at a remote Royal Outpost in the woods just North of Easterton.
+
+Wedge: What are we waiting for? Let's investigate before they move him!
+
+Wheely: Let's hit it!
+
+--- close scene i ---
+
+--- scene ii ----
+
+// While traveling through the woods you come across Frogg running away from a few Palace Guards.
+
+Frogg: Blurghhhh!!!
+
+Wheely: Hey! Leave our friend alone!
+
+// Frogg joins the party for a battle against the Palace Guards.
+
+Frogg: Blurgha wurgha.
+
+Wheely: Yup! My thoughts exactly. Now come help us save Gearson!
+
+// The team continues on to save Gearson
+
+--- close scene ii ---
+
+--- scene iii ---
+
+// The team approaches the Royal Outpost.
+
+Wheely: Now stay on alert. These places used to be safe havens in the wilderness but now that
+	BIG_BAD has taken over, they're extremely hostile. We're gonna have to fight our way through to
+	Gearson's cell, if he's even in there.
+
+// The team fights the two Royal Guards outside and enter the Outpost fighting waves of
+	enemies until they make it to Gearson's cell.
+
+Gearson: Took you guys long enough!!
+
+Wheely: Quit your moaning and help us find the other!
+
+// Upon exiting you hear but don't yet see Tinaldo and Tony
+
+Tinaldo: Come on Tony! We've see if the intel was right! Gearson could be captive in here.
+
+Tony: Bu-bu-but... That place is gonna be crawling with guards.
+
+Tinaldo: It's the only chance we have of finding the others.
+
+Wedge: Tinaldo? Tony?
+
+// Tinaldo and Tony wheel on from off-screen
+
+Tinaldo: Fellas!! You've found Gearson!
+
+Tony: Thank god! I did NOT want to fight those guards.
+
+Gearson: Good to know you've got my back Tony...
+
+Wedge: Tinaldo, do you have any idea where Percy is?
+
+Tinaldo: yes...
+
+Wheely: Right on! Let's go save him!
+
+Tinaldo: Unfortunately it's not going to be that easy. He's being kept in the Royal Palace by BIG_BAD.
+	Apparently, BIG_BAD had some special plans for him. And if you thought the palace was well guarded
+	before, you're in for a surprise now. The place is a fortress since BIG_BAD has been using it as his
+	stronghold.
+
+Wheely: Well then... let's regroup back at Matthew and Sons and talk to Matthew. He might have some idea.
+
+--- close scene iii ---
+
+--- scene iv ---
 
 
-
-
-
--Maybe Tony and Finaldino went to the same prison or found each other some other way.
--He's such a kid, he shouldnt be alone. But it would be funny if it was Finaldino being the adult.
--It might be cool to have Finaldino and Tony break out and at the same time, Gearson breaks Wedge out.
-	Wedge and Gearson go on a journey to find the others. Wedge and Gearson find Wheely and Frog.
-	Finaldino and Tony find Percy.
+-Maybe Tony and Tinaldo went to the same prison or found each other some other way.
+-He's such a kid, he shouldnt be alone. But it would be funny if it was Tinaldo being the adult.
+-It might be cool to have Tinaldo and Tony break out and at the same time, Gearson breaks Wedge out.
+	Wedge and Gearson go on a journey to find the others. Wedge and Gearson find Wheely and Frogg.
+	Tinaldo and Tony find Percy.
 	They all meet up. If we have enough time, it would be cool
 	to have the two story lines played interleaved.
 
 
--After you find all of your friends, Frog starts freaking out and trying to get you to follow him.
-You all chase after him and go into a cave. At the end of the cave you find a giant lake inside the cave and Frog's people come
-out with the egg. The leader first talks to you in the language Frog has been speaking. Then the leader turns on his 
-translator device and you can understand him. He explains that Frog was sent to you by his people to help you complete your 
-mission. That Frog has know all the specifics of the problem with the big evil dude the whole time but no one has been able to 
+-After you find all of your friends, Frogg starts freaking out and trying to get you to follow him.
+You all chase after him and go into a cave. At the end of the cave you find a giant lake inside the cave and Frogg's people come
+out with the egg. The leader first talks to you in the language Frogg has been speaking. Then the leader turns on his 
+translator device and you can understand him. He explains that Frogg was sent to you by his people to help you complete your 
+mission. That Frogg has know all the specifics of the problem with the big evil dude the whole time but no one has been able to 
 understand him and his translator broke. Big bummer. The leader explains that the egg is a queen egg ready to be incubated. 
 
 
@@ -30,10 +128,10 @@ understand him and his translator broke. Big bummer. The leader explains that th
 
 This whole act will be mostly just finding your friends in the apocalyptic landscape.
 Along journey one of the main quest items will be to explore ancient ruins for forgotten magic. You do find the forgotten
-magic and also an ancient fertilized queen egg ready to be incubated and hatched. Perhaps it's given to you by Frog's people.
-You come to a giant pond in the ruins and Frog's people come out with the egg. The leader first talks to you in the language
-Frog has been speaking. Then the leader turns on his translator device and you can understand him. He explains that Frog
-was sent to you by his people to help you complete your mission. That Frog has know all the specifics of the problem 
+magic and also an ancient fertilized queen egg ready to be incubated and hatched. Perhaps it's given to you by Frogg's people.
+You come to a giant pond in the ruins and Frogg's people come out with the egg. The leader first talks to you in the language
+Frogg has been speaking. Then the leader turns on his translator device and you can understand him. He explains that Frogg
+was sent to you by his people to help you complete your mission. That Frogg has know all the specifics of the problem 
 with the big evil dude the whole time but no one has been able to understand him and his translator broke. Big bummer.
 The leader explains that the egg is a queen egg ready to be incubated. He gives Frogg a translator. On your way out of the
 cave, someone asks Frogg a question and before he can respond, he trips and breaks the translator.
