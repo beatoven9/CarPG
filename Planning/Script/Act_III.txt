@@ -1,3 +1,6 @@
+Maybe... Tinaldo starts off kind of shy and unpredictable. His father gets killed by Jeremy and at first he's 
+broken but then starts to mature.
+
 ---Act III---
 ---scene i---
 
@@ -5,7 +8,7 @@
 
 Gov Gearson: We're here! Ok, he lives on the far side of town in an inn called The Spare Tire. 
 
-	// The team explores the city and eventually makes its way to The Spare Tire
+	// The team explores the city and eventually makes their way to The Spare Tire
 
 Gov Gearson: Hey Keepa! I'm an old friend of Carisco. Can you remind me which room he's in?
 
@@ -74,7 +77,7 @@ Wedge: Now, where to from here?
 Tinaldo: I overheard the blue cars talking about a hangar.
 
 Gearson: A hangar, huh? There's really only one hangar in Westerton skeevy enough for Percy...
-Gearson: And it does happen to be in East Westerton.
+Gearson: And it does happen to be in East-Westerton.
 
 ##################################################################
 	It's night when you walk out.
