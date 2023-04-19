@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/BattleEngine/BattleScene.gd" id="1_toh50"]
 [ext_resource type="PackedScene" uid="uid://puqlsbb83hsx" path="res://Scenes/Battle/UI/player_party_hud.tscn" id="1_xsa6o"]
 [ext_resource type="PackedScene" uid="uid://nxi76mylq08e" path="res://Scenes/Battle/UI/enemy_party_hud.tscn" id="2_vc35j"]
-[ext_resource type="PackedScene" path="res://Scenes/TileMapTerrain.tscn" id="3_21nyt"]
+[ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/TileMapTerrain.tscn" id="3_21nyt"]
 [ext_resource type="PackedScene" uid="uid://cuutkxylth4wc" path="res://Scenes/Battle/UI/move_announcer_box.tscn" id="4_b2kjt"]
 [ext_resource type="Script" path="res://Scripts/BattleEngine/BattleEngine.gd" id="4_ry1ep"]
 
