@@ -33,9 +33,12 @@ Wedge: Wow that was a nice nap. And a weird dream.
 	##################################################################
 
 Dad: Yes I know I know, I'm very sorry.
-Telephone: Unfortunately Mr. Wheelson, you're apologies won't help your son to pass his Hive History class. You're weak! Your son must obey you!
+Telephone: Unfortunately Mr. Wheelson, I've told you this time and time again Wheelson. You're weak! 
+	You must rule your household with an iron fist. If your son is to become a functioning member of 
+	this hive, he must learn to obey you! Apologizing to me is NOT going to help him.
 Dad: What CAN I do to help him?
-Telephone: At this point, the only way for him to pass Hive History and attend graduation next week is to complete extra credit.
+Telephone: At this point, the only way for him to pass Hive Culture and attend graduation tomorrow is 
+	for him to complete extra credit.
 Dad: Yes? What does he need to do?
 Telephone: Rabble rabble rabble rabble...
 
@@ -55,8 +58,8 @@ Dad: Wedge, I just got off of the phone with Mr. Gearwright. He said you missed 
 Wedge: I'm sorry Dad. I just lost track of time exploring the junkyard.
 Dad: I know son, I know. I've known from the moment you were dropped on my doorstep that you would 
 	march to the beat of your own drum (Make this a car pun).
-    I want you to follow your dreams. But I also want you to have a future. Mr. Gearwright said that 
-	you're failing behind in Hive History class. If you don't pass Hive History you won't be able to 
+	I want you to follow your dreams. But I also want you to have a future. Mr. Gearwright said that 
+	you're falling behind in Hive History class. If you don't pass Hive History you won't be able to 
 	graduate and if you don't graduate you won't be able to get a job and contribute back to the Hive 
 	and they'll send you off to the glue factory. 
 Wedge: It's just... class is so boring and pointless. It's so much more fulfilling to race
@@ -65,9 +68,10 @@ Dad: Look if you can't do it for yourself, do it for your little brother, Tirati
 	how heart broken he would be if this time next year he was building furniture with glue made from his 
 	older brother!
 
-Dad: Now, the extra credit that Mr. Gearwright has assigned you...
+Dad: Now, Mr. Gearwright graciously offered to assign you extra credit so that you can graduate tomorrow.
+	He wants you to visit to four different historical landmarks around town. To better appreciate Hive Culture.
+	He'll have a teacher at each landmark to give you a short lesson.
 
-	// Dad describes Mr. Gearwright's quest.
 	// Player regains control and completes quest.
 
 Dad: Wow! That was fast! You really are such a brilliant baby boy.
@@ -97,7 +101,11 @@ Wedge: I guess it's time to head over to the stadium for graduation!
 		Player bumps into another car named Wheely.
 	##################################################################
 
-Wheely: Hey there Wedge! Fancy meeting you out here, you here on your way to graduation too?
+Wheely: Hey there Wedge! Fancy meeting you out here, you here on your way to the graduation ceremony too?
+
+Wedge: Yup! I'm one of the graduates today!
+
+Wheely: Oh, that's right! Well congratu --
 
 	##################################################################
 		Just then, a sudden commotion.
@@ -111,7 +119,7 @@ Tony: Yeah! Get back here! // Tony is a bad driver.
 Wheely: Hey! Get away from him!
 Tiratio: NOoOOOooO!!!!
 
-	// Tiratio is captured and taken behind a broken wall. Percy rolls back out. And looks at Wedge
+	// Tiratio is captured and taken down a road off screen. Percy rolls back out. And looks at Wedge
 
 Percy: As for you two... You'll be keeping this to yourselves or I'll hear about it.
 Tony: Yeah! We'll killll ya!!
@@ -249,8 +257,8 @@ Wheely: Ok, so all we need to do is go to the city building to talk to someone a
 	// Player enters City building. Goes up to the reception desk.
 
 Receptionist: Can I help you?
-Wedge: Yes ma'am! We're hoping to get special permission to pass a government blockade on the east side of town.
-Receptionist: The blockade on the east side of town? I'm sorry, but that is strictly off limits to civilians.
+Wedge: Yes ma'am! We're hoping to get special permission to pass a government blockade on the north side of town.
+Receptionist: The blockade on the north side of town? I'm sorry, but that is strictly off limits to civilians.
 Wheely: Well, who is it NOT off limits to?
 Receptionist: Government officials and palace guards are the only people who have access. 
 Wheely: Come on! There must be some way for civilians to get through!
@@ -315,7 +323,7 @@ Gov. Gearson: I have to admit. You two are quite impressive fighters. Your style
     videos to ANYONE. Trust runs both ways.
 Wheely: You've got yourself a deal!
 Gov. Gearson: So what is it that you boys want?
-Wheely: Well there's a blocked road on the east side of town that we really want to investigate but we need special
+Wheely: Well there's a blocked road on the north side of town that we really want to investigate but we need special
 	permission to access it.
 Gov. Gearson: Which road are we talking about here boys?
 Wheely: right at the entrance to Train Drive.

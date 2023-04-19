@@ -1,0 +1,1 @@
+To enable multiple weapon sprites with the stock battle animations, we could save a list of ((x, y), rotation) for where the mount point of the weapon is in each frame. The weapon just needs to be at the position and rotation that each frame requires.
