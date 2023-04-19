@@ -1,6 +1,6 @@
 extends MarginContainer
 
-@onready var fighter_name_label: RichTextLabel = $MarginContainer/VBoxContainer/FighterName/RichTextLabel
+@onready var fighter_name_label: Label = $MarginContainer/VBoxContainer/FighterName/Label
 @onready var health_bar: TextureProgressBar = $MarginContainer/VBoxContainer/HealthHUD/HBoxContainer/Gauge
 @onready var health_bar_label: Label = $MarginContainer/VBoxContainer/HealthHUD/HBoxContainer/GaugeValueLabel
 @onready var boost_bar: TextureProgressBar = $MarginContainer/VBoxContainer/BoostHUD/HBoxContainer/Gauge

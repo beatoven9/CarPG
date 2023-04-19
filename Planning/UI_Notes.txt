@@ -1,0 +1,5 @@
+The dynamic loading of FighterHUD components is good. Instead of just having a generic margin container in the Battlescene, we should have a FighterHUDParent scene. This will have the labels for Health, Boost, Timer. 
+
+We should also have one parent margin container for the whole battle UI.
+
+We should also have the move selection box allow switching between enemy and party targets.

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/move_selection_dialogue_root.gd" id="1_lruvl"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_jcspx"]
-[ext_resource type="FontFile" path="res://Fonts/poco/Poco.tres" id="3_nhecg"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="3_nhecg"]
 [ext_resource type="PackedScene" uid="uid://re24n1rxutwn" path="res://Scenes/Battle/UI/MoveSelection/move_selection_entry_box.tscn" id="3_w2071"]
 [ext_resource type="Texture2D" uid="uid://nyfk3oblp3dk" path="res://Sprites/DriveTrain.png" id="3_yavma"]
 [ext_resource type="PackedScene" path="res://Scenes/Battle/UI/MoveSelection/move_selection_sub_box.tscn" id="4_bebub"]

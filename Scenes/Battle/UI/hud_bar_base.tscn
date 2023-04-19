@@ -7,19 +7,23 @@
 [node name="HUD_Bar_Base" type="MarginContainer"]
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="GaugeName" type="Label" parent="HBoxContainer"]
+visible = false
 texture_filter = 3
-custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("1_yxy7m")
 theme_override_font_sizes/font_size = 10
 text = "Health"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Gauge" type="TextureProgressBar" parent="HBoxContainer"]
@@ -42,4 +46,5 @@ theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("1_yxy7m")
 theme_override_font_sizes/font_size = 10
 text = "100/100"
+horizontal_alignment = 1
 vertical_alignment = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/move_announcer_box.gd" id="1_vroax"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_oot2s"]
-[ext_resource type="FontFile" path="res://Fonts/poco/Poco.tres" id="3_id6u1"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="3_id6u1"]
 
 [node name="MoveAnnouncerBox" type="MarginContainer"]
 texture_filter = 3
@@ -12,7 +12,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -304.0
-offset_top = -277.0
+offset_top = -222.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_left = 16

@@ -12,6 +12,7 @@ texture_filter = 1
 script = ExtResource("1_toh50")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(2.08165e-12, 64)
 zoom = Vector2(2, 2)
 
 [node name="Terrain" parent="." instance=ExtResource("3_21nyt")]
@@ -20,9 +21,12 @@ layer_0/tile_data = PackedInt32Array(-1, 786433, 2, 65535, 524289, 7, 131071, 78
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerPartyHUD" parent="CanvasLayer" instance=ExtResource("1_xsa6o")]
+offset_top = -40.0
+offset_right = 40.0
 script = null
 
 [node name="EnemyPartyHUD" parent="CanvasLayer" instance=ExtResource("2_vc35j")]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -39,6 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BaseTeamBattleHud" parent="CanvasLayer" instance=ExtResource("4_b2kjt")]
+visible = false
 
 [node name="MoveAnnouncerBox" parent="CanvasLayer" instance=ExtResource("4_b2kjt")]
 

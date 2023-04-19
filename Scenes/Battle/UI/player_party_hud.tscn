@@ -1,5 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://puqlsbb83hsx"]
+[gd_scene load_steps=3 format=3 uid="uid://puqlsbb83hsx"]
 
 [ext_resource type="PackedScene" uid="uid://cw8bjn8er1nyy" path="res://Scenes/Battle/UI/base_team_battle_hud.tscn" id="1_oedx7"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_hp2af"]
 
 [node name="PlayerPartyHUD" instance=ExtResource("1_oedx7")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.5
+offset_top = -86.0
+offset_right = 73.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." index="0"]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("2_hp2af")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4

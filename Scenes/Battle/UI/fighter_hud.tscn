@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/BattleEngine/Fighter_HUD.gd" id="1_i6g4p"]
 [ext_resource type="Shader" path="res://Shaders/Battle/UI/fighter_hud.gdshader" id="1_kxudg"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_2ch8l"]
-[ext_resource type="FontFile" uid="uid://delt4i65lerp5" path="res://Fonts/poco/Poco.ttf" id="3_ifr7q"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_nuwkf"]
 [ext_resource type="PackedScene" uid="uid://b05mqi8dsapm7" path="res://Scenes/Battle/UI/hud_bar_base.tscn" id="4_spv6q"]
 [ext_resource type="PackedScene" uid="uid://bmma2bgo5hf7f" path="res://Scenes/Battle/UI/boost_hud.tscn" id="5_0a2ef"]
 [ext_resource type="PackedScene" uid="uid://5k362788qlme" path="res://Scenes/Battle/UI/battle_timer_hud.tscn" id="6_vrj22"]
@@ -14,15 +14,22 @@ shader = ExtResource("1_kxudg")
 shader_parameter/selected = false
 
 [node name="FighterHUD" type="MarginContainer"]
-offset_right = 280.0
-offset_bottom = 84.0
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 472.0
+offset_bottom = 22.5
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
 script = ExtResource("1_i6g4p")
 
 [node name="BoxFrame" type="NinePatchRect" parent="."]
+visible = false
 texture_filter = 3
 material = SubResource("ShaderMaterial_q53yl")
 custom_minimum_size = Vector2(64, 2.08165e-12)
@@ -52,7 +59,7 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -62,18 +69,14 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/FighterName"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FighterName"]
 texture_filter = 3
-clip_contents = false
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(128, 2.08165e-12)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_fonts/normal_font = ExtResource("3_ifr7q")
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_nuwkf")
 text = "Fighter Name"
-fit_content = true
-scroll_active = false
-shortcut_keys_enabled = false
 
 [node name="HealthHUD" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_spv6q")]
 layout_mode = 2
