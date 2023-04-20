@@ -42,3 +42,20 @@ func _on_move_ready(move, target):
 	dialogue_box.move_complete.disconnect(_on_move_ready)
 	super._on_move_ready(move, target)
 
+func update_hud():
+	fighter_hud.update_health_bar(current_health, max_health)
+	fighter_hud.update_boost_bar(current_boost, max_boost)
+	
+func _process(_delta):
+	update_timer_bar()
+
+func _on_second_tick():
+	super._on_second_tick()
+	update_hud()
+
+func update_timer_bar():
+	var time_left = battle_timer.time_left
+	var max_time = get_battle_timer_length()
+	var timer_bar_val = 100 - ((time_left / max_time) * 100)
+	timer_changed.emit(timer_bar_val)
+

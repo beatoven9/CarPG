@@ -96,19 +96,6 @@ func _ready():
 	second_tick_timer.start(1)
 	set_collision_box_size()
 
-func update_timer_bar():
-	var time_left = battle_timer.time_left
-	var max_time = get_battle_timer_length()
-	var timer_bar_val = 100 - ((time_left / max_time) * 100)
-	timer_changed.emit(timer_bar_val)
-
-func update_hud():
-	fighter_hud.update_health_bar(current_health, max_health)
-	fighter_hud.update_boost_bar(current_boost, max_boost)
-	
-
-func _process(_delta):
-	update_timer_bar()
 
 func set_collision_box_size():
 	var car_rect = sprite2d.get_rect()
@@ -193,12 +180,10 @@ func pop_move_from_queue():
 		print(fighter_name, "Tried to pop from an empty move_queue")
 
 func get_unselected():
-	fighter_hud._on_fighter_unselected()
 	selected_ui.set_visible(false)
 	selected_ui.stop()
 
 func get_selected():
-	fighter_hud._on_fighter_selected()
 	selected_ui.set_visible(true)
 	selected_ui.play()
 
@@ -228,7 +213,8 @@ func _on_second_tick():
 	if current_health >= max_health:
 		current_health = max_health
 
-	update_hud()
+func update_hud():
+	pass
 
 func receive_move(
 	move_info,

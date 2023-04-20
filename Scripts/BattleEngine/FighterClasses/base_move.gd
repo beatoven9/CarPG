@@ -1,7 +1,5 @@
 class_name base_move
 
-#var current_move_info
-
 var generic_attempt_templates = [
 	"-{USER} used {MOVE} on {TARGET}.",
 	"-{USER} performed {MOVE} on {TARGET}.",
@@ -174,12 +172,11 @@ func calculate_move_success(move_info, success_roll):
 
 	var success_rate = user.expend_bp(bp_cost)
 	if success_rate == -1:
-		user.fighter_hud.update_boost_bar(
-			user.current_boost, user.max_boost)
+		user.update_hud()
 		return true
 	else:
 		user.current_boost = 0
-		user.fighter_hud.update_boost_bar(
+		user.fighter_hud.update_hud(
 			user.current_boost, 
 			user.max_boost
 		)

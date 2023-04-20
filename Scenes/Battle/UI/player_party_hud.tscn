@@ -3,16 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cw8bjn8er1nyy" path="res://Scenes/Battle/UI/base_team_battle_hud.tscn" id="1_oedx7"]
 
 [node name="PlayerPartyHUD" instance=ExtResource("1_oedx7")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -73.5
-offset_top = -86.0
-offset_right = 73.5
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
+custom_minimum_size = Vector2(2.08165e-12, 212)
+offset_right = 384.0
+offset_bottom = 73.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
