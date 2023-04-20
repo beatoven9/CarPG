@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxsuffoqnrdko"]
+
+[ext_resource type="PackedScene" uid="uid://bmewk7iu4ex54" path="res://Scenes/Battle/Fighters/player_fighter.tscn" id="1_y4syy"]
+[ext_resource type="Texture2D" uid="uid://dex1cb1hxi1qi" path="res://Sprites/CharacterSprites/Wedge_16_fight_stance.png" id="2_1f53y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3yqj"]
+atlas = ExtResource("2_1f53y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12akq"]
+atlas = ExtResource("2_1f53y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5127n"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3yqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12akq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="PlayerFighter" instance=ExtResource("1_y4syy")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+rotation = 6.28319
+sprite_frames = SubResource("SpriteFrames_5127n")
+frame_progress = 0.0

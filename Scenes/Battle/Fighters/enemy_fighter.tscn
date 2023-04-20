@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu5kib73hrkto"]
+
+[ext_resource type="PackedScene" uid="uid://dkodo2ytaa2x" path="res://Scenes/Battle/Fighters/fighter.tscn" id="1_h7mf2"]
+[ext_resource type="Script" path="res://Scripts/BattleEngine/EnemyFighter.gd" id="2_cd0dn"]
+[ext_resource type="Texture2D" uid="uid://bnflhsk7t1b0j" path="res://Sprites/CharacterSprites/PalaceGuard_16_fight_stance.png" id="3_weemt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32bqk"]
+atlas = ExtResource("3_weemt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjo8y"]
+atlas = ExtResource("3_weemt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htyib"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32bqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjo8y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="EnemyFighter" instance=ExtResource("1_h7mf2")]
+script = ExtResource("2_cd0dn")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_htyib")
+frame_progress = 0.0
+
+[node name="SelectedSprite" parent="." index="3"]
+position = Vector2(2.08165e-12, -24)
+flip_v = true
+
+[node name="DamageHUD" parent="." index="4"]
+offset_left = -9.0
+offset_top = -30.0
+offset_right = 9.0
+
+[node name="GunnerAttackAnims" parent="." index="6"]
+offset = Vector2(-16, 2.08165e-12)

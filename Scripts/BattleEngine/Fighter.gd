@@ -3,7 +3,7 @@ extends Area2D
 @onready var animated_sprite = $AnimatedSprite
 @onready var gunner_attack_anims = $GunnerAttackAnims
 @onready var animation_player = $AnimationPlayer
-@onready var sprite2d: Sprite2D = get_node("Sprite2D")
+@onready var animated_sprite_2d: AnimatedSprite2D = get_node("AnimatedSprite2D")
 @onready var collision_shape2d: CollisionShape2D = get_node("CollisionShape2D")
 @onready var battle_timer = get_node("BattleTimer")
 @onready var selected_ui = get_node("SelectedSprite")
@@ -64,7 +64,7 @@ func set_data(
 	data
 ):
 	fighter_name = data["name"]
-	get_node("Sprite2D").set_texture(data["texture"])
+	#get_node("Sprite2D").set_texture(data["texture"])
 	fighter_class = data["fighter_class"]
 	class_proficiency = data["class_proficiency"]
 
@@ -94,12 +94,14 @@ func _ready():
 	second_tick_timer.timeout.connect(_on_second_tick)
 	add_child(second_tick_timer)
 	second_tick_timer.start(1)
-	set_collision_box_size()
+	animated_sprite_2d.play("Idle")
+	#set_collision_box_size()
 
 
 func set_collision_box_size():
-	var car_rect = sprite2d.get_rect()
-	collision_shape2d.shape.size = car_rect.size
+	# var car_rect = animated_sprite_2d.get_rect()
+	# collision_shape2d.shape.size = car_rect.size
+	pass
 
 func start_battle_timer():
 	var time = get_battle_timer_length()
@@ -148,11 +150,11 @@ func handle_damage(move_info):
 		_on_death()	
 
 func handle_healing(move_info):
-	var damage_inflicted = move_info["damage_incurred"]
+	var healing_amount = move_info["damage_incurred"]
 	var critical = move_info["critical"]
 
-	damage_hud.display_healing(damage_inflicted, critical)
-	current_health += damage_inflicted
+	damage_hud.display_healing(healing_amount)
+	current_health += healing_amount
 
 	health_changed.emit(current_health, max_health)	
 
@@ -188,7 +190,7 @@ func get_selected():
 	selected_ui.play()
 
 func _on_death():
-	sprite2d.set_visible(false)	
+	animated_sprite_2d.set_visible(false)	
 	current_health = 0
 	dead = true
 	health_changed.emit(current_health, max_health)

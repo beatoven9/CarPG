@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvm1gkefgpnk1"]
+
+[ext_resource type="PackedScene" uid="uid://bmewk7iu4ex54" path="res://Scenes/Battle/Fighters/player_fighter.tscn" id="1_8haqb"]
+[ext_resource type="Texture2D" uid="uid://cnjppl8s3lw8u" path="res://Sprites/CharacterSprites/Tristan_16_fight_stance.png" id="2_ofnt7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ew7"]
+atlas = ExtResource("2_ofnt7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22yyy"]
+atlas = ExtResource("2_ofnt7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6u3a"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ew7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22yyy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="PlayerFighter" instance=ExtResource("1_8haqb")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+rotation = 6.28319
+sprite_frames = SubResource("SpriteFrames_f6u3a")
+frame_progress = 0.0
