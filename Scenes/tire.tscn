@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://71qblmshtso3"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://ct7nm2ovsb014" path="res://Sprites/Car_Sprites/Tire.png" id="1_p4jtl"]
+[ext_resource type="Texture2D" uid="uid://ct7nm2ovsb014" path="res://Sprites/CharacterSprites/Tire.png" id="1_p4jtl"]
 
 [node name="Tire" type="Node2D"]
 z_index = -1

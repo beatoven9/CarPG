@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://dqrmbnln6w4kx"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Battle/UI/MoveSelection/move_selection_entry_box.tscn" id="1_ajf2g"]
+[ext_resource type="PackedScene" uid="uid://re24n1rxutwn" path="res://Scenes/Battle/UI/MoveSelection/move_selection_entry_box.tscn" id="1_ajf2g"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="1_rk77s"]
 [ext_resource type="Script" path="res://Scripts/BattleEngine/move_selection_dialogue_root.gd" id="1_rs2gm"]
 [ext_resource type="PackedScene" path="res://Scenes/Battle/UI/MoveSelection/move_selection_sub_box.tscn" id="2_end2p"]

@@ -1,6 +1,6 @@
 extends MarginContainer
 
-@onready var fighter_hud_container = get_node("FighterHUDContainer")
+@onready var fighter_hud_container = get_node("MarginContainer").get_node("FighterHUDContainer")
 @onready var fighter_hud = preload("res://Scenes/Battle/UI/fighter_hud.tscn")
 
 func create_party(party_list):

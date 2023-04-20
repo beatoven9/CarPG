@@ -10,12 +10,14 @@ var global_fighters_dict = {
 	"enemies": null
 }
 var move_queue = []
+var request_queue = []
 
 var random = RandomNumberGenerator.new()
 
-@onready var player_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/PlayerPartyHUD")
-@onready var enemy_party_hud = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD")
-@onready var move_announcer_box = get_tree().get_root().get_child(0).get_node("CanvasLayer/MoveAnnouncerBox")
+@onready var battle_ui = get_tree().get_root().get_child(0).get_node("CanvasLayer/BattleUI")
+@onready var move_announcer_box = battle_ui.move_announcer_box
+@onready var player_party_hud = battle_ui.player_party_hud
+
 
 func _ready():
 	random.randomize()
@@ -119,7 +121,7 @@ func initiate_atb_meters(
 	members_list,
 ):
 	for member in members_list:
-		member.ready_to_move.connect(request_move)
+		member.ready_to_move.connect(_on_fighter_ready)
 		member.move_ready.connect(receive_move_info)
 		member.start_battle_timer()
 
@@ -139,10 +141,18 @@ func get_battle_state():
 
 	return battle_state
 
-func request_move(fighter):
-	pause_timers()
-	var battle_state = get_battle_state()
-	fighter.request_move(battle_state)
+func _on_fighter_ready(fighter):
+	request_queue.push_back(fighter)
+	request_move()	
+
+func request_move():
+	if len(request_queue) > 0:
+		pause_timers()
+		var fighter = request_queue.pop_front()
+		var battle_state = get_battle_state()
+		fighter.request_move(battle_state)
+	else:
+		pass
 
 
 func pause_timers():
@@ -154,6 +164,7 @@ func pause_timers():
 
 func on_move_complete():
 	resume_timers()
+	request_move()
 	execute_move()
 
 func resume_timers():

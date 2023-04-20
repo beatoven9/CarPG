@@ -14,7 +14,7 @@ func _ready():
 
 
 func load_enemy_data():
-	var texture1 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
+	var texture1 = load("res://Sprites/CharacterSprites/PickupTruck_b.png")
 	var enemy_member1 = {
 		"name": "Big Bad Guy a",
 		"texture": texture1,
@@ -62,7 +62,7 @@ func load_enemy_data():
 	return enemy_members_data
 
 func load_player_data():
-	var texture1 = load("res://Sprites/Car_Sprites/Sedan_a.png")
+	var texture1 = load("res://Sprites/CharacterSprites/Sedan_a.png")
 	var player_fighter1 = {
 		"name": "Wedge",
 		"texture": texture1,
@@ -85,7 +85,7 @@ func load_player_data():
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
-	var texture2 = load("res://Sprites/Car_Sprites/FriendCar.png")
+	var texture2 = load("res://Sprites/CharacterSprites/FriendCar.png")
 	var player_fighter2 = {
 		"name": "Wheely",
 		"texture": texture2,
@@ -108,7 +108,7 @@ func load_player_data():
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
-	var texture3 = load("res://Sprites/Car_Sprites/Sportscar_a.png")
+	var texture3 = load("res://Sprites/CharacterSprites/Sportscar_a.png")
 	var player_fighter3 = {
 		"name": "Gov. Gearwright",
 		"texture": texture3,
@@ -130,7 +130,7 @@ func load_player_data():
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
-	var texture4 = load("res://Sprites/Car_Sprites/PickupTruck_b.png")
+	var texture4 = load("res://Sprites/CharacterSprites/PickupTruck_b.png")
 	var player_fighter4 = {
 		"name": "Percy",
 		"texture": texture4,
