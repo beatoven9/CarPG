@@ -1,10 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://puqlsbb83hsx"]
+[gd_scene load_steps=4 format=3 uid="uid://puqlsbb83hsx"]
 
 [ext_resource type="PackedScene" uid="uid://cw8bjn8er1nyy" path="res://Scenes/Battle/UI/base_team_battle_hud.tscn" id="1_oedx7"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_li3k1"]
+[ext_resource type="PackedScene" uid="uid://bwrwst1clrken" path="res://Scenes/Battle/UI/fighter_hud.tscn" id="3_y58ks"]
 
 [node name="PlayerPartyHUD" instance=ExtResource("1_oedx7")]
-custom_minimum_size = Vector2(2.08165e-12, 212)
+texture_filter = 2
+custom_minimum_size = Vector2(2.08165e-12, 110)
 offset_right = 384.0
 offset_bottom = 73.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="NinePatchRect" parent="." index="0"]
+texture = ExtResource("2_li3k1")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Control" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(76, 2.08165e-12)
+
+[node name="Health" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(33, 2.08165e-12)
+theme_override_font_sizes/font_size = 10
+
+[node name="Magic" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(33, 2.08165e-12)
+theme_override_font_sizes/font_size = 10
+
+[node name="Timer" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer" index="3"]
+custom_minimum_size = Vector2(33, 2.08165e-12)
+theme_override_font_sizes/font_size = 10
+
+[node name="FighterHUD" parent="MarginContainer/FighterHUDContainer" index="1" instance=ExtResource("3_y58ks")]
+visible = false
+layout_mode = 2
+
+[node name="FighterHUD2" parent="MarginContainer/FighterHUDContainer" index="2" instance=ExtResource("3_y58ks")]
+visible = false
+layout_mode = 2
+
+[node name="FighterHUD3" parent="MarginContainer/FighterHUDContainer" index="3" instance=ExtResource("3_y58ks")]
+visible = false
+layout_mode = 2
+
+[node name="FighterHUD4" parent="MarginContainer/FighterHUDContainer" index="4" instance=ExtResource("3_y58ks")]
+visible = false
+layout_mode = 2

@@ -14,6 +14,7 @@ theme_override_constants/margin_right = 1
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_constants/separation = 2
 
 [node name="GaugeName" type="Label" parent="HBoxContainer"]
 visible = false
@@ -37,7 +38,7 @@ stretch_margin_right = 2
 stretch_margin_bottom = 2
 texture_over = ExtResource("3_qat5v")
 texture_progress = ExtResource("4_hcapb")
-texture_progress_offset = Vector2(2, 2)
+texture_progress_offset = Vector2(1, 1)
 
 [node name="GaugeValueLabel" type="Label" parent="HBoxContainer"]
 texture_filter = 3
