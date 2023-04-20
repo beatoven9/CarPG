@@ -1,21 +1,13 @@
 extends "res://Scripts/BattleEngine/Fighter.gd"
 
-@onready var player_hud_container = get_tree().get_root().get_child(0).get_node("CanvasLayer/BattleUI/HBoxContainer/PlayerPartyHUD/MarginContainer/FighterHUDContainer")
+@onready var battle_ui = get_tree().get_root().get_child(0).get_node("CanvasLayer/BattleUI")
+@onready var player_hud_container = battle_ui.player_party_hud_container
 @onready var fighter_hud_resource = preload("res://Scenes/Battle/UI/fighter_hud.tscn")
-@onready var dialogue_box = get_tree().get_root().get_child(0).get_node("CanvasLayer/BattleUI/HBoxContainer/MoveSelectionDialogue")
-
-#@onready var move_select_box_parent = get_tree().get_root().get_child(0).get_node("CanvasLayer/BattleUI/HBoxContainer/MoveSelectionControl")
-# @onready var move_selection_box = preload("res://Scenes/Battle/UI/move_selection_dialogue_root.tscn")
-@onready var move_selection_box = preload("res://Scenes/Battle/UI/MoveSelection/move_selection_dialogue_root.tscn")
-
-#var dialogue_box
+@onready var dialogue_box = battle_ui.move_selection_dialogue
 
 func _ready():
+	print(battle_ui.move_announcer_box)
 	super._ready()
-
-	# dialogue_box = move_selection_box.instantiate()
-	# move_select_box_parent.add_child(dialogue_box)
-
 
 	var new_fighter_hud = fighter_hud_resource.instantiate()
 	new_fighter_hud.fighter_name = fighter_name
