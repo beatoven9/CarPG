@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var player_fighter = preload("res://Scenes/Battle/player_fighter.tscn")
-@onready var enemy = preload("res://Scenes/Battle/enemy_fighter.tscn")
+#@onready var player_fighter = preload("res://Scenes/Battle/Fighters/player_fighter.tscn")
+#@onready var enemy = preload("res://Scenes/Battle/Fighters/enemy_fighter.tscn")
 @onready var battle_timer = preload("res://Scenes/Battle/UI/battle_timer.tscn")
 
 
@@ -78,7 +78,8 @@ func arrange_fighters_on_y_axis(
 func instantiate_player_fighters(player_fighters_data):
 	var player_fighters_list = []
 	for member_data in player_fighters_data:
-		var new_player_fighter = player_fighter.instantiate()
+		var fighter_scene = member_data["scene"]
+		var new_player_fighter = fighter_scene.instantiate()
 		new_player_fighter.set_data(
 			member_data
 		)
@@ -92,7 +93,8 @@ func instantiate_player_fighters(player_fighters_data):
 func instantiate_enemy_members(enemy_members_data):
 	var enemy_members_list = []
 	for member_data in enemy_members_data:
-		var new_enemy_member = enemy.instantiate()
+		var fighter_scene = member_data["scene"]
+		var new_enemy_member = fighter_scene.instantiate()
 		new_enemy_member.set_data(
 			member_data
 		)

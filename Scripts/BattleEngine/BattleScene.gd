@@ -2,6 +2,13 @@ extends Node2D
 
 @onready var battle_engine = $BattleEngine
 
+@onready var wedge = preload("res://Scenes/Battle/Fighters/Party/Wedge.tscn")
+@onready var tristan = preload("res://Scenes/Battle/Fighters/Party/Tristan.tscn")
+@onready var tinaldo = preload("res://Scenes/Battle/Fighters/Party/Tinaldo.tscn")
+@onready var gov_gearson = preload("res://Scenes/Battle/Fighters/Party/GovGearson.tscn")
+
+@onready var enemy_1 = preload("res://Scenes/Battle/Fighters/Enemies/Enemy1.tscn")
+
 func _ready():
 	var enemy_data = load_enemy_data()
 	var player_data = load_player_data()
@@ -14,10 +21,10 @@ func _ready():
 
 
 func load_enemy_data():
-	var texture1 = load("res://Sprites/CharacterSprites/PickupTruck_b.png")
+	var scene = enemy_1
 	var enemy_member1 = {
 		"name": "Big Bad Guy a",
-		"texture": texture1,
+		"scene": scene,
 		"attack": 15,
 		"defense": 15,
 		"magic": 15,
@@ -38,7 +45,7 @@ func load_enemy_data():
 	}
 	var enemy_member2 = {
 		"name": "Big Bad Guy b",
-		"texture": texture1,
+		"scene": scene,
 		"attack": 15,
 		"defense": 15,
 		"magic": 15,
@@ -62,10 +69,10 @@ func load_enemy_data():
 	return enemy_members_data
 
 func load_player_data():
-	var texture1 = load("res://Sprites/CharacterSprites/Sedan_a.png")
+	var scene1 = wedge
 	var player_fighter1 = {
 		"name": "Wedge",
-		"texture": texture1,
+		"scene": scene1,
 		"attack": 15,
 		"defense": 15,
 		"magic": 15,
@@ -73,7 +80,7 @@ func load_player_data():
 		"speed": 50,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": DragoonClass,
+		"fighter_class": WhiteMageClass,
 		"class_proficiency": 200,
 		"max_health": 500,
 		"max_boost": 100,
@@ -85,10 +92,10 @@ func load_player_data():
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
-	var texture2 = load("res://Sprites/CharacterSprites/FriendCar.png")
+	var scene2 = tristan
 	var player_fighter2 = {
 		"name": "Wheely",
-		"texture": texture2,
+		"scene": scene2,
 		"attack": 15,
 		"defense": 15,
 		"magic": 15,
@@ -96,7 +103,7 @@ func load_player_data():
 		"speed": 20,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": ThiefClass,
+		"fighter_class": MonkClass,
 		"class_proficiency": 30,
 		"max_health": 500,
 		"max_boost": 100,
@@ -108,10 +115,10 @@ func load_player_data():
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
 
-	var texture3 = load("res://Sprites/CharacterSprites/Sportscar_a.png")
+	var scene3 = gov_gearson
 	var player_fighter3 = {
 		"name": "Gov. Gearwright",
-		"texture": texture3,
+		"scene": scene3,
 		"attack": 15,
 		"defense": 15,
 		"magic": 15,
@@ -119,7 +126,7 @@ func load_player_data():
 		"speed": 30,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": MonkClass,
+		"fighter_class": ThiefClass,
 		"class_proficiency": 100,
 		"max_health": 500,
 		"max_boost": 55,
@@ -130,10 +137,10 @@ func load_player_data():
 		"inventory": ["coins", "coins", "pocket lint", "anal beads"],
 		"snatchable_inventory": ["coins", "coins", "pocket lint", "anal beads"]
 	}
-	var texture4 = load("res://Sprites/CharacterSprites/PickupTruck_b.png")
+	var scene4 = tinaldo
 	var player_fighter4 = {
-		"name": "Percy",
-		"texture": texture4,
+		"name": "Tinaldo",
+		"scene": scene4,
 		"attack": 15,
 		"defense": 15,
 		"magic": 15,
@@ -141,7 +148,7 @@ func load_player_data():
 		"speed": 50,
 		"luck": 5,
 		"vitality": 10,
-		"fighter_class": DragoonClass,
+		"fighter_class": BlackMageClass,
 		"class_proficiency": 100,
 		"max_health": 500,
 		"max_boost": 55,
