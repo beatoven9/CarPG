@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmma2bgo5hf7f"]
 
 [ext_resource type="PackedScene" uid="uid://b05mqi8dsapm7" path="res://Scenes/Battle/UI/hud_bar_base.tscn" id="1_6jf3a"]
-[ext_resource type="Texture2D" uid="uid://bs1gjff6cmh7k" path="res://Sprites/UI_Sprites/MagicBarFill.png" id="2_q0gyn"]
+[ext_resource type="Texture2D" uid="uid://ur8pj4rlq0yj" path="res://Sprites/UI_Sprites/MagicBarFill_v2.png" id="2_2fqye"]
 
 [node name="BoostHUD" instance=ExtResource("1_6jf3a")]
 
@@ -9,4 +9,4 @@
 text = "Boost"
 
 [node name="Gauge" parent="HBoxContainer" index="1"]
-texture_progress = ExtResource("2_q0gyn")
+texture_progress = ExtResource("2_2fqye")

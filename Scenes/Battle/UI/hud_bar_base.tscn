@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b05mqi8dsapm7"]
 
 [ext_resource type="FontVariation" uid="uid://bn104iyv12owi" path="res://Fonts/hud_bar_text.tres" id="1_yxy7m"]
-[ext_resource type="Texture2D" uid="uid://mmthnmxmekn" path="res://Sprites/UI_Sprites/ProgressBarFrame.png" id="3_qat5v"]
-[ext_resource type="Texture2D" uid="uid://dvholimj2xge8" path="res://Sprites/UI_Sprites/HealthBarFill.png" id="4_hcapb"]
+[ext_resource type="Texture2D" uid="uid://dx6hfob7knhn3" path="res://Sprites/UI_Sprites/ProgressBarFrame_v2.png" id="2_xm7h2"]
+[ext_resource type="Texture2D" uid="uid://bjstm3h6epx3n" path="res://Sprites/UI_Sprites/HealthBarFill_v2.png" id="3_nkdqv"]
 
 [node name="HUD_Bar_Base" type="MarginContainer"]
 size_flags_horizontal = 0
@@ -33,12 +33,10 @@ layout_mode = 2
 size_flags_vertical = 4
 value = 100.0
 stretch_margin_left = 2
-stretch_margin_top = 2
-stretch_margin_right = 2
 stretch_margin_bottom = 2
-texture_over = ExtResource("3_qat5v")
-texture_progress = ExtResource("4_hcapb")
-texture_progress_offset = Vector2(1, 1)
+texture_over = ExtResource("2_xm7h2")
+texture_progress = ExtResource("3_nkdqv")
+texture_progress_offset = Vector2(2, 2.08165e-12)
 
 [node name="GaugeValueLabel" type="Label" parent="HBoxContainer"]
 texture_filter = 3
