@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Car.gd" id="1_ceq2s"]
-[ext_resource type="Texture2D" uid="uid://bu2lgflbay7gt" path="res://Sprites/Car_Sprites/PickupTruck_a.png" id="2_kta22"]
+[ext_resource type="Texture2D" uid="uid://bu2lgflbay7gt" path="res://Sprites/CharacterSprites/PickupTruck_a.png" id="2_kta22"]
 [ext_resource type="Script" path="res://Scripts/Tires.gd" id="3_xqxg2"]
-[ext_resource type="PackedScene" uid="uid://bknynayus3la5" path="res://Scenes/tire.tscn" id="4_jos1h"]
+[ext_resource type="PackedScene" uid="uid://71qblmshtso3" path="res://Scenes/tire.tscn" id="4_jos1h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4lb0"]
 radius = 7.75322

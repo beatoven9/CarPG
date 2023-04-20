@@ -1,0 +1,5 @@
+UI Should not be tied to individual fighters.
+
+Ui should be handled by the BattleEngine.
+
+When a 

@@ -1,6 +1,6 @@
 extends "res://Scripts/BattleEngine/Fighter.gd"
 
-@onready var enemy_hud_container = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD/FighterHUDContainer")
+@onready var enemy_hud_container = get_tree().get_root().get_child(0).get_node("CanvasLayer/EnemyPartyHUD/MarginContainer/FighterHUDContainer")
 @onready var fighter_hud_resource = preload("res://Scenes/Battle/UI/fighter_hud.tscn")
 
 func _ready():

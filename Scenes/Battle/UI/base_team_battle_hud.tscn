@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw8bjn8er1nyy"]
+[gd_scene load_steps=4 format=3 uid="uid://cw8bjn8er1nyy"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/base_team_battle_hud.gd" id="1_4ftdu"]
+[ext_resource type="Texture2D" uid="uid://ctf666plr825g" path="res://Sprites/UI_Sprites/UI_Box_v2-export.png" id="2_3wnrx"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="3_6ntxs"]
 
 [node name="BaseTeamBattleHud" type="MarginContainer"]
 offset_right = 304.0
@@ -11,7 +13,61 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 script = ExtResource("1_4ftdu")
 
-[node name="FighterHUDContainer" type="VBoxContainer" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("2_3wnrx")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="FighterHUDContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/FighterHUDContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FighterHUDContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 2.08165e-12)
+layout_mode = 2
+
+[node name="Health" type="Label" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer"]
+texture_filter = 3
+custom_minimum_size = Vector2(66, 2.08165e-12)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ntxs")
+text = "Health
+"
+horizontal_alignment = 1
+
+[node name="Magic" type="Label" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(66, 2.08165e-12)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ntxs")
+text = "Magic"
+horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="MarginContainer/FighterHUDContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(66, 2.08165e-12)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ntxs")
+text = "Timer"
+horizontal_alignment = 1

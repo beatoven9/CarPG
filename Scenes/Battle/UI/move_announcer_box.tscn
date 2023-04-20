@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuutkxylth4wc"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/move_announcer_box.gd" id="1_vroax"]
-[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_oot2s"]
+[ext_resource type="Texture2D" uid="uid://ctf666plr825g" path="res://Sprites/UI_Sprites/UI_Box_v2-export.png" id="2_6mtp7"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="3_id6u1"]
 
 [node name="MoveAnnouncerBox" type="MarginContainer"]
@@ -23,11 +23,11 @@ script = ExtResource("1_vroax")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_oot2s")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+texture = ExtResource("2_6mtp7")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

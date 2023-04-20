@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw0b8x0idu0ag"]
+[gd_scene load_steps=9 format=3 uid="uid://cw0b8x0idu0ag"]
 
 [ext_resource type="Script" path="res://Scripts/BattleEngine/BattleScene.gd" id="1_toh50"]
 [ext_resource type="PackedScene" uid="uid://puqlsbb83hsx" path="res://Scenes/Battle/UI/player_party_hud.tscn" id="1_xsa6o"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/TileMapTerrain.tscn" id="3_21nyt"]
 [ext_resource type="PackedScene" uid="uid://cuutkxylth4wc" path="res://Scenes/Battle/UI/move_announcer_box.tscn" id="4_b2kjt"]
 [ext_resource type="Script" path="res://Scripts/BattleEngine/BattleEngine.gd" id="4_ry1ep"]
+[ext_resource type="Texture2D" uid="uid://ctf666plr825g" path="res://Sprites/UI_Sprites/UI_Box_v2-export.png" id="6_2bpnv"]
+[ext_resource type="PackedScene" uid="uid://b0jlthqfv2n2a" path="res://Scenes/Battle/UI/MoveSelection/move_selection_dialogue_root.tscn" id="6_6knoi"]
 
 [node name="BattleScene" type="Node2D"]
 texture_filter = 1
@@ -20,11 +22,6 @@ layer_0/tile_data = PackedInt32Array(-1, 786433, 2, 65535, 524289, 7, 131071, 78
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PlayerPartyHUD" parent="CanvasLayer" instance=ExtResource("1_xsa6o")]
-offset_top = -40.0
-offset_right = 40.0
-script = null
-
 [node name="EnemyPartyHUD" parent="CanvasLayer" instance=ExtResource("2_vc35j")]
 visible = false
 anchors_preset = 1
@@ -34,18 +31,47 @@ offset_left = -304.0
 offset_right = 0.0
 grow_horizontal = 0
 
-[node name="MoveSelectionControl" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="BaseTeamBattleHud" parent="CanvasLayer" instance=ExtResource("4_b2kjt")]
 visible = false
 
-[node name="MoveAnnouncerBox" parent="CanvasLayer" instance=ExtResource("4_b2kjt")]
+[node name="BattleUI" type="MarginContainer" parent="CanvasLayer"]
+texture_filter = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BattleUI"]
+layout_mode = 2
+texture = ExtResource("6_2bpnv")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BattleUI"]
+layout_mode = 2
+alignment = 1
+
+[node name="MoveSelectionDialogue" parent="CanvasLayer/BattleUI/HBoxContainer" instance=ExtResource("6_6knoi")]
+custom_minimum_size = Vector2(256, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="PlayerPartyHUD" parent="CanvasLayer/BattleUI/HBoxContainer" instance=ExtResource("1_xsa6o")]
+layout_mode = 2
+script = null
+
+[node name="MoveAnnouncerBox" parent="CanvasLayer/BattleUI/HBoxContainer" instance=ExtResource("4_b2kjt")]
+custom_minimum_size = Vector2(256, 2.08165e-12)
+layout_mode = 2
 
 [node name="BattleEngine" type="Node2D" parent="."]
 script = ExtResource("4_ry1ep")

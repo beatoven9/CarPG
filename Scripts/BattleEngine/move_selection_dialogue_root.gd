@@ -13,6 +13,8 @@ signal move_complete(move, target)
 @onready var player_target_box = $VBoxContainer/MarginContainer/PlayerTargets
 @onready var target_box = $VBoxContainer/MarginContainer/Targets
 
+# @onready var fighter_name_container = $VBoxContainer/FighterNameMargin
+
 @onready var boxes_list = [
 	entry_box,
 	magic_box,
@@ -91,6 +93,7 @@ func prompt_for_move(fighter, new_available_moves, new_battle_state):
 	box_stack.push_back(entry_box)
 
 	fighter_name_label.set_text(" " + fighter.fighter_name)
+	fighter_name_label.set_visible(true)
 
 	available_moves = new_available_moves
 
@@ -255,7 +258,7 @@ func _on_target_selected(target_idx):
 	move_complete.emit(selected_move, selected_target)
 	selected_target.get_unselected()
 	close_all_boxes()
-	set_visible(false)
+	fighter_name_label.set_visible(false)
 
 func _on_target_selection_changed(target_index):
 
