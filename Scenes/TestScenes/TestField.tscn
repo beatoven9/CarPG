@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkp8sl1au4gxu"]
+[gd_scene load_steps=26 format=3]
 
 [ext_resource type="Texture2D" uid="uid://cvxejg21p413x" path="res://Sprites/HouseTilemap.png" id="1_0fwtm"]
-[ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/TileMapTerrain.tscn" id="2_m4xkg"]
+[ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/Tilemaps/TileMapTerrain.tscn" id="2_m4xkg"]
 [ext_resource type="Script" path="res://Scripts/SpeedGauge.gd" id="3_3mcku"]
 [ext_resource type="Texture2D" uid="uid://bsj3upwllbcxl" path="res://Sprites/UI_Sprites/SpeedGauge.png" id="3_hqtur"]
 [ext_resource type="Texture2D" uid="uid://bcxjbyh4dbycw" path="res://Sprites/UI_Sprites/Gauge_Needle_2.png" id="5_lq2fd"]
@@ -15,11 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://cwscf8apojupm" path="res://Sprites/UI_Sprites/Bar_Underfill.png" id="13_7y5e3"]
 [ext_resource type="Texture2D" uid="uid://bbjfwwa8ftgqx" path="res://Sprites/UI_Sprites/BoostBarFill.png" id="14_f1csx"]
 [ext_resource type="Script" path="res://Scripts/PlayerBoostGauge.gd" id="14_l3a4n"]
-[ext_resource type="PackedScene" uid="uid://cxid7gxuk0pjp" path="res://Scenes/Player.tscn" id="15_wvxnx"]
+[ext_resource type="PackedScene" path="res://Scenes/characters/Player.tscn" id="15_wvxnx"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="16_h5ofl"]
-[ext_resource type="PackedScene" uid="uid://dvce0selet74m" path="res://Scenes/garage_door.tscn" id="18_2cpgn"]
-[ext_resource type="PackedScene" uid="uid://c3w3p3a354cot" path="res://Scenes/FriendCar.tscn" id="19_b5erb"]
-[ext_resource type="PackedScene" uid="uid://phl52afcjq85" path="res://Scenes/BaseCar.tscn" id="20_bldsm"]
+[ext_resource type="PackedScene" uid="uid://dvce0selet74m" path="res://Scenes/Tilemaps/garage_door.tscn" id="18_2cpgn"]
+[ext_resource type="PackedScene" path="res://Scenes/characters/FriendCar.tscn" id="19_b5erb"]
+[ext_resource type="PackedScene" path="res://Scenes/characters/BaseCar.tscn" id="20_bldsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5a7uw"]
 texture = ExtResource("1_0fwtm")
