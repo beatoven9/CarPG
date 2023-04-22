@@ -1,0 +1,63 @@
+Color_scheme: black slightly transparent background. Blue or grey boxes with curves inverted corners. Borders slightly darker than box
+
+
+
+Main Menu
+--------------------------------------------------
+|  	Items    	|	characters_portrait + hp/mp/status 		 -----------------------
+|	Equipment	|	characters_portrait + hp/mp/status 	<---| 	Move                |
+|	Magic    	|  	characters_portrait + hp/mp/status 		|	Switch	            |
+|	Formation	|  	characters_portrait + hp/mp/status 		|	Back-row/front-row  |
+|	Exit       	|											|                       |
+															|	(heal)              |
+															|	(equip)             |
+															|                       |
+															|						|
+															 -----------------------
+
+
+
+
+
+
+
+
+Items
+----------------------------------------------------
+all		healing 	battle		key 	equipment
+----------------------------------------------------
+Item 0      ------------------
+Item 1 < --|   ItemSelected   |
+Item 2	   |	  			  |
+		   | value: $100 	  |
+		   | effect: ....     | 
+		   |			      |
+		   | use  toss  exit  |
+... 	    ------------------
+
+
+
+
+
+
+
+
+Equipment
+-----------------------------------------------------------------------------------------
+	char			weapon 			offense_ring 	defense_ring 		tactical_ring
+-----------------------------------------------------------------------------------------
+Character_1			Sword_a 		empty 			ring_of_fire			Scan
+Character_2			Sword_a 		empty 			Scan					empty
+Character_3			Sword_a 		empty 			ring_of_water			empty
+Character_4			Sword_a 		Scan 			ring_of_lightning		empty
+
+
+
+Quests
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+
+Magic
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------

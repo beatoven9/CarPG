@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl6r67d6y7fhp"]
+
+[ext_resource type="Texture2D" uid="uid://csc2mhcjuww4x" path="res://Sprites/UI_Sprites/UI_Tab_SubBox.png" id="1_5tcs0"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_qjbjj"]
+
+[node name="Slot" type="MarginContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(48, 32)
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_5tcs0")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_qjbjj")
+theme_override_font_sizes/font_size = 10
+text = "Weapon"
+horizontal_alignment = 1

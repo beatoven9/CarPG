@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvkothbr8yw0l"]
+
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="1_rd3kh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8cyo"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x0sq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24brh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uaujj"]
+bg_color = Color(0.839216, 0.462745, 0.6, 1)
+
+[node name="Items" type="MarginContainer"]
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 4
+theme_override_fonts/font = ExtResource("1_rd3kh")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/panel = SubResource("StyleBoxTexture_s8cyo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5x0sq")
+theme_override_styles/selected = SubResource("StyleBoxFlat_24brh")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_uaujj")
+item_count = 6
+max_columns = 4
+item_0/text = "Sword"
+item_1/text = "Ring of Fire"
+item_2/text = "Ring of Frost"
+item_3/text = "Potion"
+item_4/text = "Ether"
+item_5/text = "High Potion"

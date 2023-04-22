@@ -216,3 +216,47 @@ Cut scenes and dialogue
 ------------------------------------------------------------
 
 
+------------------------------------------------------------
+Overworld UI/Inventory/Party
+------------------------------------------------------------
+
+Two singletons:
+	---Party:
+		a list of PartyMember
+			PartyMember:
+				var current_hp: int
+				var max_hp: int
+				var current_mp: int
+				var max_mp: int
+		
+				var status: {
+					"poison": false,
+					"asleep": false,
+					"blind": false,
+					"mute": false,
+					"confused": false,
+					"slow": false,
+					"fast": false,
+				}
+
+				var equipment = {
+					"weapon": null,
+					"ring_1": null,
+					"ring_2": null,
+					"ring_3": null,
+				}
+
+	---Inventory:
+		This is a list of items:	
+			There will be an Item parentclass and subclasses for 'healing', 'attack', 'equipment': 'weapon' and 'ring', 'key_item'
+
+
+
+
+
+PartyMemberCard:
+	portrait | HP | MP | Status HBoxContainer[(status icons are appended to this list)]
+
+
+
+When the UI is opened, the main content box is populated with party members and the Item tabs are populated with Inventory

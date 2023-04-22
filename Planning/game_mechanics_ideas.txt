@@ -158,3 +158,20 @@ ECONOMY MECHANICS
 ------------------------------------------------------------------------------------
 
     This will likely be the most basic/shallow dimension. Basic gil earned, potions/upgrades for purchase. Maybe some side quests with auction houses or something. idk.
+
+
+
+
+------------------------------------------------------------------------------------
+CARLESS BATTLE MECHANICS
+------------------------------------------------------------------------------------
+
+Two ring slots: Offense and Defense.
+Any affect granted by a ring will have the option to be used in offense or defense mode with the exception of tactical rings which can be used in either. Rings can be leveled up through use.
+			e.g. - Fire ring: Offensive grants fire damage to physical attacks, Defensive grants resistance
+						If you are a black mage, a fire ring in an offensive slot powers up your fire spells
+						If you are a white mage, a fire ring will give you a nul_blaze type spell.
+						If you are a necromancer, a fire ring will give your raised monsters fire damage.
+
+
+Maybe, you have four generic slots and can set slots to defense, offense, tactical modes

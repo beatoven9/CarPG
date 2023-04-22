@@ -1,0 +1,118 @@
+[gd_scene load_steps=13 format=3 uid="uid://kwr7gctjqq82"]
+
+[ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="1_j1duy"]
+[ext_resource type="Texture2D" uid="uid://tfrmlb1ihtvh" path="res://Sprites/UI_Sprites/UI_Arrow.png" id="1_pw00f"]
+[ext_resource type="Texture2D" uid="uid://dm38m1oqh5gdw" path="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png" id="2_mlcqn"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="3_bk7ic"]
+[ext_resource type="PackedScene" uid="uid://cjuh82lpuhbv4" path="res://Scenes/Overworld_UI/status_icon.tscn" id="4_kfc78"]
+[ext_resource type="Texture2D" uid="uid://b44pihmh2j4mi" path="res://Sprites/UI_Sprites/StatusIcons/BlindIcon.png" id="5_xb1at"]
+[ext_resource type="Texture2D" uid="uid://cbrhqsqxnc0pr" path="res://Sprites/UI_Sprites/StatusIcons/SleepIcon.png" id="6_gukwo"]
+[ext_resource type="Texture2D" uid="uid://bals0h11o8f0b" path="res://Sprites/UI_Sprites/StatusIcons/MuteIcon.png" id="7_mlvqj"]
+[ext_resource type="Texture2D" uid="uid://ctumaqb00il2u" path="res://Sprites/UI_Sprites/StatusIcons/DeadIcon.png" id="8_osi64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6ulx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1x5e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umr4k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.698039, 0.533333, 0.713726, 0.2)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="PartyMemberCard" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_pw00f")
+stretch_mode = 5
+
+[node name="PartyMemberCard" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PartyMemberCard"]
+layout_mode = 2
+texture = ExtResource("1_j1duy")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="PartyMemberCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyMemberCard/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Portrait" type="TextureRect" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_mlcqn")
+stretch_mode = 3
+
+[node name="HP" type="Label" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bk7ic")
+theme_override_font_sizes/font_size = 10
+text = "HP: 100/100"
+
+[node name="MP" type="Label" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bk7ic")
+theme_override_font_sizes/font_size = 10
+text = "MP: 100/100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Status" type="Label" parent="PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bk7ic")
+theme_override_font_sizes/font_size = 10
+text = "Status: "
+
+[node name="StatusIcon" parent="PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_kfc78")]
+layout_mode = 2
+
+[node name="StatusIcon3" parent="PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_kfc78")]
+layout_mode = 2
+texture = ExtResource("6_gukwo")
+
+[node name="StatusIcon2" parent="PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_kfc78")]
+layout_mode = 2
+texture = ExtResource("5_xb1at")
+
+[node name="StatusIcon4" parent="PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_kfc78")]
+layout_mode = 2
+texture = ExtResource("7_mlvqj")
+
+[node name="StatusIcon5" parent="PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_kfc78")]
+layout_mode = 2
+texture = ExtResource("8_osi64")
+
+[node name="Button" type="Button" parent="PartyMemberCard"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q6ulx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j1x5e")
+theme_override_styles/focus = SubResource("StyleBoxFlat_umr4k")

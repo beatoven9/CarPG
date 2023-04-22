@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhq6feddg53g2"]
+
+[ext_resource type="PackedScene" uid="uid://kwr7gctjqq82" path="res://Scenes/Overworld_UI/party_member_card.tscn" id="1_2h6wi"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/party_box.gd" id="1_fvpl3"]
+
+[node name="PartyBox" type="VBoxContainer"]
+visible = false
+theme_override_constants/separation = 1
+script = ExtResource("1_fvpl3")
+
+[node name="PartyMemberCard" parent="." instance=ExtResource("1_2h6wi")]
+layout_mode = 2
+
+[node name="PartyMemberCard2" parent="." instance=ExtResource("1_2h6wi")]
+layout_mode = 2
+
+[node name="PartyMemberCard3" parent="." instance=ExtResource("1_2h6wi")]
+layout_mode = 2
+
+[node name="PartyMemberCard4" parent="." instance=ExtResource("1_2h6wi")]
+layout_mode = 2

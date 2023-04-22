@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://7oqxpdxoj7vg"]
+
+[ext_resource type="Script" path="res://Scripts/OverworldUI/EquipmentCard.gd" id="1_ioc12"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_728f3"]
+[ext_resource type="Texture2D" uid="uid://dm38m1oqh5gdw" path="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png" id="3_fuha2"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_cynlh"]
+[ext_resource type="PackedScene" uid="uid://cl6r67d6y7fhp" path="res://Scenes/Overworld_UI/EquipmentSlotBase.tscn" id="4_ewemt"]
+[ext_resource type="PackedScene" uid="uid://ce6l02fhkpvwa" path="res://Scenes/Overworld_UI/ring_slot.tscn" id="6_uge64"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gq6e3"]
+line_spacing = 2.08165e-12
+font = ExtResource("4_cynlh")
+font_size = 10
+
+[node name="EquipmentCard" type="MarginContainer"]
+texture_filter = 1
+script = ExtResource("1_ioc12")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_728f3")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(64, 2.08165e-12)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CharacterPortrait" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_fuha2")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cynlh")
+theme_override_font_sizes/font_size = 10
+text = "Gov. Gearson"
+label_settings = SubResource("LabelSettings_gq6e3")
+horizontal_alignment = 1
+
+[node name="EquipmentSlots" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+
+[node name="WeaponSlot" parent="MarginContainer/HBoxContainer/EquipmentSlots" instance=ExtResource("4_ewemt")]
+layout_mode = 2
+
+[node name="RingSlots" type="HBoxContainer" parent="MarginContainer/HBoxContainer/EquipmentSlots"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="RingSlot" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="RingSlot2" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="RingSlot3" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="RingSlot4" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 1
