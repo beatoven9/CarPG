@@ -71,21 +71,13 @@ size_flags_vertical = 0
 theme_override_constants/separation = 8
 
 [node name="RingSlot" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_vertical = 1
 
 [node name="RingSlot2" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_vertical = 1
 
 [node name="RingSlot3" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_vertical = 1
 
 [node name="RingSlot4" parent="MarginContainer/HBoxContainer/EquipmentSlots/RingSlots" instance=ExtResource("6_uge64")]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_vertical = 1
