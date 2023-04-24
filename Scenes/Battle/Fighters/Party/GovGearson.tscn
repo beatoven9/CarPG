@@ -31,4 +31,3 @@ animations = [{
 [node name="AnimatedSprite2D" parent="." index="0"]
 rotation = 6.28319
 sprite_frames = SubResource("SpriteFrames_wmtm6")
-frame_progress = 0.0
