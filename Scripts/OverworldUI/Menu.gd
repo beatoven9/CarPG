@@ -86,6 +86,7 @@ func _open_quests_menu():
 func _open_equipment_menu():
 	close_boxes()
 	equipment_box.set_visible(true)
+	equipment_box.select_box()
 
 func _open_magic_menu():
 	pass

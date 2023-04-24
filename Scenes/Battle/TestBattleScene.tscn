@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://xl5mt7thc855"]
 
 [ext_resource type="PackedScene" uid="uid://puqlsbb83hsx" path="res://Scenes/Battle/UI/player_party_hud.tscn" id="1_2p71r"]
 [ext_resource type="PackedScene" uid="uid://bcsylcr85y820" path="res://Scenes/Tilemaps/TileMapTerrain.tscn" id="1_b2mwo"]

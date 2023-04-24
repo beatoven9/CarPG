@@ -1,5 +1,6 @@
 extends MarginContainer
 
+@onready var class_slot = $MarginContainer/HBoxContainer/EquipmentSlots/ClassSlot
 @onready var weapon_slot = $MarginContainer/HBoxContainer/EquipmentSlots/WeaponSlot
 @onready var ring_slots = $MarginContainer/HBoxContainer/EquipmentSlots/RingSlots.get_children()
 

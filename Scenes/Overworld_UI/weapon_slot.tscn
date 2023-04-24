@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d37a04gmuifq7"]
+
+[ext_resource type="PackedScene" uid="uid://cl6r67d6y7fhp" path="res://Scenes/Overworld_UI/EquipmentSlotBase.tscn" id="1_weqo6"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/WeaponSlot.gd" id="2_j80s0"]
+
+[node name="WeaponSlot" instance=ExtResource("1_weqo6")]
+script = ExtResource("2_j80s0")

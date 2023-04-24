@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl6r67d6y7fhp"]
+[gd_scene load_steps=9 format=3 uid="uid://cl6r67d6y7fhp"]
 
 [ext_resource type="Texture2D" uid="uid://csc2mhcjuww4x" path="res://Sprites/UI_Sprites/UI_Tab_SubBox.png" id="1_5tcs0"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/EquipmentSlotBase.gd" id="1_js5mb"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_qjbjj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axudy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sktvo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vocwl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k8vcp"]
+load_path = "res://.godot/imported/UI_BoxSelected.png-04c26fc20815777323ddadc7900b94e4.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1pys"]
+texture = SubResource("CompressedTexture2D_k8vcp")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
 
 [node name="Slot" type="MarginContainer"]
 texture_filter = 1
@@ -35,7 +51,12 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
+texture_filter = 1
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_axudy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sktvo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vocwl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c1pys")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2

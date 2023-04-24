@@ -1,7 +1,9 @@
 extends MarginContainer
 
+signal equip_item(item)
+
 @onready var party_members = $VBoxContainer/PartyMemberContainer.get_children()
-@onready var first_slot = party_members[0].weapon_slot
+@onready var first_slot = party_members[0].class_slot
 @onready var last_focused_button = first_slot.slot_button
 
 @onready var generic_popup = preload("res://Scenes/Overworld_UI/Popups/generic_popup.tscn")
@@ -22,18 +24,12 @@ var current_slot
 
 signal request_new_equip(equipment_slot)
 
-var popup_options = [
-	"Equip",
-	"Unequip",
-	"Move",
-	"Change Mode",
-	"Cancel"
-]
-
 func get_equipment_slots():
 	var slots = []
 	for member in party_members:
+		var class_slot = member.class_slot
 		var weapon_slot = member.weapon_slot
+		slots.append(class_slot)
 		slots.append(weapon_slot)
 		var ring_slots = member.ring_slots
 		slots += ring_slots
@@ -56,26 +52,10 @@ func _ready():
 	inventory_equipment = get_inventory_equipment()
 
 	for slot in equipment_slots:
-		slot.slot_pressed.connect(_handle_slot_press)
+		slot.request_new_equip.connect(handle_equip_request)
+		slot.request_unequip.connect(handle_unequip_request)
 
-func _handle_slot_press(slot):
-	current_slot = slot
-	last_focused_button = slot.slot_button
-
-	var popup = generic_popup.instantiate()
-	popup.index_pressed.connect(_handle_popup_response)
-	popup.popup_hide.connect(popup.queue_free)
-
-	for option in popup_options:
-		popup.add_item(option)
-
-	add_child(popup)
-	popup.set_visible(true)
-	popup.set_position(slot.global_position)
-	popup.set_focused_item(0)
-	popup.grab_focus()
-
-func handle_equip_request():
+func handle_equip_request(slot):
 	inventory_equipment_box.set_visible(true)
 	inventory_equipment_box.clear()
 	for item in inventory_equipment:
@@ -84,53 +64,39 @@ func handle_equip_request():
 	inventory_equipment_box.select(0)
 
 	inventory_equipment_box.item_activated.connect(_handle_equip_response)
+
+	equip_item.connect(slot.handle_item_equip)
+
+
+func handle_unequip_request(slot, item):
+	print("Unequipping ", item, " from ", slot)
+	# Add item back to inventory
 	
 
+func disconnect_slots():
+	pass
+
 func _handle_equip_response(index):
-	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
 	var item = inventory_equipment[index]
-	print(item, " assigned to slot ", current_slot)
+	equip_item.emit(item)
 
-	# assign_to_slot(item, current_slot)
-	# remove_item_from_inventory(item)
-
-	inventory_equipment_box.set_visible(false)
 	activate_box()
 
 
 func activate_box():
 	last_focused_button.grab_focus()
+	deactivate_inventory_equipment_box()
+
+func select_box():
+	# inventory_equipment_box.set_visible(false)
+	deactivate_inventory_equipment_box()
+
+func deactivate_inventory_equipment_box():
+	inventory_equipment_box.set_visible(false)
+	# inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
+
 
 func get_equipment_textures():
 	for party_member in party_members:
 		for slot in party_member.equipment_slots:
 			pass
-
-
-func _handle_popup_response(index):
-	if popup_options[index] == "Equip":
-		handle_equip_request()
-	elif popup_options[index] == "Unequip":
-		handle_unequip()
-	elif popup_options[index] == "Move":
-		handle_move()
-	elif popup_options[index] == "Change Mode":
-		handle_change_mode()
-	elif popup_options[index] == "Cancel":
-		handle_cancel()
-
-
-func handle_equip():
-	request_new_equip.emit(self)
-
-func handle_unequip():
-	pass
-
-func handle_move():
-	pass
-
-func handle_change_mode():
-	pass
-
-func handle_cancel():
-	pass

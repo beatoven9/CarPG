@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce6l02fhkpvwa"]
+[gd_scene load_steps=4 format=3 uid="uid://ce6l02fhkpvwa"]
 
 [ext_resource type="PackedScene" uid="uid://cl6r67d6y7fhp" path="res://Scenes/Overworld_UI/EquipmentSlotBase.tscn" id="1_djm7g"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/ring_slot.gd" id="2_k0ng3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ajtvm"]
 line_spacing = 2.08165e-12
 font_size = 10
 
 [node name="RingSlot" instance=ExtResource("1_djm7g")]
+script = ExtResource("2_k0ng3")
 
 [node name="Label" parent="VBoxContainer" index="1"]
 text = "Offense"

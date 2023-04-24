@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://xb8kxfofm13e"]
+
+[ext_resource type="PackedScene" uid="uid://cl6r67d6y7fhp" path="res://Scenes/Overworld_UI/EquipmentSlotBase.tscn" id="1_lsmc3"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/ClassSlot.gd" id="2_r17xs"]
+
+[node name="ClassSlot" instance=ExtResource("1_lsmc3")]
+script = ExtResource("2_r17xs")
+
+[node name="Label" parent="VBoxContainer" index="1"]
+text = "Class"
