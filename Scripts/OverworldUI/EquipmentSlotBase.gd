@@ -1,10 +1,12 @@
 extends MarginContainer
 
-@onready var button = $VBoxContainer/MarginContainer/Button
+@onready var slot_button = $VBoxContainer/MarginContainer/Button
+signal slot_pressed
 
+@onready var generic_popup = preload("res://Scenes/Overworld_UI/Popups/generic_popup.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	slot_button.pressed.connect(_on_slot_pressed)
 
-
+func _on_slot_pressed():
+	slot_pressed.emit(self)

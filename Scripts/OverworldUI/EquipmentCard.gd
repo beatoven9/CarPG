@@ -9,21 +9,10 @@ extends MarginContainer
 
 
 func _ready():
-	for slot in ring_slots:
-		slot.button.pressed.connect(_handle_ring_slot_press)
+	pass
+	#for slot in ring_slots:
+	#	slot.slot_button.pressed.connect(_handle_ring_slot_press)
 
 
 func _handle_ring_slot_press():
-
-	# This isn't really the way to handle this.
-	# I should really have these modals created as scenes
-	# Which modal is shown should be handled but the individual slot
-	# not the EquipmentCard as done here.
-
-	var popup: PopupMenu = PopupMenu.new()
-	popup.set_max_size(Vector2(128, 128))
-	popup.add_item("Item 1")
-	popup.add_item("Item 2")
-	add_child(popup)
-	popup.set_visible(true)
-	popup.grab_focus()
+	pass

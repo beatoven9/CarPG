@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nvmo26fiam4s"]
+
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="1_6m4ry"]
+[ext_resource type="StyleBox" uid="uid://rixdr1m38jtp" path="res://UI_Styles/PlainBox_Style.tres" id="2_682b5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fwhkt"]
+color = Color(0.239216, 0.372549, 0.431373, 1)
+
+[node name="GenericPopup" type="PopupMenu"]
+canvas_item_default_texture_filter = 0
+size = Vector2i(134, 120)
+theme_override_fonts/font = ExtResource("1_6m4ry")
+theme_override_fonts/font_separator = ExtResource("1_6m4ry")
+theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_separator_size = 10
+theme_override_styles/panel = ExtResource("2_682b5")
+theme_override_styles/panel_disabled = ExtResource("2_682b5")
+theme_override_styles/separator = SubResource("StyleBoxLine_fwhkt")
