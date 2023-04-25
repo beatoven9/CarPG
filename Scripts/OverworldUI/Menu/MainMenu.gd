@@ -10,17 +10,19 @@ func _gui_input(event):
 			item_selected_idx += 1
 			select(item_selected_idx)
 			item_selected.emit(item_selected_idx)
+			accept_event()
 	elif event.is_action_pressed("ui_up"):
 		if item_selected_idx > 0:
 			item_selected_idx -= 1
 			select(item_selected_idx)
 			item_selected.emit(item_selected_idx)
+			accept_event()
 	elif event.is_action_pressed("ui_accept") || event.is_action_pressed("ui_right"):
 		item_activated.emit(item_selected_idx)
+		accept_event()
 	elif event.is_action_pressed("ui_cancel"):
 		close_menu.emit()
 		accept_event()
-	accept_event()
 
 func select_item(idx):
 	select(idx)
