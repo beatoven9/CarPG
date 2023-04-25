@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://oyw83r635isw"]
+
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="1_57jlq"]
+
+[node name="StatContainer" type="HBoxContainer"]
+alignment = 1
+
+[node name="Stat" type="Label" parent="."]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_57jlq")
+theme_override_font_sizes/font_size = 10
+text = "Attack"
+
+[node name="StatValue" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_57jlq")
+theme_override_font_sizes/font_size = 10
+text = "100"
+horizontal_alignment = 2

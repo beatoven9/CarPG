@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3qtl"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esh15"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pla5v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2uq5"]
 
@@ -49,7 +49,7 @@ theme_override_fonts/font = ExtResource("2_tjoff")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/panel = SubResource("StyleBoxEmpty_q0flk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j3qtl")
-theme_override_styles/selected = SubResource("StyleBoxEmpty_esh15")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_pla5v")
 theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_g2uq5")
 item_count = 5
 max_columns = 3

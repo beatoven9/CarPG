@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1oktv5kraeae"]
+
+[ext_resource type="PackedScene" uid="uid://oyw83r635isw" path="res://Scenes/Overworld_UI/PartyStats/stat_container.tscn" id="1_2rnd1"]
+
+[node name="VitalityContainer" instance=ExtResource("1_2rnd1")]
+
+[node name="Stat" parent="." index="0"]
+text = "Vitality"

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsi2kgg300w5h"]
+
+[ext_resource type="PackedScene" uid="uid://oyw83r635isw" path="res://Scenes/Overworld_UI/PartyStats/stat_container.tscn" id="1_wjvya"]
+
+[node name="MagicDefenseContainer" instance=ExtResource("1_wjvya")]
+
+[node name="Stat" parent="." index="0"]
+text = "Magic Def."
+
+[node name="StatValue" parent="." index="1"]
+text = "0"

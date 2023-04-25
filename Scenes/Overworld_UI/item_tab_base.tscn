@@ -14,7 +14,7 @@ texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x0sq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24brh"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eq8d7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uaujj"]
 bg_color = Color(0.839216, 0.462745, 0.6, 1)
@@ -29,7 +29,7 @@ theme_override_fonts/font = ExtResource("1_rd3kh")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/panel = SubResource("StyleBoxTexture_s8cyo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5x0sq")
-theme_override_styles/selected = SubResource("StyleBoxFlat_24brh")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_eq8d7")
 theme_override_styles/selected_focus = SubResource("StyleBoxFlat_uaujj")
 item_count = 6
 max_columns = 4

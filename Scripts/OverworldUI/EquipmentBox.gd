@@ -56,6 +56,7 @@ func _ready():
 		slot.request_unequip.connect(handle_unequip_request)
 
 func handle_equip_request(slot):
+	last_focused_button = slot.slot_button
 	inventory_equipment_box.set_visible(true)
 	inventory_equipment_box.clear()
 	for item in inventory_equipment:
@@ -80,7 +81,8 @@ func _handle_equip_response(index):
 	var item = inventory_equipment[index]
 	equip_item.emit(item)
 
-	activate_box()
+	deactivate_inventory_equipment_box()
+	last_focused_button.grab_focus.call_deferred()
 
 
 func activate_box():

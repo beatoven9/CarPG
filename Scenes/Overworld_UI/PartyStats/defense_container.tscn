@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://5nd2utoamfxe"]
+
+[ext_resource type="PackedScene" uid="uid://oyw83r635isw" path="res://Scenes/Overworld_UI/PartyStats/stat_container.tscn" id="1_qac5t"]
+
+[node name="DefenseContainer" instance=ExtResource("1_qac5t")]
+
+[node name="Stat" parent="." index="0"]
+text = "Defense"
+
+[node name="StatValue" parent="." index="1"]
+text = "0"

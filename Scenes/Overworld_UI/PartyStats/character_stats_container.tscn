@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyc3ddgnaqah3"]
+
+[ext_resource type="Script" path="res://Scripts/OverworldUI/PartyStats/character_stats_container.gd" id="1_aegmm"]
+[ext_resource type="Texture2D" uid="uid://d2d358jmoj0km" path="res://Sprites/UI_Sprites/SharpUIBox.png" id="1_hhqf4"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_5momh"]
+[ext_resource type="PackedScene" uid="uid://bi34ppdj3tcc3" path="res://Scenes/Overworld_UI/PartyStats/attack_container.tscn" id="3_3c78i"]
+[ext_resource type="PackedScene" uid="uid://5nd2utoamfxe" path="res://Scenes/Overworld_UI/PartyStats/defense_container.tscn" id="4_6ib5v"]
+[ext_resource type="PackedScene" uid="uid://dmffo4yorv4jo" path="res://Scenes/Overworld_UI/PartyStats/magic_container.tscn" id="5_tolce"]
+[ext_resource type="PackedScene" uid="uid://bsi2kgg300w5h" path="res://Scenes/Overworld_UI/PartyStats/magic_defense_container.tscn" id="6_ystc8"]
+[ext_resource type="PackedScene" uid="uid://c3tdngniu3y26" path="res://Scenes/Overworld_UI/PartyStats/speed_container.tscn" id="7_u83ym"]
+
+[node name="CharacterStatsContainer" type="MarginContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_aegmm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_hhqf4")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="CharacterStatsContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="CharacterStatContainer" type="VBoxContainer" parent="CharacterStatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StatTitle" type="Label" parent="CharacterStatsContainer/CharacterStatContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5momh")
+theme_override_font_sizes/font_size = 20
+text = "Stats"
+
+[node name="AttackContainer" parent="CharacterStatsContainer/CharacterStatContainer" instance=ExtResource("3_3c78i")]
+layout_mode = 2
+
+[node name="DefenseContainer" parent="CharacterStatsContainer/CharacterStatContainer" instance=ExtResource("4_6ib5v")]
+layout_mode = 2
+
+[node name="MagicContainer" parent="CharacterStatsContainer/CharacterStatContainer" instance=ExtResource("5_tolce")]
+layout_mode = 2
+
+[node name="MagicDefenseContainer" parent="CharacterStatsContainer/CharacterStatContainer" instance=ExtResource("6_ystc8")]
+layout_mode = 2
+
+[node name="SpeedContainer" parent="CharacterStatsContainer/CharacterStatContainer" instance=ExtResource("7_u83ym")]
+layout_mode = 2

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3tdngniu3y26"]
+
+[ext_resource type="PackedScene" uid="uid://oyw83r635isw" path="res://Scenes/Overworld_UI/PartyStats/stat_container.tscn" id="1_b4b5x"]
+
+[node name="SpeedContainer" instance=ExtResource("1_b4b5x")]
+
+[node name="Stat" parent="." index="0"]
+text = "Speed"
+
+[node name="StatValue" parent="." index="1"]
+text = "0"
