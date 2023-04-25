@@ -29,6 +29,7 @@ func _input(event):
 	if equipment_box_focused():
 		if event.is_action_pressed("ui_cancel"):
 			go_back.emit()
+			accept_event()
 
 func get_equipment_slots():
 	var slots = []

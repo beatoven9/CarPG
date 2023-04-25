@@ -22,9 +22,8 @@ func _ready():
 	main_menu.item_activated.connect(_on_main_menu_activated)
 
 	var node_path = main_menu.get_path()
-	main_menu.set_focus_neighbor(SIDE_RIGHT, node_path)
-	main_menu.set_focus_neighbor(SIDE_LEFT, node_path)
 
+	main_menu.close_menu.connect(close_menu)
 	party_box.go_back.connect(main_menu.grab_focus)
 	item_box.go_back.connect(main_menu.grab_focus)
 	equipment_box.go_back.connect(main_menu.grab_focus)

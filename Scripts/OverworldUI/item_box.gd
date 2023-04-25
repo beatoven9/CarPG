@@ -39,6 +39,12 @@ func _input(event):
 			tab_container.set_current_tab(0)
 			go_back.emit()
 			accept_event()
+		elif event.is_action_pressed("next_tab"):
+			if tab_container.current_tab < len(tab_list) - 1:
+				focus_tab(tab_container.current_tab + 1)
+		elif event.is_action_pressed("previous_tab"):
+			if tab_container.current_tab > 0:
+				focus_tab(tab_container.current_tab - 1)
 	else:
 		pass
 		# print("Not handling input")

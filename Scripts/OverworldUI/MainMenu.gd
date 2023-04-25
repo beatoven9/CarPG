@@ -2,6 +2,8 @@ extends ItemList
 
 var item_selected_idx = 0
 
+signal close_menu
+
 func _gui_input(event):
 	if event.is_action_pressed("ui_down"):
 		item_selected_idx += 1
@@ -13,6 +15,9 @@ func _gui_input(event):
 		item_selected.emit(item_selected_idx)
 	elif event.is_action_pressed("ui_accept") || event.is_action_pressed("ui_right"):
 		item_activated.emit(item_selected_idx)
+	elif event.is_action_pressed("ui_cancel"):
+		close_menu.emit()
+		accept_event()
 	accept_event()
 
 func select_item(idx):

@@ -10,7 +10,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pla5v"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2uq5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxgiy"]
+bg_color = Color(0.807843, 0.482353, 0.623529, 1)
 
 [node name="QuestBox" type="MarginContainer"]
 anchors_preset = 15
@@ -50,7 +51,7 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/panel = SubResource("StyleBoxEmpty_q0flk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j3qtl")
 theme_override_styles/selected = SubResource("StyleBoxEmpty_pla5v")
-theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_g2uq5")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_yxgiy")
 item_count = 5
 max_columns = 3
 fixed_column_width = 128
