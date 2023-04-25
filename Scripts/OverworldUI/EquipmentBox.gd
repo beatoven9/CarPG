@@ -1,5 +1,6 @@
 extends MarginContainer
 
+signal go_back
 signal equip_item(item)
 
 @onready var party_members = $VBoxContainer/PartyMemberContainer.get_children()
@@ -23,6 +24,11 @@ var current_slot
 # set the Party equipment data.
 
 signal request_new_equip(equipment_slot)
+
+func _input(event):
+	if equipment_box_focused():
+		if event.is_action_pressed("ui_cancel"):
+			go_back.emit()
 
 func get_equipment_slots():
 	var slots = []
@@ -50,10 +56,16 @@ func get_inventory_equipment():
 func _ready():
 	equipment_slots = get_equipment_slots()
 	inventory_equipment = get_inventory_equipment()
+	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
+
 
 	for slot in equipment_slots:
 		slot.request_new_equip.connect(handle_equip_request)
 		slot.request_unequip.connect(handle_unequip_request)
+
+func _handle_box_exited():
+	inventory_equipment_box.set_visible(false)
+	last_focused_button.grab_focus()
 
 func handle_equip_request(slot):
 	last_focused_button = slot.slot_button
@@ -102,3 +114,9 @@ func get_equipment_textures():
 	for party_member in party_members:
 		for slot in party_member.equipment_slots:
 			pass
+
+func equipment_box_focused():
+	for slot in equipment_slots:
+		if slot.slot_button.has_focus():
+			return true
+	return false

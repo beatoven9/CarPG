@@ -20,21 +20,37 @@ func _ready():
 	populate_main_menu()
 	main_menu.item_selected.connect(_on_main_menu_selection)
 	main_menu.item_activated.connect(_on_main_menu_activated)
+
 	var node_path = main_menu.get_path()
 	main_menu.set_focus_neighbor(SIDE_RIGHT, node_path)
 	main_menu.set_focus_neighbor(SIDE_LEFT, node_path)
 
+	party_box.go_back.connect(main_menu.grab_focus)
+	item_box.go_back.connect(main_menu.grab_focus)
+	equipment_box.go_back.connect(main_menu.grab_focus)
+	quest_box.go_back.connect(main_menu.grab_focus)
+
+func _input(event):
+	if event.is_action_pressed("menu-toggle"):
+		toggle_menu()
+		accept_event()
+	# elif event.is_action_pressed("ui_cancel"):
+	# 	main_menu.grab_focus()
+
 func toggle_menu():
 	if menu_open == false:
 		open_menu()
+		main_menu.item_selected_idx = 0
 		get_tree().paused = true
+	elif menu_open == true:
+		close_menu()
 
 
 func open_menu():
 	close_boxes()
 	set_visible(true)
 	main_menu.grab_focus()
-	main_menu.select(0)
+	main_menu.select_item(0)
 	menu_open = true
 	_open_party_menu()
 
@@ -79,7 +95,7 @@ func close_boxes():
 
 func _open_items_menu():
 	close_boxes()
-	item_box.set_visible(true)
+	item_box.select_box()
 
 func _open_quests_menu():
 	close_boxes()

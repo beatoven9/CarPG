@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dio35s3ar114w"]
+[gd_scene load_steps=15 format=3 uid="uid://dio35s3ar114w"]
 
 [ext_resource type="PackedScene" uid="uid://c6pt3dsoybmp0" path="res://Scenes/Tilemaps/TownOneTilemap.tscn" id="1_4jes7"]
 [ext_resource type="PackedScene" uid="uid://shi6vfqi6wag" path="res://Scenes/characters/WedgeController.tscn" id="2_5ovpk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="4_6x73w"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="5_qoabd"]
 [ext_resource type="PackedScene" uid="uid://bjy0xjkbvfuc8" path="res://Scenes/Overworld_UI/item_box.tscn" id="7_wkr1l"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/MainMenu.gd" id="7_y00yt"]
 [ext_resource type="PackedScene" uid="uid://da8kkfuybomb3" path="res://Scenes/Overworld_UI/party_box.tscn" id="8_chco1"]
 [ext_resource type="PackedScene" uid="uid://dnwvgat8fj4ks" path="res://Scenes/Overworld_UI/equipment_box.tscn" id="9_f5iuo"]
 [ext_resource type="PackedScene" uid="uid://cxw2suqhhv5w4" path="res://Scenes/Overworld_UI/quest_box.tscn" id="10_cmywu"]
@@ -14,6 +15,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hykic"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeb50"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdsuu"]
+bg_color = Color(0.807843, 0.501961, 0.517647, 1)
 
 [node name="CarlessOverworld" type="Node2D"]
 
@@ -82,6 +86,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_qoabd")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hykic")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qeb50")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_fdsuu")
+script = ExtResource("7_y00yt")
 
 [node name="MainBoxContainer" type="MarginContainer" parent="UI/Menu/MarginContainer/HBoxContainer"]
 layout_mode = 2

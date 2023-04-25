@@ -1,10 +1,13 @@
 extends VBoxContainer
 
+signal go_back
+
 @onready var tab_container = $ItemTabs
 @onready var all_items_list = $ItemTabs.get_node("All Items").get_node("ItemList")
 @onready var tab_list = tab_container.get_children()
 
 func activate_box():
+	tab_container.set_current_tab(0)
 	all_items_list.grab_focus()
 	all_items_list.select(0)
 
@@ -14,9 +17,14 @@ func item_box_focused():
 			return true
 	return false
 
+
+func select_box():
+	set_visible(true)
+	tab_container.set_current_tab(0)
+
 func _input(event):
 	if item_box_focused():
-		print("Handling input")
+		#print("Handling input")
 		if event.is_action_pressed("hotbar-1"):
 			focus_tab(0)
 		elif event.is_action_pressed("hotbar-2"):
@@ -27,8 +35,13 @@ func _input(event):
 			focus_tab(3)
 		elif event.is_action_pressed("hotbar-5"):
 			focus_tab(4)
+		elif event.is_action_pressed("ui_cancel"):
+			tab_container.set_current_tab(0)
+			go_back.emit()
+			accept_event()
 	else:
-		print("Not handling input")
+		pass
+		# print("Not handling input")
 
 func focus_tab(index):
 	tab_container.set_current_tab(index)

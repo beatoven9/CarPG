@@ -7,6 +7,13 @@ extends VBoxContainer
 @onready var magic_container = character_info_container.get_node("CharacterMagicContainer")
 @onready var ring_boosts_container = character_info_container.get_node("CharacterRingBoostsContainer")
 
+signal go_back
+
+func _input(event):
+	if party_has_focus():
+		if event.is_action_pressed("ui_cancel"):
+			go_back.emit()
+			accept_event()
 
 
 var button_translator = {}
@@ -73,3 +80,10 @@ func set_stats_box(party_member):
 	magic_container.populate_container(magic)
 	ring_boosts_container.populate_container(ring_boosts)
 
+
+func party_has_focus():
+	for card in party_member_cards:
+		if card.button.has_focus():
+			return true
+			
+	return false

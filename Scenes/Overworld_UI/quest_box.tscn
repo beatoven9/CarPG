@@ -80,6 +80,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="Label" type="Label" parent="VBoxContainer/QuestDescriptionContainer/MarginContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_tjoff")
