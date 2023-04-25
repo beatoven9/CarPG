@@ -54,6 +54,9 @@ func get_inventory_equipment():
 		"Light Rod"
 	]
 
+func populate_box(equipment_data_list):
+	pass
+
 func _ready():
 	equipment_slots = get_equipment_slots()
 	inventory_equipment = get_inventory_equipment()

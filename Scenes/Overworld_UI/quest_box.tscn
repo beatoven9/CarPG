@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxw2suqhhv5w4"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="1_in4f3"]
-[ext_resource type="Script" path="res://Scripts/OverworldUI/quest_box.gd" id="1_msfim"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Quests/quest_box.gd" id="1_msfim"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_tjoff"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0flk"]
@@ -52,14 +52,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_q0flk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j3qtl")
 theme_override_styles/selected = SubResource("StyleBoxEmpty_pla5v")
 theme_override_styles/selected_focus = SubResource("StyleBoxFlat_yxgiy")
-item_count = 5
 max_columns = 3
 fixed_column_width = 128
-item_0/text = "Quest 1"
-item_1/text = "Quest 2"
-item_2/text = "Quest 3"
-item_3/text = "Quest 4"
-item_4/text = "Quest 5"
 
 [node name="QuestDescriptionContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -80,11 +74,10 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Label" type="Label" parent="VBoxContainer/QuestDescriptionContainer/MarginContainer"]
+[node name="QuestDescription" type="Label" parent="VBoxContainer/QuestDescriptionContainer/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_tjoff")
 theme_override_font_sizes/font_size = 10
-text = "This first quest is gonna be pretty easy. Don't fret little one. You just have to visit some landmarks and learn about Hive Culture yo."
 autowrap_mode = 2

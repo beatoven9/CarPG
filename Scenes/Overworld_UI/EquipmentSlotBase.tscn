@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl6r67d6y7fhp"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Texture2D" uid="uid://csc2mhcjuww4x" path="res://Sprites/UI_Sprites/UI_Tab_SubBox.png" id="1_5tcs0"]
-[ext_resource type="Script" path="res://Scripts/OverworldUI/EquipmentSlotBase.gd" id="1_js5mb"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentSlotBase.gd" id="1_js5mb"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_qjbjj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axudy"]

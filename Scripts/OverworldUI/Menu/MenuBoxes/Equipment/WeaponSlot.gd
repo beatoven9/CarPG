@@ -1,4 +1,4 @@
-extends "res://Scripts/OverworldUI/EquipmentSlotBase.gd"
+extends "res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentSlotBase.gd"
 
 
 var popup_options = [
@@ -37,3 +37,4 @@ func _handle_popup_response(index):
 
 	callback.call()
 	popup.queue_free()
+

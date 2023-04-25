@@ -6,13 +6,15 @@ signal close_menu
 
 func _gui_input(event):
 	if event.is_action_pressed("ui_down"):
-		item_selected_idx += 1
-		select(item_selected_idx)
-		item_selected.emit(item_selected_idx)
+		if item_selected_idx < get_item_count() - 1:
+			item_selected_idx += 1
+			select(item_selected_idx)
+			item_selected.emit(item_selected_idx)
 	elif event.is_action_pressed("ui_up"):
-		item_selected_idx -= 1
-		select(item_selected_idx)
-		item_selected.emit(item_selected_idx)
+		if item_selected_idx > 0:
+			item_selected_idx -= 1
+			select(item_selected_idx)
+			item_selected.emit(item_selected_idx)
 	elif event.is_action_pressed("ui_accept") || event.is_action_pressed("ui_right"):
 		item_activated.emit(item_selected_idx)
 	elif event.is_action_pressed("ui_cancel"):

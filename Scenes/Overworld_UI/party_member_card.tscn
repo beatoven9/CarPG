@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://kwr7gctjqq82"]
+[gd_scene load_steps=14 format=3]
 
-[ext_resource type="Script" path="res://Scripts/OverworldUI/PartyStats/party_member_card.gd" id="1_h7mwn"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Party/PartyStats/party_member_card.gd" id="1_h7mwn"]
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="1_j1duy"]
 [ext_resource type="Texture2D" uid="uid://tfrmlb1ihtvh" path="res://Sprites/UI_Sprites/UI_Arrow.png" id="1_pw00f"]
 [ext_resource type="Texture2D" uid="uid://dm38m1oqh5gdw" path="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png" id="2_mlcqn"]

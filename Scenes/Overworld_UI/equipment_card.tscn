@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://7oqxpdxoj7vg"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://Scripts/OverworldUI/EquipmentCard.gd" id="1_ioc12"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentCard.gd" id="1_ioc12"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_728f3"]
 [ext_resource type="Texture2D" uid="uid://dm38m1oqh5gdw" path="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png" id="3_fuha2"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_cynlh"]
-[ext_resource type="PackedScene" uid="uid://xb8kxfofm13e" path="res://Scenes/Overworld_UI/ClassSlot.tscn" id="5_mfvbl"]
-[ext_resource type="PackedScene" uid="uid://d37a04gmuifq7" path="res://Scenes/Overworld_UI/weapon_slot.tscn" id="6_fhpbb"]
-[ext_resource type="PackedScene" uid="uid://ce6l02fhkpvwa" path="res://Scenes/Overworld_UI/ring_slot.tscn" id="6_uge64"]
+[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/ClassSlot.tscn" id="5_mfvbl"]
+[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/weapon_slot.tscn" id="6_fhpbb"]
+[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/ring_slot.tscn" id="6_uge64"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gq6e3"]
 line_spacing = 2.08165e-12

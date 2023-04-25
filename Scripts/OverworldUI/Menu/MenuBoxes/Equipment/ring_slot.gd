@@ -1,4 +1,4 @@
-extends "res://Scripts/OverworldUI/EquipmentSlotBase.gd"
+extends "res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentSlotBase.gd"
 
 var popup_options = [
 	"Equip",

@@ -29,6 +29,10 @@ func _ready():
 	equipment_box.go_back.connect(main_menu.grab_focus)
 	quest_box.go_back.connect(main_menu.grab_focus)
 
+
+func populate_boxes():
+	pass
+
 func _input(event):
 	if event.is_action_pressed("menu-toggle"):
 		toggle_menu()
@@ -98,7 +102,7 @@ func _open_items_menu():
 
 func _open_quests_menu():
 	close_boxes()
-	quest_box.set_visible(true)
+	quest_box.select_box()
 
 func _open_equipment_menu():
 	close_boxes()
