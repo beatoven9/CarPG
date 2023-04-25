@@ -21,8 +21,6 @@ func _ready():
 	main_menu.item_selected.connect(_on_main_menu_selection)
 	main_menu.item_activated.connect(_on_main_menu_activated)
 
-	var node_path = main_menu.get_path()
-
 	main_menu.close_menu.connect(close_menu)
 	party_box.go_back.connect(main_menu.grab_focus)
 	item_box.go_back.connect(main_menu.grab_focus)
@@ -30,26 +28,19 @@ func _ready():
 	quest_box.go_back.connect(main_menu.grab_focus)
 
 
-func populate_boxes():
+func populate_boxes(_ui_data):
 	pass
 
 func _input(event):
 	if event.is_action_pressed("menu-toggle"):
-		toggle_menu()
-		accept_event()
-	# elif event.is_action_pressed("ui_cancel"):
-	# 	main_menu.grab_focus()
-
-func toggle_menu():
-	if menu_open == false:
-		open_menu()
-		main_menu.item_selected_idx = 0
-		get_tree().paused = true
-	elif menu_open == true:
-		close_menu()
+		if is_visible():
+			close_menu()
+			accept_event()
 
 
-func open_menu():
+func open_menu(ui_data):
+	get_tree().paused = true
+	populate_boxes(ui_data)
 	close_boxes()
 	set_visible(true)
 	main_menu.grab_focus()
