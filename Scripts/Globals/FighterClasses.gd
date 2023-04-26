@@ -1,0 +1,12 @@
+extends Node2D
+class_name FIGHTER_CLASSES
+
+enum {
+	WHITE_MAGE,
+	MONK,
+	THIEF,
+	BLACK_MAGE,
+	GUNNER,
+	DRAGOON,
+	BLUE_MAGE,
+}

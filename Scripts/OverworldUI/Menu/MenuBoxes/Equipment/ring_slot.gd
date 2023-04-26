@@ -16,6 +16,9 @@ var mode_popup_options = [
 
 var mode_popup: PopupMenu
 
+func _init():
+	equip_type = EQUIP_TYPES.RING
+
 func _ready():
 	super._ready()
 

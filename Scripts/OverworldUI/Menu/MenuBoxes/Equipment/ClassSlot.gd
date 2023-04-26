@@ -8,6 +8,9 @@ var popup_options = [
 	"Cancel"
 ]
 
+func _init():
+	equip_type = EQUIP_TYPES.CLASS_STONE
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()

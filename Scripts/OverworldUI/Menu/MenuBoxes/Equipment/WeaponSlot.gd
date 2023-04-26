@@ -8,8 +8,13 @@ var popup_options = [
 	"Cancel"
 ]
 
+func _init():
+	equip_type = EQUIP_TYPES.WEAPON
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#var new_equip = StandardSword.new()
+	#handle_item_equip(new_equip)
 	super._ready()
 
 func _handle_slot_pressed():

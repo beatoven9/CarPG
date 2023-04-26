@@ -12,7 +12,7 @@ signal equip_item(item)
 @onready var equipment_slots
 
 @onready var inventory_equipment_box = $InventoryEquipmentBox
-var inventory_equipment
+# var inventory_equipment
 
 var current_slot
 
@@ -31,6 +31,12 @@ func _input(event):
 			go_back.emit()
 			accept_event()
 
+func close_equipment_box():
+	print("CLOSING")
+	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
+	equip_item.disconnect(current_slot.handle_item_equip)
+
+
 func get_equipment_slots():
 	var slots = []
 	for member in party_members:
@@ -43,23 +49,22 @@ func get_equipment_slots():
 
 	return slots
 
-func get_inventory_equipment():
-	return [
-		"ring of fire",
-		"Ring of healing",
-		"Lance",
-		"Something else",
-		"Ring of healing",
-		"Twisted Staff",
-		"Light Rod"
-	]
+var inventory_list = [
+	StandardSword.new(),
+	StandardSword.new(),
+	StandardDagger.new(),
+	StandardHammer.new(),
+]
 
-func populate_box(equipment_data_list):
+func get_inventory_equipment():
+	return inventory_list
+
+func populate_box(_equipment_data_list):
 	pass
 
 func _ready():
 	equipment_slots = get_equipment_slots()
-	inventory_equipment = get_inventory_equipment()
+	# inventory_equipment = get_inventory_equipment()
 	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
 
 
@@ -68,34 +73,45 @@ func _ready():
 		slot.request_unequip.connect(handle_unequip_request)
 
 func _handle_box_exited():
+	close_equipment_box()
 	inventory_equipment_box.set_visible(false)
 	last_focused_button.grab_focus()
 
-func handle_equip_request(slot):
+func handle_equip_request(slot, equip_type):
+	current_slot = slot
 	last_focused_button = slot.slot_button
 	inventory_equipment_box.set_visible(true)
 	inventory_equipment_box.clear()
-	for item in inventory_equipment:
-		inventory_equipment_box.add_item(item)
+	for i in range(len(inventory_list)):
+		var item = inventory_list[i]
+		inventory_equipment_box.add_item(item.name_string)
+
+		if item.equip_type != equip_type:
+			inventory_equipment_box.set_item_disabled(i, true)
+
 	inventory_equipment_box.grab_focus()
 	inventory_equipment_box.select(0)
 
 	inventory_equipment_box.item_activated.connect(_handle_equip_response)
-
 	equip_item.connect(slot.handle_item_equip)
 
 
-func handle_unequip_request(slot, item):
-	print("Unequipping ", item, " from ", slot)
-	# Add item back to inventory
+func handle_unequip_request(_slot, item):
+	inventory_list.append(item)
 	
 
 func disconnect_slots():
 	pass
 
 func _handle_equip_response(index):
-	var item = inventory_equipment[index]
+	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
+
+	var item = inventory_list[index]
 	equip_item.emit(item)
+	
+	inventory_list.erase(item)
+
+	equip_item.disconnect(current_slot.handle_item_equip)
 
 	deactivate_inventory_equipment_box()
 	last_focused_button.grab_focus.call_deferred()
@@ -106,12 +122,10 @@ func activate_box():
 	deactivate_inventory_equipment_box()
 
 func select_box():
-	# inventory_equipment_box.set_visible(false)
 	deactivate_inventory_equipment_box()
 
 func deactivate_inventory_equipment_box():
 	inventory_equipment_box.set_visible(false)
-	# inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
 
 
 func get_equipment_textures():

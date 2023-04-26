@@ -1,6 +1,5 @@
 extends MarginContainer
 
-var menu_open = false
 @onready var main_menu = $MarginContainer/HBoxContainer/MainMenuContainer/MarginContainer/MainMenu
 @onready var party_box = $MarginContainer/HBoxContainer/MainBoxContainer/MainBoxes/PartyBox
 @onready var item_box = $MarginContainer/HBoxContainer/MainBoxContainer/MainBoxes/ItemBox
@@ -37,22 +36,34 @@ func _input(event):
 			close_menu()
 			accept_event()
 
+func get_ui_data():
+	var char_1 = PartyMember.new()
+	char_1.set_max_hp(100)
+	char_1.set_max_mp(100)
+	char_1.set_current_hp(90)
+	char_1.set_current_mp(50)
+	char_1.set_status("confused", true)
+	char_1.set_status("poisoned", true)
 
-func open_menu(ui_data):
+	
+
+	return {}
+
+func open_menu():
 	get_tree().paused = true
-	populate_boxes(ui_data)
 	close_boxes()
+
+	populate_boxes(get_ui_data())
+
 	set_visible(true)
 	main_menu.grab_focus()
 	main_menu.select_item(0)
-	menu_open = true
 	_open_party_menu()
 
 
 func close_menu():
 	close_boxes()
 	set_visible(false)
-	menu_open = false
 	get_tree().paused = false
 
 
