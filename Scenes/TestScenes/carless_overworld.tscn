@@ -31,6 +31,7 @@ script = ExtResource("3_itmto")
 
 [node name="Menu" type="MarginContainer" parent="UI"]
 process_mode = 2
+visible = false
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,10 +102,10 @@ patch_margin_bottom = 4
 layout_mode = 2
 
 [node name="PartyBox" parent="UI/Menu/MarginContainer/HBoxContainer/MainBoxContainer/MainBoxes" instance=ExtResource("8_chco1")]
-visible = false
 layout_mode = 2
 
 [node name="ItemBox" parent="UI/Menu/MarginContainer/HBoxContainer/MainBoxContainer/MainBoxes" instance=ExtResource("7_wkr1l")]
+visible = false
 layout_mode = 2
 
 [node name="EquipmentBox" parent="UI/Menu/MarginContainer/HBoxContainer/MainBoxContainer/MainBoxes" instance=ExtResource("9_f5iuo")]
