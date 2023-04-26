@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://ch3cba13bdbun"]
 
 [ext_resource type="PackedScene" uid="uid://c6pt3dsoybmp0" path="res://Scenes/Tilemaps/TownOneTilemap.tscn" id="1_4jes7"]
 [ext_resource type="PackedScene" uid="uid://shi6vfqi6wag" path="res://Scenes/characters/WedgeController.tscn" id="2_5ovpk"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/item_box.tscn" id="7_wkr1l"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MainMenu.gd" id="7_y00yt"]
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/party_box.tscn" id="8_chco1"]
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/equipment_box.tscn" id="9_f5iuo"]
+[ext_resource type="PackedScene" uid="uid://d24iyh1y5xrwb" path="res://Scenes/Overworld_UI/equipment_box.tscn" id="9_f5iuo"]
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/quest_box.tscn" id="10_cmywu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hykic"]

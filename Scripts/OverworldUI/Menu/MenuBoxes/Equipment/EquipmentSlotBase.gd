@@ -30,10 +30,10 @@ func handle_item_equip(item):
 	set_current_equip(item)
 
 func _handle_unequip_request():
-	print("Unequipping")
-	var current_equip = get_current_equip()
-	equip_container.remove_child(current_equip)
-	request_unequip.emit(self, current_equip)
+	if equip_container.get_child_count() > 0:
+		var current_equip = get_current_equip()
+		equip_container.remove_child(current_equip)
+		request_unequip.emit(self, current_equip)
 
 func _handle_move_request():
 	pass

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbue64ipk8auy"]
+
+[ext_resource type="Texture2D" uid="uid://cgm03elln88br" path="res://Sprites/Weapons/standard-sword.png" id="1_merg1"]
+
+[node name="BaseEquipment" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="IconTexture" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_merg1")

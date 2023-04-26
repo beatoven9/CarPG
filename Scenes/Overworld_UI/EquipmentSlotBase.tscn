@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://t3yrrh2td42p"]
 
 [ext_resource type="Texture2D" uid="uid://csc2mhcjuww4x" path="res://Sprites/UI_Sprites/UI_Tab_SubBox.png" id="1_5tcs0"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentSlotBase.gd" id="1_js5mb"]
@@ -44,12 +44,6 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-expand_mode = 5
-stretch_mode = 4
-
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -57,6 +51,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_axudy")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sktvo")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vocwl")
 theme_override_styles/focus = SubResource("StyleBoxTexture_c1pys")
+
+[node name="EquipContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2

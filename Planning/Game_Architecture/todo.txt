@@ -155,3 +155,26 @@ I think I'm gonna make blue mage more intuitive. There's gonna be some sort of p
 learnable moves. So when you see a learnable move is used, you get a notification that it is learnable
 and your move_dex is updated. When you look through your move dex, you can see all the moves you've seen
 with the monsters that can learn them. Maybe there could be a move dex and a monster dex.
+
+
+
+
+
+
+
+
+
+
+
+#######################################################
+#######################################################
+#######################################################
+#######################################################
+
+Create base classes for Ring, Weapon, and ClassStone.
+
+There should also be an Equipment base class that all of these inherit from
+which handles the texture for the icon as well as some basic methods for 
+switching ownership of an item perhaps.
+
+
