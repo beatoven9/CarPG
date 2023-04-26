@@ -10,7 +10,7 @@ extends Area2D
 @onready var damage_hud = $DamageHUD
 
 @onready var spell_hit_anim = preload("res://Scenes/Battle/AttackAnims/spell_hit_base.tscn")
-@onready var bullet_scene = preload("res://Scenes/Battle/AttackAnims/Bullet.tscn")
+@onready var bullet_scene = preload("res://Scenes/Battle/AttackAnims/bullet.tscn")
 
 
 var second_tick_timer: Timer
