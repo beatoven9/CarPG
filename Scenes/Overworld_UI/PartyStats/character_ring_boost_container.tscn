@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsg8c38wy6fuc"]
 
-[ext_resource type="PackedScene" uid="uid://08od6us26k37" path="res://Scenes/Overworld_UI/PartyStats/character_ability_container_base.tscn" id="1_4tixg"]
+[ext_resource type="PackedScene" uid="uid://dcxoopygj41rj" path="res://Scenes/Overworld_UI/PartyStats/character_ability_container_base.tscn" id="1_4tixg"]
 
 [node name="CharacterRingBoostsContainer" instance=ExtResource("1_4tixg")]
 size_flags_horizontal = 3
