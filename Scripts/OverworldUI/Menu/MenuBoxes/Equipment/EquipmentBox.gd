@@ -3,7 +3,7 @@ extends MarginContainer
 signal go_back
 signal equip_item(item)
 
-@onready var party_members = $VBoxContainer/PartyMemberContainer.get_children()
+@onready var party_members = $VBoxContainer/MarginContainer/PartyMemberContainer.get_children()
 @onready var first_slot = party_members[0].class_slot
 @onready var last_focused_button = first_slot.slot_button
 
@@ -11,7 +11,7 @@ signal equip_item(item)
 
 @onready var equipment_slots
 
-@onready var inventory_equipment_box = $InventoryEquipmentBox
+@onready var inventory_equipment_box = $VBoxContainer/MarginContainer/InventoryEquipmentBox
 # var inventory_equipment
 
 var current_slot
@@ -54,6 +54,12 @@ var inventory_list = [
 	StandardSword.new(),
 	StandardDagger.new(),
 	StandardHammer.new(),
+	FireRing.new(),
+	FireRing.new(),
+	AttackRing.new(),
+	AttackRing.new(),
+	AttackRing.new(),
+	AttackRing.new(),
 ]
 
 func get_inventory_equipment():
@@ -77,7 +83,7 @@ func _handle_box_exited():
 	inventory_equipment_box.set_visible(false)
 	last_focused_button.grab_focus()
 
-func handle_equip_request(slot, equip_type):
+func handle_equip_request(slot, _equip_type):
 	current_slot = slot
 	last_focused_button = slot.slot_button
 	inventory_equipment_box.set_visible(true)
@@ -86,8 +92,8 @@ func handle_equip_request(slot, equip_type):
 		var item = inventory_list[i]
 		inventory_equipment_box.add_item(item.name_string)
 
-		if item.equip_type != equip_type:
-			inventory_equipment_box.set_item_disabled(i, true)
+		#if item.equip_type != equip_type:
+		#	inventory_equipment_box.set_item_selectable(i, false)
 
 	inventory_equipment_box.grab_focus()
 	inventory_equipment_box.select(0)
@@ -104,17 +110,18 @@ func disconnect_slots():
 	pass
 
 func _handle_equip_response(index):
-	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
-
 	var item = inventory_list[index]
-	equip_item.emit(item)
-	
-	inventory_list.erase(item)
+	if current_slot.equip_type == item.equip_type:
+		inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
 
-	equip_item.disconnect(current_slot.handle_item_equip)
+		equip_item.emit(item)
+		
+		inventory_list.erase(item)
 
-	deactivate_inventory_equipment_box()
-	last_focused_button.grab_focus.call_deferred()
+		equip_item.disconnect(current_slot.handle_item_equip)
+
+		deactivate_inventory_equipment_box()
+		last_focused_button.grab_focus.call_deferred()
 
 
 func activate_box():

@@ -28,21 +28,37 @@ script = ExtResource("1_q70hq")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="PartyMemberContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PartyMemberContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = -2
 
-[node name="EquipmentCard" parent="VBoxContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
+[node name="EquipmentCard" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
 layout_mode = 2
 
-[node name="EquipmentCard2" parent="VBoxContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
+[node name="EquipmentCard2" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
 layout_mode = 2
 
-[node name="EquipmentCard3" parent="VBoxContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
+[node name="EquipmentCard3" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
 layout_mode = 2
 
-[node name="EquipmentCard4" parent="VBoxContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
+[node name="EquipmentCard4" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
 layout_mode = 2
+
+[node name="InventoryEquipmentBox" type="ItemList" parent="VBoxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/panel = SubResource("StyleBoxTexture_a8l5r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6bshl")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_oexj8")
+max_columns = 5
+same_column_width = true
+fixed_column_width = 96
+script = ExtResource("5_byr8l")
 
 [node name="UserPromptContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -55,16 +71,3 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
-
-[node name="InventoryEquipmentBox" type="ItemList" parent="."]
-visible = false
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_dwoev")
-theme_override_font_sizes/font_size = 10
-theme_override_styles/panel = SubResource("StyleBoxTexture_a8l5r")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6bshl")
-theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_oexj8")
-max_columns = 5
-same_column_width = true
-fixed_column_width = 96
-script = ExtResource("5_byr8l")

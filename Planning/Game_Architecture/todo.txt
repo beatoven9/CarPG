@@ -178,3 +178,6 @@ which handles the texture for the icon as well as some basic methods for
 switching ownership of an item perhaps.
 
 
+
+
+Equipment --- Hook up item description. inventory box shouldn't obscure the item description box.
