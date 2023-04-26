@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d24iyh1y5xrwb"]
+[gd_scene load_steps=10 format=3 uid="uid://d24iyh1y5xrwb"]
 
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentBox.gd" id="1_q70hq"]
 [ext_resource type="PackedScene" uid="uid://bpw7f6qdsexy5" path="res://Scenes/Overworld_UI/equipment_card.tscn" id="2_cj57u"]
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="3_1s6nt"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_dwoev"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/InventoryEquipmentBox.gd" id="5_byr8l"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="6_mk8aw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8l5r"]
 texture = ExtResource("3_1s6nt")
@@ -27,6 +28,7 @@ script = ExtResource("1_q70hq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = -2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -60,14 +62,177 @@ same_column_width = true
 fixed_column_width = 96
 script = ExtResource("5_byr8l")
 
-[node name="UserPromptContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="ItemInfoContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/UserPromptContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/ItemInfoContainer"]
+layout_mode = 2
+texture = ExtResource("6_mk8aw")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ItemInfoContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemNameContainer" type="MarginContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Name" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemNameContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 20
+text = "Fire Ring"
+
+[node name="ItemInfoContainer" type="HBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -2
+
+[node name="BoostContainer" type="MarginContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer"]
 layout_mode = 2
 texture = ExtResource("3_1s6nt")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="BoostContainer" type="HBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer/VBoxContainer/BoostContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "Effect:"
+
+[node name="Value" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer/VBoxContainer/BoostContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "Fire Boost"
+
+[node name="DescriptionContainer" type="HBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer/VBoxContainer/DescriptionContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "Description:"
+
+[node name="Value" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/BoostContainer/MarginContainer/VBoxContainer/DescriptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "This ring adds 10 fire damage to all melee attacks and boosts fire spells by 1.25%. As the ring levels up, it's effects will grow more potent."
+autowrap_mode = 2
+
+[node name="ExpContainer" type="MarginContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer"]
+layout_mode = 2
+texture = ExtResource("3_1s6nt")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ExpContainer" type="VBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 0
+
+[node name="LevelContainer" type="HBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/LevelContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "Level:"
+
+[node name="Value" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "1"
+horizontal_alignment = 2
+
+[node name="CurrentExpContainer" type="HBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/CurrentExpContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "Current Exp:"
+
+[node name="Value" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/CurrentExpContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "500"
+horizontal_alignment = 2
+
+[node name="NextLevelContainer" type="HBoxContainer" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/NextLevelContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "Exp to next lvl:"
+
+[node name="Value" type="Label" parent="VBoxContainer/ItemInfoContainer/MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/NextLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_dwoev")
+theme_override_font_sizes/font_size = 10
+text = "26"
+horizontal_alignment = 2

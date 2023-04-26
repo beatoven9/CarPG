@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=17 format=3 uid="uid://wdlw1qucqx0k"]
 
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="1_6j3tw"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Items/item_box.gd" id="1_kvpb7"]
@@ -52,16 +52,22 @@ texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kwjq"]
 
-[node name="ItemBox" type="VBoxContainer"]
+[node name="ItemBox" type="MarginContainer"]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 script = ExtResource("1_kvpb7")
 
-[node name="ItemTabs" type="TabContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemTabs" type="TabContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_6j3tw")
@@ -72,36 +78,36 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_j44pe")
 tab_alignment = 1
 script = ExtResource("6_2clwb")
 
-[node name="All Items" parent="ItemTabs" instance=ExtResource("5_hh8aq")]
+[node name="All Items" parent="VBoxContainer/ItemTabs" instance=ExtResource("5_hh8aq")]
 layout_mode = 2
 
-[node name="Battle" parent="ItemTabs" instance=ExtResource("5_hh8aq")]
+[node name="Battle" parent="VBoxContainer/ItemTabs" instance=ExtResource("5_hh8aq")]
 visible = false
 layout_mode = 2
 
-[node name="Healing" parent="ItemTabs" instance=ExtResource("5_hh8aq")]
+[node name="Healing" parent="VBoxContainer/ItemTabs" instance=ExtResource("5_hh8aq")]
 visible = false
 layout_mode = 2
 
-[node name="Equipment" parent="ItemTabs" instance=ExtResource("5_hh8aq")]
+[node name="Equipment" parent="VBoxContainer/ItemTabs" instance=ExtResource("5_hh8aq")]
 visible = false
 layout_mode = 2
 
-[node name="Key Items" parent="ItemTabs" instance=ExtResource("5_hh8aq")]
+[node name="Key Items" parent="VBoxContainer/ItemTabs" instance=ExtResource("5_hh8aq")]
 visible = false
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 64)
 layout_mode = 2
 
-[node name="ItemInfo" type="Label" parent="HBoxContainer"]
+[node name="ItemInfo" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/normal = ExtResource("6_7whin")
 
-[node name="ItemAction" type="ItemList" parent="HBoxContainer"]
+[node name="ItemAction" type="ItemList" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(128, 2.08165e-12)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_fks8h")

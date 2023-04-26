@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=14 format=3 uid="uid://bimv5yqhjn3kt"]
 
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Party/PartyStats/party_member_card.gd" id="1_h7mwn"]
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="1_j1duy"]
@@ -44,10 +44,6 @@ stretch_mode = 5
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 1
-theme_override_constants/margin_top = 1
-theme_override_constants/margin_right = 1
-theme_override_constants/margin_bottom = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PartyMemberCard"]
 layout_mode = 2

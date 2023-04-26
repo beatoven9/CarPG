@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-@onready var party_member_cards = get_node("PartyCards").get_children()
+@onready var party_member_cards = get_node("PartyCardContainer").get_node("PartyCards").get_children()
 @onready var character_info_container = $CharacterInfo/HBoxContainer/MarginContainer/CharacterInfoContainer
 @onready var stats_container = character_info_container.get_node("CharacterStatsContainer")
 @onready var ability_container = character_info_container.get_node("CharacterAbilityContainer")

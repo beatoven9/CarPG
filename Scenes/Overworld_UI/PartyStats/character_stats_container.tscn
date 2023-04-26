@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://dvo0j8sl71vll"]
 
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Party/PartyStats/character_stats_container.gd" id="1_aegmm"]
-[ext_resource type="Texture2D" uid="uid://d2d358jmoj0km" path="res://Sprites/UI_Sprites/SharpUIBox.png" id="1_hhqf4"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_5momh"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_tmlpn"]
 [ext_resource type="PackedScene" uid="uid://bi34ppdj3tcc3" path="res://Scenes/Overworld_UI/PartyStats/attack_container.tscn" id="3_3c78i"]
 [ext_resource type="PackedScene" uid="uid://5nd2utoamfxe" path="res://Scenes/Overworld_UI/PartyStats/defense_container.tscn" id="4_6ib5v"]
 [ext_resource type="PackedScene" uid="uid://dmffo4yorv4jo" path="res://Scenes/Overworld_UI/PartyStats/magic_container.tscn" id="5_tolce"]
@@ -15,7 +15,7 @@ script = ExtResource("1_aegmm")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_hhqf4")
+texture = ExtResource("2_tmlpn")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4

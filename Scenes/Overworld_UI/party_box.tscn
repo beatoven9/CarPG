@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://vhpy5akdwn02"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/party_member_card.tscn" id="1_2h6wi"]
+[ext_resource type="PackedScene" uid="uid://bimv5yqhjn3kt" path="res://Scenes/Overworld_UI/party_member_card.tscn" id="1_2h6wi"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Party/party_box.gd" id="1_fvpl3"]
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="3_0esqf"]
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/PartyStats/character_stats_container.tscn" id="4_shavx"]
+[ext_resource type="PackedScene" uid="uid://dvo0j8sl71vll" path="res://Scenes/Overworld_UI/PartyStats/character_stats_container.tscn" id="4_shavx"]
 [ext_resource type="PackedScene" uid="uid://cjfy04tdqt0a0" path="res://Scenes/Overworld_UI/PartyStats/character_ability_container.tscn" id="5_oryn7"]
 [ext_resource type="PackedScene" uid="uid://2wwywivln6jw" path="res://Scenes/Overworld_UI/PartyStats/character_magic_container.tscn" id="6_c0pkc"]
 [ext_resource type="PackedScene" uid="uid://dsg8c38wy6fuc" path="res://Scenes/Overworld_UI/PartyStats/character_ring_boost_container.tscn" id="7_7pxbi"]
@@ -18,19 +18,25 @@ grow_vertical = 2
 theme_override_constants/separation = 1
 script = ExtResource("1_fvpl3")
 
-[node name="PartyCards" type="VBoxContainer" parent="."]
+[node name="PartyCardContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PartyCards" type="VBoxContainer" parent="PartyCardContainer"]
 layout_mode = 2
 
-[node name="PartyMemberCard" parent="PartyCards" instance=ExtResource("1_2h6wi")]
+[node name="PartyMemberCard" parent="PartyCardContainer/PartyCards" instance=ExtResource("1_2h6wi")]
 layout_mode = 2
 
-[node name="PartyMemberCard2" parent="PartyCards" instance=ExtResource("1_2h6wi")]
+[node name="PartyMemberCard2" parent="PartyCardContainer/PartyCards" instance=ExtResource("1_2h6wi")]
 layout_mode = 2
 
-[node name="PartyMemberCard3" parent="PartyCards" instance=ExtResource("1_2h6wi")]
+[node name="PartyMemberCard3" parent="PartyCardContainer/PartyCards" instance=ExtResource("1_2h6wi")]
 layout_mode = 2
 
-[node name="PartyMemberCard4" parent="PartyCards" instance=ExtResource("1_2h6wi")]
+[node name="PartyMemberCard4" parent="PartyCardContainer/PartyCards" instance=ExtResource("1_2h6wi")]
 layout_mode = 2
 
 [node name="CharacterInfo" type="MarginContainer" parent="."]

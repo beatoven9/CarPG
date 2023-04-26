@@ -1,9 +1,9 @@
-extends VBoxContainer
+extends MarginContainer
 
 signal go_back
 
-@onready var tab_container = $ItemTabs
-@onready var all_items_list = $ItemTabs.get_node("All Items").get_node("ItemList")
+@onready var tab_container = $VBoxContainer/ItemTabs
+@onready var all_items_list = $VBoxContainer/ItemTabs.get_node("All Items").get_node("ItemList")
 @onready var tab_list = tab_container.get_children()
 
 func activate_box():

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dcxoopygj41rj"]
 
-[ext_resource type="Texture2D" uid="uid://d2d358jmoj0km" path="res://Sprites/UI_Sprites/SharpUIBox.png" id="1_53mrf"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Party/PartyStats/character_ability_container_base.gd" id="1_nvk0h"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_0nx5j"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_mx75j"]
 
 [node name="CharacterAbilityContainer" type="MarginContainer"]
@@ -9,7 +9,7 @@ script = ExtResource("1_nvk0h")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_53mrf")
+texture = ExtResource("2_0nx5j")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
