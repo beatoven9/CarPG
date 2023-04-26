@@ -1,8 +1,7 @@
-extends MarginContainer
+extends BaseItem
 class_name BaseEquipment
 
 @onready var texture_rect: TextureRect
-var name_string = "equipment name"
 
 func _ready():
 	texture_rect = TextureRect.new()
@@ -15,10 +14,4 @@ func set_icon_texture(new_texture: Texture2D):
 
 func get_icon_texture():
 	return texture_rect.get_texture()
-
-func get_name_string():
-	return name_string
-
-func set_name_string(new_name: String):
-	name_string = new_name
 

@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://ucq5gpi7w3hm"]
+
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/equip_info_container.gd" id="1_34k1x"]
+[ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="1_wejen"]
+[ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="2_8nojg"]
+[ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="3_edcb5"]
+
+[node name="EquipInfoContainer" type="MarginContainer"]
+size_flags_vertical = 3
+script = ExtResource("1_34k1x")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_wejen")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemNameContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/ItemNameContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 20
+text = " "
+
+[node name="ItemInfoContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -2
+
+[node name="ItemInfoContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer"]
+layout_mode = 2
+texture = ExtResource("3_edcb5")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="EffectContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer/VBoxContainer/EffectContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "Effect:"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer/VBoxContainer/EffectContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+
+[node name="DescriptionContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer/VBoxContainer/DescriptionContainer"]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "Description:"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ItemInfoContainer/MarginContainer/VBoxContainer/DescriptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 2
+
+[node name="ExpContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer"]
+layout_mode = 2
+texture = ExtResource("3_edcb5")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ExpContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LevelContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/LevelContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "Level:"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+
+[node name="CurrentExpContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/CurrentExpContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "Current Exp:"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/CurrentExpContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+
+[node name="NextLevelContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/NextLevelContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "Exp to next lvl:"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/ItemInfoContainer/ExpContainer/MarginContainer/ExpContainer/NextLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_8nojg")
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2

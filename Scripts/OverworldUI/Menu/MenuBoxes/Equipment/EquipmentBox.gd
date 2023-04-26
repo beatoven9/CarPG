@@ -12,6 +12,7 @@ signal equip_item(item)
 @onready var equipment_slots
 
 @onready var inventory_equipment_box = $VBoxContainer/MarginContainer/InventoryEquipmentBox
+@onready var equip_info_box = $VBoxContainer/EquipInfoContainer
 # var inventory_equipment
 
 var current_slot
@@ -32,7 +33,6 @@ func _input(event):
 			accept_event()
 
 func close_equipment_box():
-	print("CLOSING")
 	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
 	equip_item.disconnect(current_slot.handle_item_equip)
 
@@ -72,11 +72,25 @@ func _ready():
 	equipment_slots = get_equipment_slots()
 	# inventory_equipment = get_inventory_equipment()
 	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
+	inventory_equipment_box.item_selected.connect(
+		func (idx): 
+			var selected_item = get_inventory_equipment()[idx]
+			equip_info_box.set_item_info(selected_item)
+	)
 
 
 	for slot in equipment_slots:
 		slot.request_new_equip.connect(handle_equip_request)
 		slot.request_unequip.connect(handle_unequip_request)
+		slot.on_focus_entered.connect(handle_slot_focused)
+
+
+func handle_slot_focused(slot):
+	if slot.has_equip():
+		var equipped_item = slot.get_current_equip()
+		equip_info_box.set_item_info(equipped_item)
+	else:
+		equip_info_box.clear_info()
 
 func _handle_box_exited():
 	close_equipment_box()

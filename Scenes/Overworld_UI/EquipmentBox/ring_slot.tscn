@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentSlotBase.tscn" id="1_djm7g"]
+[ext_resource type="PackedScene" uid="uid://t3yrrh2td42p" path="res://Scenes/Overworld_UI/EquipmentBox/EquipmentSlotBase.tscn" id="1_djm7g"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/ring_slot.gd" id="2_k0ng3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ajtvm"]

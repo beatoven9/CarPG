@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentSlotBase.tscn" id="1_lsmc3"]
+[ext_resource type="PackedScene" uid="uid://t3yrrh2td42p" path="res://Scenes/Overworld_UI/EquipmentBox/EquipmentSlotBase.tscn" id="1_lsmc3"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/ClassSlot.gd" id="2_r17xs"]
 
 [node name="ClassSlot" instance=ExtResource("1_lsmc3")]

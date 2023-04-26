@@ -2,6 +2,7 @@ extends MarginContainer
 
 signal request_new_equip(slot, equip_type)
 signal request_unequip(slot, item)
+signal on_focus_entered(slot)
 
 var current_item = "Sword of fire"
 
@@ -16,9 +17,13 @@ var popup: PopupMenu
 
 func _ready():
 	slot_button.pressed.connect(_handle_slot_pressed)
+	slot_button.focus_entered.connect(_handle_focus_entered)
 
 func _handle_slot_pressed():
 	pass
+
+func _handle_focus_entered():
+	on_focus_entered.emit(self)
 
 func _on_slot_pressed():
 	slot_pressed.emit(self)
@@ -48,3 +53,9 @@ func set_current_equip(item):
 
 func get_current_equip():
 	return equip_container.get_child(0)
+
+func has_equip():
+	if len(equip_container.get_children()) > 0:
+		return true
+	else:
+		return false
