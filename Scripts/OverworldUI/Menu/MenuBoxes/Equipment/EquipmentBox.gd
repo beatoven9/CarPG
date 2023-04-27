@@ -59,7 +59,6 @@ func get_equipment_slots():
 var inventory_list = [
 	StandardSword.new(),
 	StandardSword.new(),
-	StandardDagger.new(),
 	StandardHammer.new(),
 	FireRing.new(),
 	FireRing.new(),
@@ -72,7 +71,14 @@ var inventory_list = [
 	DragoonStone.new(),
 	GunnerStone.new(),
 	MonkStone.new(),
-	WhiteMageStone.new()
+	WhiteMageStone.new(),
+	BlackMageCaster.new(),
+	BlackMageCaster.new(),
+	WhiteMageCaster.new(),
+	WhiteMageCaster.new(),
+	Dagger.new(),
+	HandGun.new(),
+	Lance.new(),
 ]
 
 func get_inventory_equipment():

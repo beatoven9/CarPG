@@ -196,18 +196,18 @@ Everytime an equip happens, a signal will get sent to update the party_members s
 
 todo
     -create sprites:
-        - all stones
-        - rings
-            -Frost Ring
-            -Flood Ring
-            -Shock Ring
-        - weapons
-            -Dagger
-            -BlackMageStaff
-            -WhiteMageStaff
-            -Lance
-            -Guns
-            -MonkFists
+***     - all stones
+***     - rings
+***         -Frost Ring
+***         -Flood Ring
+***         -Shock Ring
+***     - weapons
+***         -Dagger
+***         -BlackMageStaff
+***         -WhiteMageStaff
+***         -Lance
+***         -Guns
+***         -MonkFists
         - portraits of all characters
 
 
@@ -218,10 +218,10 @@ todo
 
 
     -equipment box
-        -equip characters with a few things by default for testing
-        -create all of the class stones
-        -create one weapon for each class
-        -set up equipment box to populate slots with equipment
+***     -equip characters with a few things by default for testing
+***     -create all of the class stones
+***     -create one weapon for each class
+***     -set up equipment box to populate slots with equipment
         -when equipping a weapon, it should check what the player's class stone is
         -when equipping a class stone, it should check what weapon is equipped and remove it if it isn't the right weapon type.
 
