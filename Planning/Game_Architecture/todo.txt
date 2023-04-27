@@ -181,3 +181,47 @@ switching ownership of an item perhaps.
 
 
 Equipment --- Hook up item description. inventory box shouldn't obscure the item description box.
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+
+Everytime an equip happens, a signal will get sent to update the party_members singleton. Likely anytime anything happens in UI.
+
+todo
+    -create sprites:
+        - all stones
+        - rings
+            -Frost Ring
+            -Flood Ring
+            -Shock Ring
+        - weapons
+            -Dagger
+            -BlackMageStaff
+            -WhiteMageStaff
+            -Lance
+            -Guns
+            -MonkFists
+        - portraits of all characters
+
+
+    -item box
+        -create a couple of items
+        -set up inventory box to use actual items
+        -use descriptions for item info box
+
+
+    -equipment box
+        -equip characters with a few things by default for testing
+        -set up equipment box to populate slots with equipment
+
+
+    -set up singletons for:
+        -party_members
+        -inventory
