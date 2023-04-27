@@ -1,6 +1,7 @@
 extends VBoxContainer
 
-@onready var party_member_cards = get_node("PartyCardContainer").get_node("PartyCards").get_children()
+@onready var party_member_card = preload("res://Scenes/Overworld_UI/PartyBox/party_member_card.tscn")
+@onready var party_member_card_container = get_node("PartyCardContainer").get_node("PartyCards")
 @onready var character_info_container = $CharacterInfo/HBoxContainer/MarginContainer/CharacterInfoContainer
 @onready var stats_container = character_info_container.get_node("CharacterStatsContainer")
 @onready var ability_container = character_info_container.get_node("CharacterAbilityContainer")
@@ -17,63 +18,49 @@ func _input(event):
 
 
 var button_translator = {}
-var party_mem_dicts
+var party_members
 
 func _ready():
-	for i in range(len(party_member_cards)):
-		button_translator[party_member_cards[i].name] = i
-		party_member_cards[i].card_selected.connect(_on_card_selected)
+	party_members = get_party()
+	set_party_cards(party_members)
 
-	# This part should be set way earlier.
-	# Probably by the menu everytime it's toggled on it will poll for the
-	# party singleton's state
-	var party_mem_dict = {
-		"stats_dict": {
-			"attack": 90,
-			"defense": 100,
-			"magic": 50,
-			"magic_defense": 90,
-			"speed": 100
-		},
-		"abilities": ["Jump", "Jump-high", "Swipe"],
-		"magic": ["Fire", "Frost", "Flood", "Shock"],
-		"ring_boosts": ["Fire-boost 1", "Shock-boost 2"],
-	}
+func set_party_cards(party_list):
+	for old_card in party_member_card_container.get_children():
+		old_card.queue_free()
 
-	var party_mem_dict1 = {
-		"stats_dict": {
-			"attack": 100,
-			"defense": 95,
-			"magic": 150,
-			"magic_defense": 200,
-			"speed": 50
-		},
-		"abilities": ["Jump", "Jump-high", "Swipe", "Jinkies"],
-		"magic": ["Fire", "Frost", "Flood", "Shock", "Shock 2", "Shock 3"],
-		"ring_boosts": ["Fire-boost 1", "Shock-boost 2", "Flood-boost 4"],
-	}
+	for i in range(len(party_list)):
+		var new_member = party_list[i]
+		var new_card = party_member_card.instantiate()
+		party_member_card_container.add_child(new_card)
+		new_card.set_card_info(new_member)
+		button_translator[new_card.name] = i
+		new_card.card_selected.connect(_on_card_selected)
 
-	party_mem_dicts = [party_mem_dict, party_mem_dict1, party_mem_dict, party_mem_dict1]
 
-func set_party_mem_dicts(dict_list):
-	party_mem_dicts = dict_list
-
+func get_party():
+	var party_member_1 = GovGearson.new()
+	var party_member_2 = GovGearson.new()
+	var party_member_3 = GovGearson.new()
+	party_member_1.set_status("poison", true)
+	party_member_1.set_status("mute", true)
+	party_member_1.set_status("blind", true)
+	return [party_member_1, party_member_2, party_member_3]
 
 func _on_card_selected(card):
 	var index = button_translator[card.name]
-	var current_dict = party_mem_dicts[index]
-	set_stats_box(current_dict)
+	var current_party_member = party_members[index]
+	set_stats_box(current_party_member)
 
 func activate_box():
-	var party_member_card = party_member_cards[0]
-	var button = party_member_card.button
+	var first_card = party_member_card_container.get_children()[0]
+	var button = first_card.button
 	button.grab_focus()
 
-func set_stats_box(party_member):
-	var stats_dict = party_member["stats_dict"]
-	var abilities_list = party_member["abilities"]
-	var magic = party_member["magic"]
-	var ring_boosts = party_member["ring_boosts"]
+func set_stats_box(party_member: PartyMember):
+	var stats_dict = party_member.stats_dict
+	var abilities_list = party_member.get_abilities_list()
+	var magic = party_member.get_magic_list()
+	var ring_boosts = party_member.get_ring_boosts()
 
 	stats_container.set_stats(stats_dict)
 	ability_container.populate_container(abilities_list)
@@ -82,7 +69,7 @@ func set_stats_box(party_member):
 
 
 func party_has_focus():
-	for card in party_member_cards:
+	for card in party_member_card_container.get_children():
 		if card.button.has_focus():
 			return true
 			

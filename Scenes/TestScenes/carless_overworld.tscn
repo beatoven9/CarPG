@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="5_qoabd"]
 [ext_resource type="PackedScene" uid="uid://wdlw1qucqx0k" path="res://Scenes/Overworld_UI/item_box.tscn" id="7_wkr1l"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MainMenu.gd" id="7_y00yt"]
-[ext_resource type="PackedScene" uid="uid://vhpy5akdwn02" path="res://Scenes/Overworld_UI/party_box.tscn" id="8_chco1"]
+[ext_resource type="PackedScene" uid="uid://vhpy5akdwn02" path="res://Scenes/Overworld_UI/PartyBox/party_box.tscn" id="8_chco1"]
 [ext_resource type="PackedScene" uid="uid://dm3g73dqb2gml" path="res://Scenes/Overworld_UI/EquipmentBox/equipment_box.tscn" id="9_f5iuo"]
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/quest_box.tscn" id="10_cmywu"]
 

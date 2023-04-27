@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjuh82lpuhbv4"]
-
-[ext_resource type="Texture2D" uid="uid://dri25dy8t8ci0" path="res://Sprites/UI_Sprites/StatusIcons/PoisonIcon.png" id="1_bdme7"]
-
-[node name="StatusIcon" type="TextureRect"]
-scale = Vector2(2, 2)
-size_flags_vertical = 4
-texture = ExtResource("1_bdme7")
-stretch_mode = 4

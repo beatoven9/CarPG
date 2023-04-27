@@ -2,12 +2,36 @@ extends Node2D
 class_name PartyMember
 
 var portrait: Texture2D
-var char_name: String
+var char_name: String = "default name"
 
-var current_hp: int
-var max_hp: int
-var current_mp: int
-var max_mp: int
+var current_exp: int = 0
+var level_tiers = [
+	50,
+	100,
+	200,
+	400,
+	700,
+	1000,
+	1500,
+	2000,
+	3000,
+	5000,
+	7000,
+	10000
+]
+
+var current_hp: int = 100
+var max_hp: int = 100
+var current_mp: int = 100
+var max_mp: int = 100
+
+var stats_dict = {
+	"attack": 100,
+	"defense": 100,
+	"magic": 100,
+	"magic_defense": 100,
+	"speed": 100
+}
 
 var status = {
 	"poison": false,
@@ -142,3 +166,31 @@ func set_ring_3(ring):
 
 func set_ring_3_mode(new_mode):
 	equipment["ring_3"]["mode"] = new_mode
+
+func get_level():
+	var current_level = 0
+	for i in range(len(level_tiers)):
+		if current_exp < level_tiers[i]:
+			return current_level
+		else:
+			current_level += 1
+
+func get_current_exp():
+	return current_exp
+
+func get_exp_to_next_level():
+	var current_level = get_level()
+	var next_level = current_level + 1
+	var next_level_idx = next_level - 1
+
+	var exp_to_next_level = level_tiers[next_level_idx] - get_current_exp()
+	return exp_to_next_level
+
+func get_abilities_list():
+	return ["Ability 1", "Ability 2"]
+
+func get_magic_list():
+	return ["Spell 1", "Spell 2"]
+
+func get_ring_boosts():
+	return ["Fire Boost 2", "Attack Boost"]
