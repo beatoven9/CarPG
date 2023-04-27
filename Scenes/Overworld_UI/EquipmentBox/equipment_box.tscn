@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm3g73dqb2gml"]
+[gd_scene load_steps=9 format=3 uid="uid://dm3g73dqb2gml"]
 
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentBox.gd" id="1_q70hq"]
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentBox/equipment_card.tscn" id="2_cj57u"]
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="3_1s6nt"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_dwoev"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/InventoryEquipmentBox.gd" id="5_byr8l"]
@@ -36,18 +35,6 @@ layout_mode = 2
 [node name="PartyMemberContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = -2
-
-[node name="EquipmentCard" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
-layout_mode = 2
-
-[node name="EquipmentCard2" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
-layout_mode = 2
-
-[node name="EquipmentCard3" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
-layout_mode = 2
-
-[node name="EquipmentCard4" parent="VBoxContainer/MarginContainer/PartyMemberContainer" instance=ExtResource("2_cj57u")]
-layout_mode = 2
 
 [node name="InventoryEquipmentBox" type="ItemList" parent="VBoxContainer/MarginContainer"]
 visible = false

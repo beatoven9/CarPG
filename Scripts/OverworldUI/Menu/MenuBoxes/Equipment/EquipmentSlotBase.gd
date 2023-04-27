@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name BaseEquipmentSlot
 
 signal request_new_equip(slot, equip_type)
 signal request_unequip(slot, item)

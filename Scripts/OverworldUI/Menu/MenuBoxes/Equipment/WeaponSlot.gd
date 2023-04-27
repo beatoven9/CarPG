@@ -1,4 +1,5 @@
 extends "res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentSlotBase.gd"
+class_name WeaponSlot
 
 
 var popup_options = [

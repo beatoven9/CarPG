@@ -3,13 +3,14 @@ extends MarginContainer
 signal go_back
 signal equip_item(item)
 
-@onready var party_members = $VBoxContainer/MarginContainer/PartyMemberContainer.get_children()
-@onready var first_slot = party_members[0].class_slot
-@onready var last_focused_button = first_slot.slot_button
+@onready var card_container = $VBoxContainer/MarginContainer/PartyMemberContainer
+var first_button
+var last_focused_button
+var equipment_card = preload("res://Scenes/Overworld_UI/EquipmentBox/equipment_card.tscn")
 
 @onready var generic_popup = preload("res://Scenes/Overworld_UI/Popups/generic_popup.tscn")
 
-@onready var equipment_slots
+var equipment_slots
 
 @onready var inventory_equipment_box = $VBoxContainer/MarginContainer/InventoryEquipmentBox
 @onready var equip_info_box = $VBoxContainer/EquipInfoContainer
@@ -36,10 +37,16 @@ func close_equipment_box():
 	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
 	equip_item.disconnect(current_slot.handle_item_equip)
 
+func populate_equipment_cards(party_members):
+	for child in card_container.get_children():
+		child.queue_free()
+
+	for party_member in party_members:
+		pass
 
 func get_equipment_slots():
 	var slots = []
-	for member in party_members:
+	for member in card_container.get_children():
 		var class_slot = member.class_slot
 		var weapon_slot = member.weapon_slot
 		slots.append(class_slot)
@@ -60,15 +67,47 @@ var inventory_list = [
 	AttackRing.new(),
 	AttackRing.new(),
 	AttackRing.new(),
+	BlackMageStone.new(),
+	ThiefStone.new(),
+	DragoonStone.new(),
+	GunnerStone.new(),
+	MonkStone.new(),
+	WhiteMageStone.new()
 ]
 
 func get_inventory_equipment():
 	return inventory_list
 
-func populate_box(_equipment_data_list):
-	pass
+func populate_box(data_dict):
+	var party_members = data_dict["party_members"]
+	for child in card_container.get_children():
+		child.queue_free()
+
+	for party_member in party_members:
+		var new_card = equipment_card.instantiate()
+		card_container.add_child(new_card)
+		new_card.set_card_info(party_member)
+
+
+func get_party():
+	var party_member_1 = GovGearson.new()
+	var party_member_2: Wedge = Wedge.new()
+	var party_member_3 = Tristan.new()
+	party_member_1.set_status("poison", true)
+	party_member_1.set_status("mute", true)
+	party_member_1.set_status("blind", true)
+	party_member_2.set_status("mute", true)
+	party_member_3.set_status("mute", true)
+	party_member_3.set_status("poison", true)
+	return [party_member_1, party_member_2, party_member_3]
 
 func _ready():
+	var party = get_party()
+	var data_dict = {"party_members": party, "inventory": []}
+	populate_box(data_dict)
+	# Populate partMemberCard list here and attach to container
+	first_button = card_container.get_children()[0].class_slot.slot_button
+	last_focused_button = first_button
 	equipment_slots = get_equipment_slots()
 	# inventory_equipment = get_inventory_equipment()
 	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
@@ -149,13 +188,8 @@ func deactivate_inventory_equipment_box():
 	inventory_equipment_box.set_visible(false)
 
 
-func get_equipment_textures():
-	for party_member in party_members:
-		for slot in party_member.equipment_slots:
-			pass
-
 func equipment_box_focused():
-	for slot in equipment_slots:
+	for slot in get_equipment_slots():
 		if slot.slot_button.has_focus():
 			return true
 	return false

@@ -3,13 +3,15 @@
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Party/PartyStats/party_member_card.gd" id="1_h7mwn"]
 [ext_resource type="Texture2D" uid="uid://dfqyl2kbn6ygn" path="res://Sprites/UI_Sprites/NestedBox.png" id="1_j1duy"]
 [ext_resource type="Texture2D" uid="uid://tfrmlb1ihtvh" path="res://Sprites/UI_Sprites/UI_Arrow.png" id="1_pw00f"]
-[ext_resource type="Texture2D" uid="uid://dm38m1oqh5gdw" path="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png" id="2_mlcqn"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="3_bk7ic"]
 [ext_resource type="Texture2D" uid="uid://b44pihmh2j4mi" path="res://Sprites/UI_Sprites/StatusIcons/BlindIcon.png" id="5_xb1at"]
 [ext_resource type="PackedScene" uid="uid://cjuh82lpuhbv4" path="res://Scenes/Overworld_UI/PartyBox/status_icon.tscn" id="6_71fif"]
 [ext_resource type="Texture2D" uid="uid://cbrhqsqxnc0pr" path="res://Sprites/UI_Sprites/StatusIcons/SleepIcon.png" id="6_gukwo"]
 [ext_resource type="Texture2D" uid="uid://bals0h11o8f0b" path="res://Sprites/UI_Sprites/StatusIcons/MuteIcon.png" id="7_mlvqj"]
 [ext_resource type="Texture2D" uid="uid://ctumaqb00il2u" path="res://Sprites/UI_Sprites/StatusIcons/DeadIcon.png" id="8_osi64"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lyx36"]
+load_path = "res://.godot/imported/GearsonPortrait_32.png-0247316045b07f96d36aaf450366dd1c.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6ulx"]
 
@@ -66,7 +68,7 @@ theme_override_constants/separation = 16
 
 [node name="Portrait" type="TextureRect" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_mlcqn")
+texture = SubResource("CompressedTexture2D_lyx36")
 stretch_mode = 3
 
 [node name="Name" type="Label" parent="PartyMemberCard/MarginContainer/HBoxContainer"]

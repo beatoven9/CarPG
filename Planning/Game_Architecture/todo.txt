@@ -219,9 +219,26 @@ todo
 
     -equipment box
         -equip characters with a few things by default for testing
+        -create all of the class stones
+        -create one weapon for each class
         -set up equipment box to populate slots with equipment
+        -when equipping a weapon, it should check what the player's class stone is
+        -when equipping a class stone, it should check what weapon is equipped and remove it if it isn't the right weapon type.
 
 
     -set up singletons for:
         -party_members
         -inventory
+
+
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+Some thoughts about the class system.....
+
+    I think probably the best way to do this is for there to be a method in each class stone that gets run upon every new equip that calculates which moves are available based on that character's 
+        class proficiency and sets properties with these values.
+        Then, the get_available_moves() method is just returning the values of these properties.

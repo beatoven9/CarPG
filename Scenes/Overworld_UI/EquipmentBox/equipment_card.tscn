@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://p4q34ttes21k"]
 
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/EquipmentCard.gd" id="1_ioc12"]
 [ext_resource type="Texture2D" uid="uid://chkkrpf88fe0e" path="res://Sprites/UI_Sprites/UI_Box.png" id="2_728f3"]
-[ext_resource type="Texture2D" uid="uid://dm38m1oqh5gdw" path="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png" id="3_fuha2"]
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_cynlh"]
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentBox/ClassSlot.tscn" id="5_mfvbl"]
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentBox/weapon_slot.tscn" id="6_fhpbb"]
+[ext_resource type="PackedScene" uid="uid://cvvp27ruug2ju" path="res://Scenes/Overworld_UI/EquipmentBox/weapon_slot.tscn" id="6_fhpbb"]
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentBox/ring_slot.tscn" id="6_uge64"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lyx36"]
+load_path = "res://.godot/imported/GearsonPortrait_32.png-0247316045b07f96d36aaf450366dd1c.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_gq6e3"]
 line_spacing = 2.08165e-12
@@ -46,7 +48,7 @@ theme_override_constants/separation = 0
 
 [node name="CharacterPortrait" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_fuha2")
+texture = SubResource("CompressedTexture2D_lyx36")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]

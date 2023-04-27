@@ -39,7 +39,7 @@ func set_party_cards(party_list):
 
 func get_party():
 	var party_member_1 = GovGearson.new()
-	var party_member_2 = Wedge.new()
+	var party_member_2: Wedge = Wedge.new()
 	var party_member_3 = Tristan.new()
 	party_member_1.set_status("poison", true)
 	party_member_1.set_status("mute", true)

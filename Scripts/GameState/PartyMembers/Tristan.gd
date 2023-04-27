@@ -1,7 +1,7 @@
 extends PartyMember
 class_name Tristan
 
-@onready var local_portrait: Texture2D = preload("res://Sprites/UI_Sprites/Portraits/GearsonPortrait_32.png")
+var local_portrait: Texture2D = preload("res://Sprites/UI_Sprites/Portraits/TristanPortrait_32.png")
 var local_name_string = "Tristan"
 
 var local_base_stats_dict = {
@@ -30,5 +30,6 @@ func _init():
 
 	##### Testing
 	set_class_stone(BlackMageStone.new())
+	set_weapon(StandardSword.new())
 	set_current_exp(52)
 	set_class_proficiency("black_mage", 10)

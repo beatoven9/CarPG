@@ -8,6 +8,7 @@ signal card_activated(party_member_card)
 @onready var hp_label: Label = $PartyMemberCard/MarginContainer/HBoxContainer/HP
 @onready var mp_label: Label = $PartyMemberCard/MarginContainer/HBoxContainer/MP
 @onready var status_container: HBoxContainer = $PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer/StatusContainer
+@onready var portrait_box: TextureRect = $PartyMemberCard/MarginContainer/HBoxContainer/Portrait
 
 @onready var status_icon = preload("res://Scenes/Overworld_UI/PartyBox/status_icon.tscn")
 
@@ -27,6 +28,11 @@ func _ready():
 	button.focus_entered.connect(_on_focus_entered)
 	button.pressed.connect(_on_button_pressed)
 
+func set_portrait(new_texture: Texture2D):
+	portrait_box.set_texture(new_texture)
+	portrait_box.set_anchors_preset(TextureRect.PRESET_FULL_RECT)
+	portrait_box.set_stretch_mode(TextureRect.STRETCH_KEEP_ASPECT)
+	
 
 func _on_focus_entered():
 	card_selected.emit(self)
@@ -35,6 +41,8 @@ func _on_button_pressed():
 	card_activated.emit(self)
 
 func set_card_info(party_member: PartyMember):
+	set_portrait(party_member.get_portrait())
+
 	set_hp_label(party_member.current_hp, party_member.max_hp)
 	set_mp_label(party_member.current_mp, party_member.max_mp)
 

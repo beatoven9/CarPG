@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c31b48disca4w"
-path="res://.godot/imported/GearsonPortrait_64.png-d7553a5065d8a8ebae4dc6827e9f0985.ctex"
+uid="uid://dt03oln2n7q14"
+path="res://.godot/imported/GunnerStone.png-b42bd6b47035d5e930dc5ea98410c4cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI_Sprites/Portraits/GearsonPortrait_64.png"
-dest_files=["res://.godot/imported/GearsonPortrait_64.png-d7553a5065d8a8ebae4dc6827e9f0985.ctex"]
+source_file="res://Sprites/UI_Sprites/Items/ClassStones/GunnerStone.png"
+dest_files=["res://.godot/imported/GunnerStone.png-b42bd6b47035d5e930dc5ea98410c4cf.ctex"]
 
 [params]
 

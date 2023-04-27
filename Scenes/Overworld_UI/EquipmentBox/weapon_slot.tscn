@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cvvp27ruug2ju"]
 
 [ext_resource type="PackedScene" uid="uid://t3yrrh2td42p" path="res://Scenes/Overworld_UI/EquipmentBox/EquipmentSlotBase.tscn" id="1_weqo6"]
 [ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Equipment/WeaponSlot.gd" id="2_j80s0"]
