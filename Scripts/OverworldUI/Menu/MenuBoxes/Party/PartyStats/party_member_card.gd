@@ -4,6 +4,7 @@ signal card_selected(party_member_card)
 signal card_activated(party_member_card)
 
 @onready var button = $PartyMemberCard/Button
+@onready var name_label: Label = $PartyMemberCard/MarginContainer/HBoxContainer/Name
 @onready var hp_label: Label = $PartyMemberCard/MarginContainer/HBoxContainer/HP
 @onready var mp_label: Label = $PartyMemberCard/MarginContainer/HBoxContainer/MP
 @onready var status_container: HBoxContainer = $PartyMemberCard/MarginContainer/HBoxContainer/HBoxContainer/StatusContainer
@@ -38,6 +39,10 @@ func set_card_info(party_member: PartyMember):
 	set_mp_label(party_member.current_mp, party_member.max_mp)
 
 	set_status_icons(party_member.status)
+	set_card_name(party_member.get_name_string())
+
+func set_card_name(text: String):
+	name_label.set_text(text)
 
 func set_hp_label(current_hp, max_hp):
 	var new_text = "HP: " + str(current_hp) + "/" + str(max_hp)

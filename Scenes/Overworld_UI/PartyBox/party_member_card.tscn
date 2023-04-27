@@ -69,6 +69,13 @@ layout_mode = 2
 texture = ExtResource("2_mlcqn")
 stretch_mode = 3
 
+[node name="Name" type="Label" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bk7ic")
+theme_override_font_sizes/font_size = 10
+text = "Gov. Gearson"
+
 [node name="HP" type="Label" parent="PartyMemberCard/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bk7ic")

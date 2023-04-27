@@ -39,11 +39,14 @@ func set_party_cards(party_list):
 
 func get_party():
 	var party_member_1 = GovGearson.new()
-	var party_member_2 = GovGearson.new()
-	var party_member_3 = GovGearson.new()
+	var party_member_2 = Wedge.new()
+	var party_member_3 = Tristan.new()
 	party_member_1.set_status("poison", true)
 	party_member_1.set_status("mute", true)
 	party_member_1.set_status("blind", true)
+	party_member_2.set_status("mute", true)
+	party_member_3.set_status("mute", true)
+	party_member_3.set_status("poison", true)
 	return [party_member_1, party_member_2, party_member_3]
 
 func _on_card_selected(card):
@@ -57,9 +60,13 @@ func activate_box():
 	button.grab_focus()
 
 func set_stats_box(party_member: PartyMember):
-	var stats_dict = party_member.stats_dict
-	var abilities_list = party_member.get_abilities_list()
-	var magic = party_member.get_magic_list()
+	var stats_dict = party_member.get_stats_dict()
+
+	var available_moves: AvailableMoves = party_member.get_available_moves()
+
+	var abilities_list = available_moves.ability_strings
+	var magic = available_moves.magic_strings
+
 	var ring_boosts = party_member.get_ring_boosts()
 
 	stats_container.set_stats(stats_dict)
