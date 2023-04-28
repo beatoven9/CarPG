@@ -10,27 +10,27 @@ var equipment_card = preload("res://Scenes/Overworld_UI/EquipmentBox/equipment_c
 
 @onready var generic_popup = preload("res://Scenes/Overworld_UI/Popups/generic_popup.tscn")
 
-var equipment_slots
 
-@onready var inventory_equipment_box = $VBoxContainer/MarginContainer/InventoryEquipmentBox
 @onready var equip_info_box = $VBoxContainer/EquipInfoContainer
 
 var current_slot
 
 signal request_new_equip(equipment_slot)
 
+func _ready():
+	var party = get_party()
+	populate_box(party)
+
+	# Populate partMemberCard list here and attach to container
+	first_button = card_container.get_children()[0].class_slot.slot_button
+	last_focused_button = first_button
+
+
 func _input(event):
 	if equipment_box_focused():
 		if event.is_action_pressed("ui_cancel"):
 			go_back.emit()
 			accept_event()
-
-func populate_equipment_cards(party_members):
-	for child in card_container.get_children():
-		child.queue_free()
-
-	for party_member in party_members:
-		pass
 
 func get_equipment_slots():
 	var slots = []
@@ -44,8 +44,7 @@ func get_equipment_slots():
 
 	return slots
 
-func populate_box(data_dict):
-	var party_members = data_dict["party_members"]
+func populate_box(party_members):
 	for child in card_container.get_children():
 		child.queue_free()
 
@@ -57,26 +56,8 @@ func populate_box(data_dict):
 
 
 func get_party():
-	var party_member_1 = GovGearson.new()
-	var party_member_2: Wedge = Wedge.new()
-	var party_member_3 = Tristan.new()
-	party_member_1.set_status("poison", true)
-	party_member_1.set_status("mute", true)
-	party_member_1.set_status("blind", true)
-	party_member_2.set_status("mute", true)
-	party_member_3.set_status("mute", true)
-	party_member_3.set_status("poison", true)
-	return [party_member_1, party_member_2, party_member_3]
-
-func _ready():
-	var party = get_party()
-	var data_dict = {"party_members": party, "inventory": []}
-	populate_box(data_dict)
-	# Populate partMemberCard list here and attach to container
-	first_button = card_container.get_children()[0].class_slot.slot_button
-	last_focused_button = first_button
-	equipment_slots = get_equipment_slots()
-	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
+	var party = GlobalParty.get_active_party_members()
+	return party
 
 func set_item_info(item):
 	if is_instance_valid(item):
@@ -95,20 +76,11 @@ func handle_slot_focused(slot):
 	else:
 		equip_info_box.clear_info()
 
-func _handle_box_exited():
-	inventory_equipment_box.set_visible(false)
-	last_focused_button.grab_focus()
-
-
 func activate_box():
 	last_focused_button.grab_focus()
-	deactivate_inventory_equipment_box()
 
 func select_box():
-	deactivate_inventory_equipment_box()
-
-func deactivate_inventory_equipment_box():
-	inventory_equipment_box.set_visible(false)
+	pass
 
 
 func equipment_box_focused():

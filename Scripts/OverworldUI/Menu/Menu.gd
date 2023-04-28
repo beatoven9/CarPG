@@ -26,7 +26,6 @@ func _ready():
 	equipment_box.go_back.connect(main_menu.grab_focus)
 	quest_box.go_back.connect(main_menu.grab_focus)
 
-
 func populate_boxes(_ui_data):
 	pass
 
@@ -113,6 +112,7 @@ func _open_equipment_menu():
 
 func _open_party_menu():
 	close_boxes()
+	party_box.refresh_box()
 	party_box.set_visible(true)
 
 
@@ -127,3 +127,6 @@ func _activate_equipment_menu():
 
 func _activate_party_menu():
 	party_box.activate_box()
+
+func refresh_boxes():
+	party_box.refresh_box()

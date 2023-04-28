@@ -13,6 +13,7 @@ signal go_back
 func _input(event):
 	if party_has_focus():
 		if event.is_action_pressed("ui_cancel"):
+			clear_stats_box()
 			go_back.emit()
 			accept_event()
 
@@ -21,10 +22,10 @@ var button_translator = {}
 var party_members
 
 func _ready():
-	party_members = get_party()
-	set_party_cards(party_members)
+	refresh_box()
 
 func set_party_cards(party_list):
+	button_translator = {}
 	for old_card in party_member_card_container.get_children():
 		old_card.queue_free()
 
@@ -33,30 +34,36 @@ func set_party_cards(party_list):
 		var new_card = party_member_card.instantiate()
 		party_member_card_container.add_child(new_card)
 		new_card.set_card_info(new_member)
-		button_translator[new_card.name] = i
+		button_translator[new_card.get_card_name()] = i
 		new_card.card_selected.connect(_on_card_selected)
 
 
 func get_party():
-	var party_member_1 = GovGearson.new()
-	var party_member_2: Wedge = Wedge.new()
-	var party_member_3 = Tristan.new()
-	party_member_1.set_status("poison", true)
-	party_member_1.set_status("mute", true)
-	party_member_1.set_status("blind", true)
-	party_member_2.set_status("mute", true)
-	party_member_3.set_status("mute", true)
-	party_member_3.set_status("poison", true)
-	return [party_member_1, party_member_2, party_member_3]
+	var party = GlobalParty.get_active_party_members()
+	return party
 
 func _on_card_selected(card):
-	var index = button_translator[card.name]
+	var index = button_translator[card.get_card_name()]
 	var current_party_member = party_members[index]
 	set_stats_box(current_party_member)
 
+func select_box():
+	refresh_box()
+
 func activate_box():
+	party_box_grab_focus()
+
+func refresh_box():
+	party_members = get_party()
+	set_party_cards(party_members)
+	clear_stats_box()
+
+
+func party_box_grab_focus():
 	var first_card = party_member_card_container.get_children()[0]
+
 	var button = first_card.button
+
 	button.grab_focus()
 
 func set_stats_box(party_member: PartyMember):
@@ -74,10 +81,15 @@ func set_stats_box(party_member: PartyMember):
 	magic_container.populate_container(magic)
 	ring_boosts_container.populate_container(ring_boosts)
 
-
 func party_has_focus():
 	for card in party_member_card_container.get_children():
 		if card.button.has_focus():
 			return true
 			
 	return false
+
+func clear_stats_box():
+	stats_container.clear_container()
+	ability_container.clear_container()
+	magic_container.clear_container()
+	# ring_boosts_container.clear()

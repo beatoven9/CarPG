@@ -1,5 +1,7 @@
 extends MarginContainer
 
+var party_member: PartyMember
+
 @onready var class_slot: ClassSlot = $MarginContainer/HBoxContainer/EquipmentSlots/ClassSlot
 @onready var weapon_slot: WeaponSlot = $MarginContainer/HBoxContainer/EquipmentSlots/WeaponSlot
 @onready var ring_slots: Array = $MarginContainer/HBoxContainer/EquipmentSlots/RingSlots.get_children()
@@ -104,6 +106,8 @@ func equip_item(item: BaseEquipment):
 		return_to_inventory(unequipped_item)
 	else:
 		pass
+
+	refresh_party_member()
 	
 func _handle_unequip_request():
 	var unequipped_item = current_slot.unequip_item()
@@ -111,6 +115,8 @@ func _handle_unequip_request():
 		return_to_inventory(unequipped_item)
 	else:
 		pass
+
+	refresh_party_member()
 
 func _handle_change_mode_request():
 	change_mode_popup = generic_popup.instantiate()
@@ -132,8 +138,9 @@ func _handle_change_mode_response(response_string):
 
 	current_slot.set_mode(ring_mode)
 
+	refresh_party_member()
+
 func return_to_inventory(item):
-	print("Adding item to inventory")
 	GlobalInventory.add_inventory_item(item)
 
 func get_selectable_inventory(slot):
@@ -152,14 +159,16 @@ func get_selectable_inventory(slot):
 func _handle_cancel_request():
 	pass
 
-func set_card_info(party_member: PartyMember):
-	var new_name = party_member.get_name_string()
-	var new_portrait = party_member.get_portrait()
-	var new_class_stone = party_member.get_class_stone()
-	var new_weapon = party_member.get_weapon()
-	var new_ring_1 = party_member.get_ring_1()
-	var new_ring_2 = party_member.get_ring_2()
-	var new_ring_3 = party_member.get_ring_3()
+func set_card_info(new_party_member: PartyMember):
+	party_member = new_party_member
+
+	var new_name = new_party_member.get_name_string()
+	var new_portrait = new_party_member.get_portrait()
+	var new_class_stone = new_party_member.get_class_stone()
+	var new_weapon = new_party_member.get_weapon()
+	var new_ring_1 = new_party_member.get_ring_1()
+	var new_ring_2 = new_party_member.get_ring_2()
+	var new_ring_3 = new_party_member.get_ring_3()
 
 	set_card_name(new_name)
 	set_portrait(new_portrait)
@@ -199,3 +208,54 @@ func set_ring_3(new_ring: BaseRing):
 
 func get_current_class():
 	return class_slot.get_current_class()	 
+
+func get_class_stone():
+	return class_slot.get_current_equip()
+
+func get_weapon():
+	return weapon_slot.get_current_equip()
+
+func get_ring_1():
+	return ring_slots[0].get_current_equip()
+
+func get_ring_2():
+	return ring_slots[1].get_current_equip()
+
+func get_ring_3():
+	return ring_slots[2].get_current_equip()
+
+func get_ring_1_mode():
+	return ring_slots[0].get_mode()
+
+func get_ring_2_mode():
+	return ring_slots[1].get_mode()
+
+func get_ring_3_mode():
+	return ring_slots[2].get_mode()
+
+func get_equip_data():
+	var class_stone = get_class_stone()
+	var weapon = get_weapon()
+	var ring_1 = get_ring_1()
+	var ring_2 = get_ring_2()
+	var ring_3 = get_ring_3()
+
+	var ring_1_mode = get_ring_1_mode()
+	var ring_2_mode = get_ring_2_mode()
+	var ring_3_mode = get_ring_3_mode()
+
+
+	var player_data_dict = {
+		"class_stone": class_stone,
+		"weapon": weapon,
+		"ring_1": ring_1,
+		"ring_2": ring_2,
+		"ring_3": ring_3,
+		"ring_1_mode": ring_1_mode,
+		"ring_2_mode": ring_2_mode,
+		"ring_3_mode": ring_3_mode,
+	}
+	return player_data_dict
+
+func refresh_party_member():
+	party_member.set_equip_data(get_equip_data())

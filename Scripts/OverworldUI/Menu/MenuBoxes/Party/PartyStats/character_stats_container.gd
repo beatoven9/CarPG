@@ -27,3 +27,10 @@ func set_magic_defense(value):
 
 func set_speed(value):
 	speed_label.set_text(str(value))
+
+func clear_container():
+	set_attack(0)
+	set_defense(0)
+	set_magic(0)
+	set_magic_defense(0)
+	set_speed(0)

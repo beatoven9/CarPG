@@ -223,10 +223,13 @@ func get_current_exp():
 func get_available_moves():
 	var class_stone = get_class_stone()
 
-	var available_moves: AvailableMoves = get_class_stone().get_available_moves(
-		get_class_proficiency(class_stone.fighter_class)
-	)
-	return available_moves
+	if class_stone == null:
+		return AvailableMoves.new() #empty
+	else:
+		var available_moves: AvailableMoves = class_stone.get_available_moves(
+			get_class_proficiency(class_stone.fighter_class)
+		)
+		return available_moves
 
 func get_exp_to_next_level():
 	var current_level = get_level()
@@ -266,3 +269,14 @@ func calculate_stats_dict():
 	for key in base_stats_dict.keys():
 		new_stats_dict[key] = base_stats_dict[key] + (get_level() * stat_increase_scale_dict[key])
 	return new_stats_dict
+
+func set_equip_data(equip_data):
+	set_class_stone(equip_data["class_stone"])
+	set_weapon(equip_data["weapon"])
+	set_ring_1(equip_data["ring_1"])
+	set_ring_2(equip_data["ring_2"])
+	set_ring_3(equip_data["ring_3"])
+
+	set_ring_1_mode(equip_data["ring_1_mode"])
+	set_ring_2_mode(equip_data["ring_2_mode"])
+	set_ring_3_mode(equip_data["ring_3_mode"])

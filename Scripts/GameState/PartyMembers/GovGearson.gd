@@ -42,3 +42,5 @@ func _init():
 	set_class_stone(BlackMageStone.new())
 	set_current_exp(1000)
 	set_class_proficiency("black_mage", 400)
+	set_class_proficiency("thief", 400)
+	set_class_proficiency("dragoon", 400)

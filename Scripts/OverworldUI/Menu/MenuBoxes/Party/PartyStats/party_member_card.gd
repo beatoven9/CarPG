@@ -52,6 +52,9 @@ func set_card_info(party_member: PartyMember):
 func set_card_name(text: String):
 	name_label.set_text(text)
 
+func get_card_name():
+	return name_label.get_text()
+
 func set_hp_label(current_hp, max_hp):
 	var new_text = "HP: " + str(current_hp) + "/" + str(max_hp)
 	hp_label.set_text(new_text)

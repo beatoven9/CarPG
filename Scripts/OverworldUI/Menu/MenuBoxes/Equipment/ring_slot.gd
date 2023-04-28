@@ -26,6 +26,9 @@ func set_mode(mode):
 	current_mode = mode
 	refresh_mode_string()
 
+func get_mode():
+	return current_mode
+
 func refresh_mode_string():
 	if current_mode == RING_MODES.OFFENSE:
 		mode_label.set_text("Offense")

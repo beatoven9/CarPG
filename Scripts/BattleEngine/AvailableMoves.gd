@@ -1,13 +1,13 @@
 class_name AvailableMoves
 
 var attack  # this is a Move
-var attack_string
-var magic  # this is a list of Move types
-var magic_strings
-var abilities # this is a list of Move types
-var ability_strings
-var items # this is a list of Move types
-var items_strings
+var attack_string = ""
+var magic = [] # this is a list of Move types
+var magic_strings = []
+var abilities = []# this is a list of Move types
+var ability_strings = []
+var items = []# this is a list of Move types
+var items_strings = []
 var flex_options = []# this is a list of Move types
 var flex_name = ""
 
