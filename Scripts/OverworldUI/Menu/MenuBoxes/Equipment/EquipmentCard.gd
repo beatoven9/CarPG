@@ -21,6 +21,7 @@ signal on_ring_2_activated
 signal on_ring_3_activated
 
 signal request_new_equip(equip_request_dict) #{"slot":, "current_class":}
+signal item_selected(item)
 
 var current_slot: BaseEquipmentSlot
 
@@ -60,14 +61,20 @@ func _handle_popup_response(response_string):
 func create_item_select_popup():
 	var selectable_inventory = get_selectable_inventory(current_slot)
 	inventory_select_popup = select_equip_popup.instantiate()
-	inventory_select_popup.set_items(selectable_inventory)
 	current_slot.add_child(inventory_select_popup)
+	inventory_select_popup.response.connect(_handle_item_select_response)
+	inventory_select_popup.item_selected.connect(_handle_item_focused)
+
+	inventory_select_popup.set_items(selectable_inventory)
 	
 	inventory_select_popup.set_visible(true)
 	inventory_select_popup.set_position(current_slot.global_position)
 	inventory_select_popup.set_focused_item(0)
 	inventory_select_popup.grab_focus()
-	inventory_select_popup.response.connect(_handle_item_select_response)
+
+
+func _handle_item_focused(item):
+	item_selected.emit(item)
 
 func _handle_item_select_response(item):
 	equip_item(item)

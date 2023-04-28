@@ -53,6 +53,7 @@ func populate_box(data_dict):
 		var new_card = equipment_card.instantiate()
 		card_container.add_child(new_card)
 		new_card.set_card_info(party_member)
+		new_card.item_selected.connect(set_item_info)
 
 
 func get_party():

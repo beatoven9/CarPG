@@ -5,9 +5,18 @@ var popup_options: Array
 var obj_list: Array
 
 signal response(obj)
+signal item_selected(obj)
 
 func _ready():
 	index_pressed.connect(_handle_response)
+	id_focused.connect(_handle_focus_change)
+
+func _handle_focus_change(id):
+	if popup_options[id] == "cancel":
+		pass
+	else:
+		item_selected.emit(obj_list[id])
+	
 
 func set_items(item_list):
 	popup_options = []
@@ -18,6 +27,8 @@ func set_items(item_list):
 
 	popup_options.append("cancel")
 	add_item("cancel")
+
+	item_selected.emit(obj_list[0])
 
 func _handle_response(idx):
 	if popup_options[idx] == "cancel":
