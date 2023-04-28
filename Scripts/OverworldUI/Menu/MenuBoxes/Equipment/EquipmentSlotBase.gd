@@ -3,7 +3,7 @@ class_name BaseEquipmentSlot
 
 signal request_new_equip(slot, equip_type)
 signal request_unequip(slot, item)
-signal on_focus_entered(slot)
+signal on_focus_entered(item)
 signal slot_pressed
 
 var current_item = "Sword of fire"
@@ -24,7 +24,8 @@ func _handle_slot_pressed():
 	slot_pressed.emit(self)
 
 func _handle_focus_entered():
-	on_focus_entered.emit(self)
+	var item = get_current_equip()
+	on_focus_entered.emit(item)
 
 func _handle_equip_request():
 	request_new_equip.emit(self, equip_type)

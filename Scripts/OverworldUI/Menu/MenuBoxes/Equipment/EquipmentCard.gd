@@ -27,10 +27,17 @@ var current_slot: BaseEquipmentSlot
 
 func _ready():
 	class_slot.slot_pressed.connect(_on_slot_pressed)
+
 	weapon_slot.slot_pressed.connect(_on_slot_pressed)
 	ring_slots[0].slot_pressed.connect(_on_slot_pressed)
 	ring_slots[1].slot_pressed.connect(_on_slot_pressed)
 	ring_slots[2].slot_pressed.connect(_on_slot_pressed)
+
+	class_slot.on_focus_entered.connect(_handle_item_focused)
+	weapon_slot.on_focus_entered.connect(_handle_item_focused)
+	ring_slots[0].on_focus_entered.connect(_handle_item_focused)
+	ring_slots[1].on_focus_entered.connect(_handle_item_focused)
+	ring_slots[2].on_focus_entered.connect(_handle_item_focused)
 
 func _on_slot_pressed(slot):
 	current_slot = slot

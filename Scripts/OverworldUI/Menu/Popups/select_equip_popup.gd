@@ -13,7 +13,7 @@ func _ready():
 
 func _handle_focus_change(id):
 	if popup_options[id] == "cancel":
-		pass
+		item_selected.emit(null)
 	else:
 		item_selected.emit(obj_list[id])
 	

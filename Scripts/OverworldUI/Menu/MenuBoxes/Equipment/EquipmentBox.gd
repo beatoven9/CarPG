@@ -79,7 +79,13 @@ func _ready():
 	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
 
 func set_item_info(item):
-	equip_info_box.set_item_info(item)
+	if is_instance_valid(item):
+		equip_info_box.set_item_info(item)
+	else:
+		clear_item_info()
+
+func clear_item_info():
+	equip_info_box.clear_info()
 
 
 func handle_slot_focused(slot):
