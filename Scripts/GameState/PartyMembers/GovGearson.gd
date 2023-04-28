@@ -13,10 +13,10 @@ var local_base_stats_dict = {
 }
 
 var local_stat_increase_scale_dict = {
-	"attack": 2,
-	"defense": 2,
-	"magic": 1,
-	"magic_defense": 1,
+	"attack": 3,
+	"defense": 3,
+	"magic": 2,
+	"magic_defense": 2,
 	"speed": 2
 }
 

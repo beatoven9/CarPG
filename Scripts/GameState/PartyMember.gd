@@ -209,6 +209,7 @@ func get_level():
 			return current_level
 		else:
 			current_level += 1
+	return current_level
 
 func set_current_exp(value: int):
 	current_exp = value
@@ -263,5 +264,5 @@ func calculate_stats_dict():
 	var new_stats_dict = {}
 
 	for key in base_stats_dict.keys():
-		new_stats_dict[key] = base_stats_dict[key] + pow(get_level(), stat_increase_scale_dict[key])
+		new_stats_dict[key] = base_stats_dict[key] + (get_level() * stat_increase_scale_dict[key])
 	return new_stats_dict

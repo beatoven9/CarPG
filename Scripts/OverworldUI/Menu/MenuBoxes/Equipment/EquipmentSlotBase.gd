@@ -21,6 +21,7 @@ func _ready():
 	slot_button.focus_entered.connect(_handle_focus_entered)
 
 func _handle_slot_pressed():
+	# class built to be overriden
 	pass
 
 func _handle_focus_entered():
