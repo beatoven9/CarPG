@@ -85,10 +85,10 @@ func _handle_item_focused(item):
 
 func _handle_item_select_response(item):
 	equip_item(item)
-	GlobalInventory.equipment.erase(item)
 
 func equip_item(item: BaseEquipment):
 	var unequipped_item = current_slot.set_current_equip(item)
+	GlobalInventory.remove_inventory_item(item)
 	if item.equip_type == EQUIP_TYPES.CLASS_STONE:
 		if item.fighter_class != weapon_slot.get_current_class():
 			var class_incompatible_item = weapon_slot.unequip_item()
@@ -133,37 +133,20 @@ func _handle_change_mode_response(response_string):
 	current_slot.set_mode(ring_mode)
 
 func return_to_inventory(item):
-	GlobalInventory.equipment.append(item)
+	print("Adding item to inventory")
+	GlobalInventory.add_inventory_item(item)
 
 func get_selectable_inventory(slot):
-	var selectable_inventory = []
-	var inventory_list = GlobalInventory.equipment
+	var selectable_inventory
 	var current_class = get_current_class()
 
 	if slot.equip_type == EQUIP_TYPES.CLASS_STONE:
-		for i in range(len(inventory_list)):
-			var equippable = inventory_list[i]
-			if equippable.equip_type == EQUIP_TYPES.CLASS_STONE:
-				selectable_inventory.append(equippable)
-
+		selectable_inventory = GlobalInventory.get_class_stones()
 	elif slot.equip_type == EQUIP_TYPES.WEAPON:
-		if current_class == FIGHTER_CLASSES.NONE:
-			for i in range(len(inventory_list)):
-				var equippable = inventory_list[i]
-				if equippable.equip_type == EQUIP_TYPES.WEAPON:
-					selectable_inventory.append(equippable)
-		else:
-			for i in range(len(inventory_list)):
-				var equippable: BaseEquipment = inventory_list[i]
-				if equippable.equip_type == EQUIP_TYPES.WEAPON:
-					if equippable.fighter_class == current_class:
-						selectable_inventory.append(equippable)
-
+		selectable_inventory = GlobalInventory.get_weapons_of_type(current_class)
 	elif slot.equip_type == EQUIP_TYPES.RING:
-		for i in range(len(inventory_list)):
-			var equippable = inventory_list[i]
-			if equippable.equip_type == EQUIP_TYPES.RING:
-				selectable_inventory.append(equippable)
+		selectable_inventory = GlobalInventory.get_rings()
+
 	return selectable_inventory
 
 func _handle_cancel_request():

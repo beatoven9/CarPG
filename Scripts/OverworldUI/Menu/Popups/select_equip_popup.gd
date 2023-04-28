@@ -28,7 +28,10 @@ func set_items(item_list):
 	popup_options.append("cancel")
 	add_item("cancel")
 
-	item_selected.emit(obj_list[0])
+	if len(item_list) > 0:
+		item_selected.emit(obj_list[0])
+	else:
+		item_selected.emit(null)
 
 func _handle_response(idx):
 	if popup_options[idx] == "cancel":

@@ -216,6 +216,12 @@ todo
         -set up inventory box to use actual items
         -use descriptions for item info box
 
+            Items should be of a couple diff types.
+                -equipment: class stones, weapons, rings
+                -restorative: health-restore, magic-restore, status cures
+                -battle: grenades, status-causers?
+                -key item: items for progressing the story
+
 
 *** -equipment box
 ***     -equip characters with a few things by default for testing

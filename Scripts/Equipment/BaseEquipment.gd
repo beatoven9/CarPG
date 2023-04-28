@@ -2,6 +2,7 @@ extends BaseItem
 class_name BaseEquipment
 
 @onready var texture_rect: TextureRect
+var item_type = ITEM_TYPES.EQUIP
 
 func _ready():
 	texture_rect = TextureRect.new()

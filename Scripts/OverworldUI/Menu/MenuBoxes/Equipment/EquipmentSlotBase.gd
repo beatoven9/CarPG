@@ -48,7 +48,11 @@ func set_current_equip(item):
 		return null
 
 func get_current_equip():
-	return equip_container.get_child(0)
+	
+	if len(equip_container.get_children()):
+		return equip_container.get_child(0)
+	else:
+		return null
 
 func has_equip():
 	if len(equip_container.get_children()) > 0:

@@ -6,7 +6,6 @@ class_name RingSlot
 var popup_options = [
 	"Equip",
 	"Unequip",
-	"Move",
 	"Change Mode",
 	"Cancel"
 ]
