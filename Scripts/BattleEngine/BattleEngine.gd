@@ -14,7 +14,7 @@ var request_queue = []
 
 var random = RandomNumberGenerator.new()
 
-@onready var battle_ui = get_tree().get_root().get_child(0).get_node("CanvasLayer/BattleUI")
+@onready var battle_ui = get_tree().get_root().get_node("BattleScene").get_node("CanvasLayer/BattleUI")
 @onready var move_announcer_box = battle_ui.move_announcer_box
 @onready var player_party_hud = battle_ui.player_party_hud
 

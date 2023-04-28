@@ -217,18 +217,23 @@ todo
         -use descriptions for item info box
 
 
-    -equipment box
+*** -equipment box
 ***     -equip characters with a few things by default for testing
 ***     -create all of the class stones
 ***     -create one weapon for each class
 ***     -set up equipment box to populate slots with equipment
-        -when equipping a weapon, it should check what the player's class stone is
-        -when equipping a class stone, it should check what weapon is equipped and remove it if it isn't the right weapon type.
+***     -when equipping a weapon, it should check what the player's class stone is
+***     -when equipping a class stone, it should check what weapon is equipped and remove it if it isn't the right weapon type.
 
 
     -set up singletons for:
         -party_members
         -inventory
+            -this should actually be multiple lists with helper methods
+                -all thief weapons in one list, black mage in another, etc. 
+                    -get_weapon_list() will return the concatenation of all of these weapons.
+                    -likewise, get_equipment_list() will return the concatentaion of all equipment type lists.
+            
 
 
 
@@ -242,19 +247,3 @@ Some thoughts about the class system.....
     I think probably the best way to do this is for there to be a method in each class stone that gets run upon every new equip that calculates which moves are available based on that character's 
         class proficiency and sets properties with these values.
         Then, the get_available_moves() method is just returning the values of these properties.
-
-
-
-
-
-
-When an equipment card makes a request for an item to be picked from the item box (this request is sent to the equipment box), it will send a dictionary like this:
-{
-    "slot_type": SLOT_TYPE.WEAPON
-    "current_class": CLASS_TYPE.BLACK_MAGE,
-}
-
-the handler in the equipment_box node will first check the slot type, if it is a class_stone or ring, no further checks are made. However, if it is a weapon_slot
-only weapons in line with the current class are allowed to be equipped. 
-
-Then, when the party_card receives the response, if the response is a class_stone, it checks to see if the previous class is different from the new_class. if it is, the weapon_slot is emptied.
