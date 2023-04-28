@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://nvmo26fiam4s"]
+[gd_scene load_steps=8 format=3 uid="uid://nvmo26fiam4s"]
 
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="1_6m4ry"]
 [ext_resource type="StyleBox" uid="uid://rixdr1m38jtp" path="res://UI_Styles/PlainBox_Style.tres" id="2_682b5"]
 [ext_resource type="Texture2D" uid="uid://bqcwnr0jtck77" path="res://Sprites/UI_Sprites/SubmenuArrow.png" id="2_diy06"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/Popups/generic_popup.gd" id="4_wgb8p"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cnym6"]
 diffuse_texture = ExtResource("2_diy06")
@@ -26,3 +27,4 @@ theme_override_styles/panel = ExtResource("2_682b5")
 theme_override_styles/panel_disabled = ExtResource("2_682b5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p2fds")
 theme_override_styles/separator = SubResource("StyleBoxLine_fwhkt")
+script = ExtResource("4_wgb8p")

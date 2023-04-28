@@ -7,11 +7,152 @@ extends MarginContainer
 @onready var portrait_box: TextureRect = $MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/CharacterPortrait
 @onready var name_label: Label = $MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/Label
 
+var popup: GenericPopup
+var change_mode_popup: GenericPopup
+var inventory_select_popup: SelectEquipPopup
+
+@onready var generic_popup = preload("res://Scenes/Overworld_UI/Popups/generic_popup.tscn")
+@onready var select_equip_popup = preload("res://Scenes/Overworld_UI/Popups/select_equip_popup.tscn")
+
+signal on_class_stone_activated
+signal on_weapon_activated
+signal on_ring_1_activated
+signal on_ring_2_activated
+signal on_ring_3_activated
+
+signal request_new_equip(equip_request_dict) #{"slot":, "current_class":}
+
+var current_slot: BaseEquipmentSlot
 
 func _ready():
-	pass
+	class_slot.slot_pressed.connect(_on_slot_pressed)
+	weapon_slot.slot_pressed.connect(_on_slot_pressed)
+	ring_slots[0].slot_pressed.connect(_on_slot_pressed)
+	ring_slots[1].slot_pressed.connect(_on_slot_pressed)
+	ring_slots[2].slot_pressed.connect(_on_slot_pressed)
 
-func _handle_ring_slot_press():
+func _on_slot_pressed(slot):
+	current_slot = slot
+	create_popup_prompt(slot)
+
+func create_popup_prompt(slot: BaseEquipmentSlot):
+	popup = generic_popup.instantiate()
+	popup.set_items(slot.popup_options)
+
+	slot.add_child(popup)
+	popup.set_visible(true)
+	popup.set_position(slot.global_position)
+	popup.set_focused_item(0)
+	popup.grab_focus()
+
+	popup.response.connect(_handle_popup_response)
+
+func _handle_popup_response(response_string):
+	var callback = {
+		"Equip": create_item_select_popup,
+		"Unequip": _handle_unequip_request,
+		"Change Mode": _handle_change_mode_request,
+		"Cancel": _handle_cancel_request
+	}[response_string]
+
+	callback.call()
+
+func create_item_select_popup():
+	var selectable_inventory = get_selectable_inventory(current_slot)
+	inventory_select_popup = select_equip_popup.instantiate()
+	inventory_select_popup.set_items(selectable_inventory)
+	current_slot.add_child(inventory_select_popup)
+	
+	inventory_select_popup.set_visible(true)
+	inventory_select_popup.set_position(current_slot.global_position)
+	inventory_select_popup.set_focused_item(0)
+	inventory_select_popup.grab_focus()
+	inventory_select_popup.response.connect(_handle_item_select_response)
+
+func _handle_item_select_response(item):
+	equip_item(item)
+	GlobalInventory.equipment.erase(item)
+
+func equip_item(item: BaseEquipment):
+	var unequipped_item = current_slot.set_current_equip(item)
+	if item.equip_type == EQUIP_TYPES.CLASS_STONE:
+		if item.fighter_class != weapon_slot.get_current_class():
+			var class_incompatible_item = weapon_slot.unequip_item()
+			if is_instance_valid(class_incompatible_item):
+				return_to_inventory(class_incompatible_item)
+	elif item.equip_type == EQUIP_TYPES.WEAPON:
+		if item.fighter_class != class_slot.get_current_class():
+			var class_incompatible_item = class_slot.unequip_item()
+			if is_instance_valid(class_incompatible_item):
+				return_to_inventory(class_incompatible_item)
+
+	if is_instance_valid(unequipped_item):
+		return_to_inventory(unequipped_item)
+	else:
+		pass
+	
+func _handle_unequip_request():
+	var unequipped_item = current_slot.unequip_item()
+	if is_instance_valid(unequipped_item):
+		return_to_inventory(unequipped_item)
+	else:
+		pass
+
+func _handle_change_mode_request():
+	change_mode_popup = generic_popup.instantiate()
+	change_mode_popup.set_items(["offense", "defense", "tactical"])
+	current_slot.add_child(change_mode_popup)
+
+	change_mode_popup.set_visible(true)
+	change_mode_popup.set_position(current_slot.global_position)
+	change_mode_popup.set_focused_item(0)
+	change_mode_popup.grab_focus()
+	change_mode_popup.response.connect(_handle_change_mode_response)
+
+func _handle_change_mode_response(response_string):
+	var ring_mode = {
+		"offense": RING_MODES.OFFENSE,
+		"defense": RING_MODES.DEFENSE,
+		"tactical": RING_MODES.TACTICAL,
+	}[response_string]
+
+	current_slot.set_mode(ring_mode)
+
+func return_to_inventory(item):
+	GlobalInventory.equipment.append(item)
+
+func get_selectable_inventory(slot):
+	var selectable_inventory = []
+	var inventory_list = GlobalInventory.equipment
+	var current_class = get_current_class()
+
+	if slot.equip_type == EQUIP_TYPES.CLASS_STONE:
+		for i in range(len(inventory_list)):
+			var equippable = inventory_list[i]
+			if equippable.equip_type == EQUIP_TYPES.CLASS_STONE:
+				selectable_inventory.append(equippable)
+
+	elif slot.equip_type == EQUIP_TYPES.WEAPON:
+		if current_class == FIGHTER_CLASSES.NONE:
+			for i in range(len(inventory_list)):
+				var equippable = inventory_list[i]
+				if equippable.equip_type == EQUIP_TYPES.WEAPON:
+					selectable_inventory.append(equippable)
+		else:
+			for i in range(len(inventory_list)):
+				var equippable: BaseEquipment = inventory_list[i]
+				if equippable.equip_type == EQUIP_TYPES.WEAPON:
+					if equippable.fighter_class == current_class:
+						selectable_inventory.append(equippable)
+
+	elif slot.equip_type == EQUIP_TYPES.RING:
+		for i in range(len(inventory_list)):
+			var equippable = inventory_list[i]
+			if equippable.equip_type == EQUIP_TYPES.RING:
+				selectable_inventory.append(equippable)
+	return selectable_inventory
+
+func _handle_cancel_request():
 	pass
 
 func set_card_info(party_member: PartyMember):
@@ -59,11 +200,5 @@ func set_ring_3(new_ring: BaseRing):
 	if is_instance_valid(new_ring):
 		ring_slots[2].set_current_equip(new_ring)
 
-func set_ring_1_mode(new_mode):
-	pass
-
-func set_ring_2_mode(new_mode):
-	pass
-
-func set_ring_3_mode(new_mode):
-	pass
+func get_current_class():
+	return class_slot.get_current_class()	 

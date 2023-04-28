@@ -14,16 +14,8 @@ var equipment_slots
 
 @onready var inventory_equipment_box = $VBoxContainer/MarginContainer/InventoryEquipmentBox
 @onready var equip_info_box = $VBoxContainer/EquipInfoContainer
-# var inventory_equipment
 
 var current_slot
-
-# We need to keep an array or a matrix of all of the equipment slots.
-# This way when someone wants to move a ring or weapon, we can call
-# the switch directly between two slots.
-# When the box opens, all of the slots are set from the caller
-# When the box closes, the current state of the slots are used to
-# set the Party equipment data.
 
 signal request_new_equip(equipment_slot)
 
@@ -32,10 +24,6 @@ func _input(event):
 		if event.is_action_pressed("ui_cancel"):
 			go_back.emit()
 			accept_event()
-
-func close_equipment_box():
-	inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
-	equip_item.disconnect(current_slot.handle_item_equip)
 
 func populate_equipment_cards(party_members):
 	for child in card_container.get_children():
@@ -55,34 +43,6 @@ func get_equipment_slots():
 		slots += ring_slots
 
 	return slots
-
-var inventory_list = [
-	StandardSword.new(),
-	StandardSword.new(),
-	StandardHammer.new(),
-	FireRing.new(),
-	FireRing.new(),
-	AttackRing.new(),
-	AttackRing.new(),
-	AttackRing.new(),
-	AttackRing.new(),
-	BlackMageStone.new(),
-	ThiefStone.new(),
-	DragoonStone.new(),
-	GunnerStone.new(),
-	MonkStone.new(),
-	WhiteMageStone.new(),
-	BlackMageCaster.new(),
-	BlackMageCaster.new(),
-	WhiteMageCaster.new(),
-	WhiteMageCaster.new(),
-	Dagger.new(),
-	HandGun.new(),
-	Lance.new(),
-]
-
-func get_inventory_equipment():
-	return inventory_list
 
 func populate_box(data_dict):
 	var party_members = data_dict["party_members"]
@@ -115,19 +75,10 @@ func _ready():
 	first_button = card_container.get_children()[0].class_slot.slot_button
 	last_focused_button = first_button
 	equipment_slots = get_equipment_slots()
-	# inventory_equipment = get_inventory_equipment()
 	inventory_equipment_box.cancel_inventory_box.connect(_handle_box_exited)
-	inventory_equipment_box.item_selected.connect(
-		func (idx): 
-			var selected_item = get_inventory_equipment()[idx]
-			equip_info_box.set_item_info(selected_item)
-	)
 
-
-	for slot in equipment_slots:
-		slot.request_new_equip.connect(handle_equip_request)
-		slot.request_unequip.connect(handle_unequip_request)
-		slot.on_focus_entered.connect(handle_slot_focused)
+func set_item_info(item):
+	equip_info_box.set_item_info(item)
 
 
 func handle_slot_focused(slot):
@@ -138,49 +89,8 @@ func handle_slot_focused(slot):
 		equip_info_box.clear_info()
 
 func _handle_box_exited():
-	close_equipment_box()
 	inventory_equipment_box.set_visible(false)
 	last_focused_button.grab_focus()
-
-func handle_equip_request(slot, _equip_type):
-	current_slot = slot
-	last_focused_button = slot.slot_button
-	inventory_equipment_box.set_visible(true)
-	inventory_equipment_box.clear()
-	for i in range(len(inventory_list)):
-		var item = inventory_list[i]
-		inventory_equipment_box.add_item(item.name_string)
-
-		#if item.equip_type != equip_type:
-		#	inventory_equipment_box.set_item_selectable(i, false)
-
-	inventory_equipment_box.grab_focus()
-	inventory_equipment_box.select(0)
-
-	inventory_equipment_box.item_activated.connect(_handle_equip_response)
-	equip_item.connect(slot.handle_item_equip)
-
-
-func handle_unequip_request(_slot, item):
-	inventory_list.append(item)
-	
-
-func disconnect_slots():
-	pass
-
-func _handle_equip_response(index):
-	var item = inventory_list[index]
-	if current_slot.equip_type == item.equip_type:
-		inventory_equipment_box.item_activated.disconnect(_handle_equip_response)
-
-		equip_item.emit(item)
-		
-		inventory_list.erase(item)
-
-		equip_item.disconnect(current_slot.handle_item_equip)
-
-		deactivate_inventory_equipment_box()
-		last_focused_button.grab_focus.call_deferred()
 
 
 func activate_box():

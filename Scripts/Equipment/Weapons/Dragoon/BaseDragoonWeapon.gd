@@ -1,5 +1,5 @@
 extends BaseWeapon
 class_name BaseDragoonWeapon
 
-var weapon_class = FIGHTER_CLASSES.DRAGOON
+var fighter_class = FIGHTER_CLASSES.DRAGOON
 

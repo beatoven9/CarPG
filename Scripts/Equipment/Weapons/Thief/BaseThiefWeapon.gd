@@ -1,4 +1,4 @@
 extends BaseWeapon
 class_name BaseThiefWeapon
 
-var weapon_class = FIGHTER_CLASSES.THIEF
+var fighter_class = FIGHTER_CLASSES.THIEF

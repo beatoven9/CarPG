@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="4_cynlh"]
 [ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentBox/ClassSlot.tscn" id="5_mfvbl"]
 [ext_resource type="PackedScene" uid="uid://cvvp27ruug2ju" path="res://Scenes/Overworld_UI/EquipmentBox/weapon_slot.tscn" id="6_fhpbb"]
-[ext_resource type="PackedScene" path="res://Scenes/Overworld_UI/EquipmentBox/ring_slot.tscn" id="6_uge64"]
+[ext_resource type="PackedScene" uid="uid://chxb8i0w81vuf" path="res://Scenes/Overworld_UI/EquipmentBox/ring_slot.tscn" id="6_uge64"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lyx36"]
 load_path = "res://.godot/imported/GearsonPortrait_32.png-0247316045b07f96d36aaf450366dd1c.ctex"

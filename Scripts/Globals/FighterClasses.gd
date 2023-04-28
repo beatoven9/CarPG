@@ -9,4 +9,5 @@ enum {
 	GUNNER,
 	DRAGOON,
 	BLUE_MAGE,
+	NONE
 }

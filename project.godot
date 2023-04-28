@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/TestScenes/carless_overworld.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalInventory="*res://Scripts/GameState/GlobalInventory.gd"
+
 [display]
 
 window/size/mode=2
