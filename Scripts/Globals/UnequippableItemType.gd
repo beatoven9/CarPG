@@ -1,0 +1,9 @@
+extends Node2D
+
+class_name UNEQUIPPABLE_TYPES
+
+enum {
+	RESTORATION,
+	KEY_ITEM,
+	BATTLE_ITEM
+}

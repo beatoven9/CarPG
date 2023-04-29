@@ -1,0 +1,5 @@
+extends BaseRestoration
+class_name BaseMagicRestorationItem
+
+var restoration_type = RESTORATION_ITEM_TYPES.MAGIC_RESTORATION
+

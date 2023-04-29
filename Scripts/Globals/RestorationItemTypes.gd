@@ -1,0 +1,7 @@
+extends Node2D
+class_name RESTORATION_ITEM_TYPES
+
+enum {
+	HEALTH_RESTORATION,
+	MAGIC_RESTORATION
+}

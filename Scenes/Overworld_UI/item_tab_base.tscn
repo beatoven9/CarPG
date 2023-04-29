@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvkothbr8yw0l"]
+[gd_scene load_steps=7 format=3 uid="uid://dvkothbr8yw0l"]
 
 [ext_resource type="FontFile" uid="uid://dcvb7cb63i04f" path="res://Fonts/poco/Poco.tres" id="1_rd3kh"]
+[ext_resource type="Script" path="res://Scripts/OverworldUI/Menu/MenuBoxes/Items/item_tab_base.gd" id="1_rs5db"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8cyo"]
 content_margin_left = 8.0
@@ -20,6 +21,7 @@ texture_margin_bottom = 4.0
 bg_color = Color(0.839216, 0.462745, 0.6, 1)
 
 [node name="Items" type="MarginContainer"]
+script = ExtResource("1_rs5db")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 2
@@ -33,6 +35,7 @@ theme_override_styles/selected = SubResource("StyleBoxEmpty_eq8d7")
 theme_override_styles/selected_focus = SubResource("StyleBoxFlat_uaujj")
 item_count = 6
 max_columns = 4
+fixed_column_width = 64
 item_0/text = "Sword"
 item_1/text = "Ring of Fire"
 item_2/text = "Ring of Frost"

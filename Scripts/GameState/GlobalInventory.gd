@@ -1,5 +1,22 @@
 extends Node
 
+var battle_items = [
+	Grenade.new(),
+	Grenade.new(),
+	Grenade.new(),
+]
+
+var key_items = [
+	AncientMagic.new(),
+]
+
+var restoration_items = [
+	Potion.new(),
+	Potion.new(),
+	Ether.new(),
+	Ether.new(),
+	Ether.new(),
+]
 
 var rings = [
 	FireRing.new(),
@@ -77,18 +94,32 @@ func get_equipment():
 	equipment_list += get_rings()
 	return equipment_list
 
-func get_items():
+func get_unequippable_items():
 	var item_list = []
-	# append all types of items to this list.
+	item_list += get_battle_items()
+	item_list += get_key_items()
+	item_list += get_restoration_items()
 	return item_list
 
-func get_all_inventory():
-	return []
+func get_battle_items():
+	return battle_items
+
+func get_key_items():
+	return key_items
+
+func get_restoration_items():
+	return restoration_items
+
+func get_all_items():
+	var item_list = []
+	item_list += get_equipment()
+	item_list += get_unequippable_items()
+	return item_list
 
 func remove_inventory_item(item):
 	if item.item_type == ITEM_TYPES.EQUIP:
 		remove_equipment(item)
-	elif item.item_type == ITEM_TYPES.ITEM:
+	elif item.item_type == ITEM_TYPES.UNEQUIPPABLE:
 		remove_item(item)
 
 func remove_equipment(equipment):
@@ -135,7 +166,7 @@ func remove_ring(ring):
 func add_inventory_item(new_item):
 	if new_item.item_type == ITEM_TYPES.EQUIP:
 		add_equipment(new_item)
-	elif new_item.item_type == ITEM_TYPES.ITEM:
+	elif new_item.item_type == ITEM_TYPES.UNEQUIPPABLE:
 		add_item(new_item)
 
 func add_item(new_item):

@@ -3,6 +3,6 @@ extends Node2D
 class_name ITEM_TYPES
 
 enum {
-	ITEM,
+	UNEQUIPPABLE,
 	EQUIP,
 }

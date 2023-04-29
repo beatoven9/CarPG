@@ -3,13 +3,20 @@ extends MarginContainer
 signal go_back
 
 @onready var tab_container = $VBoxContainer/ItemTabs
-@onready var all_items_list = $VBoxContainer/ItemTabs.get_node("All Items").get_node("ItemList")
+
+@onready var all_items_tab = tab_container.get_node("All Items")
+@onready var battle_items_tab = tab_container.get_node("Battle")
+@onready var restoration_items_tab = tab_container.get_node("Restoration")
+@onready var equipment_items_tab = tab_container.get_node("Equipment")
+@onready var key_items_tab = tab_container.get_node("Key Items")
+
 @onready var tab_list = tab_container.get_children()
 
 func activate_box():
+	populate_item_tabs()
 	tab_container.set_current_tab(0)
-	all_items_list.grab_focus()
-	all_items_list.select(0)
+	all_items_tab.item_list.grab_focus()
+	all_items_tab.item_list.select(0)
 
 func item_box_focused():
 	for tab in tab_list:
@@ -24,7 +31,6 @@ func select_box():
 
 func _input(event):
 	if item_box_focused():
-		#print("Handling input")
 		if event.is_action_pressed("hotbar-1"):
 			focus_tab(0)
 		elif event.is_action_pressed("hotbar-2"):
@@ -47,7 +53,6 @@ func _input(event):
 				focus_tab(tab_container.current_tab - 1)
 	else:
 		pass
-		# print("Not handling input")
 
 func focus_tab(index):
 	tab_container.set_current_tab(index)
@@ -55,7 +60,9 @@ func focus_tab(index):
 	current_tab.get_node("ItemList").select(0)
 	current_tab.get_node("ItemList").grab_focus.call_deferred()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+func populate_item_tabs():
+	all_items_tab.populate_list(GlobalInventory.get_all_items())
+	battle_items_tab.populate_list(GlobalInventory.get_battle_items())
+	restoration_items_tab.populate_list(GlobalInventory.get_restoration_items())
+	equipment_items_tab.populate_list(GlobalInventory.get_equipment())
+	key_items_tab.populate_list(GlobalInventory.get_key_items())

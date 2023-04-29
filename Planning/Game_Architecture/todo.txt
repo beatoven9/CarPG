@@ -222,6 +222,8 @@ todo
                 -battle: grenades, status-causers?
                 -key item: items for progressing the story
 
+            BaseItem should have a get_description() method. Child classes can use a description template to fill in data with actual properties of the item.
+
 
 *** -equipment box
 ***     -equip characters with a few things by default for testing
