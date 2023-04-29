@@ -210,11 +210,15 @@ todo
 ***         -MonkFists
         - portraits of all characters
 
+    -party box
+        -implement party member switching
+
 
     -item box
-        -create a couple of items
-        -set up inventory box to use actual items
+***     -create a couple of items
+***     -set up inventory box to use actual items
         -use descriptions for item info box
+        -add restoration functionality to items out of battle and in battle
 
             Items should be of a couple diff types.
                 -equipment: class stones, weapons, rings
@@ -234,13 +238,13 @@ todo
 ***     -when equipping a class stone, it should check what weapon is equipped and remove it if it isn't the right weapon type.
 
 
-    -set up singletons for:
-        -party_members
-        -inventory
-            -this should actually be multiple lists with helper methods
-                -all thief weapons in one list, black mage in another, etc. 
-                    -get_weapon_list() will return the concatenation of all of these weapons.
-                    -likewise, get_equipment_list() will return the concatentaion of all equipment type lists.
+*** -set up singletons for:
+***     -party_members
+***     -inventory
+***         -this should actually be multiple lists with helper methods
+***             -all thief weapons in one list, black mage in another, etc. 
+***                 -get_weapon_list() will return the concatenation of all of these weapons.
+***                 -likewise, get_equipment_list() will return the concatentaion of all equipment type lists.
             
 
 
